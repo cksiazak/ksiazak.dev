@@ -1,10 +1,21 @@
 import React from 'react';
-import './App.css';
+import Heading from './Components/heading/heading';
+import Navigation from './Components/navigation/navigation';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      
+      <Navigation />
+      <div className="container">
+        <Heading />
+        {/* 
+        Aboutd
+        Experience
+        Projects
+        Contact
+        */}
+      </div>
     </div>
   );
 }
