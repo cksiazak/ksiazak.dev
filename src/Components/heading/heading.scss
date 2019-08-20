@@ -1,0 +1,22 @@
+.heading {
+    padding: 150px 0px;
+
+    .Typist {
+        display: flex;
+        flex-direction: column;
+
+        .opening-hello {
+            font-size: 1.75rem;
+            color: #EBEBEB;
+        }
+
+        h1 {
+            font-size: 6rem;
+            color: #77B6EA;
+        }
+        h2 {
+            font-size: 4rem;
+            color: #EBEBEB;
+        }
+    }
+}
