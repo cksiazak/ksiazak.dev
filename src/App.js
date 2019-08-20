@@ -1,11 +1,13 @@
 import React from 'react';
 import Heading from './Components/heading/heading';
+import Navigation from './Components/navigation/navigation';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Heading />
+      <Navigation />
+      {/* <Heading /> */}
     </div>
   );
 }
