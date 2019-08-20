@@ -1,20 +1,32 @@
-.navbar-container {
+.navigation {
   position: fixed;
-  display: flex;
   width: 100%;
-  justify-content: flex-end;
 
-  .navigation-links {
-    display: inherit;
+  .navbar-container {
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+    justify-content: flex-end;
 
-    div {
+    .navigation-links {
       display: inherit;
+      padding: 15px 0px;
 
-      a {
-        font-size: 1.25rem;
-        padding: 25px 0px;
-        margin: 0px 25px;
-        cursor: pointer;
+      div {
+        display: inherit;
+
+        a {
+          font-size: 1.25rem;
+          padding: 10px 15px;
+          margin: 0px 10px;
+          cursor: pointer;
+          color: #F19C79;
+          transition: 0.2s;
+
+          &:hover {
+            color: #E3E3E3;
+          }
+        }
       }
     }
   }

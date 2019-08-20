@@ -14,6 +14,7 @@ function App() {
         Experience
         Projects
         Contact
+        Footer
         */}
       </div>
     </div>

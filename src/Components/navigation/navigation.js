@@ -13,7 +13,7 @@ import './navigation.scss';
 
 const Navigation = () => {
   return (
-    <navigation>
+    <section className="navigation">
       <nav className="navbar-container">
         <div className="navigation-links">
           <Fade top delay={400}>
@@ -66,7 +66,7 @@ const Navigation = () => {
           </Fade>
         </div>
       </nav>
-    </navigation>
+    </section>
   );
 };
 
