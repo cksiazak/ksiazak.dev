@@ -10,7 +10,7 @@ function App() {
       <div className="container">
         <Heading />
         {/* 
-        Aboutd
+        About
         Experience
         Projects
         Contact

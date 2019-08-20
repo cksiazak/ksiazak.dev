@@ -1,0 +1,15 @@
+.heading {
+
+    .Typist {
+        display: flex;
+        flex-direction: column;
+
+        .opening-hello {
+            font-size: 2rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+}
