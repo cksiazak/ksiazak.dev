@@ -5,6 +5,13 @@ import { Link } from 'react-scroll';
 import './navigation.scss';
 
 const Navigation = () => {
+  const navLinks = [
+    { name: 'About', fadeDown: 400, linkTo: 'about' },
+    { name: 'Experience', fadeDown: 600, linkTo: 'experience' },
+    { name: 'Projects', fadeDown: 800, linkTo: 'projects' },
+    { name: 'Contact', fadeDown: 1000, linkTo: 'contact' }
+  ];
+
   return (
     <section className="navigation">
       <nav className="navbar-container">
@@ -14,54 +21,20 @@ const Navigation = () => {
           </a>
         </Fade>
         <div className="navigation-links">
-          <Fade top delay={400}>
-            <Link
-              activeClass="active"
-              to="test1"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-            >
-              About
-            </Link>
-          </Fade>
-          <Fade top delay={600}>
-            <Link
-              activeClass="active"
-              to="test2"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-            >
-              Experience
-            </Link>
-          </Fade>
-          <Fade top delay={800}>
-            <Link
-              activeClass="active"
-              to="test3"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-            >
-              Projects
-            </Link>
-          </Fade>
-          <Fade top delay={1000}>
-            <Link
-              activeClass="active"
-              to="test4"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-            >
-              Contact
-            </Link>
-          </Fade>
+          {navLinks.map((link, id) => (
+            <Fade top delay={link.fadeDown} key={id}>
+              <Link
+                activeClass="active"
+                to={link.linkTo}
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                {link.name}
+              </Link>
+            </Fade>
+          ))}
         </div>
       </nav>
     </section>
