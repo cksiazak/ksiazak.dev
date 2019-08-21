@@ -5,8 +5,23 @@
   .navbar-container {
     margin: 0 auto;
     display: flex;
-    width: 90%;
-    justify-content: flex-end;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+
+    .top-left-logo {
+      text-decoration: none;
+      font-size: 1.25rem;
+      padding: 10px 15px;
+      margin: 0px 10px;
+      color: #f19c79;
+      transition: 0.2s;
+      user-select: none;
+
+      &:hover {
+        color: #e3e3e3;
+      }
+    }
 
     .navigation-links {
       display: inherit;
@@ -20,11 +35,11 @@
           padding: 10px 15px;
           margin: 0px 10px;
           cursor: pointer;
-          color: #F19C79;
+          color: #f19c79;
           transition: 0.2s;
 
           &:hover {
-            color: #E3E3E3;
+            color: #e3e3e3;
           }
         }
       }

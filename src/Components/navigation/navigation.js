@@ -1,13 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from 'react-scroll';
+import { Link } from 'react-scroll';
 
 import './navigation.scss';
 
@@ -15,6 +8,11 @@ const Navigation = () => {
   return (
     <section className="navigation">
       <nav className="navbar-container">
+        <Fade top delay={200}>
+          <a href="https://ksiazak.dev" className="top-left-logo">
+            CK
+          </a>
+        </Fade>
         <div className="navigation-links">
           <Fade top delay={400}>
             <Link
