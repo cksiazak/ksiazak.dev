@@ -6,16 +6,16 @@ import './navigation.scss';
 
 const Navigation = () => {
   const navLinks = [
-    { name: 'About', fadeDown: 400, linkTo: 'about' },
-    { name: 'Experience', fadeDown: 600, linkTo: 'experience' },
-    { name: 'Projects', fadeDown: 800, linkTo: 'projects' },
-    { name: 'Contact', fadeDown: 1000, linkTo: 'contact' }
+    { name: 'About', fadeDown: 200, linkTo: 'about' },
+    { name: 'Experience', fadeDown: 300, linkTo: 'experience' },
+    { name: 'Projects', fadeDown: 400, linkTo: 'projects' },
+    { name: 'Contact', fadeDown: 500, linkTo: 'contact' }
   ];
 
   return (
     <section className="navigation">
       <nav className="navbar-container">
-        <Fade top delay={200}>
+        <Fade top delay={100}>
           <a href="https://ksiazak.dev" className="top-left-logo">
             CK
           </a>
