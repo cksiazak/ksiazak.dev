@@ -2,6 +2,7 @@ import React from 'react';
 import { Element } from 'react-scroll';
 import Heading from './Components/heading/heading';
 import Navigation from './Components/navigation/navigation';
+import Contact from './Components/contact/contact';
 import './App.scss';
 
 function App() {
@@ -10,17 +11,19 @@ function App() {
       <Navigation />
       <div className="container">
         <Heading />
-        <Element name="about" ></Element>
-        <Element name="experience" ></Element>
-        <Element name="projects" ></Element>
-        <Element name="contact" ></Element>
-        {/* 
-        About
-        Experience
-        Projects
-        Contact
-        Footer
-        */}
+        <Element name="about" >
+          {/* About */}
+        </Element>
+        <Element name="experience" >
+          {/* Experience */}
+        </Element>
+        <Element name="projects" >
+          {/* Projects */}
+        </Element>
+        <Element name="contact" >
+          <Contact />
+        </Element>
+        {/* Footer */}
       </div>
     </div>
   );

@@ -1,3 +1,6 @@
+$nonHoverColor: #FC6471;
+$hoverColor: #D1FAFF;
+
 .navigation {
   position: fixed;
   width: 100%;
@@ -14,12 +17,12 @@
       font-size: 1.25rem;
       padding: 10px 15px;
       margin: 0px 10px;
-      color: #f19c79;
+      color: $nonHoverColor;
       transition: 0.2s;
       user-select: none;
 
       &:hover {
-        color: #e3e3e3;
+        color: $hoverColor;
       }
     }
 
@@ -35,11 +38,11 @@
           padding: 10px 15px;
           margin: 0px 10px;
           cursor: pointer;
-          color: #f19c79;
+          color: $nonHoverColor;
           transition: 0.2s;
 
           &:hover {
-            color: #e3e3e3;
+            color: $hoverColor;
           }
         }
       }

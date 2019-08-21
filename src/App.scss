@@ -1,4 +1,22 @@
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.page-btn {
+  padding: 20px;
+  background: transparent;
+  border: 2px solid #FC6471;
+  color: whitesmoke;
+  border-radius: 5px;
+  max-width: 175px;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+      background: rgba(252, 100, 113, 0.10);
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
+import Flip from 'react-reveal/Flip';
 import { Link } from 'react-scroll';
 
 import './navigation.scss';
@@ -15,14 +15,14 @@ const Navigation = () => {
   return (
     <section className="navigation">
       <nav className="navbar-container">
-        <Fade top delay={100}>
+        <Flip top delay={100}>
           <a href="https://ksiazak.dev" className="top-left-logo">
             CK
           </a>
-        </Fade>
+        </Flip >
         <div className="navigation-links">
           {navLinks.map((link, id) => (
-            <Fade top delay={link.fadeDown} key={id}>
+            <Flip top delay={link.fadeDown} key={id}>
               <Link
                 activeClass="active"
                 to={link.linkTo}
@@ -33,7 +33,7 @@ const Navigation = () => {
               >
                 {link.name}
               </Link>
-            </Fade>
+            </Flip>
           ))}
         </div>
       </nav>
