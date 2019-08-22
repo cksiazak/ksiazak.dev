@@ -1,9 +1,11 @@
-$nonHoverColor: #FC6471;
-$hoverColor: #D1FAFF;
+$nonHoverColor: #fc6471;
+$hoverColor: #d1faff;
 
 .navigation {
   position: fixed;
   width: 100%;
+  z-index: 2;
+  background: #22333b;
 
   .navbar-container {
     margin: 0 auto;
@@ -32,18 +34,20 @@ $hoverColor: #D1FAFF;
 
       div {
         display: inherit;
+        font-size: 1.25rem;
+        padding: 10px 15px;
+        margin: 0px 10px;
+        cursor: pointer;
+        color: $nonHoverColor;
+        transition: 0.2s;
 
-        a {
-          font-size: 1.25rem;
-          padding: 10px 15px;
-          margin: 0px 10px;
-          cursor: pointer;
-          color: $nonHoverColor;
+        &:hover {
+          color: $hoverColor;
+        }
+
+        .active {
           transition: 0.2s;
-
-          &:hover {
-            color: $hoverColor;
-          }
+          color: #a689f5;
         }
       }
     }

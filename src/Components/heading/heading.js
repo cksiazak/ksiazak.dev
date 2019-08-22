@@ -7,7 +7,7 @@ import './heading.scss';
 
 const heading = () => {
   return (
-    <section className="heading">
+    <section className="heading section-padding">
       <Typist cursor={{ show: false }} avgTypingDelay={60}>
         <Typist.Delay ms={1000} />
         <span className="opening-hello">

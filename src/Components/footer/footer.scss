@@ -17,18 +17,17 @@ footer {
       font-size: 1rem;
       color: $footerColors;
       padding: 20px 5px;
+      transition: 0.15s;
     }
 
     .footer-logo {
       color: $footerColors;
+      transition: 0.15s;
     }
 
     &:hover {
       a {
-        text-decoration: none;
-        font-size: 1rem;
         color: $footerHover;
-        padding: 20px 5px;
       }
 
       .footer-logo {

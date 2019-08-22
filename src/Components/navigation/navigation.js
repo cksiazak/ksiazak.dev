@@ -19,17 +19,19 @@ const Navigation = () => {
           <a href="https://ksiazak.dev" className="top-left-logo">
             CK
           </a>
-        </Flip >
+        </Flip>
         <div className="navigation-links">
           {navLinks.map((link, id) => (
             <Flip top delay={link.fadeDown} key={id}>
               <Link
+                className="nav-link"
                 activeClass="active"
                 to={link.linkTo}
                 spy={true}
                 smooth={true}
                 offset={50}
                 duration={500}
+                isDynamic={true}
               >
                 {link.name}
               </Link>
