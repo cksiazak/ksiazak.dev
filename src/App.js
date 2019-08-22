@@ -3,6 +3,7 @@ import { Element } from 'react-scroll';
 import Heading from './Components/heading/heading';
 import Navigation from './Components/navigation/navigation';
 import Contact from './Components/contact/contact';
+import Footer from './Components/footer/footer';
 import './App.scss';
 
 function App() {
@@ -23,8 +24,8 @@ function App() {
         <Element name="contact" >
           <Contact />
         </Element>
-        {/* Footer */}
       </div>
+        <Footer />
     </div>
   );
 }

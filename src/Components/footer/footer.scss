@@ -1,0 +1,39 @@
+$footerColors: #5785ac;
+$footerHover: #77b6ea;
+
+footer {
+  background: rgb(20, 29, 34);
+  display: flex;
+
+  .footer-container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: $footerColors;
+      padding: 20px 5px;
+    }
+
+    .footer-logo {
+      color: $footerColors;
+    }
+
+    &:hover {
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: $footerHover;
+        padding: 20px 5px;
+      }
+
+      .footer-logo {
+        color: $footerHover;
+      }
+    }
+  }
+}
