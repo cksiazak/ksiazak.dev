@@ -1,11 +1,12 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { Element } from 'react-scroll';
 
 const About = () => {
   return (
-    <Fade bottom>
-      <section className="about-box section-padding">About</section>
-    </Fade>
+    <Element name="about" className="about-box section-padding">
+      <Fade bottom>About</Fade>
+    </Element>
   );
 };
 

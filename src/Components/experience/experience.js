@@ -1,13 +1,12 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { Element } from 'react-scroll';
 
 const Experience = () => {
   return (
-    <Fade bottom>
-      <section className="experience-box section-padding">
-        Experience test
-      </section>
-    </Fade>
+    <Element name="experience" className="experience-box section-padding">
+        <Fade bottom>Experience test</Fade>
+    </Element>
   );
 };
 

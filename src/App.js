@@ -1,5 +1,4 @@
-import React from 'react';
-import { Element } from 'react-scroll';
+import React, { useEffect } from 'react';
 import Navigation from './Components/navigation/navigation';
 import Heading from './Components/heading/heading';
 import About from './Components/about/about';
@@ -10,23 +9,21 @@ import Footer from './Components/footer/footer';
 import './App.scss';
 
 function App() {
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   return (
     <div className="App">
       <Navigation />
       <div className="container">
         <Heading />
-        <Element name="about">
-          <About />
-        </Element>
-        <Element name="experience">
-          <Experience />
-        </Element>
-        <Element name="projects">
-          <Projects />
-        </Element>
-        <Element name="contact">
-          <Contact />
-        </Element>
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
       </div>
       <Footer />
     </div>

@@ -1,28 +1,25 @@
 .heading {
+  display: flex;
+  flex-direction: column;
 
-  div {
-    display: flex;
-    flex-direction: column;
-
-    .opening-hello {
-      font-size: 1.75rem;
-      color: #ebebeb;
-    }
-
-    h1 {
-      font-size: 6rem;
-      color: #77b6ea;
-    }
-    h2 {
-      font-size: 4rem;
-      color: #ebebeb;
-    }
+  .opening-hello {
+    font-size: 1.75rem;
+    color: #ebebeb;
   }
 
-  .heading-information {
-    font-size: 1.4rem;
-    padding-top: 50px;
-    color: white;
-    width: 50%;
+  h1 {
+    font-size: 6rem;
+    color: #77b6ea;
   }
+  h2 {
+    font-size: 4rem;
+    color: #ebebeb;
+  }
+}
+
+.heading-information {
+  font-size: 1.4rem;
+  padding: 50px 0px;
+  color: white;
+  width: 50%;
 }
