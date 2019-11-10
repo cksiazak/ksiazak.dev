@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  .nav-logo {
+    user-select: none;
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+}
