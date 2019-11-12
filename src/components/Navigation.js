@@ -26,7 +26,8 @@ const Navigation = () => {
           )}
         </TransitionGroup>
       </div>
-      <DesktopNav isMounted={isMounted} />
+      {/* <DesktopNav isMounted={isMounted} /> */}
+      <HamburgerIcon />
     </nav>
   );
 };
@@ -48,6 +49,27 @@ const DesktopNav = ({ isMounted }) => {
             </CSSTransition>
           ))}
       </TransitionGroup>
+    </div>
+  );
+};
+
+const HamburgerIcon = () => {
+  const [active, setActive] = useState(false);
+
+  const clickHandler = () => {
+    !active ? setActive(true) : setActive(false);
+  };
+  return (
+    <div>
+      <div
+        onClick={clickHandler}
+        class={!active ? `hamburger` : `hamburger is-active`}
+        id="hamburger"
+      >
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
     </div>
   );
 };
