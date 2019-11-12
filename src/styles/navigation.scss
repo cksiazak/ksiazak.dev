@@ -1,25 +1,38 @@
-$navFont: 2rem;
-
 nav {
   width: 90%;
   margin: 0 auto;
+}
 
-  .nav-container {
+// Desktop Nav CSS
+$DesktopNavFont: 2rem;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  .nav-logo {
+    user-select: none;
+    font-size: $DesktopNavFont;
+  }
+  .nav-links-desktop {
     display: flex;
+    width: 30%;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+    font-size: $DesktopNavFont;
+  }
+}
 
-    .nav-logo {
-      user-select: none;
-      font-size: $navFont;
-    }
-    .nav-links-desktop {
-      display: flex;
-      width: 30%;
-      justify-content: space-between;
-      font-size: $navFont;
-    }
+// Mobile nav CSS
+.nav-container-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  .nav-logo-mobile {
+    user-select: none;
+    font-size: 3rem;
   }
 }
 
@@ -40,7 +53,7 @@ nav {
 }
 
 #hamburger {
-  position: relative;
+  // position: relative;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
