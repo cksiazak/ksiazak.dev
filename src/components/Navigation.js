@@ -137,7 +137,7 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
             {hamburgerOpen &&
               navigationLinks.map((link, i) => (
                 <CSSTransition
-                  in={isMounted}
+                  in={menuMounted}
                   classNames="fadedown"
                   timeout={400}
                   key={i}

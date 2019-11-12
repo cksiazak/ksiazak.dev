@@ -37,7 +37,7 @@
 }
 .fadedown-exit {
   opacity: 0.01;
-  transform: translateY(00px);
+  transform: translateY(20px);
   transition: opacity 5ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 5ms;
 }
 .fadedown-exit-active {
