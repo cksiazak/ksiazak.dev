@@ -1,6 +1,5 @@
 nav {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 // Desktop Nav CSS
@@ -10,6 +9,7 @@ $DesktopNavFont: 2rem;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  width: 90%;
 
   .nav-logo {
     user-select: none;
@@ -29,24 +29,42 @@ $DesktopNavFont: 2rem;
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
+  background: red;
+  transition-duration: 0.4s;
+  height: 75px;
 
   .nav-container-mobile {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    width: 90%;
     margin: 0 auto;
 
-    .nav-logo-mobile {
-      user-select: none;
-      font-size: 3rem;
+    .upper-mobile-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nav-logo-mobile {
+        user-select: none;
+        font-size: 2rem;
+      }
+    }
+
+    .nav-links-mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        font-size: 2rem;
+        margin: 10px 0px;
+      }
     }
   }
+}
 
-  .nav-links-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.nav-mobile-active {
+  height: 300px;
 }
 
 // hamburger menu

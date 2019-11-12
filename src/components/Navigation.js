@@ -73,22 +73,37 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
 };
 
 const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
-  const [hamburgerState, setHamburgerState] = useState(false);
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [menuMounted, setMenuMounted] = useState(false);
   const clickHandler = () => {
-    !hamburgerState ? setHamburgerState(true) : setHamburgerState(false);
+    !hamburgerOpen ? setHamburgerOpen(true) : setHamburgerOpen(false);
   };
 
   // deactivate hamburger menu if page is no longer mobile
   useEffect(() => {
     if (!isMobile) {
-      setHamburgerState(false);
+      setHamburgerOpen(false);
+      setMenuMounted(false);
     }
   }, [isMobile]);
 
   return (
-    <nav className="nav-mobile-view">
+    <nav className={`nav-mobile-view ${hamburgerOpen && 'nav-mobile-active'}`}>
       <div className="nav-container-mobile">
-        <div className="nav-logo-mobile">
+        <div className="upper-mobile-nav">
+          <div className="nav-logo-mobile">
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition
+                  in={isMounted}
+                  classNames="fadedown"
+                  timeout={3000}
+                >
+                  <p style={{ transitionDelay: '50ms' }}>CK</p>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
+          </div>
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition
@@ -96,47 +111,39 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
                 classNames="fadedown"
                 timeout={3000}
               >
-                <p style={{ transitionDelay: '50ms' }}>CK</p>
+                <div
+                  onClick={clickHandler}
+                  className={
+                    !hamburgerOpen ? `hamburger` : `hamburger is-active`
+                  }
+                  id="hamburger"
+                  style={{ transitionDelay: '200ms' }}
+                >
+                  <span className="line"></span>
+                  <span className="line"></span>
+                  <span className="line"></span>
+                </div>
               </CSSTransition>
             )}
           </TransitionGroup>
         </div>
-        <TransitionGroup component={null}>
-          {isMounted && (
-            <CSSTransition in={isMounted} classNames="fadedown" timeout={3000}>
-              <div
-                onClick={clickHandler}
-                className={
-                  !hamburgerState ? `hamburger` : `hamburger is-active`
-                }
-                id="hamburger"
-                style={{ transitionDelay: '200ms' }}
-              >
-                <span className="line"></span>
-                <span className="line"></span>
-                <span className="line"></span>
-              </div>
-            </CSSTransition>
-          )}
-        </TransitionGroup>
-      </div>
-      {hamburgerState ? (
         <div className="nav-links-mobile">
           <TransitionGroup component={null}>
-            {isMounted &&
-              navigationLinks.map((link, i) => (
-                <CSSTransition
-                  in={isMounted}
-                  classNames="fadedown"
-                  timeout={3000}
-                  key={i}
-                >
-                  <p style={{ transitionDelay: `${i * 150}ms` }}>{link}</p>
-                </CSSTransition>
-              ))}
+            {hamburgerOpen
+              ? navigationLinks.map((link, i) => (
+                  <CSSTransition
+                    in={menuMounted}
+                    classNames="fadedown"
+                    timeout={400}
+                    key={i}
+                  >
+                    <p>{link}</p>
+                  </CSSTransition>
+                ))
+              : null}
           </TransitionGroup>
         </div>
-      ) : null}
+      </div>
     </nav>
   );
 };
