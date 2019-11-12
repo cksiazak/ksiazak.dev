@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import useMedia from 'use-media';
+
 import '../styles/animate.css';
 import '../styles/navigation.scss';
 
 const Navigation = () => {
+  // check if component mounted
   const [isMounted, setIsMounted] = useState(false);
-
+  // setting component mount status
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsMounted(true);
@@ -15,19 +18,39 @@ const Navigation = () => {
     };
   }, []);
 
+  // Handling hamburger/mobile view
+  const isMobile = useMedia({ maxWidth: 700 });
+  const [hamburgerState, setHamburgerState] = useState(false);
+  const hamburgerMenuHandler = () => {
+    !hamburgerState ? setHamburgerState(true) : setHamburgerState(false);
+  };
+
   return (
     <nav>
-      <div className="nav-logo">
-        <TransitionGroup component={null}>
-          {isMounted && (
-            <CSSTransition in={isMounted} classNames="fadedown" timeout={3000}>
-              <p style={{ transitionDelay: '50ms' }}>CK</p>
-            </CSSTransition>
-          )}
-        </TransitionGroup>
+      <div className="nav-container">
+        <div className="nav-logo">
+          <TransitionGroup component={null}>
+            {isMounted && (
+              <CSSTransition
+                in={isMounted}
+                classNames="fadedown"
+                timeout={3000}
+              >
+                <p style={{ transitionDelay: '50ms' }}>CK</p>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
+        </div>
+        {!isMobile ? (
+          <DesktopNav isMounted={isMounted} />
+        ) : (
+          <HamburgerIcon
+            clickHandler={hamburgerMenuHandler}
+            hamburgerState={hamburgerState}
+            isMounted={isMounted}
+          />
+        )}
       </div>
-      {/* <DesktopNav isMounted={isMounted} /> */}
-      <HamburgerIcon />
     </nav>
   );
 };
@@ -53,24 +76,24 @@ const DesktopNav = ({ isMounted }) => {
   );
 };
 
-const HamburgerIcon = () => {
-  const [active, setActive] = useState(false);
-
-  const clickHandler = () => {
-    !active ? setActive(true) : setActive(false);
-  };
+const HamburgerIcon = ({ clickHandler, hamburgerState, isMounted }) => {
   return (
-    <div>
-      <div
-        onClick={clickHandler}
-        class={!active ? `hamburger` : `hamburger is-active`}
-        id="hamburger"
-      >
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
-    </div>
+    <TransitionGroup component={null}>
+      {isMounted && (
+        <CSSTransition in={isMounted} classNames="fadedown" timeout={3000}>
+          <div
+            onClick={clickHandler}
+            class={!hamburgerState ? `hamburger` : `hamburger is-active`}
+            id="hamburger"
+            style={{ transitionDelay: '200ms' }}
+          >
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </CSSTransition>
+      )}
+    </TransitionGroup>
   );
 };
 
