@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import useMedia from 'use-media';
+import React, { useEffect, useState, useContext } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import useMedia from "use-media";
 
-import '../styles/animate.css';
-import '../styles/navigation.scss';
+import mobileNavContext from "../context/navMenuContext";
+
+import "../styles/animate.css";
+import "../styles/navigation.scss";
 
 const Navigation = () => {
   // check if component mounted
@@ -22,7 +24,7 @@ const Navigation = () => {
   const isMobile = useMedia({ maxWidth: 700 });
 
   // mapping nav links
-  const navigationLinks = ['About', 'Experience', 'Projects', 'Contact'];
+  const navigationLinks = ["About", "Experience", "Projects", "Contact"];
 
   return !isMobile ? (
     <DesktopNav isMounted={isMounted} navigationLinks={navigationLinks} />
@@ -47,7 +49,7 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
                 classNames="fadedown"
                 timeout={3000}
               >
-                <p style={{ transitionDelay: '25ms' }}>CK</p>
+                <p style={{ transitionDelay: "25ms" }}>CK</p>
               </CSSTransition>
             )}
           </TransitionGroup>
@@ -73,22 +75,24 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
 };
 
 const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
-  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const mobileContext = useContext(mobileNavContext);
+  const { mobileMenu, openMobileNav, closeMobileNav } = mobileContext;
+
   const [menuMounted, setMenuMounted] = useState(false);
   const clickHandler = () => {
-    !hamburgerOpen ? setHamburgerOpen(true) : setHamburgerOpen(false);
+    !mobileMenu ? openMobileNav() : closeMobileNav();
   };
 
   // deactivate hamburger menu if page is no longer mobile
   useEffect(() => {
     if (!isMobile) {
-      setHamburgerOpen(false);
+      closeMobileNav();
       setMenuMounted(false);
     }
-  }, [isMobile]);
+  }, [isMobile, closeMobileNav]);
 
   return (
-    <nav className={`nav-mobile-view ${hamburgerOpen && 'nav-mobile-active'}`}>
+    <nav className={`nav-mobile-view ${mobileMenu && "nav-mobile-active"}`}>
       <div className="nav-container-mobile">
         <div className="upper-mobile-nav">
           <div className="nav-logo-mobile">
@@ -99,7 +103,7 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
                   classNames="fadedown"
                   timeout={3000}
                 >
-                  <p style={{ transitionDelay: '50ms' }}>CK</p>
+                  <p style={{ transitionDelay: "50ms" }}>CK</p>
                 </CSSTransition>
               )}
             </TransitionGroup>
@@ -113,11 +117,9 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
               >
                 <div
                   onClick={clickHandler}
-                  className={
-                    !hamburgerOpen ? `hamburger` : `hamburger is-active`
-                  }
+                  className={!mobileMenu ? `hamburger` : `hamburger is-active`}
                   id="hamburger"
-                  style={{ transitionDelay: '200ms' }}
+                  style={{ transitionDelay: "200ms" }}
                 >
                   <span className="line"></span>
                   <span className="line"></span>
@@ -130,11 +132,11 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
 
         <div
           className={
-            !hamburgerOpen ? 'nav-links-mobile' : 'nav-links-mobile-active'
+            !mobileMenu ? "nav-links-mobile" : "nav-links-mobile-active"
           }
         >
           <TransitionGroup component={null}>
-            {hamburgerOpen &&
+            {mobileMenu &&
               navigationLinks.map((link, i) => (
                 <CSSTransition
                   in={menuMounted}

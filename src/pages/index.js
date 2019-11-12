@@ -1,19 +1,22 @@
-import React from 'react';
-import Helmet from '../components/mainHelmet';
-import Navigation from '../components/Navigation';
-import Header from '../components/Header';
+import React from "react";
+import Helmet from "../components/mainHelmet";
+import Navigation from "../components/Navigation";
+import Header from "../components/Header";
 
-import '../styles/global.scss';
+import MobileNavState from "../context/navMenuState";
+import "../styles/global.scss";
 
 const index = () => {
   return (
-    <div>
-      <Helmet />
-      <Navigation />
-      <div className="container">
-        <Header />
+    <MobileNavState>
+      <div className="app">
+        <Helmet />
+        <Navigation />
+        <div className="container">
+          <Header />
+        </div>
       </div>
-    </div>
+    </MobileNavState>
   );
 };
 
