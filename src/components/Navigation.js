@@ -5,7 +5,6 @@ import '../styles/navigation.scss';
 
 const Navigation = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const navigationLinks = ['About', 'Experience', 'Projects', 'Contact'];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,21 +26,29 @@ const Navigation = () => {
           )}
         </TransitionGroup>
       </div>
-      <div className="nav-links">
-        <TransitionGroup component={null}>
-          {isMounted &&
-            navigationLinks.map((link, i) => (
-              <CSSTransition
-                in={isMounted}
-                classNames="fadedown"
-                timeout={3000}
-              >
-                <p style={{ transitionDelay: `${i * 150}ms` }}>{link}</p>
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
-      </div>
+      <DesktopNav isMounted={isMounted} />
     </nav>
+  );
+};
+
+const DesktopNav = ({ isMounted }) => {
+  const navigationLinks = ['About', 'Experience', 'Projects', 'Contact'];
+  return (
+    <div className="nav-links-desktop">
+      <TransitionGroup component={null}>
+        {isMounted &&
+          navigationLinks.map((link, i) => (
+            <CSSTransition
+              in={isMounted}
+              classNames="fadedown"
+              timeout={3000}
+              key={i}
+            >
+              <p style={{ transitionDelay: `${i * 150}ms` }}>{link}</p>
+            </CSSTransition>
+          ))}
+      </TransitionGroup>
+    </div>
   );
 };
 

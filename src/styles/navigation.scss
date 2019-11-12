@@ -1,19 +1,20 @@
+$navFont: 2rem;
+
 nav {
   display: flex;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 
   .nav-logo {
     user-select: none;
-    font-size: 1.5rem;
+    font-size: $navFont;
   }
-
-  .nav-links {
+  .nav-links-desktop {
     display: flex;
     width: 30%;
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: $navFont;
   }
 }
