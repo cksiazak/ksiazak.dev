@@ -14,14 +14,12 @@
 .fadeup-exit {
   opacity: 0.01;
   transform: translateY(-20px);
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 300ms;
+  transition: opacity 10ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 10ms;
 }
 .fadeup-exit-active {
   opacity: 0.01;
   transform: translateY(0px);
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 300ms;
+  transition: opacity 10ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 10ms;
 }
 
 /* Fade down animations */
@@ -39,15 +37,14 @@
 }
 .fadedown-exit {
   opacity: 0.01;
-  transform: translateY(20px);
-  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 200ms;
+  transform: translateY(00px);
+  transition: opacity 5ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 5ms;
 }
 .fadedown-exit-active {
   opacity: 0;
   transform: translateY(0px);
-  transition: opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 5ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 5ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .fade-enter {
   opacity: 0.01;

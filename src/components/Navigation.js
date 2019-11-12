@@ -127,20 +127,24 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
             )}
           </TransitionGroup>
         </div>
-        <div className="nav-links-mobile">
+
+        <div
+          className={
+            !hamburgerOpen ? 'nav-links-mobile' : 'nav-links-mobile-active'
+          }
+        >
           <TransitionGroup component={null}>
-            {hamburgerOpen
-              ? navigationLinks.map((link, i) => (
-                  <CSSTransition
-                    in={menuMounted}
-                    classNames="fadedown"
-                    timeout={400}
-                    key={i}
-                  >
-                    <p>{link}</p>
-                  </CSSTransition>
-                ))
-              : null}
+            {hamburgerOpen &&
+              navigationLinks.map((link, i) => (
+                <CSSTransition
+                  in={isMounted}
+                  classNames="fadedown"
+                  timeout={400}
+                  key={i}
+                >
+                  <p style={{ transitionDelay: `${i * 25}ms` }}>{link}</p>
+                </CSSTransition>
+              ))}
           </TransitionGroup>
         </div>
       </div>

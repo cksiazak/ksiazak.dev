@@ -29,9 +29,9 @@ $DesktopNavFont: 2rem;
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
-  background: red;
-  transition-duration: 0.4s;
-  height: 75px;
+  background: #34252f;
+  transition-duration: 0.5s;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.6);
 
   .nav-container-mobile {
     display: flex;
@@ -54,6 +54,8 @@ $DesktopNavFont: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 0px;
+      transition: 0.5s;
 
       p {
         font-size: 2rem;
@@ -63,8 +65,17 @@ $DesktopNavFont: 2rem;
   }
 }
 
-.nav-mobile-active {
-  height: 300px;
+.nav-links-mobile-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  transition: 0.5s;
+
+  p {
+    font-size: 2rem;
+    margin: 10px 0px;
+  }
 }
 
 // hamburger menu
