@@ -6,6 +6,10 @@ const mainHead = () => {
     <Helmet>
       <meta charSet="utf-8" />
       <title>CK</title>
+      <meta
+        name="description"
+        content="A personal developer portfolio and art piece by Christopher Ksiazak"
+      />
     </Helmet>
   );
 };

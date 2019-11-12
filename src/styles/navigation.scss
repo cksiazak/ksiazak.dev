@@ -3,13 +3,15 @@ nav {
 }
 
 // Desktop Nav CSS
-$DesktopNavFont: 2rem;
+$DesktopNavFont: 2.5rem;
+
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   width: 90%;
+  padding: 10px 0px;
 
   .nav-logo {
     user-select: none;
@@ -17,7 +19,7 @@ $DesktopNavFont: 2rem;
   }
   .nav-links-desktop {
     display: flex;
-    width: 30%;
+    width: 35%;
     justify-content: space-between;
     font-size: $DesktopNavFont;
   }

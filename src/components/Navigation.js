@@ -47,7 +47,7 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
                 classNames="fadedown"
                 timeout={3000}
               >
-                <p style={{ transitionDelay: '50ms' }}>CK</p>
+                <p style={{ transitionDelay: '25ms' }}>CK</p>
               </CSSTransition>
             )}
           </TransitionGroup>

@@ -20,6 +20,7 @@
   "dependencies": {
     "gatsby": "^2.17.10",
     "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.20",
     "gatsby-plugin-scroll-reveal": "^0.0.4",
     "node-sass": "^4.13.0",
