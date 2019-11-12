@@ -86,7 +86,7 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
   }, [isMobile]);
 
   return (
-    <nav>
+    <nav className="nav-mobile-view">
       <div className="nav-container-mobile">
         <div className="nav-logo-mobile">
           <TransitionGroup component={null}>
@@ -120,6 +120,23 @@ const MobileNav = ({ isMounted, navigationLinks, isMobile }) => {
           )}
         </TransitionGroup>
       </div>
+      {hamburgerState ? (
+        <div className="nav-links-mobile">
+          <TransitionGroup component={null}>
+            {isMounted &&
+              navigationLinks.map((link, i) => (
+                <CSSTransition
+                  in={isMounted}
+                  classNames="fadedown"
+                  timeout={3000}
+                  key={i}
+                >
+                  <p style={{ transitionDelay: `${i * 150}ms` }}>{link}</p>
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
+        </div>
+      ) : null}
     </nav>
   );
 };

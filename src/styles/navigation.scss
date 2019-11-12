@@ -24,15 +24,28 @@ $DesktopNavFont: 2rem;
 }
 
 // Mobile nav CSS
-.nav-container-mobile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
 
-  .nav-logo-mobile {
-    user-select: none;
-    font-size: 3rem;
+.nav-mobile-view {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  .nav-container-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    .nav-logo-mobile {
+      user-select: none;
+      font-size: 3rem;
+    }
+  }
+
+  .nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
