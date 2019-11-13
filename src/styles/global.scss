@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 * {
   box-sizing: border-box;
@@ -17,4 +17,6 @@ body {
 .container {
   width: 90%;
   margin: 0 auto;
+  transition-duration: 0.5s;
+  z-index: -10;
 }

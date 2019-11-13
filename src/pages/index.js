@@ -1,23 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Helmet from "../components/mainHelmet";
+import useMedia from "use-media";
+
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 
-import MobileNavState from "../context/navMenuState";
 import "../styles/global.scss";
+import "../styles/index.scss";
 
-const index = () => {
+const Index = () => {
+  // Handling hamburger/mobile view
+  const isMobile = useMedia({ maxWidth: 700 });
+
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const mobileNavControl = () => {
+    !hamburgerOpen ? setHamburgerOpen(true) : setHamburgerOpen(false);
+  };
+
+  useEffect(() => {
+    if (!isMobile) {
+      setHamburgerOpen(false);
+    }
+  }, [isMobile]);
+
   return (
-    <MobileNavState>
-      <div className="app">
-        <Helmet />
-        <Navigation />
-        <div className="container">
-          <Header />
-        </div>
+    <div id="app">
+      <Helmet />
+      <Navigation
+        hamburgerState={hamburgerOpen}
+        mobileNavControl={mobileNavControl}
+        isMobile={isMobile}
+      />
+      <div className={`container ${hamburgerOpen && "mobile-drawer-open"}`}>
+        <Header />
       </div>
-    </MobileNavState>
+    </div>
   );
 };
 
-export default index;
+export default Index;
