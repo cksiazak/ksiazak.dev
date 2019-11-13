@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/mainHelmet";
 import useMedia from "use-media";
 
-import Navigation from "../components/Navigation";
+import Navigation from "../components/Navigation/Navigation";
 import Header from "../components/Header";
 
 import "../styles/global.scss";
