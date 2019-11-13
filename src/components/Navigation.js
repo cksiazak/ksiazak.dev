@@ -73,19 +73,9 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
 const MobileNav = ({
   isMounted,
   navigationLinks,
-  isMobile,
   hamburgerState,
   mobileNavControl
 }) => {
-  const [menuMounted, setMenuMounted] = useState(false);
-
-  // deactivate hamburger menu if page is no longer mobile
-  useEffect(() => {
-    if (!isMobile) {
-      setMenuMounted(false);
-    }
-  }, [isMobile]);
-
   return (
     <nav className={`nav-mobile-view ${hamburgerState && "nav-mobile-active"}`}>
       <div className="nav-container-mobile">
@@ -127,24 +117,18 @@ const MobileNav = ({
           </TransitionGroup>
         </div>
 
-        <div
-          className={
-            !hamburgerState ? "nav-links-mobile" : "nav-links-mobile-active"
-          }
-        >
-          <TransitionGroup component={null}>
-            {hamburgerState &&
-              navigationLinks.map((link, i) => (
-                <CSSTransition
-                  in={menuMounted}
-                  classNames="fadedown"
-                  timeout={400}
-                  key={i}
-                >
-                  <p style={{ transitionDelay: `${i * 25}ms` }}>{link}</p>
-                </CSSTransition>
-              ))}
-          </TransitionGroup>
+        <div className="navigation-links-mobile">
+          <div className="nav-links-mobile-container">
+            {navigationLinks.map((link, i) => (
+              <p
+                key={i}
+                className="nav-links-list-mobile"
+                onClick={mobileNavControl}
+              >
+                {link}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

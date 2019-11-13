@@ -48,9 +48,17 @@
 }
 .fade-enter {
   opacity: 0.01;
-  transition: opacity 1000ms;
+  transition: opacity 200ms;
 }
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 1000ms;
+  transition: opacity 200ms;
+}
+.fade-exit {
+  opacity: 0.01;
+  transition: opacity 10ms;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 10ms;
 }

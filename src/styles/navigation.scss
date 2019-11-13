@@ -51,32 +51,34 @@ $DesktopNavFont: 2.5rem;
         font-size: 2rem;
       }
     }
-
-    .nav-links-mobile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 0px;
-      transition: 0.5s;
-
-      p {
-        font-size: 2rem;
-        margin: 10px 0px;
-      }
-    }
   }
 }
 
-.nav-links-mobile-active {
+.navigation-links-mobile {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  right: -250px;
+  background: #4c3b4d;
+  z-index: -2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 200px;
-  transition: 0.5s;
 
-  p {
-    font-size: 2rem;
-    margin: 10px 0px;
+  .nav-links-mobile-container {
+    margin: 75px 0;
+
+    .nav-links-list-mobile {
+      font-size: 2rem;
+      padding: 30px 20px;
+      transition: 0.3s;
+      margin: 0px;
+      cursor: pointer;
+
+      &:hover {
+        background: red;
+      }
+    }
   }
 }
 

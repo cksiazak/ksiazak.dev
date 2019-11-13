@@ -24,14 +24,14 @@ const Index = () => {
   }, [isMobile]);
 
   return (
-    <div id="app">
+    <div id="app" className={`app-container ${hamburgerOpen && "mobile-drawer-open"}`}>
       <Helmet />
       <Navigation
         hamburgerState={hamburgerOpen}
         mobileNavControl={mobileNavControl}
         isMobile={isMobile}
       />
-      <div className={`container ${hamburgerOpen && "mobile-drawer-open"}`}>
+      <div className="container">
         <Header />
       </div>
     </div>
