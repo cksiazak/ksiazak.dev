@@ -1,8 +1,8 @@
-import React from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import React from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import "../../styles/animate.css";
-import "../../styles/navigation.scss";
+import '../../styles/animate.css';
+import '../../styles/navigation.scss';
 
 const MobileNav = ({
   isMounted,
@@ -11,7 +11,18 @@ const MobileNav = ({
   mobileNavControl
 }) => {
   return (
-    <nav className={`nav-mobile-view ${hamburgerState && "nav-mobile-active"}`}>
+    <nav className={`nav-mobile-view ${hamburgerState && 'nav-mobile-active'}`}>
+      <div className="navigation-links-mobile">
+        {navigationLinks.map((link, i) => (
+          <p
+            key={i}
+            className="nav-links-list-mobile"
+            onClick={mobileNavControl}
+          >
+            {link}
+          </p>
+        ))}
+      </div>
       <div className="nav-container-mobile">
         <div className="upper-mobile-nav">
           <div className="nav-logo-mobile">
@@ -22,7 +33,7 @@ const MobileNav = ({
                   classNames="fadedown"
                   timeout={3000}
                 >
-                  <p style={{ transitionDelay: "50ms" }}>CK</p>
+                  <p style={{ transitionDelay: '50ms' }}>CK</p>
                 </CSSTransition>
               )}
             </TransitionGroup>
@@ -40,7 +51,7 @@ const MobileNav = ({
                     !hamburgerState ? `hamburger` : `hamburger is-active`
                   }
                   id="hamburger"
-                  style={{ transitionDelay: "200ms" }}
+                  style={{ transitionDelay: '200ms' }}
                 >
                   <span className="line"></span>
                   <span className="line"></span>
@@ -49,20 +60,6 @@ const MobileNav = ({
               </CSSTransition>
             )}
           </TransitionGroup>
-        </div>
-
-        <div className="navigation-links-mobile">
-          <div className="nav-links-mobile-container">
-            {navigationLinks.map((link, i) => (
-              <p
-                key={i}
-                className="nav-links-list-mobile"
-                onClick={mobileNavControl}
-              >
-                {link}
-              </p>
-            ))}
-          </div>
         </div>
       </div>
     </nav>

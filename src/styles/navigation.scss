@@ -28,18 +28,16 @@ $DesktopNavFont: 2.5rem;
 // Mobile nav CSS
 
 .nav-mobile-view {
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
   background: #34252f;
-  transition-duration: 0.5s;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.6);
+  transition-duration: 0.5s;
+  position: fixed;
+  margin-top: -176px;
 
   .nav-container-mobile {
-    display: flex;
-    flex-direction: column;
     width: 90%;
     margin: 0 auto;
+    overflow: hidden;
 
     .upper-mobile-nav {
       display: flex;
@@ -54,30 +52,27 @@ $DesktopNavFont: 2.5rem;
   }
 }
 
+.nav-mobile-active {
+  transform: translatey(176px);
+}
+
 .navigation-links-mobile {
-  width: 250px;
-  height: 100vh;
-  position: fixed;
-  top: 0px;
-  right: -250px;
   background: #4c3b4d;
   z-index: -2;
   display: flex;
   flex-direction: column;
 
-  .nav-links-mobile-container {
-    margin: 75px 0;
+  .nav-links-list-mobile {
+    font-size: 2rem;
+    width: 100%;
+    transition: 0.3s;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0px;
+    cursor: pointer;
 
-    .nav-links-list-mobile {
-      font-size: 2rem;
-      padding: 30px 20px;
-      transition: 0.3s;
-      margin: 0px;
-      cursor: pointer;
-
-      &:hover {
-        background: red;
-      }
+    &:hover {
+      background: red;
     }
   }
 }
