@@ -1,36 +1,41 @@
 {
   "name": "ksiazak.dev",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "node-sass": "^4.12.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-icons": "^3.7.0",
-    "react-reveal": "^1.2.2",
-    "react-scripts": "3.1.1",
-    "react-scroll": "^1.7.13",
-    "react-typist": "^2.0.5"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cksiazak/ksiazak.dev.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cksiazak/ksiazak.dev/issues"
+  },
+  "homepage": "https://github.com/cksiazak/ksiazak.dev#readme",
+  "dependencies": {
+    "gatsby": "^2.17.10",
+    "gatsby-plugin-html-attributes": "^1.0.5",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-robots-txt": "^1.5.0",
+    "gatsby-plugin-sass": "^2.1.20",
+    "gatsby-plugin-scroll-reveal": "^0.0.4",
+    "node-sass": "^4.13.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
+    "react-transition-group": "^4.3.0",
+    "react-typist": "^2.0.5",
+    "scrollreveal": "^4.0.5",
+    "use-media": "^1.4.0"
+  },
+  "resolutions": {
+    "react-helmet/react-side-effect": "2.1.0"
   }
 }

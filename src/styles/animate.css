@@ -1,0 +1,64 @@
+/* Fade up animations */
+.fadeup-enter {
+  opacity: 0.01;
+  transform: translateY(20px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms;
+}
+.fadeup-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fadeup-exit {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 10ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 10ms;
+}
+.fadeup-exit-active {
+  opacity: 0.01;
+  transform: translateY(0px);
+  transition: opacity 10ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 10ms;
+}
+
+/* Fade down animations */
+.fadedown-enter {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fadedown-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fadedown-exit {
+  opacity: 0.01;
+  transform: translateY(20px);
+  transition: opacity 5ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 5ms;
+}
+.fadedown-exit-active {
+  opacity: 0;
+  transform: translateY(0px);
+  transition: opacity 5ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 5ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fade-enter {
+  opacity: 0.01;
+  transition: opacity 200ms;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.fade-exit {
+  opacity: 0.01;
+  transition: opacity 10ms;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 10ms;
+}
