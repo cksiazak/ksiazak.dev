@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
-import Helmet from "../components/mainHelmet";
-import useMedia from "use-media";
+import React, { useState, useEffect } from 'react';
+import Helmet from '../components/mainHelmet';
+import useMedia from 'use-media';
 
-import Navigation from "../components/Navigation/Navigation";
-import Header from "../components/Header";
+import Navigation from '../components/Navigation/Navigation';
+import Header from '../components/Header';
 
-import "../styles/global.scss";
-import "../styles/index.scss";
+import Footer from '../components/Footer';
+
+import '../styles/global.scss';
+import '../styles/index.scss';
 
 const Index = () => {
   // Handling hamburger/mobile view
@@ -24,7 +26,10 @@ const Index = () => {
   }, [isMobile]);
 
   return (
-    <div id="app" className={`app-container ${hamburgerOpen && "mobile-drawer-open"}`}>
+    <div
+      id="app"
+      className={`app-container ${hamburgerOpen && 'mobile-drawer-open'}`}
+    >
       <Helmet />
       <Navigation
         hamburgerState={hamburgerOpen}
@@ -34,6 +39,7 @@ const Index = () => {
       <div className="container">
         <Header />
       </div>
+      <Footer />
     </div>
   );
 };
