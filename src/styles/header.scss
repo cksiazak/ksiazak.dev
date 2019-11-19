@@ -1,13 +1,13 @@
 .header-main {
   padding: 100px 0px;
-  height: 500px;
+  height: 600px;
 
   .initial-hello {
     font-size: 3rem;
   }
 
   .header-name {
-    font-size: 7rem;
+    font-size: 8rem;
     margin: 0px;
   }
 
@@ -17,7 +17,27 @@
 }
 
 .about-intro {
-  font-size: 1.8rem;
-  width: 60%;
-  line-height: 145%;
+  font-size: 2.25rem;
+  width: 45%;
+  line-height: 150%;
+  margin: 25px 0px 30px;
+}
+
+.header-transition {
+  transition-delay: 200ms;
+}
+
+.header-contact {
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 15px 20px;
+  border: 2px solid rgb(0, 0, 161);
+  color: rgb(173, 173, 173);
+  border-radius: 10px;
+  transition: 0.2s;
+
+  &:hover {
+    color: rgb(201, 201, 201);
+    border-color: rgb(87, 87, 248);
+  }
 }

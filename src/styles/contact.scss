@@ -1,0 +1,22 @@
+.contact-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0px;
+  flex-direction: column;
+
+  .contact-header {
+    font-size: 4rem;
+    margin: 10px 0px;
+  }
+
+  .contact-text {
+    font-size: 2.5rem;
+    width: 35%;
+    text-align: center;
+  }
+
+  .contact-link {
+    font-size: 2.5rem;
+  }
+}

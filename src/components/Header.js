@@ -7,7 +7,6 @@ import '../styles/animate.css';
 
 const Header = () => {
   const [typingComplete, setTypingComplete] = useState(false);
-
   useEffect(() => {
     let timer = setTimeout(() => {
       setTypingComplete(true);
@@ -16,8 +15,19 @@ const Header = () => {
       clearTimeout(timer);
     };
   }, []);
+
+  const [transitionComplete, setTrasitionComplete] = useState(false);
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setTrasitionComplete(true);
+    }, 5800);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
-    <div className="header-main">
+    <header className="header-main">
       <Typist cursor={{ show: false }} startDelay={1200} avgTypingDelay={55}>
         <span className="initial-hello">
           Hello, <Typist.Delay ms={250} /> my name is
@@ -31,14 +41,27 @@ const Header = () => {
           <CSSTransition in={typingComplete} classNames="fadeup" timeout={3000}>
             <p className="about-intro">
               I am a (mostly) self taught developer from El Paso, Texas. Apart
-              from HTML, CSS, and Javascript, I also speak Enlgish and
-              Spanish. I believe in improving oneself by taking every moment
-              as a learning opportunity.
+              from HTML, CSS, and Javascript, I also speak English and Spanish.
+              I believe in improving oneself by taking every moment as a
+              learning opportunity.
             </p>
           </CSSTransition>
         )}
       </TransitionGroup>
-    </div>
+      <TransitionGroup component={null}>
+        {transitionComplete && (
+          <CSSTransition
+            in={transitionComplete}
+            classNames="fadeup"
+            timeout={3000}
+          >
+            <a href="#" className="header-contact">
+              Get to know me
+            </a>
+          </CSSTransition>
+        )}
+      </TransitionGroup>
+    </header>
   );
 };
 
