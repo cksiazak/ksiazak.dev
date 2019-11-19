@@ -1,5 +1,6 @@
 .header-main {
   padding: 100px 0px;
+  height: 500px;
 
   .initial-hello {
     font-size: 3rem;
@@ -13,4 +14,10 @@
   .short-bio {
     font-size: 4rem;
   }
+}
+
+.about-intro {
+  font-size: 1.8rem;
+  width: 60%;
+  line-height: 145%;
 }

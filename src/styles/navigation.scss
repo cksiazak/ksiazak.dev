@@ -33,6 +33,7 @@ $DesktopNavFont: 2.5rem;
   transition-duration: 0.5s;
   position: fixed;
   margin-top: -176px;
+  z-index: 1;
 
   .nav-container-mobile {
     width: 90%;

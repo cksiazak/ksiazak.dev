@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Helmet from '../components/mainHelmet';
 import useMedia from 'use-media';
 
 import Navigation from '../components/Navigation/Navigation';
 import Header from '../components/Header';
+
+import Contact from '../components/Contact';
 
 import Footer from '../components/Footer';
 
@@ -26,7 +28,7 @@ const Index = () => {
   }, [isMobile]);
 
   return (
-    <div id="app" className={`app-container`}>
+    <Fragment>
       <Helmet />
       <Navigation
         hamburgerState={hamburgerOpen}
@@ -39,10 +41,11 @@ const Index = () => {
       >
         <div className="content-container">
           <Header />
+          <Contact />
         </div>
         <Footer />
       </div>
-    </div>
+    </Fragment>
   );
 };
 

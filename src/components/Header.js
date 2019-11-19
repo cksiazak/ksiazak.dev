@@ -29,7 +29,12 @@ const Header = () => {
       <TransitionGroup component={null}>
         {typingComplete && (
           <CSSTransition in={typingComplete} classNames="fadeup" timeout={3000}>
-            <h2>THIS HAS BEEN COMPLETED</h2>
+            <p className="about-intro">
+              I am a (mostly) self taught developer from El Paso, Texas. Apart
+              from HTML, CSS, and Javascript, I also speak Enlgish and
+              Spanish. I believe in improving oneself by taking every moment
+              as a learning opportunity.
+            </p>
           </CSSTransition>
         )}
       </TransitionGroup>

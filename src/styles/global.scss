@@ -8,19 +8,13 @@ html {
   font-size: 62.5%;
   background: #34252f;
   font-family: Lato;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0px;
-  overflow-x: hidden;
-}
-
-.app-container {
-  transition-duration: 0.5s;
-  z-index: -10;
 }
 
 .content-container {
   width: 90%;
-  margin: 0 auto;
 }

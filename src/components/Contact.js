@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Contact = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <a href="mailto:cksiazak@gmail.com">Talk to me</a>
+    </div>
+  );
+};
 
-export default Contact
+export default Contact;
