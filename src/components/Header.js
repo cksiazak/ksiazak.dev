@@ -56,7 +56,7 @@ const Header = () => {
             timeout={3000}
           >
             <a href="#" className="header-contact">
-              Get to know me
+              Do you want to know more?
             </a>
           </CSSTransition>
         )}

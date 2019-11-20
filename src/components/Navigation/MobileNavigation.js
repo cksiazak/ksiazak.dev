@@ -11,18 +11,7 @@ const MobileNav = ({
   mobileNavControl
 }) => {
   return (
-    <nav className={`nav-mobile-view ${hamburgerState && 'nav-mobile-active'}`}>
-      <div className="navigation-links-mobile">
-        {navigationLinks.map((link, i) => (
-          <p
-            key={i}
-            className="nav-links-list-mobile"
-            onClick={mobileNavControl}
-          >
-            {link}
-          </p>
-        ))}
-      </div>
+    <nav className="nav-mobile-view">
       <div className="nav-container-mobile">
         <div className="upper-mobile-nav">
           <div className="nav-logo-mobile">
@@ -61,6 +50,20 @@ const MobileNav = ({
             )}
           </TransitionGroup>
         </div>
+      </div>
+      <div
+        className={`navigation-links-mobile  ${hamburgerState &&
+          'nav-mobile-active'}`}
+      >
+        {navigationLinks.map((link, i) => (
+          <p
+            key={i}
+            className="nav-links-list-mobile"
+            onClick={mobileNavControl}
+          >
+            {link}
+          </p>
+        ))}
       </div>
     </nav>
   );
