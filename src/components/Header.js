@@ -7,20 +7,14 @@ import '../styles/animate.css';
 
 const Header = () => {
   const [typingComplete, setTypingComplete] = useState(false);
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      setTypingComplete(true);
-    }, 5400);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   const [transitionComplete, setTrasitionComplete] = useState(false);
   useEffect(() => {
     let timer = setTimeout(() => {
-      setTrasitionComplete(true);
-    }, 5800);
+      setTypingComplete(true);
+      setTimeout(() => {
+        setTrasitionComplete(true);
+      }, 400);
+    }, 5400);
     return () => {
       clearTimeout(timer);
     };
