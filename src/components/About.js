@@ -7,7 +7,7 @@ const technologies = [
   'CSS (LESS/SASS)',
   'React.js',
   'Node/Express.js',
-  'PostgreSQL',
+  'SQLite/PostgreSQL',
   'Golang (WIP)'
 ];
 
@@ -24,11 +24,12 @@ const About = () => {
           </p>
           <p>
             Currently, I am a Project Coordinator at C3i Solutions. I work in
-            colloberation with our client, Castlight Health, in knowledge base
-            development, processing reporting checks via Salesforce and JIRA,
-            as well as reviewing and triaging support incidents. I am also currently a
-            Full Stack Web Development student at Lambda School, which only
-            furthered my curiosity into both the known and unknown.
+            colloberation with our client, Castlight Health. Before, I attended
+            the University of Texas at El Paso to study Electrical Engineering.
+            At some point during this time, I realized that Electrical
+            Engineering wasn't something I quite enjoyed. I joined the Full Stack Web
+            Development program at Lambda School, which helped me in discovering
+            my passion for tech and design.
           </p>
           <h3>Here are a few technologies I'm working with:</h3>
           <ul>
