@@ -1,0 +1,39 @@
+$fontPadding: 5px;
+
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    .experience-meta {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      h3 {
+        font-size: 2.75rem;
+        padding-bottom: $fontPadding;
+      }
+
+      h4 {
+        font-size: 1.75rem;
+        padding-bottom: $fontPadding;
+      }
+
+      span {
+        font-size: 1.75rem;
+      }
+    }
+
+    .experience-inner-container {
+      padding: 20px 0px;
+      font-size: 2rem;
+      line-height: 125%;
+    }
+  }
+}

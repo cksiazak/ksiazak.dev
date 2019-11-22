@@ -15,7 +15,7 @@ const About = () => {
   return (
     <section className="section-container">
       <h2 className="section-header">About Me</h2>
-      <div className="about-me-inner-container">
+      <div className="inner-section-container about-me-inner-container">
         <div className="about-me-info">
           <p>
             Welcome! I'm Chris, a developer born and raised in El Paso, TX. I

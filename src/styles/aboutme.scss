@@ -1,7 +1,6 @@
 .about-me-inner-container {
   display: flex;
   justify-content: space-between;
-  padding: 50px 0px;
 
   .about-me-info {
     display: flex;
@@ -38,6 +37,6 @@
   .user-avatar {
     width: 30%;
     height: 30%;
-    margin: 0 auto;
+    // margin: 0 auto;
   }
 }
