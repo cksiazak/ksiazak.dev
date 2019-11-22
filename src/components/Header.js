@@ -36,8 +36,6 @@ const Header = () => {
             <p className="about-intro">
               I am a (mostly) self taught developer from El Paso, Texas. Apart
               from HTML, CSS, and Javascript, I also speak English and Spanish.
-              I believe in improving oneself by taking every moment as a
-              learning opportunity.
             </p>
           </CSSTransition>
         )}

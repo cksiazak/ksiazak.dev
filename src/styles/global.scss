@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
+@import './reset.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -15,6 +17,16 @@ body {
   margin: 0px;
 }
 
-.content-container {
-  width: 80%;
+// global classes
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  padding: 150px 0px;
+  margin: 0 auto;
+
+  .section-header {
+    font-size: 3rem;
+    color: green;
+  }
 }

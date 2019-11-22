@@ -1,31 +1,43 @@
-.about-me-container {
+.about-me-inner-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  justify-content: space-between;
+  padding: 50px 0px;
 
-  .about-me-header {
-    font-size: 3rem;
-  }
-
-  .about-me-inner-container {
+  .about-me-info {
     display: flex;
-    justify-content: space-between;
-    font-size: 2rem;
+    flex-direction: column;
+    width: 48%;
 
-    .about-me-info {
-      width: 45%;
+    p {
+      font-size: 2rem;
+      padding-bottom: 10px;
+      line-height: 125%;
+    }
 
-      ul {
-        columns: 2;
+    h3 {
+      font-size: 2rem;
+      padding-top: 15px;
+    }
+
+    ul {
+      font-size: 1.5rem;
+      padding: 10px 0px;
+      list-style-type: square;
+      list-style-position: inside;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      li {
+        padding: 5px 0px;
       }
     }
+  }
 
-    .placeholder-image {
-      background: red;
-      height: 300px;
-      width: 300px;
-      margin: 50px auto;
-    }
+  .user-avatar {
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
   }
 }

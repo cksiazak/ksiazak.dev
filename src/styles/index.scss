@@ -5,6 +5,12 @@
   align-items: center;
 }
 
+.content-container {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
 .mobile-drawer-open {
   transform: translateY(176px);
 }

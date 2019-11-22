@@ -4,8 +4,8 @@ import { workHistory } from './data/experienceData';
 
 const Experience = () => {
   return (
-    <section className="experience-section">
-      <h2>Experience</h2>
+    <section className="section-container">
+      <h2 className="section-header">Experience</h2>
       {workHistory.map((job, id) => (
         <div className="experience-container" key={id}>
           <h3>{job.location}</h3>
