@@ -4,11 +4,11 @@ import '../styles/aboutme.scss';
 import avatar from './assets/avatar.png';
 
 const technologies = [
-  'HTML + CSS (LESS/SASS)',
+  'HTML',
+  'CSS (LESS/SASS)',
   'React.js',
   'Node/Express.js',
-  'SQLite/PostgreSQL',
-  'Golang (WIP)'
+  'SQLite/PostgreSQL'
 ];
 
 const About = () => {

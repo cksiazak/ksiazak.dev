@@ -1,6 +1,8 @@
 .header-main {
-  padding: 100px 0px;
-  height: 600px;
+  padding: 150px 0px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
 
   .initial-hello {
     font-size: 3rem;
@@ -25,19 +27,4 @@
 
 .header-transition {
   transition-delay: 200ms;
-}
-
-.header-contact {
-  font-size: 2rem;
-  text-decoration: none;
-  padding: 15px 20px;
-  border: 2px solid rgb(0, 0, 161);
-  color: rgb(173, 173, 173);
-  border-radius: 10px;
-  transition: 0.2s;
-
-  &:hover {
-    color: rgb(201, 201, 201);
-    border-color: rgb(87, 87, 248);
-  }
 }

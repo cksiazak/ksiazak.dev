@@ -9,9 +9,11 @@ $DesktopNavFont: 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   width: 90%;
-  padding: 10px 0px;
+  padding: 25px 0px;
 
   .nav-logo {
     user-select: none;

@@ -3,7 +3,7 @@ import Helmet from '../components/mainHelmet';
 import useMedia from 'use-media';
 
 import Navigation from '../components/Navigation/Navigation';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
