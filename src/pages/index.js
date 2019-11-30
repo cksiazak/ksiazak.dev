@@ -15,7 +15,7 @@ import '../styles/index.scss';
 
 const Index = () => {
   // Handling hamburger/mobile view
-  const isMobile = useMedia({ maxWidth: 700 });
+  const isMobile = useMedia({ maxWidth: 800 });
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const mobileNavControl = () => {
     !hamburgerOpen ? setHamburgerOpen(true) : setHamburgerOpen(false);

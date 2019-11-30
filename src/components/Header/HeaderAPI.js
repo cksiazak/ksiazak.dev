@@ -11,9 +11,9 @@ const HeaderAPI = ({ transitionComplete }) => {
           timeout={3000}
         >
           <div>
-            <p>In lieu of scrolling, you may also query my API</p>
             <p>
-              Send a GET request to <span>api.ksiazak.dev</span>
+              In lieu of scrolling, you may also send a GET request to{' '}
+              <span>https://api.ksiazak.dev</span>
             </p>
           </div>
         </CSSTransition>
