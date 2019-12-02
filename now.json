@@ -1,13 +1,7 @@
 {
   "version": 2,
-  "name": "Christopher Ksiazak Developer Page",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build"
-    }
-  ],
   "routes": [
-    { "src": "/.*", "dest": "/404.html" }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/404.html" }
   ]
 }
