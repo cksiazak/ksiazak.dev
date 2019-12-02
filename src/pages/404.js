@@ -5,8 +5,8 @@ const ErrorPage = () => {
   return (
     <div>
       <h2>
-        404! This page doesn't exist{' '}
-        <span role="img" aria-label="sad emoji">
+        404! This page doesn't exist
+        <span role="img" aria-label="sad-emoji">
           😟
         </span>
       </h2>
