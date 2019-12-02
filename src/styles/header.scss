@@ -1,3 +1,9 @@
+$initialHello: '';
+$typistName: '';
+$underHeading: '';
+$shortBio: '';
+$headerAPI:'';
+
 .header-main {
   padding: 200px 0px;
   height: 700px;
@@ -5,16 +11,19 @@
   flex-direction: column;
 
   .initial-hello {
-    font-size: 3rem;
+    font-size: 2.75rem;
+    color: #9F9FAD;
   }
 
   .header-name {
     font-size: 8rem;
     margin: 0px;
+    color: #D9DBF1;
   }
 
   .short-bio {
     font-size: 4rem;
+    color: #9F9FAD;
   }
 }
 
@@ -23,6 +32,7 @@
   width: 45%;
   line-height: 150%;
   margin: 25px 0px 30px;
+  color: #9F9FAD;
 }
 
 .header-transition {

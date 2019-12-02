@@ -10,7 +10,7 @@ const HeaderAPI = ({ transitionComplete }) => {
           classNames="fadeup"
           timeout={3000}
         >
-          <div>
+          <div className="header-api">
             <p>
               In lieu of scrolling, you may also send a GET request to{' '}
               <span>https://api.ksiazak.dev</span>

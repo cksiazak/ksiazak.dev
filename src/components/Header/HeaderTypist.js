@@ -3,7 +3,7 @@ import Typist from 'react-typist';
 
 const HeaderTypist = () => {
   return (
-    <Typist cursor={{ show: false }} startDelay={1200} avgTypingDelay={55}>
+    <Typist cursor={{ show: false }} startDelay={800} avgTypingDelay={55}>
       <span className="initial-hello">
         Hello, <Typist.Delay ms={250} /> my name is
       </span>
