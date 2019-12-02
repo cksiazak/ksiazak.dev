@@ -8,5 +8,8 @@
       "config": { "distDir": "public" }
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "index.html" }]
+  "routes": [
+    { "src": "/", "dest": "index.html" },
+    { "src": "/(.*)", "dest": "404.html" }
+  ]
 }
