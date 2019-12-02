@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 
 import '../styles/aboutme.scss';
 import avatar from './assets/avatar.png';
@@ -13,7 +14,7 @@ const technologies = [
 
 const About = () => {
   return (
-    <section className="section-container">
+    <Element name="About" className="section-container">
       <h2 className="section-header">About Me</h2>
       <div className="inner-section-container about-me-inner-container">
         <div className="about-me-info">
@@ -25,10 +26,11 @@ const About = () => {
           <p>
             Currently, I am a Project Coordinator at C3i Solutions. I work in
             colloberation with our client, Castlight Health. Before, I attended
-            the University of Texas at El Paso (UTEP) to study Electrical Engineering.
-            At some point during this time, I realized that it wasn't a topic I quite enjoyed. I joined the Full
-            Stack Web Development program at Lambda School, which helped me in
-            discovering my passion for tech and design.
+            the University of Texas at El Paso (UTEP) to study Electrical
+            Engineering. At some point during this time, I realized that it
+            wasn't a topic I quite enjoyed. I joined the Full Stack Web
+            Development program at Lambda School, which helped me in discovering
+            my passion for tech and design.
           </p>
           <h3>Here are a few technologies I'm working with:</h3>
           <ul>
@@ -39,7 +41,7 @@ const About = () => {
         </div>
         <img src={avatar} className="user-avatar" />
       </div>
-    </section>
+    </Element>
   );
 };
 

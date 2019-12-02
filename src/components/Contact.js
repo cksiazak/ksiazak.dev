@@ -1,11 +1,12 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 import { IoLogoGithub, IoMdMail, IoLogoTwitter } from 'react-icons/io';
 
 import '../styles/contact.scss';
 
 const Contact = () => {
   return (
-    <section className="section-container contact-section">
+    <Element name="Contact" className="section-container contact-section">
       <h2 className="section-header">Contact</h2>
       <div className="contact-container">
         <p className="contact-text">
@@ -25,7 +26,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-    </section>
+    </Element>
   );
 };
 

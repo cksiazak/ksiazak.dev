@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 import { IoLogoGithub } from 'react-icons/io';
 
 import { projects } from './data/projectData';
@@ -7,7 +8,7 @@ import '../styles/projects.scss';
 
 const Projects = () => {
   return (
-    <section className="section-container project-section">
+    <Element name="Projects" className="section-container project-section">
       <h2 className="section-header">Projects</h2>
       {projects.map((project, id) => (
         <div className="inner-section-container project-container" key={id}>
@@ -37,7 +38,7 @@ const Projects = () => {
           </div>
         </div>
       ))}
-    </section>
+    </Element>
   );
 };
 

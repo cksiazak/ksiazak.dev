@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Link } from 'react-scroll';
 
 import '../../styles/animate.css';
 import '../../styles/navigation.scss';
@@ -56,13 +57,16 @@ const MobileNav = ({
           'nav-mobile-active'}`}
       >
         {navigationLinks.map((link, i) => (
-          <p
+          <Link
+            to={link}
+            smooth={true}
+            offset={-100}
             key={i}
             className="nav-links-list-mobile"
             onClick={mobileNavControl}
           >
             {link}
-          </p>
+          </Link>
         ))}
       </div>
     </nav>

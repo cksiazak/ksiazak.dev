@@ -1,12 +1,12 @@
 import React from 'react';
-
+import { Element } from 'react-scroll';
 import { workHistory } from './data/experienceData';
 
 import '../styles/experience.scss';
 
 const Experience = () => {
   return (
-    <section className="section-container experience-section">
+    <Element name="Experience" className="section-container experience-section">
       <h2 className="section-header">Experience</h2>
       {workHistory.map((job, id) => (
         <div className="inner-section-container experience-container" key={id}>
@@ -22,7 +22,7 @@ const Experience = () => {
           </div>
         </div>
       ))}
-    </section>
+    </Element>
   );
 };
 

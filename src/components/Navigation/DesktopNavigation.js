@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Link } from 'react-scroll';
 
 import '../../styles/animate.css';
 import '../../styles/navigation.scss';
@@ -16,7 +17,7 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
                 classNames="fadedown"
                 timeout={3000}
               >
-                <p style={{ transitionDelay: '25ms' }}>CK</p>
+                <p>CK</p>
               </CSSTransition>
             )}
           </TransitionGroup>
@@ -31,7 +32,14 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
                   timeout={3000}
                   key={i}
                 >
-                  <p style={{ transitionDelay: `${i * 150}ms` }}>{link}</p>
+                  <Link
+                    to={link}
+                    smooth={true}
+                    className="nonActive"
+                    activeClass="active"
+                  >
+                    {link}
+                  </Link>
                 </CSSTransition>
               ))}
           </TransitionGroup>
