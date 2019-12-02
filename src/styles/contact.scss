@@ -1,0 +1,26 @@
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 75px 0px;
+        width: 45%;
+
+        p {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: space-evenly;
+            width: 50%;
+            font-size: 5rem;
+            padding: 50px 0px;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoLogoGithub } from 'react-icons/io';
 
 import { projects } from './data/projectData';
 
@@ -12,6 +13,9 @@ const Projects = () => {
         <div className="inner-section-container project-container" key={id}>
           <div className="project-title-links">
             <a href={project.url}>{project.title}</a>
+            <a href={project.githubLink} className="project-github-link">
+              <IoLogoGithub />
+            </a>
           </div>
           <div className="projects-inner">
             <div className="project-info">
