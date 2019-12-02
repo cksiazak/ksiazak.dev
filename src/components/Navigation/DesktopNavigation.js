@@ -31,7 +31,7 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
                   timeout={3000}
                   key={i}
                 > */}
-          <p style={{ transitionDelay: `${i * 150}ms` }}>{link}</p>
+          <p>TEST</p>
           {/* </CSSTransition>
               ))}
           </TransitionGroup> */}

@@ -10,9 +10,9 @@ const HederDesc = ({ typingComplete }) => {
             I am a (mostly) self taught developer from El Paso, Texas. Apart
             from HTML, CSS, and Javascript, I also speak English and Spanish.
           </p>
-        {/* </CSSTransition>
-      )}
-    </TransitionGroup> */}
+    //     {/* </CSSTransition>
+    //   )}
+    // </TransitionGroup> */}
   );
 };
 
