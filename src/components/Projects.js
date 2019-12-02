@@ -10,7 +10,9 @@ const Projects = () => {
       <h2 className="section-header">Projects</h2>
       {projects.map((project, id) => (
         <div className="inner-section-container project-container" key={id}>
-          <a href={project.url}>{project.title}</a>
+          <div className="project-title-links">
+            <a href={project.url}>{project.title}</a>
+          </div>
           <div className="projects-inner">
             <div className="project-info">
               {project.description.map((desc, id) => (
