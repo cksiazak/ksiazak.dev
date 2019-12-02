@@ -9,20 +9,20 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
     <nav>
       <div className="nav-container">
         <div className="nav-logo">
-          {/* <TransitionGroup component={null}>
+          <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition
                 in={isMounted}
                 classNames="fadedown"
                 timeout={3000}
-              > */}
-          <p style={{ transitionDelay: '25ms' }}>CK</p>
-          {/* </CSSTransition>
+              >
+                <p style={{ transitionDelay: '25ms' }}>CK</p>
+              </CSSTransition>
             )}
-          </TransitionGroup> */}
+          </TransitionGroup>
         </div>
         <div className="nav-links-desktop">
-          {/* <TransitionGroup component={null}>
+          <TransitionGroup component={null}>
             {isMounted &&
               navigationLinks.map((link, i) => (
                 <CSSTransition
@@ -30,11 +30,11 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
                   classNames="fadedown"
                   timeout={3000}
                   key={i}
-                > */}
-          <p>TEST</p>
-          {/* </CSSTransition>
+                >
+                  <p style={{ transitionDelay: `${i * 150}ms` }}>{link}</p>
+                </CSSTransition>
               ))}
-          </TransitionGroup> */}
+          </TransitionGroup>
         </div>
       </div>
     </nav>
