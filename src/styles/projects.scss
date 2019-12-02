@@ -30,7 +30,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 0px;
+            padding: 30px 0px;
             
             .project-info {
                 width: 70%;
@@ -48,12 +48,14 @@
                 ul {
 
                     display: flex;
-                    width: 80%;
+                    width: 100%;
                     flex-wrap: wrap;
-                    justify-content: space-between;
+                    justify-content: space-around;
 
                     li {
                         font-size: 1.8rem;
+                        list-style-type: square;
+                        list-style-position: inside;
                     }
                 }
             }
