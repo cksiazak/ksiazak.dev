@@ -5,7 +5,7 @@ import '../styles/footer.scss';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="page-footer">
       <a href="https://github.com/cksiazak/ksiazak.dev">
         This website was created and designed by Christopher Ksiazak{' '}
         <IoMdGitBranch />
