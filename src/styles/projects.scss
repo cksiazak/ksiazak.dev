@@ -20,7 +20,7 @@
         .project-title-links {
 
             a {
-                font-size: 2.5rem;
+                font-size: 2.75rem;
             }
         }
     
@@ -35,11 +35,15 @@
             .project-info {
                 width: 70%;
 
-                p {
-                    font-size: 2rem;
-                    line-height: 125%;
-                    padding: 10px 0px;
+                .project-description {
+                    
+                    p {
+                        font-size: 2rem;
+                        padding-bottom: 10px;
+                        line-height: 125%;
+                    }
                 }
+
 
                 ul {
 

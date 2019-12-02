@@ -15,9 +15,11 @@ const Projects = () => {
           </div>
           <div className="projects-inner">
             <div className="project-info">
-              {project.description.map((desc, id) => (
-                <p key={id}>{desc}</p>
-              ))}
+              <div className="project-description">
+                {project.description.map((desc, id) => (
+                  <p key={id}>{desc}</p>
+                ))}
+              </div>
               <hr />
               <ul>
                 {project.technologies.map((tech, id) => (
