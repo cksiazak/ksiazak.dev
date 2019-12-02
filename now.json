@@ -8,7 +8,6 @@
     }
   ],
   "routes": [
-    { "src": "/", "dest": "/index.html" },
     { "src": "/.*", "dest": "/404.html" }
   ]
 }
