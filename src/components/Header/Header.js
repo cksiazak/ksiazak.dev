@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Typist from './HeaderTypist';
-import HeaderDesc from './HederDesc';
+import HeaderDesc from './HeaderDesc';
 import HeaderAPI from './HeaderAPI';
 
 import '../../styles/header.scss';
