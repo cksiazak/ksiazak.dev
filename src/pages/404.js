@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 const ErrorPage = () => {
   return (
     <div>
-      {/* <h2>
+      <h2>
         404! This page doesn't exist
         <span role="img" aria-label="sad-emoji">
           😟
@@ -12,7 +12,7 @@ const ErrorPage = () => {
       </h2>
       <p>
         <Link to="/">Click here</Link> to return home.
-      </p> */}
+      </p>
     </div>
   );
 };
