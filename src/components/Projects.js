@@ -8,7 +8,6 @@ const Projects = () => {
   return (
     <section className="section-container project-section">
       <h2 className="section-header">Projects</h2>
-
       {projects.map((project, id) => (
         <div className="inner-section-container project-container" key={id}>
           <a href={project.url}>{project.title}</a>
