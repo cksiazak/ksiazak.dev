@@ -15,7 +15,7 @@ export const workHistory = [
     date: 'June 2014 – March 2015',
     description: [
       "At Best Buy, I strove to meet sales goals by listening to the customer's needs, wants, and desires, then using that information, I was able to provide a total solution based on my product knowledge.",
-      'I was promoted from a regular home theater consultant to a Samsung representative. This granted me the opportunity to provide Samsung specific trainings and ensuring our premium displays were organized and up to date. I departed to focus on school full time.'
+      'I was promoted from a regular home theater consultant to a Samsung representative. This granted me the opportunity to provide Samsung specific training and ensuring our premium displays were organized and up to date. I departed to focus on school full time.'
     ]
   },
   {
