@@ -20,9 +20,20 @@
         .contact-links {
             display: flex;
             justify-content: space-evenly;
-            width: 50%;
+            width: 55%;
             font-size: 5rem;
             padding: 50px 0px;
+
+            a {
+                text-decoration: none;
+                color: #A1ABEC;
+                transition: 0.2s;
+
+                &:hover {
+                    color: #AFC281;
+                    transform: scale(1.05);
+                }
+            }
         }
     }
 }

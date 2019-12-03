@@ -1,6 +1,11 @@
 import React from 'react';
 import { Element } from 'react-scroll';
-import { IoLogoGithub, IoMdMail, IoLogoTwitter } from 'react-icons/io';
+import {
+  IoLogoGithub,
+  IoMdMail,
+  IoLogoTwitter,
+  IoMdDocument
+} from 'react-icons/io';
 
 import '../styles/contact.scss';
 
@@ -15,13 +20,16 @@ const Contact = () => {
           to you as soon as possible.
         </p>
         <div className="contact-links">
-          <a href="https://github.com/cksiazak">
+          <a href="https://github.com/cksiazak" title="Github">
             <IoLogoGithub />
           </a>
-          <a href="mailto:cksiazak@gmail.com">
+          <a href="mailto:cksiazak@gmail.com" title="Email">
             <IoMdMail />
           </a>
-          <a href="https://twitter.com/cksiazak_dev">
+          <a href="" title="Resume">
+            <IoMdDocument />
+          </a>
+          <a href="https://twitter.com/cksiazak_dev" title="Twitter">
             <IoLogoTwitter />
           </a>
         </div>
