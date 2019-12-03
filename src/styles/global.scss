@@ -22,16 +22,21 @@ body {
 .section-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 150px 0px;
   margin: 0 auto;
 
   .section-header {
     font-size: 3.25rem;
-    color: green;
+    color: #E85F5C;
+    border-bottom: 2px solid #E85F5C;
+    padding-bottom: 3px;
+
   }
 
   .inner-section-container {
     padding: 50px 0px;
+    color: #ABA8B2;
   }
 }
 
