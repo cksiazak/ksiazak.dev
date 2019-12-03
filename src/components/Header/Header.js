@@ -16,7 +16,7 @@ const Header = () => {
       setTimeout(() => {
         setTrasitionComplete(true);
       }, 400);
-    }, 4800);
+    }, 4900);
     return () => {
       clearTimeout(timer);
     };
