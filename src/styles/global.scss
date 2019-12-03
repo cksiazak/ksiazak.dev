@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+@import './reset.scss';
+@import './mediaQueries.scss';
 
 * {
   box-sizing: border-box;
@@ -6,21 +9,79 @@
 
 html {
   font-size: 62.5%;
-  background: #34252f;
+  background: #1C1F33;
   font-family: Lato;
-}
-
-body {
-  margin: 0px;
   overflow-x: hidden;
 }
 
-.app-container {
-  transition-duration: 0.5s;
-  z-index: -10;
+body {
+  margin: 0 auto;
+  max-width: 1600px;
 }
 
-.container {
-  width: 90%;
+// global classes
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 150px 0px;
   margin: 0 auto;
+
+  @include desktop1000 {
+    align-items: center;
+  }
+
+  @include tablet800 {
+    padding: 100px 0px;
+  }
+
+  .section-header {
+    font-size: 3.25rem;
+    color: #E85F5C;
+    border-bottom: 2px solid #E85F5C;
+    padding-bottom: 4px;
+
+    @include tablet800 {
+      font-size: 2.9rem;
+    }
+
+  }
+
+  .inner-section-container {
+    padding: 50px 0px;
+    color: #ABA8B2;
+  }
+}
+
+
+hr {
+  border: 2px solid #534C5B;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: rgb(54, 54, 54);
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,
+											  #e4f5fc 0%,
+											  #bfe8f9 33%,
+											  #9fd8ef 66%,
+											  #2ab0ed 100%);
 }

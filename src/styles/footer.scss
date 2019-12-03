@@ -1,0 +1,28 @@
+@import './mediaQueries.scss';
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(21, 23, 37);
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: darkorchid;
+    transition: 0.3s;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+    @include mobile600 {
+      font-size: 1rem;
+
+    }
+
+    &:hover {
+      color: rgb(163, 98, 196);
+    }
+  }
+}

@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from "react";
-import Helmet from "../components/mainHelmet";
-import useMedia from "use-media";
+import React, { useState, useEffect, Fragment } from 'react';
+import Helmet from '../components/mainHelmet';
+import useMedia from 'use-media';
 
-import Navigation from "../components/Navigation/Navigation";
-import Header from "../components/Header";
+import Navigation from '../components/Navigation/Navigation';
+import Header from '../components/Header/Header';
+import About from '../components/About';
+import Experience from '../components/Experience';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
-import "../styles/global.scss";
-import "../styles/index.scss";
+import '../styles/global.scss';
+import '../styles/index.scss';
 
 const Index = () => {
   // Handling hamburger/mobile view
-  const isMobile = useMedia({ maxWidth: 700 });
-
+  const isMobile = useMedia({ maxWidth: 800 });
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const mobileNavControl = () => {
     !hamburgerOpen ? setHamburgerOpen(true) : setHamburgerOpen(false);
@@ -24,17 +28,27 @@ const Index = () => {
   }, [isMobile]);
 
   return (
-    <div id="app" className={`app-container ${hamburgerOpen && "mobile-drawer-open"}`}>
+    <Fragment>
       <Helmet />
       <Navigation
         hamburgerState={hamburgerOpen}
         mobileNavControl={mobileNavControl}
         isMobile={isMobile}
       />
-      <div className="container">
-        <Header />
+      <div
+        className={`component-container ${hamburgerOpen &&
+          'mobile-container-effect'}`}
+      >
+        <div className="content-container">
+          <Header />
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </div>
+        <Footer />
       </div>
-    </div>
+    </Fragment>
   );
 };
 
