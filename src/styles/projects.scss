@@ -1,3 +1,5 @@
+@import './mediaQueries.scss';
+
 .project-section {
     align-items: center !important;
 
@@ -11,15 +13,27 @@
         border-radius: 25px 0px 25px 0px;
         width: 90%;
 
+        @include desktop1000 {
+            width: 100%;
+        }
+
         &:nth-child(odd) {
             align-items: flex-end;
             border-radius: 0px 25px 0px 25px;
+            @include tablet850 {
+                align-items: flex-start;
+
+            }
 
 
             .projects-inner {
                 display: flex;
                 flex-direction: row-reverse;
                 justify-content: space-between;
+
+                @include tablet850 {
+                    flex-direction: column-reverse;
+                }
             }
         }
 
@@ -51,9 +65,18 @@
             justify-content: space-between;
             align-items: center;
             padding: 30px 0px;
+
+            @include tablet850 {
+                flex-direction: column-reverse;
+
+            }
             
             .project-info {
                 width: 65%;
+
+                @include tablet850 {
+                    width: 100%;
+                }
 
                 .project-description {
                     border-bottom: 3px solid #1C1F33;
@@ -75,10 +98,18 @@
                     justify-content: space-around;
                     padding-top: 15px;
 
+                    @include mobile600 {
+                        display: block;
+                    }
+
                     li {
                         font-size: 1.8rem;
                         list-style-type: square;
                         list-style-position: inside;
+
+                        @include mobile600 {
+                            columns: 1;
+                        }
                     }
                 }
             }
@@ -86,6 +117,11 @@
             .image-place {
                 height: auto;
                 width: 30%;
+
+                @include tablet850 {
+                    width: 100%;
+                    padding-bottom: 25px;
+                }
             }
         }
     }

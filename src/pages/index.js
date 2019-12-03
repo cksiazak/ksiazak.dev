@@ -37,7 +37,7 @@ const Index = () => {
       />
       <div
         className={`component-container ${hamburgerOpen &&
-          'mobile-container-effect mobile-drawer-open'}`}
+          'mobile-container-effect'}`}
       >
         <div className="content-container">
           <Header />

@@ -1,3 +1,5 @@
+@import './mediaQueries.scss';
+
 .page-footer {
   display: flex;
   align-items: center;
@@ -13,6 +15,11 @@
     display: flex;
     align-items: center;
     padding: 20px;
+
+    @include mobile600 {
+      font-size: 1rem;
+
+    }
 
     &:hover {
       color: rgb(163, 98, 196);

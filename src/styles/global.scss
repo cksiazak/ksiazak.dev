@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 @import './reset.scss';
+@import './mediaQueries.scss';
 
 * {
   box-sizing: border-box;
@@ -27,11 +28,23 @@ body {
   padding: 150px 0px;
   margin: 0 auto;
 
+  @include desktop1000 {
+    align-items: center;
+  }
+
+  @include tablet800 {
+    padding: 100px 0px;
+  }
+
   .section-header {
     font-size: 3.25rem;
     color: #E85F5C;
     border-bottom: 2px solid #E85F5C;
     padding-bottom: 4px;
+
+    @include tablet800 {
+      font-size: 2.9rem;
+    }
 
   }
 

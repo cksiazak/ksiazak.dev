@@ -1,3 +1,5 @@
+@import './mediaQueries.scss';
+
 $initialHello: #BCABAE;
 $headerName: #D9DBF1;
 $underHeading: #EB5E28;
@@ -13,24 +15,40 @@ $headerAPI: #716969;
   .initial-hello {
     font-size: 2.5rem;
     color: $initialHello;
+
+    @include tablet800 {
+      font-size: 2rem;
+    }
   }
 
   .header-name {
     font-size: 8rem;
     margin: 0px;
     color: $headerName;
+
+    @include tablet800 {
+      font-size: 6rem;
+    }
   }
 
   .under-header {
     font-size: 4rem;
     color: $underHeading;
     padding: 10px 0px;
+
+    @include tablet800 {
+      font-size: 3rem;
+    }
   }
 
   .header-api {
     font-size: 1.25rem;
     color: $headerAPI;
     margin-top: 150px;
+
+    @include tablet800 {
+      font-size: 0.9rem;
+    }
 
     a {
       text-decoration: none;
@@ -51,6 +69,18 @@ $headerAPI: #716969;
   line-height: 150%;
   margin: 25px 0px 30px;
   color: $shortBio;
+
+  @include desktop1000 {
+    width: 70%;
+  }
+
+  @include tablet800 {
+    font-size: 2rem;
+  }
+
+  @include mobile600 {
+    width: 90%;
+  }
 }
 
 .header-transition {
