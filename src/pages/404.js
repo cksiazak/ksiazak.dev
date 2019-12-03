@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import '../styles/404.scss';
+
 const ErrorPage = () => {
   return (
-    <div>
+    <div className="error-page">
       <h2>
         404! This page doesn't exist
         <span role="img" aria-label="sad-emoji">

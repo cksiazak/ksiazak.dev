@@ -60,7 +60,6 @@ const MobileNav = ({
           <Link
             to={link}
             smooth={true}
-            offset={-100}
             key={i}
             className="nav-links-list-mobile"
             onClick={mobileNavControl}
