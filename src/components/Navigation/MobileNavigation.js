@@ -23,7 +23,7 @@ const MobileNav = ({
                   classNames="fadedown"
                   timeout={3000}
                 >
-                  <p style={{ transitionDelay: '50ms' }}>CK</p>
+                  <a href="https://ksiazak.dev">CK</a>
                 </CSSTransition>
               )}
             </TransitionGroup>

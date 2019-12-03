@@ -4,11 +4,12 @@ nav {
 // Desktop Nav CSS
 $DesktopNavFont: 2rem;
 $NavTextColor: #A3E0D9;
+$NavBackground: rgb(21, 23, 37);
 
 .nav-container {
   display: flex;
   justify-content: center;
-  background: rgb(21, 23, 37);
+  background: $NavBackground;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -70,7 +71,7 @@ $NavTextColor: #A3E0D9;
 
   .nav-container-mobile {
     width: 100%;
-    background: green;
+    background: $NavBackground;
 
     .upper-mobile-nav {
       width: 90%;
@@ -82,6 +83,15 @@ $NavTextColor: #A3E0D9;
       .nav-logo-mobile {
         user-select: none;
         font-size: 2rem;
+
+        a {
+          color: $NavTextColor;
+          text-decoration: none;
+    
+          &:hover {
+            color: #E39D84;
+          }
+        }
       }
     }
   }
@@ -89,6 +99,7 @@ $NavTextColor: #A3E0D9;
 
 .nav-mobile-active {
   transform: translatey(176px);
+  box-shadow: 2px 1px 5px -2px rgba(0, 0, 0, 0.6);
 }
 
 .navigation-links-mobile {
@@ -108,9 +119,10 @@ $NavTextColor: #A3E0D9;
     margin: 0 auto;
     padding: 10px 0px;
     cursor: pointer;
+    color: $NavTextColor;
 
     &:hover {
-      background: red;
+      background: #6d556e;
     }
   }
 }
