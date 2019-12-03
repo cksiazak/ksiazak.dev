@@ -26,7 +26,11 @@ const Contact = () => {
           <a href="mailto:cksiazak@gmail.com" title="Email">
             <IoMdMail />
           </a>
-          <a href="./assets/Cksiazak_Resume.pdf" title="Resume" download>
+          <a
+            href="./Cksiazak_Resume.pdf"
+            title="Resume"
+            download="cksiazak_resume.pdf"
+          >
             <IoMdDocument />
           </a>
           <a href="https://twitter.com/cksiazak_dev" title="Twitter">
