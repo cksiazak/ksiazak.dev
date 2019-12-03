@@ -25,7 +25,6 @@ const Projects = () => {
                   <p key={id}>{desc}</p>
                 ))}
               </div>
-              <hr />
               <ul>
                 {project.technologies.map((tech, id) => (
                   <li key={id}>{tech}</li>

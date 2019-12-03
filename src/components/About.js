@@ -20,12 +20,12 @@ const About = () => {
         <div className="about-me-info">
           <p>
             Welcome! I'm Chris, a developer born and raised in El Paso, TX. I
-            enjoy learning new technologies and applying that knowledge into
+            enjoy learning new technologies and applying that knowledge in
             designing and creating web applications.
           </p>
           <p>
             Currently, I am a Project Coordinator at C3i Solutions. I work in
-            colloberation with our client, Castlight Health. Before, I attended
+            collaboration with our client, Castlight Health. Before, I attended
             the University of Texas at El Paso (UTEP) to study Electrical
             Engineering. At some point during this time, I realized that it
             wasn't a topic I quite enjoyed. I joined the Full Stack Web

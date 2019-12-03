@@ -13,7 +13,10 @@ $fontPadding: 5px;
     .experience-meta {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      // width: 100%;
+      color: #D7AF70;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #232734;
 
       h3 {
         font-size: 2.75rem;
@@ -36,7 +39,7 @@ $fontPadding: 5px;
       line-height: 125%;
 
       p {
-        padding-top: 10px;
+        padding-bottom: 10px;
       }
     }
   }
