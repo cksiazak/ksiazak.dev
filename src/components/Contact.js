@@ -15,9 +15,9 @@ const Contact = () => {
       <h2 className="section-header">Contact</h2>
       <div className="contact-container">
         <p className="contact-text">
-          I'm currently available and actively looking for positions. Feel
-          free to reach out to me, even if you just want to talk. I'll get back
-          to you as soon as possible.
+          I'm currently available and actively looking for positions. Feel free
+          to reach out to me, even if you just want to talk. I'll get back to
+          you as soon as possible.
         </p>
         <div className="contact-links">
           <a href="https://github.com/cksiazak" title="Github">
@@ -26,7 +26,7 @@ const Contact = () => {
           <a href="mailto:cksiazak@gmail.com" title="Email">
             <IoMdMail />
           </a>
-          <a href="" title="Resume">
+          <a href="./assets/Cksiazak_Resume.pdf" title="Resume" download>
             <IoMdDocument />
           </a>
           <a href="https://twitter.com/cksiazak_dev" title="Twitter">
