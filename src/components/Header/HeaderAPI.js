@@ -13,7 +13,7 @@ const HeaderAPI = ({ transitionComplete }) => {
           <div className="header-api">
             <p>
               In lieu of scrolling, you may also send a GET request to{' '}
-              <span>https://api.ksiazak.dev</span>
+              <a href="https://api.ksiazak.dev">https://api.ksiazak.dev</a>
             </p>
           </div>
         </CSSTransition>

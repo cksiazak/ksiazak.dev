@@ -9,7 +9,7 @@ const HeaderTypist = () => {
       </span>
       <h1 className="header-name">Christopher Ksiazak</h1>
       <Typist.Delay ms={250} />
-      <span className="short-bio">& I like to build things.</span>
+      <span className="under-header">& I like to build things.</span>
     </Typist>
   );
 };
