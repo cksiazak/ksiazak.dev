@@ -2,7 +2,7 @@ import React from 'react';
 import { Element } from 'react-scroll';
 
 import '../styles/aboutme.scss';
-import avatar from './assets/avatar.png';
+import avatar from './assets/avatar2.jpg';
 
 const technologies = [
   'HTML',
