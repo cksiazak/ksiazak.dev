@@ -7,7 +7,7 @@ export const projects = [
       "This is my portfolio page (the one that you're currently on.) The front end is built using Gatsby.js, which pulls from my personal api that is handles by Express. You may send a GET request to https://api.ksiazak.dev for the JSON output."
     ],
     technologies: ['Gatsby.js', 'Node/Express.js', '(S)CSS'],
-    imgurl: ''
+    imgurl: 'https://i.imgur.com/2oitU1p.png'
   },
   {
     title: 'SongSight',
@@ -15,11 +15,11 @@ export const projects = [
     githubLink:
       'https://github.com/Build-Week-Spotify-Song-Suggester-PT/front-end-react',
     description: [
-      'SongSight allows you to select from a list of songs, save that song to your list, or select similar songs based on danceability, key, bpm, and other metrics.',
+      'SongSight allows you to select from a list of songs, save that song to your list, or select similar songs based on danceability, key, and other metrics.',
       'This was part 3 of our build week projcts at Lambda school. I worked with 3 other React developers in planning out the application layout and function, as well as with our back-end developer and data science team.'
     ],
     technologies: ['React.js', 'React-Router', 'React-Redux', 'Grommet'],
-    imgurl: ''
+    imgurl: 'https://i.imgur.com/klyWf6m.png'
   },
   {
     title: 'SIXR',
@@ -30,7 +30,7 @@ export const projects = [
       "I was paired up with another React developer, as well as a UI designer. I created the login, sign up, and project list pages to the (near) pixel perfect design our designer had for us. Full functionality isn't complete yet, but I am planning on a re-design."
     ],
     technologies: ['React.js', 'React-Router', '(S)CSS'],
-    imgurl: ''
+    imgurl: 'https://i.imgur.com/EMamtCm.png'
   },
   {
     title: 'DevDesk',
@@ -41,6 +41,6 @@ export const projects = [
       'I worked with another front-end developer, and I created the Home and Solutions pages. This was the first build project.'
     ],
     technologies: ['HTML', 'Javascript', 'CSS (LESS)'],
-    imgurl: ''
+    imgurl: 'https://i.imgur.com/lD5UZEf.png'
   }
 ];

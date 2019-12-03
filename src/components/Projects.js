@@ -31,9 +31,11 @@ const Projects = () => {
                 ))}
               </ul>
             </div>
-            <div className="image-place" alt={project.title}>
-              THIS IS AN IMAGE
-            </div>
+            <img
+              src={project.imgurl}
+              className="image-place"
+              alt={project.title}
+            />
           </div>
         </div>
       ))}
