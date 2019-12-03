@@ -28,8 +28,8 @@ const About = () => {
             collaboration with our client, Castlight Health. Before, I attended
             the University of Texas at El Paso (UTEP) to study Electrical
             Engineering. At some point during this time, I realized that it
-            wasn't a topic I quite enjoyed. I joined the Full Stack Web
-            Development program at Lambda School, which helped me in discovering
+            wasn't a topic that I enjoyed. I joined the Full Stack Web
+            Development program at Lambda School, which aided me in discovering
             my passion for tech and design.
           </p>
           <h3>Here are a few technologies I'm working with:</h3>
@@ -39,7 +39,7 @@ const About = () => {
             ))}
           </ul>
         </div>
-        <img src={avatar} className="user-avatar" />
+        <img src={avatar} className="user-avatar" alt="Christopher Ksiazak" />
       </div>
     </Element>
   );

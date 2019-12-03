@@ -15,7 +15,7 @@ const Contact = () => {
       <h2 className="section-header">Contact</h2>
       <div className="contact-container">
         <p className="contact-text">
-          I'm currently available and am actively looking for positions. Feel
+          I'm currently available and actively looking for positions. Feel
           free to reach out to me, even if you just want to talk. I'll get back
           to you as soon as possible.
         </p>
