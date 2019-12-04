@@ -8,7 +8,7 @@ export const projects = [
       'You may send a GET request to https://api.ksiazak.dev for the JSON output.'
     ],
     technologies: ['Gatsby.js', 'Node/Express.js', '(S)CSS'],
-    imgurl: 'https://i.imgur.com/2oitU1p.png'
+    imgurl: 'https://i.imgur.com/a5kUeLM.jpg'
   },
   {
     title: 'SongSight',
@@ -20,7 +20,7 @@ export const projects = [
       'This was part 3 of our build week projects at Lambda school. I worked with 3 other React developers in planning out the application layout and function, as well as with our back-end developer and data science team.'
     ],
     technologies: ['React.js', 'React-Router', 'React-Redux', 'Grommet'],
-    imgurl: 'https://i.imgur.com/klyWf6m.png'
+    imgurl: 'https://i.imgur.com/W5CAuFH.jpg'
   },
   {
     title: 'SIXR',
@@ -31,7 +31,7 @@ export const projects = [
       "I was paired up with another React developer, as well as a UI designer. I created the login, sign up, and project list pages to the (near) pixel perfect design that our designer had for us. Full functionality isn't complete yet, but I am planning on a rebuilding for full functionality."
     ],
     technologies: ['React.js', 'React-Router', '(S)CSS'],
-    imgurl: 'https://i.imgur.com/EMamtCm.png'
+    imgurl: 'https://i.imgur.com/tThRGFc.jpg'
   },
   {
     title: 'DevDesk',
@@ -42,6 +42,6 @@ export const projects = [
       'I worked with another front-end developer, and I created the Home and Solutions pages.'
     ],
     technologies: ['HTML', 'Javascript', 'CSS (LESS)'],
-    imgurl: 'https://i.imgur.com/lD5UZEf.png'
+    imgurl: 'https://i.imgur.com/A130nRb.jpg'
   }
 ];
