@@ -4,7 +4,8 @@ import {
   IoLogoGithub,
   IoMdMail,
   IoLogoTwitter,
-  IoMdDocument
+  IoMdDocument,
+  IoLogoLinkedin
 } from 'react-icons/io';
 
 import '../styles/contact.scss';
@@ -20,9 +21,6 @@ const Contact = () => {
           you as soon as possible.
         </p>
         <div className="contact-links">
-          <a href="https://github.com/cksiazak" title="Github">
-            <IoLogoGithub />
-          </a>
           <a href="mailto:cksiazak@gmail.com" title="Email">
             <IoMdMail />
           </a>
@@ -32,6 +30,12 @@ const Contact = () => {
             download="cksiazak_resume.pdf"
           >
             <IoMdDocument />
+          </a>
+          <a href="https://github.com/cksiazak" title="Github">
+            <IoLogoGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/cksiazak/" title="LinkedIn">
+            <IoLogoLinkedin />
           </a>
           <a href="https://twitter.com/cksiazak_dev" title="Twitter">
             <IoLogoTwitter />

@@ -33,7 +33,12 @@ const DesktopNav = ({ isMounted, navigationLinks }) => {
                     timeout={3000}
                     key={i}
                   >
-                    <Link to={link} smooth={true} className="navigation-link">
+                    <Link
+                      to={link}
+                      smooth={true}
+                      className="navigation-link"
+                      title={link}
+                    >
                       {link}
                     </Link>
                   </CSSTransition>

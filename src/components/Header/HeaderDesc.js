@@ -7,7 +7,7 @@ const HederDesc = ({ typingComplete }) => {
       {typingComplete && (
         <CSSTransition in={typingComplete} classNames="fadeup" timeout={3000}>
           <p className="about-intro">
-            I am a (mostly) self taught web developer from El Paso, Texas. Apart
+            I am a (mostly) self taught developer from El Paso, Texas. Apart
             from HTML, CSS, and Javascript, I also speak English and Spanish.
           </p>
         </CSSTransition>
