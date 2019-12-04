@@ -119,6 +119,11 @@
                 width: 30%;
 
                 @include tablet850 {
+                    width: 70%;
+                    padding-bottom: 25px;
+                }
+
+                @include mobile600 {
                     width: 100%;
                     padding-bottom: 25px;
                 }
