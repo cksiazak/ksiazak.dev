@@ -4,10 +4,10 @@ export const projects = [
     url: 'https://ksiazak.dev',
     githubLink: 'https://github.com/cksiazak/ksiazak.dev',
     description: [
-      "This is my portfolio page (the one that you're currently on.) The front end is built using Gatsby.js. I also created a quick api using Node/Express.js using the same information.",
-      'You may send a GET request to https://api.ksiazak.dev for the JSON output.'
+      "This is my portfolio page (the one that you're currently on.) The front end is built using Gatsby.js and (S)CSS and  is fully responsive.",
+      'In the future, I plan on completing a Node/express back-end along with a form to submit your information to.'
     ],
-    technologies: ['Gatsby.js', 'Node/Express.js', '(S)CSS'],
+    technologies: ['Gatsby.js', '(S)CSS'],
     imgurl: 'https://i.imgur.com/a5kUeLM.jpg'
   },
   {
