@@ -9,6 +9,14 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-robots-txt`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-154417992-1',
+        anonymize: true,
+        head: false
+      }
+    },
+    {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: 'en'
