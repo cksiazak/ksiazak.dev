@@ -1,9 +1,9 @@
 @import './mediaQueries.scss';
 
-$initialHello: #BCABAE;
-$headerName: #D9DBF1;
-$underHeading: #EB5E28;
-$shortBio: #9F9FAD;
+$initialHello: #bcabae;
+$headerName: #d9dbf1;
+$underHeading: #eb5e28;
+$shortBio: #9f9fad;
 $headerAPI: #716969;
 
 .header-main {
@@ -28,6 +28,10 @@ $headerAPI: #716969;
 
     @include tablet800 {
       font-size: 6rem;
+    }
+
+    @include mobile600 {
+      max-width: 360px;
     }
   }
 
@@ -57,7 +61,6 @@ $headerAPI: #716969;
 
       &:hover {
         color: $headerName;
-
       }
     }
   }
