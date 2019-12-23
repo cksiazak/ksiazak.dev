@@ -12,18 +12,18 @@ const MobileNav = ({
   mobileNavControl
 }) => {
   return (
-    <nav className="nav-mobile-view">
-      <div className="nav-container-mobile">
-        <div className="upper-mobile-nav">
-          <div className="nav-logo-mobile">
+    <nav className='nav-mobile-view'>
+      <div className='nav-container-mobile'>
+        <div className='upper-mobile-nav'>
+          <div className='nav-logo-mobile'>
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition
                   in={isMounted}
-                  classNames="fadedown"
+                  classNames='fadedown'
                   timeout={3000}
                 >
-                  <a href="https://ksiazak.dev">CK</a>
+                  <a href='https://ksiazak.dev'>{'<CK>'}</a>
                 </CSSTransition>
               )}
             </TransitionGroup>
@@ -32,7 +32,7 @@ const MobileNav = ({
             {isMounted && (
               <CSSTransition
                 in={isMounted}
-                classNames="fadedown"
+                classNames='fadedown'
                 timeout={3000}
               >
                 <div
@@ -40,12 +40,12 @@ const MobileNav = ({
                   className={
                     !hamburgerState ? `hamburger` : `hamburger is-active`
                   }
-                  id="hamburger"
+                  id='hamburger'
                   style={{ transitionDelay: '200ms' }}
                 >
-                  <span className="line"></span>
-                  <span className="line"></span>
-                  <span className="line"></span>
+                  <span className='line'></span>
+                  <span className='line'></span>
+                  <span className='line'></span>
                 </div>
               </CSSTransition>
             )}
@@ -61,7 +61,7 @@ const MobileNav = ({
             to={link}
             smooth={true}
             key={i}
-            className="nav-links-list-mobile"
+            className='nav-links-list-mobile'
             onClick={mobileNavControl}
           >
             {link}

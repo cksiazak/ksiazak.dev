@@ -2,7 +2,7 @@ import React from 'react';
 import { Element } from 'react-scroll';
 
 import '../styles/aboutme.scss';
-import avatar from './assets/avatar2.jpg';
+import avatar from '../images/avatar2.jpg';
 
 const technologies = [
   'HTML',
@@ -14,10 +14,10 @@ const technologies = [
 
 const About = () => {
   return (
-    <Element name="About" className="section-container">
-      <h2 className="section-header">About Me</h2>
-      <div className="inner-section-container about-me-inner-container">
-        <div className="about-me-info">
+    <Element name='About' className='section-container'>
+      <h2 className='section-header'>About Me</h2>
+      <div className='inner-section-container about-me-inner-container'>
+        <div className='about-me-info'>
           <p>
             Welcome! I'm Chris, a developer born and raised in El Paso, TX. I
             enjoy learning new technologies and applying that knowledge in
@@ -39,7 +39,7 @@ const About = () => {
             ))}
           </ul>
         </div>
-        <img src={avatar} className="user-avatar" alt="Christopher Ksiazak" />
+        <img src={avatar} className='user-avatar' alt='Christopher Ksiazak' />
       </div>
     </Element>
   );
