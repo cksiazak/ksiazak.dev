@@ -120,7 +120,7 @@
             span {
               position: relative;
               left: -10px;
-              z-index: -1;
+              z-index: 0;
             }
 
             @include mobile600 {
