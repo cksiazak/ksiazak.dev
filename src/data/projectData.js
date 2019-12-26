@@ -39,7 +39,7 @@ export const projects = [
     githubLink: 'https://github.com/vr-funding-platform/frontend',
     description: [
       'SIXR is a project creation and investment piece. This allows you to either find a project to invest in, or create a new project for others to select from.',
-      "I was paired up with another React developer, as well as a UI designer. I created the login, sign up, and project list pages to the (near) pixel perfect design that our designer had for us. Full functionality isn't complete yet, but I am planning on a rebuilding for full functionality."
+      "I was paired up with another React developer, as well as a UI designer. I created the login, sign up, and project list pages and completed my components to pixel perfection according to the specification our UI designer had for us. Full functionality isn't complete yet, but I am planning on a rebuild."
     ],
     technologies: ['React.js', 'React-Router', '(S)CSS'],
     imgurl: 'https://i.imgur.com/tThRGFc.jpg'
