@@ -1,135 +1,148 @@
 @import './mediaQueries.scss';
 
 .project-section {
-    align-items: center !important;
+  align-items: center !important;
 
-    .project-container {
-        display: flex;
-        flex-direction: column;
-        margin-top: 75px;
-        padding: 25px 25px !important;
-        background: #232734;
-        box-shadow: 2px 2px 3px 1px #13161d;
-        border-radius: 25px 0px 25px 0px;
-        width: 90%;
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+    padding: 25px 25px !important;
+    background: #232734;
+    box-shadow: 2px 2px 3px 1px #13161d;
+    border-radius: 25px 0px 25px 0px;
+    width: 90%;
 
-        @include desktop1000 {
-            width: 100%;
-        }
-
-        &:nth-child(odd) {
-            align-items: flex-end;
-            border-radius: 0px 25px 0px 25px;
-            @include tablet850 {
-                align-items: flex-start;
-
-            }
-
-
-            .projects-inner {
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: space-between;
-
-                @include tablet850 {
-                    flex-direction: column-reverse;
-                }
-            }
-        }
-
-        .project-title-links {
-            display: flex;
-            align-items: center;
-            font-size: 2.75rem;
-            
-            .project-github-link {
-                padding: 0px 5px;
-            }
-            
-            a {
-                display: flex;
-                text-decoration: none;
-                color: #E28C4F;
-                transition: 0.2s;
-
-                &:hover {
-                    color: rgb(255, 175, 117);
-                }
-            }
-        }
-    
-
-        .projects-inner {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 0px;
-
-            @include tablet850 {
-                flex-direction: column-reverse;
-
-            }
-            
-            .project-info {
-                width: 65%;
-
-                @include tablet850 {
-                    width: 100%;
-                }
-
-                .project-description {
-                    border-bottom: 3px solid #1C1F33;
-                    padding-bottom: 5px;
-                    
-                    p {
-                        font-size: 2rem;
-                        padding-bottom: 10px;
-                        line-height: 125%;
-                    }
-                }
-
-
-                ul {
-
-                    display: flex;
-                    width: 100%;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                    padding-top: 15px;
-
-                    @include mobile600 {
-                        display: block;
-                    }
-
-                    li {
-                        font-size: 1.8rem;
-                        list-style-type: square;
-                        list-style-position: inside;
-
-                        @include mobile600 {
-                            columns: 1;
-                        }
-                    }
-                }
-            }
-
-            .image-place {
-                height: auto;
-                width: 30%;
-
-                @include tablet850 {
-                    width: 70%;
-                    padding-bottom: 25px;
-                }
-
-                @include mobile600 {
-                    width: 100%;
-                    padding-bottom: 25px;
-                }
-            }
-        }
+    @include desktop1000 {
+      width: 100%;
     }
+
+    &:nth-child(odd) {
+      border-radius: 0px 25px 0px 25px;
+
+      @include tablet850 {
+        align-items: flex-start;
+      }
+
+      .projects-inner {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        @include tablet850 {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+
+    .project-title-links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 3.25rem;
+      flex-direction: row;
+
+      .project-github-link {
+        padding: 0px 5px;
+        border-bottom: 0px;
+
+        &:hover {
+          border-bottom: 0px;
+        }
+      }
+
+      a {
+        display: flex;
+        text-decoration: none;
+        color: #e28c4f;
+        transition: 0.2s;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #e28c4f;
+
+        &:hover {
+          color: rgb(255, 175, 117);
+          border-bottom: 2px solid rgb(255, 175, 117);
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      .project-title-links {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .projects-inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0px;
+
+      @include tablet850 {
+        flex-direction: column-reverse;
+      }
+
+      .project-info {
+        width: 65%;
+
+        @include tablet850 {
+          width: 100%;
+        }
+
+        .project-description {
+          border-bottom: 3px solid #1c1f33;
+          padding-bottom: 5px;
+
+          p {
+            font-size: 2rem;
+            padding-bottom: 10px;
+            line-height: 125%;
+          }
+        }
+
+        ul {
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          padding-top: 15px;
+
+          @include mobile600 {
+            display: block;
+          }
+
+          li {
+            font-size: 1.8rem;
+            list-style-type: square;
+            list-style-position: inside;
+            span {
+              position: relative;
+              left: -10px;
+            }
+
+            @include mobile600 {
+              columns: 1;
+            }
+          }
+        }
+      }
+
+      .image-place {
+        height: auto;
+        width: 30%;
+
+        @include tablet850 {
+          width: 70%;
+          padding-bottom: 25px;
+        }
+
+        @include mobile600 {
+          width: 100%;
+          padding-bottom: 25px;
+        }
+      }
+    }
+  }
 }
-
-

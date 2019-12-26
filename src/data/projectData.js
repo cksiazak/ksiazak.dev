@@ -5,10 +5,21 @@ export const projects = [
     githubLink: 'https://github.com/cksiazak/ksiazak.dev',
     description: [
       "This is my portfolio page (the one that you're currently on.) The front end is built using Gatsby.js and (S)CSS and  is fully responsive.",
-      'In the future, I plan on completing a Node/express back-end along with a form to submit your information to.'
+      'In the future, I planning on setting up a CMS and query it using graphQL.'
     ],
     technologies: ['Gatsby.js', '(S)CSS'],
     imgurl: 'https://i.imgur.com/a5kUeLM.jpg'
+  },
+  {
+    title: 'AirBnB Optimal Pricing API (WIP)',
+    url: 'https://optimal-airbnb-pricing-api.herokuapp.com/',
+    githubLink: 'https://github.com/Build-Week-AirBnB-Optimal-Price/Backend',
+    description: [
+      "This is the back end portion of the AirBnB Optimal Pricing application. Our application allows you to query our data science team's flask app for the best optimal price in Berlin, as well as save properties to their account. This is done using historical data, along with neighborhoods, zip codes, and other parameters.",
+      'I am the sole back end developer for this api, doing both the routing and the database design. This is currently a work in progress.'
+    ],
+    technologies: ['Nodejs', 'PostgresQL', 'JWT', 'bcrypt', 'Knex', 'Jest'],
+    imgurl: 'https://i.imgur.com/UrRiOHS.jpg'
   },
   {
     title: 'SongSight',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Element } from 'react-scroll';
-import { workHistory } from './data/experienceData';
+import { workHistory } from '../data/experienceData';
 
 import '../styles/experience.scss';
 
