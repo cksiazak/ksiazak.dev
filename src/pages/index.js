@@ -11,6 +11,10 @@ import { navData } from '../data/navData';
 import '../styles/global.css';
 
 const useStyles = createUseStyles({
+  pageContainer: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
   pageHeadingUpper: {
     width: '100%',
     display: 'flex',
@@ -95,6 +99,7 @@ const metadata = {
 
 const Index = () => {
   const {
+    pageContainer,
     pageHeadingUpper,
     headingContainer,
     mainHeading,
@@ -110,23 +115,30 @@ const Index = () => {
   return (
     <PageTransition>
       <Head metadata={metadata} />
-      <div className={pageHeadingUpper}>
-        <div className={headingContainer}>
-          <h1 className={mainHeading}>Christopher Ksiazak</h1>
-          <span className={underHeading}>Web Developer</span>
+      <div className={pageContainer}>
+        <div className={pageHeadingUpper}>
+          <div className={headingContainer}>
+            <h1 className={mainHeading}>Christopher Ksiazak</h1>
+            <span className={underHeading}>Web Developer</span>
+          </div>
         </div>
+        <nav className={navContainer}>
+          <div className={navigationList}>
+            {navData.map((page, i) => (
+              <Link
+                to={page.url}
+                key={i}
+                className={navItem}
+                title={page.title}
+              >
+                <h2 className={pageHeading}>{page.title}</h2>
+                <hr className={pageBreak} />
+                <p className={linkDesc}>{page.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </nav>
       </div>
-      <nav className={navContainer}>
-        <div className={navigationList}>
-          {navData.map((page, i) => (
-            <Link to={page.url} key={i} className={navItem} title={page.title}>
-              <h2 className={pageHeading}>{page.title}</h2>
-              <hr className={pageBreak} />
-              <p className={linkDesc}>{page.desc}</p>
-            </Link>
-          ))}
-        </div>
-      </nav>
     </PageTransition>
   );
 };

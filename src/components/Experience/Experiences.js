@@ -85,8 +85,8 @@ const Experiences = () => {
             </div>
             <div className={jobDesc}>
               {job.description.map((desc, id) => (
-                <Fragment>
-                  <p key={id}>{desc}</p>
+                <Fragment key={id}>
+                  <p>{desc}</p>
                   <br />
                 </Fragment>
               ))}
