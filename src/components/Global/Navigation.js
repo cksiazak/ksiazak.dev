@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center'
   },
   innerNavContainer: {
-    width: '90%',
+    width: '80%',
     display: 'flex',
     justifyContent: 'space-between',
     padding: '20px 0px',

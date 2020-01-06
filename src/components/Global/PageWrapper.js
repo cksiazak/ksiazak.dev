@@ -6,7 +6,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '100px 0px',
+    padding: '150px 0px',
     width: '100%'
   }
 });

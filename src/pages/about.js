@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import Head from '../components/Global/Head';
 import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
+import Header from '../components/About/Header';
 
 const metadata = {
   title: 'Christopher Ksiazak - About Me',
@@ -16,8 +17,7 @@ const About = () => {
       <Head metadata={metadata} />
       <Navigation />
       <PageWrapper>
-        About
-        {/* Placeholder */}
+        <Header />
       </PageWrapper>
     </Fragment>
   );
