@@ -6,7 +6,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '100px 0px',
+    padding: '50px 0px 100px',
     width: '100%',
     background: 'white'
   }

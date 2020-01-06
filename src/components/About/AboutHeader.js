@@ -6,7 +6,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    padding: '100px 0px'
+    padding: '150px 0px 225px'
   },
   headingContainer: {
     display: 'flex',
