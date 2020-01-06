@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-const Head = ({ pageTitle, pageDesc }) => {
+const Head = ({ metadata: { pageTitle, pageDesc } }) => {
   return (
     <Helmet>
       <meta charSet='utf-8' />

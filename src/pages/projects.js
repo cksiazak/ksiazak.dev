@@ -1,8 +1,9 @@
 import React from 'react';
 
 // import components
-import Head from '../components/Head';
-import Navigation from '../components/Navigation';
+import Head from '../components/Global/Head';
+import Navigation from '../components/Global/Navigation';
+import PageWrapper from '../components/Global/PageWrapper';
 
 const metadata = {
   title: 'Christopher Ksiazak - Projects',
@@ -12,8 +13,12 @@ const metadata = {
 const Projects = () => {
   return (
     <div>
-      <Head pageTitle={metadata.title} pageDesc={metadata.desc} />
+      <Head metadata={metadata} />
       <Navigation />
+      <PageWrapper>
+        Projects
+        {/* Placeholder */}
+      </PageWrapper>
     </div>
   );
 };

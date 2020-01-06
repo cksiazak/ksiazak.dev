@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
-import Head from '../components/Head';
+import Head from '../components/Global/Head';
 
 // Reset CSS
 import '../styles/global.css';
@@ -26,7 +26,7 @@ const Index = () => {
 
   return (
     <Fragment>
-      <Head pageTitle={metadata.title} pageDesc={metadata.desc} />
+      <Head metadata={metadata} />
       <nav className={navContainer}>
         <div className={navigationList}>
           {navData.map((page, i) => (

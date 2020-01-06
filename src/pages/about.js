@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 // import components
-import Head from '../components/Head';
-import Navigation from '../components/Navigation';
+import Head from '../components/Global/Head';
+import Navigation from '../components/Global/Navigation';
+import PageWrapper from '../components/Global/PageWrapper';
 
 const metadata = {
   title: 'Christopher Ksiazak - About Me',
@@ -11,11 +12,14 @@ const metadata = {
 
 const About = () => {
   return (
-    <div>
-      <Head pageTitle={metadata.title} pageDesc={metadata.desc} />
+    <Fragment>
+      <Head metadata={metadata} />
       <Navigation />
-
-    </div>
+      <PageWrapper>
+        About
+        {/* Placeholder */}
+      </PageWrapper>
+    </Fragment>
   );
 };
 

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
 
 // navigation data
-import { navData } from '../data/navData';
+import { navData } from '../../data/navData';
 
 const useStyles = createUseStyles({
   mainNav: {
