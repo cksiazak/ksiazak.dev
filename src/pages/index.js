@@ -1,33 +1,44 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
-import Helmet from 'react-helmet';
+import HeadData from '../components/HeadData';
 
-const indexData = [
-  { url: '/about', title: 'About Me', desc: '' },
-  { url: '/experience', title: 'Experience', desc: '' },
-  { url: '/projects', title: 'Projects', desc: '' },
-  { url: '/contact', title: 'Contact Me', desc: '' }
-];
+// Reset CSS
+import '../styles/global.css';
+// import new css
+import { useStyles } from '../styles/indexStyles';
+// component data
+import { indexData } from '../data/indexData';
+
+const metadata = {
+  title: 'Christopher Ksiazak',
+  desc: 'A personal developer portfolio and art piece by Christopher Ksiazak'
+}
 
 const Index = () => {
+  const {
+    navContainer,
+    navigationList,
+    navItem,
+    pageHeading,
+    pageBreak
+  } = useStyles();
+
   return (
-    <Fragment>
-      <IndexMetaData />
-      <div>
-        {indexData.map((page, i) => (
-          <div key={i}>
-            <Link to={page.url}>{page.title}</Link>
-          </div>
-        ))}
-      </div>
-    </Fragment>
+    <div>
+      <HeadData pageTitle={metadata.title} pageDesc={metadata.desc} />
+      <nav className={navContainer}>
+        <div className={navigationList}>
+          {indexData.map((page, i) => (
+            <Link to={page.url} key={i} className={navItem}>
+              <h2 className={pageHeading}>{page.title}</h2>
+              <hr className={pageBreak} />
+              <p>Test</p>
+            </Link>
+          ))}
+        </div>
+      </nav>
+    </div>
   );
 };
-
-const IndexMetaData = () => (
-  <Helmet>
-    <title>Christopher Ksiazak</title>
-  </Helmet>
-);
 
 export default Index;
