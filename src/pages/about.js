@@ -1,13 +1,22 @@
-import React from 'react'
-import PageTransition from 'gatsby-plugin-page-transitions';
+import React from 'react';
 
+// import components
+import Head from '../components/Head';
+import Navigation from '../components/Navigation';
+
+const metadata = {
+  title: 'Christopher Ksiazak - About Me',
+  desc: 'A history about me, my values, and what I can do'
+};
 
 const About = () => {
-    return (
-        <PageTransition>
-            ABOUT pAGE
-        </PageTransition>
-    )
-}
+  return (
+    <div>
+      <Head pageTitle={metadata.title} pageDesc={metadata.desc} />
+      <Navigation />
 
-export default About
+    </div>
+  );
+};
+
+export default About;

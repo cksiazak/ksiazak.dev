@@ -1,4 +1,4 @@
-export const indexData = [
+export const navData = [
   {
     url: '/about',
     title: 'About Me',

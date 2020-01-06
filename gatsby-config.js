@@ -32,12 +32,6 @@ module.exports = {
       options: {
         lang: 'en'
       }
-    },
-    {
-      resolve: 'gatsby-plugin-page-transitions',
-      options: {
-        transitionTime: 500
-      }
     }
   ]
 };

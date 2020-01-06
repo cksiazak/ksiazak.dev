@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
-import PageTransition from 'gatsby-plugin-page-transitions';
 import Head from '../components/Head';
 
 // Reset CSS
@@ -8,7 +7,7 @@ import '../styles/global.css';
 // import new css
 import { useStyles } from '../styles/indexStyles';
 // component data
-import { indexData } from '../data/indexData';
+import { navData } from '../data/navData';
 
 const metadata = {
   title: 'Christopher Ksiazak',
@@ -26,12 +25,12 @@ const Index = () => {
   } = useStyles();
 
   return (
-    <PageTransition>
+    <Fragment>
       <Head pageTitle={metadata.title} pageDesc={metadata.desc} />
       <nav className={navContainer}>
         <div className={navigationList}>
-          {indexData.map((page, i) => (
-            <Link to={page.url} key={i} className={navItem}>
+          {navData.map((page, i) => (
+            <Link to={page.url} key={i} className={navItem} title={page.title}>
               <h2 className={pageHeading}>{page.title}</h2>
               <hr className={pageBreak} />
               <p className={linkDesc}>{page.desc}</p>
@@ -39,7 +38,7 @@ const Index = () => {
           ))}
         </div>
       </nav>
-    </PageTransition>
+    </Fragment>
   );
 };
 
