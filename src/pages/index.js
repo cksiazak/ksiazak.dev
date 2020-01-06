@@ -1,55 +1,33 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import Helmet from '../components/mainHelmet';
-import useMedia from 'use-media';
+import React, { Fragment } from 'react';
+import { Link } from 'gatsby';
+import Helmet from 'react-helmet';
 
-import Navigation from '../components/Navigation/Navigation';
-import Header from '../components/Header/Header';
-import About from '../components/About';
-import Experience from '../components/Experience';
-import Projects from '../components/Projects';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-
-import '../styles/global.scss';
-import '../styles/index.scss';
+const indexData = [
+  { url: '/about', title: 'About Me', desc: '' },
+  { url: '/experience', title: 'Experience', desc: '' },
+  { url: '/projects', title: 'Projects', desc: '' },
+  { url: '/contact', title: 'Contact Me', desc: '' }
+];
 
 const Index = () => {
-  // Handling hamburger/mobile view
-  const isMobile = useMedia({ maxWidth: 800 });
-  const [hamburgerOpen, setHamburgerOpen] = useState(false);
-  const mobileNavControl = () => {
-    !hamburgerOpen ? setHamburgerOpen(true) : setHamburgerOpen(false);
-  };
-
-  useEffect(() => {
-    if (!isMobile) {
-      setHamburgerOpen(false);
-    }
-  }, [isMobile]);
-
   return (
     <Fragment>
-      <Helmet />
-      <Navigation
-        hamburgerState={hamburgerOpen}
-        mobileNavControl={mobileNavControl}
-        isMobile={isMobile}
-      />
-      <div
-        className={`component-container ${hamburgerOpen &&
-          'mobile-container-effect'}`}
-      >
-        <div className="content-container">
-          <Header />
-          <About />
-          <Experience />
-          <Projects />
-          <Contact />
-        </div>
-        <Footer />
+      <IndexMetaData />
+      <div>
+        {indexData.map((page, i) => (
+          <div key={i}>
+            <Link to={page.url}>{page.title}</Link>
+          </div>
+        ))}
       </div>
     </Fragment>
   );
 };
+
+const IndexMetaData = () => (
+  <Helmet>
+    <title>Christopher Ksiazak</title>
+  </Helmet>
+);
 
 export default Index;
