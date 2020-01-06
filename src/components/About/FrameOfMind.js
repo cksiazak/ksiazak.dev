@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
     width: '100%',
     padding: '75px 0px',
     background: '#AFBC88',
-    boxShadow: 'inset 0px -2px 10px 2px rgba(42,42,42,0.6)'
+    boxShadow: 'inset 0px 2px 10px 1px rgba(42,42,42,0.4)'
   },
   innerContainer: {
     display: 'flex',

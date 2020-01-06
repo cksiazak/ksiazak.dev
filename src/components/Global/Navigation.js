@@ -15,14 +15,14 @@ const useStyles = createUseStyles({
     background: 'whitesmoke'
   },
   innerNavContainer: {
-    width: '80%',
+    width: '85%',
     display: 'flex',
     justifyContent: 'space-between',
     padding: '20px 0px',
     fontSize: '1.8rem'
   },
   listStyle: {
-    width: '40%',
+    width: '45%',
     display: 'flex',
     justifyContent: 'space-between'
   },
@@ -43,7 +43,7 @@ const Navigation = () => {
         <ul className={listStyle}>
           <li>
             <Link to='/' className={linkStyle}>
-              Home
+              00. Home
             </Link>
           </li>
           {navData.map((link, i) => (
