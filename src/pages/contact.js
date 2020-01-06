@@ -1,10 +1,12 @@
 import React from 'react'
+import PageTransition from 'gatsby-plugin-page-transitions';
+
 
 const Contact = () => {
     return (
-        <div>
+        <PageTransition>
             CONTACT PAGE
-        </div>
+        </PageTransition>
     )
 }
 

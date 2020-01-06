@@ -13,12 +13,11 @@ module.exports = {
         start_url: '/',
         background_color: '#1C1F33',
         theme_color: '#ABA8B2',
-        display: 'browser',
+        display: 'browser'
         // icon: 'src/images/icon.png'
       }
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -32,6 +31,12 @@ module.exports = {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: 'en'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-page-transitions',
+      options: {
+        transitionTime: 500
       }
     }
   ]

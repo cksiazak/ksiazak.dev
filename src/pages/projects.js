@@ -1,10 +1,12 @@
 import React from 'react'
+import PageTransition from 'gatsby-plugin-page-transitions';
+
 
 const Projects = () => {
     return (
-        <div>
+        <PageTransition>
             PROVJECT PAGE
-        </div>
+        </PageTransition>
     )
 }
 

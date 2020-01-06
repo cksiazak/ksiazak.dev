@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 const ErrorPage = () => {
   return (
-    <div className='error-page'>
+    <PageTransition className='error-page'>
       <h2>
         404! This page doesn't exist
         <span role='img' aria-label='sad-emoji'>
@@ -13,7 +14,7 @@ const ErrorPage = () => {
       <p>
         <Link to='/'>Click here</Link> to return home.
       </p>
-    </div>
+    </PageTransition>
   );
 };
 

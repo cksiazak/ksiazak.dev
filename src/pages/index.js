@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import HeadData from '../components/HeadData';
+import PageTransition from 'gatsby-plugin-page-transitions';
+import Head from '../components/Head';
 
 // Reset CSS
 import '../styles/global.css';
@@ -12,7 +13,7 @@ import { indexData } from '../data/indexData';
 const metadata = {
   title: 'Christopher Ksiazak',
   desc: 'A personal developer portfolio and art piece by Christopher Ksiazak'
-}
+};
 
 const Index = () => {
   const {
@@ -20,24 +21,25 @@ const Index = () => {
     navigationList,
     navItem,
     pageHeading,
-    pageBreak
+    pageBreak,
+    linkDesc
   } = useStyles();
 
   return (
-    <div>
-      <HeadData pageTitle={metadata.title} pageDesc={metadata.desc} />
+    <PageTransition>
+      <Head pageTitle={metadata.title} pageDesc={metadata.desc} />
       <nav className={navContainer}>
         <div className={navigationList}>
           {indexData.map((page, i) => (
             <Link to={page.url} key={i} className={navItem}>
               <h2 className={pageHeading}>{page.title}</h2>
               <hr className={pageBreak} />
-              <p>Test</p>
+              <p className={linkDesc}>{page.desc}</p>
             </Link>
           ))}
         </div>
       </nav>
-    </div>
+    </PageTransition>
   );
 };
 

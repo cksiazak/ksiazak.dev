@@ -18,11 +18,11 @@ export const useStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '0px 50px',
+    padding: '0px 60px',
     textDecoration: 'none',
     background: '#0F0326',
     transition: '.4s',
-    color: 'red',
+    color: '#F4F4F8',
 
     '&:hover': {
       background: 'transparent',
@@ -41,7 +41,12 @@ export const useStyles = createUseStyles({
     border: 'none',
     borderBottom: '3px solid rgba(199, 204, 219, 0.5)',
     margin: '25px 0px',
-    width: '40%',
+    width: '50%',
     transition: '.4s'
+  },
+  linkDesc: {
+    fontSize: '2.2rem',
+    textAlign: 'center',
+    lineHeight: '125%'
   }
 });

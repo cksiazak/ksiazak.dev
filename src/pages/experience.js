@@ -1,10 +1,11 @@
 import React from 'react'
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 const Experience = () => {
     return (
-        <div>
+        <PageTransition>
             EXPERIENCEPAGE
-        </div>
+        </PageTransition>
     )
 }
 
