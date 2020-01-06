@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 // import components
 import Head from '../components/Global/Head';
@@ -8,9 +9,9 @@ import Header from '../components/About/AboutHeader';
 import FrameOfMind from '../components/About/FrameOfMind';
 import AboutMain from '../components/About/AboutMain';
 import Technologies from '../components/About/Technologies';
-import Goals from '../components/About/Goals';
 // Contact Component Here
 import Footer from '../components/Global/Footer';
+import { Link } from 'gatsby';
 
 const metadata = {
   title: 'Christopher Ksiazak - About Me',
@@ -19,7 +20,7 @@ const metadata = {
 
 const About = () => {
   return (
-    <Fragment>
+    <PageTransition>
       <Head metadata={metadata} />
       <Navigation />
       <PageWrapper>
@@ -27,10 +28,15 @@ const About = () => {
         <FrameOfMind />
         <AboutMain />
         <Technologies />
-        <Goals />
+        <div>
+          <h3>Would you like to know more?</h3>
+          <Link to='/experience' title='experience'>
+            Click here to go to the next page
+          </Link>
+        </div>
       </PageWrapper>
       <Footer />
-    </Fragment>
+    </PageTransition>
   );
 };
 

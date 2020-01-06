@@ -11,6 +11,7 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     position: 'fixed',
     top: '0',
+    zIndex: '10',
     width: '100%',
     background: 'whitesmoke'
   },

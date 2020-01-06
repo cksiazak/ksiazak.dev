@@ -130,6 +130,8 @@ table {
 
 /* Global values */
 
+@import url('https://fonts.googleapis.com/css?family=Courgette|Fugaz+One|Lobster|Roboto&display=swap');
+
 * {
   box-sizing: border-box;
 }
