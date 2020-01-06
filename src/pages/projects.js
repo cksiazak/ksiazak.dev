@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 // import components
 import Head from '../components/Global/Head';
 import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
+import Header from '../components/Projects/ProjectHeader';
+import Applications from '../components/Projects/Applications';
+// Contact section here
+import Footer from '../components/Global/Footer';
 
 const metadata = {
   title: 'Christopher Ksiazak - Projects',
@@ -12,14 +16,15 @@ const metadata = {
 
 const Projects = () => {
   return (
-    <div>
+    <Fragment>
       <Head metadata={metadata} />
       <Navigation />
       <PageWrapper>
-        Projects
-        {/* Placeholder */}
+        <Header />
+        <Applications />
       </PageWrapper>
-    </div>
+      <Footer />
+    </Fragment>
   );
 };
 

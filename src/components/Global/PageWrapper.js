@@ -6,8 +6,9 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '150px 0px',
-    width: '100%'
+    padding: '100px 0px',
+    width: '100%',
+    background: 'white'
   }
 });
 

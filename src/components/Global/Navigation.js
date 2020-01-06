@@ -8,7 +8,11 @@ import { navData } from '../../data/navData';
 const useStyles = createUseStyles({
   mainNav: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    position: 'fixed',
+    top: '0',
+    width: '100%',
+    background: 'whitesmoke'
   },
   innerNavContainer: {
     width: '80%',

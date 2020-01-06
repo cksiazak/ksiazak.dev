@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 // import components
 import Head from '../components/Global/Head';
 import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
+import Header from '../components/Experience/ExperienceHeader';
+import Experiences from '../components/Experience/Experiences';
+// Conact Sections here
+import Footer from '../components/Global/Footer';
 
 const metadata = {
   title: 'Christopher Ksiazak - Experiences',
@@ -12,14 +16,15 @@ const metadata = {
 
 const Experience = () => {
   return (
-    <div>
+    <Fragment>
       <Head metadata={metadata} />
       <Navigation />
       <PageWrapper>
-        Experience
-        {/* Placeholder */}
+        <Header />
+        <Experiences />
       </PageWrapper>
-    </div>
+      <Footer />
+    </Fragment>
   );
 };
 

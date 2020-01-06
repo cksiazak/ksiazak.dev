@@ -5,7 +5,8 @@ const useStyles = createUseStyles({
   AboutHeaderMain: {
     display: 'flex',
     justifyContent: 'center',
-    width: '100%'
+    width: '100%',
+    padding: '100px 0px'
   },
   headingContainer: {
     display: 'flex',
@@ -51,9 +52,9 @@ const Header = () => {
         </div>
 
         <p className={shortBio}>
-          I am a (mostly) self taught developer from El Paso, Texas. Apart
-          from English and Spanish, I also speak HTML, CSS, and Javascript.
-        </p> 
+          I am a (mostly) self taught developer from El Paso, Texas. Apart from
+          English and Spanish, I also speak HTML, CSS, and Javascript.
+        </p>
       </div>
     </section>
   );
