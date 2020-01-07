@@ -21,8 +21,9 @@ const useStyles = createUseStyles({
     fontSize: '5.4rem'
   },
   headerDesc: {
-    fontSize: '3.4rem',
-    lineheight: '125%'
+    fontSize: '3.2rem',
+    lineHeight: '125%',
+    width: '80%'
   }
 });
 
