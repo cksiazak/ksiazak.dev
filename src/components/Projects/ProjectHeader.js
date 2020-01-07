@@ -6,7 +6,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    padding: '150px 0px 200px'
+    padding: '150px 0px 250px'
   },
   innerProjectContainer: {
     display: 'flex',

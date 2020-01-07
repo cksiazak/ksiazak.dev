@@ -40,7 +40,7 @@ const Navigation = () => {
       <div className={innerNavContainer}>
         <AniLink
           paintDrip
-          hex='#663399'
+          hex='#0F0326'
           duration={1}
           to='/'
           className={linkStyle}
@@ -51,7 +51,7 @@ const Navigation = () => {
           <li>
             <AniLink
               paintDrip
-              hex='#663399'
+              hex='#0F0326'
               duration={1}
               to='/'
               className={linkStyle}
@@ -62,9 +62,9 @@ const Navigation = () => {
           {navData.map((link, i) => (
             <li key={i}>
               <AniLink
-                swipe
-                left='entry'
+                cover
                 to={link.url}
+                direction='right'
                 className={linkStyle}
                 title={link.title}
               >

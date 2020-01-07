@@ -13,7 +13,10 @@ const useStyles = createUseStyles({
   },
   sectionHeader: {
     fontSize: '3.5rem',
-    paddingBottom: '50px'
+    padding: '50px 0px',
+    width: '100%',
+    textAlign: 'center',
+    boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)'
   },
   projectContainer: {
     display: 'flex',
@@ -21,11 +24,8 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
     padding: '50px 0px',
-    '&:nth-child(2)': {
-      boxShadow: 'inset 0px 2px 10px 1px rgba(42,42,42,0.4)'
-    },
-    '&:nth-child(4)': {
-      boxShadow: 'inset 0px 2px 10px 1px rgba(42,42,42,0.4)'
+    '&:nth-child(3)': {
+      boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)'
     },
     '&:nth-child(odd)': {
       '& .reverseContainer': {
@@ -61,9 +61,13 @@ const useStyles = createUseStyles({
     lineHeight: '125%',
     '& p:nth-child(2)': {
       padding: '10px 0px'
+    },
+    '& hr': {
+      margin: '10px 0px',
+      border: '0px',
+      borderBottom: '2px solid'
     }
   },
-  buttonContainer: {},
   listStyle: {
     display: 'flex',
     justifyContent: 'space-between'
@@ -84,7 +88,6 @@ const IndividualApp = ({
     projectHeader,
     projectDesc,
     innerProjectDesc,
-    buttonContainer,
     listStyle,
     imageStyle
   } = useStyles();
@@ -98,14 +101,6 @@ const IndividualApp = ({
               {description.map((desc, i) => (
                 <p key={i}>{desc}</p>
               ))}
-              <div className={buttonContainer}>
-                <a href={url} title={title}>
-                  PROJECT
-                </a>
-                <a href={githubLink} title={`${title} Github`}>
-                  GIT
-                </a>
-              </div>
               <hr />
               <ul className={listStyle}>
                 {technologies.map((tech, i) => (

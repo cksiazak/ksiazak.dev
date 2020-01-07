@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import avatar from '../../assets/avatar.jpg';
 
 const useStyles = createUseStyles({
   mainSection: {
@@ -20,14 +21,20 @@ const useStyles = createUseStyles({
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
-    padding: '50px 0px'
+    padding: '50px 0px',
+    alignItems: 'center'
   },
   textContainer: {
     fontSize: '2rem',
     lineHeight: '125%',
-    width: '45%'
+    width: '55%'
   },
-  selfImage: {}
+  selfImage: {
+    width: 'auto',
+    height: '350px',
+    marginRight: '100px',
+    borderRadius: '25px 0px'
+  }
 });
 
 const AboutMain = () => {
@@ -61,7 +68,7 @@ const AboutMain = () => {
               development with distributed teams.
             </p>
           </div>
-          <img className={selfImage} />
+          <img className={selfImage} src={avatar} alt='Christopher Ksiazak' />
         </div>
       </div>
     </section>
