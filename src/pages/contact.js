@@ -1,5 +1,5 @@
-import React from 'react';
-import PageTransition from 'gatsby-plugin-page-transitions';
+import React, { Fragment } from 'react';
+import { TransitionPortal } from 'gatsby-plugin-transition-link';
 
 // import components
 import Head from '../components/Global/Head';
@@ -8,21 +8,23 @@ import PageWrapper from '../components/Global/PageWrapper';
 import Footer from '../components/Global/Footer';
 
 const metadata = {
-  title: 'Christopher Ksiazak - Contact',
-  desc: 'My contact information and ways to reach me'
+  pageTitle: 'Christopher Ksiazak - Contact',
+  pageDesc: 'My contact information and ways to reach me'
 };
 
 const Contact = () => {
   return (
-    <PageTransition>
+    <Fragment>
       <Head metadata={metadata} />
-      <Navigation />
+      <TransitionPortal>
+        <Navigation />
+      </TransitionPortal>
       <PageWrapper>
         Contact
         {/* Placeholder */}
       </PageWrapper>
       <Footer />
-    </PageTransition>
+    </Fragment>
   );
 };
 

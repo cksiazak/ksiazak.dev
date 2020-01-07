@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
-    padding: '50px 0px'
+    padding: '50px 0px 0px'
   },
   sectionHeader: {
     fontSize: '3.5rem',
@@ -18,25 +18,59 @@ const useStyles = createUseStyles({
   projectContainer: {
     display: 'flex',
     width: '100%',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '50px 0px',
+    '&:nth-child(2)': {
+      boxShadow: 'inset 0px 2px 10px 1px rgba(42,42,42,0.4)'
+    },
+    '&:nth-child(4)': {
+      boxShadow: 'inset 0px 2px 10px 1px rgba(42,42,42,0.4)'
+    },
     '&:nth-child(odd)': {
-      flexDirection: 'row-reverse'
+      '& .reverseContainer': {
+        flexDirection: 'row-reverse'
+      },
+      '& .reverseTitle': {
+        alignItems: 'flex-end'
+      }
     }
+  },
+  innerContainer: {
+    display: 'flex',
+    width: '75%',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    padding: '25px 0px'
   },
   textContainer: {
     display: 'flex',
     flexDirection: 'column',
-    padding: '0px 100px'
+    justifyContent: 'space-between',
+    width: '60%',
+    height: '100%'
   },
   projectHeader: {
-    fontSize: '2.6rem'
+    fontSize: '3rem',
+    paddingBottom: '20px'
   },
-  projectDesc: {},
-  innerProjectDesc: {},
+  projectDesc: {
+    fontSize: '2rem'
+  },
+  innerProjectDesc: {
+    lineHeight: '125%',
+    '& p:nth-child(2)': {
+      padding: '10px 0px'
+    }
+  },
   buttonContainer: {},
+  listStyle: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
   imageStyle: {
-    width: '50%',
-    height: 'auto'
+    width: 'auto',
+    height: '300px'
   }
 });
 
@@ -45,40 +79,44 @@ const IndividualApp = ({
 }) => {
   const {
     projectContainer,
+    innerContainer,
     textContainer,
     projectHeader,
     projectDesc,
     innerProjectDesc,
     buttonContainer,
+    listStyle,
     imageStyle
   } = useStyles();
   return (
     <div className={projectContainer}>
-      <div className={textContainer}>
-        <h3 className={projectHeader}>{title}</h3>
-        <div className={projectDesc}>
-          <div className={innerProjectDesc}>
-            {description.map((desc, i) => (
-              <p key={i}>{desc}</p>
-            ))}
-            <div className={buttonContainer}>
-              <a href={url} title={title}>
-                PROJECT
-              </a>
-              <a href={githubLink} title={`${title} Github`}>
-                GIT
-              </a>
-            </div>
-            <hr />
-            <ul>
-              {technologies.map((tech, i) => (
-                <li key={i}>{tech}</li>
+      <div className={`${innerContainer} reverseContainer`}>
+        <div className={`${textContainer} reverseTitle`}>
+          <h3 className={projectHeader}>{title}</h3>
+          <div className={projectDesc}>
+            <div className={innerProjectDesc}>
+              {description.map((desc, i) => (
+                <p key={i}>{desc}</p>
               ))}
-            </ul>
+              <div className={buttonContainer}>
+                <a href={url} title={title}>
+                  PROJECT
+                </a>
+                <a href={githubLink} title={`${title} Github`}>
+                  GIT
+                </a>
+              </div>
+              <hr />
+              <ul className={listStyle}>
+                {technologies.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
+        <img src={imgurl} alt={title} className={imageStyle} />
       </div>
-      <img src={imgurl} alt={title} className={imageStyle} />
     </div>
   );
 };

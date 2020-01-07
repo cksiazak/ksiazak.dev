@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { createUseStyles } from 'react-jss';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 // navigation data
 import { navData } from '../../data/navData';
@@ -38,20 +38,26 @@ const Navigation = () => {
   return (
     <nav className={mainNav}>
       <div className={innerNavContainer}>
-        <Link to='/' className={linkStyle}>
+        <AniLink paintDrip duration={1} to='/' className={linkStyle}>
           {'<CK/>'}
-        </Link>
+        </AniLink>
         <ul className={listStyle}>
           <li>
-            <Link to='/' className={linkStyle}>
+            <AniLink paintDrip duration={1} to='/' className={linkStyle}>
               00. Home
-            </Link>
+            </AniLink>
           </li>
           {navData.map((link, i) => (
             <li key={i}>
-              <Link to={link.url} className={linkStyle} title={link.title}>
+              <AniLink
+                swipe
+                top='entry'
+                to={link.url}
+                className={linkStyle}
+                title={link.title}
+              >
                 {link.title}
-              </Link>
+              </AniLink>
             </li>
           ))}
         </ul>

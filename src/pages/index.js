@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import Head from '../components/Global/Head';
-import PageTransition from 'gatsby-plugin-page-transitions';
 import { createUseStyles } from 'react-jss';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 // component data
 import { navData } from '../data/navData';
@@ -113,7 +113,7 @@ const Index = () => {
   } = useStyles();
 
   return (
-    <PageTransition>
+    <Fragment>
       <Head metadata={metadata} />
       <div className={pageContainer}>
         <div className={pageHeadingUpper}>
@@ -125,7 +125,9 @@ const Index = () => {
         <nav className={navContainer}>
           <div className={navigationList}>
             {navData.map((page, i) => (
-              <Link
+              <AniLink
+                paintDrip
+                duration={1}
                 to={page.url}
                 key={i}
                 className={navItem}
@@ -134,12 +136,12 @@ const Index = () => {
                 <h2 className={pageHeading}>{page.title}</h2>
                 <hr className={pageBreak} />
                 <p className={linkDesc}>{page.desc}</p>
-              </Link>
+              </AniLink>
             ))}
           </div>
         </nav>
       </div>
-    </PageTransition>
+    </Fragment>
   );
 };
 

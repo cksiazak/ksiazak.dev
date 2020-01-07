@@ -1,5 +1,5 @@
-import React from 'react';
-import PageTransition from 'gatsby-plugin-page-transitions';
+import React, { Fragment } from 'react';
+import { TransitionPortal } from 'gatsby-plugin-transition-link';
 
 // import components
 import Head from '../components/Global/Head';
@@ -17,15 +17,17 @@ const metadata = {
 
 const Experience = () => {
   return (
-    <PageTransition>
+    <Fragment>
       <Head metadata={metadata} />
-      <Navigation />
+      <TransitionPortal>
+        <Navigation />
+      </TransitionPortal>
       <PageWrapper>
         <Header />
         <Experiences />
       </PageWrapper>
       <Footer />
-    </PageTransition>
+    </Fragment>
   );
 };
 
