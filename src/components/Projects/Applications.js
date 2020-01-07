@@ -1,12 +1,19 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
+import { projects } from '../../data/projectData';
+
 const useStyles = createUseStyles({
   mainProjectSection: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '100%'
+    width: '100%',
+    padding: '50px 0px'
+  },
+  sectionHeader: {
+    fontSize: '3.5rem',
+    paddingBottom: '50px'
   },
   projectContainer: {
     display: 'flex',
@@ -18,58 +25,72 @@ const useStyles = createUseStyles({
   },
   textContainer: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    padding: '0px 100px'
   },
   projectHeader: {
     fontSize: '2.6rem'
   },
   projectDesc: {},
   innerProjectDesc: {},
-  buttonContainer: {}
+  buttonContainer: {},
+  imageStyle: {
+    width: '50%',
+    height: 'auto'
+  }
 });
 
-const IndividualApp = () => {
+const IndividualApp = ({
+  data: { title, url, githubLink, description, technologies, imgurl }
+}) => {
   const {
     projectContainer,
     textContainer,
     projectHeader,
     projectDesc,
     innerProjectDesc,
-    buttonContainer
+    buttonContainer,
+    imageStyle
   } = useStyles();
   return (
     <div className={projectContainer}>
       <div className={textContainer}>
-        <h3 className={projectHeader}>PROJECTTITLE</h3>
+        <h3 className={projectHeader}>{title}</h3>
         <div className={projectDesc}>
           <div className={innerProjectDesc}>
-            <p>PROJECT DESC</p>
+            {description.map((desc, i) => (
+              <p key={i}>{desc}</p>
+            ))}
             <div className={buttonContainer}>
-              <a href='/'>PROJECT</a>
-              <a href='/'>GIT</a>
+              <a href={url} title={title}>
+                PROJECT
+              </a>
+              <a href={githubLink} title={`${title} Github`}>
+                GIT
+              </a>
             </div>
             <hr />
             <ul>
-              <li>TECH</li>
-              <li>TECH</li>
-              <li>TECH</li>
+              {technologies.map((tech, i) => (
+                <li key={i}>{tech}</li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
-      <div>IMG</div>
+      <img src={imgurl} alt={title} className={imageStyle} />
     </div>
   );
 };
 
 const Applications = () => {
-  const { mainProjectSection } = useStyles();
+  const { mainProjectSection, sectionHeader } = useStyles();
   return (
     <section className={mainProjectSection}>
-      <h2>Projects</h2>
-      <IndividualApp />
-      <IndividualApp />
-      <IndividualApp />
+      <h2 className={sectionHeader}>03. Projects</h2>
+      {projects.map((proj, i) => (
+        <IndividualApp key={i} data={proj} />
+      ))}
     </section>
   );
 };

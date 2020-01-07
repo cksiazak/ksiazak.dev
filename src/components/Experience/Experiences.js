@@ -75,7 +75,7 @@ const Experiences = () => {
   return (
     <section className={mainSection}>
       <div className={innerContainer}>
-        <h2 className={sectionHeading}>Experiences</h2>
+        <h2 className={sectionHeading}>02. Experiences</h2>
         {workHistory.map((job, id) => (
           <div key={id} className={experienceContainer}>
             <div className={jobInfo}>
