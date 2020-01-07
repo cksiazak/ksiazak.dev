@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
 import Head from '../components/Global/Head';
 import { createUseStyles } from 'react-jss';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
@@ -128,6 +127,7 @@ const Index = () => {
               <AniLink
                 paintDrip
                 duration={1}
+                hex='#663399'
                 to={page.url}
                 key={i}
                 className={navItem}

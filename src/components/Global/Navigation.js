@@ -38,12 +38,24 @@ const Navigation = () => {
   return (
     <nav className={mainNav}>
       <div className={innerNavContainer}>
-        <AniLink paintDrip duration={1} to='/' className={linkStyle}>
+        <AniLink
+          paintDrip
+          hex='#663399'
+          duration={1}
+          to='/'
+          className={linkStyle}
+        >
           {'<CK/>'}
         </AniLink>
         <ul className={listStyle}>
           <li>
-            <AniLink paintDrip duration={1} to='/' className={linkStyle}>
+            <AniLink
+              paintDrip
+              hex='#663399'
+              duration={1}
+              to='/'
+              className={linkStyle}
+            >
               00. Home
             </AniLink>
           </li>
@@ -51,7 +63,7 @@ const Navigation = () => {
             <li key={i}>
               <AniLink
                 swipe
-                top='entry'
+                left='entry'
                 to={link.url}
                 className={linkStyle}
                 title={link.title}
