@@ -13,22 +13,28 @@ const useStyles = createUseStyles({
     top: '0',
     zIndex: '10',
     width: '100%',
-    background: 'whitesmoke'
+    background: '#E26D5C'
   },
   innerNavContainer: {
     width: '85%',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '20px 0px',
     fontSize: '1.8rem'
   },
   listStyle: {
     width: '45%',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   linkStyle: {
-    textDecoration: 'none'
+    textDecoration: 'none',
+    padding: '20px 0px',
+    color: 'black',
+    transition: '.3s',
+    '&:hover': {
+      color: 'blue'
+    }
   }
 });
 
