@@ -5,6 +5,9 @@ module.exports = {
     description: 'Personal portolio for Christopher Ksiazak'
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-jss`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -17,7 +20,6 @@ module.exports = {
         // icon: 'src/images/icon.png'
       }
     },
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -32,7 +34,6 @@ module.exports = {
       options: {
         lang: 'en'
       }
-    },
-    `gatsby-plugin-transition-link`
+    }
   ]
 };

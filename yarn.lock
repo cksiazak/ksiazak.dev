@@ -4487,6 +4487,13 @@ gatsby-plugin-html-attributes@^1.0.5:
   dependencies:
     babel-runtime "^6.26.0"
 
+gatsby-plugin-jss@^2.1.17:
+  version "2.1.17"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-jss/-/gatsby-plugin-jss-2.1.17.tgz#a048ca323bc8361659090024e4fb1345efdb7835"
+  integrity sha512-pAsS9Y7mjp1txyrpDS/O0AR3TIVHO1ERvGTmptSjsv9Tt52LvGQ7F3K3WMR1dwI/+KlCmrG6m8ziSLw9oVynhA==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+
 gatsby-plugin-manifest@^2.2.34:
   version "2.2.34"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.34.tgz#578ad8ef689f06564097649a941744ace25d4b27"
