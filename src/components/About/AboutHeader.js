@@ -19,19 +19,23 @@ const useStyles = createUseStyles({
     paddingBottom: '75px',
 
     '& span': {
-      fontSize: '2.4rem'
+      fontSize: '2.4rem',
+      color: '#BBC3C0'
     },
     '& h1': {
-      fontSize: '8.2rem'
+      fontSize: '8.2rem',
+      color: '#B41F15'
     },
     '& p': {
-      fontSize: '5rem'
+      fontSize: '5rem',
+      color: '#CACAC9'
     }
   },
   shortBio: {
     fontSize: '2.5rem',
     width: '90%',
-    lineHeight: '125%'
+    lineHeight: '125%',
+    color: '#CACAC9'
   }
 });
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import Head from '../components/Global/Head';
 import { createUseStyles } from 'react-jss';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import Helmet from 'react-helmet';
 
 // component data
 import { navData } from '../data/navData';
@@ -91,11 +91,6 @@ const useStyles = createUseStyles({
   }
 });
 
-const metadata = {
-  title: 'Christopher Ksiazak',
-  desc: 'A personal developer portfolio and art piece by Christopher Ksiazak'
-};
-
 const Index = () => {
   const {
     pageContainer,
@@ -113,7 +108,14 @@ const Index = () => {
 
   return (
     <Fragment>
-      <Head metadata={metadata} />
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>Christopher Ksiazak</title>
+        <meta
+          name='description'
+          content='A personal developer portfolio and art piece by Christopher Ksiazak'
+        />
+      </Helmet>
       <div className={pageContainer}>
         <div className={pageHeadingUpper}>
           <div className={headingContainer}>
@@ -126,7 +128,7 @@ const Index = () => {
             {navData.map((page, i) => (
               <AniLink
                 paintDrip
-                duration={1}
+                duration={0.75}
                 hex='#663399'
                 to={page.url}
                 key={i}

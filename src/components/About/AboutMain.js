@@ -7,7 +7,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     width: '100%',
     justifyContent: 'center',
-    padding: '150px 0px'
+    padding: '125px 0px'
   },
   innerSection: {
     display: 'flex',
@@ -15,19 +15,21 @@ const useStyles = createUseStyles({
     flexDirection: 'column'
   },
   aboutHeading: {
-    fontSize: '3.5rem'
+    fontSize: '3.5rem',
+    color: '#CACAC9'
   },
   outerInfoContainer: {
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
-    padding: '50px 0px',
+    padding: '40px 0px',
     alignItems: 'center'
   },
   textContainer: {
-    fontSize: '2rem',
+    fontSize: '2.25rem',
     lineHeight: '125%',
-    width: '55%'
+    width: '55%',
+    color: '#899D9E'
   },
   selfImage: {
     width: 'auto',
@@ -49,7 +51,7 @@ const AboutMain = () => {
   return (
     <section className={mainSection}>
       <div className={innerSection}>
-        <h2 className={aboutHeading}>01. About Me</h2>
+        <h2 className={aboutHeading}>About Me</h2>
         <div className={outerInfoContainer}>
           <div className={textContainer}>
             <p>

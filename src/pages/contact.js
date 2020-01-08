@@ -1,21 +1,23 @@
 import React, { Fragment } from 'react';
 import { TransitionPortal } from 'gatsby-plugin-transition-link';
+import Helmet from 'react-helmet';
 
 // import components
-import Head from '../components/Global/Head';
 import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
 import Footer from '../components/Global/Footer';
 
-const metadata = {
-  pageTitle: 'Christopher Ksiazak - Contact',
-  pageDesc: 'My contact information and ways to reach me'
-};
-
 const Contact = () => {
   return (
     <Fragment>
-      <Head metadata={metadata} />
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>Christopher Ksiazak - Contact</title>
+        <meta
+          name='description'
+          content='My contact information and ways to reach me'
+        />
+      </Helmet>
       <TransitionPortal>
         <Navigation />
       </TransitionPortal>

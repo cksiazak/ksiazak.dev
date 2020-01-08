@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     padding: '50px 0px 0px',
     width: '100%',
-    background: 'white'
+    background: '#10294C'
   }
 });
 

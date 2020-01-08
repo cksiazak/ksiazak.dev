@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { TransitionPortal } from 'gatsby-plugin-transition-link';
+import Helmet from 'react-helmet';
 
 // import components
-import Head from '../components/Global/Head';
 import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
 import Header from '../components/Projects/ProjectHeader';
@@ -10,15 +10,17 @@ import Applications from '../components/Projects/Applications';
 // Contact section here
 import Footer from '../components/Global/Footer';
 
-const metadata = {
-  title: 'Christopher Ksiazak - Projects',
-  desc: 'Building new projects using new technologies'
-};
-
 const Projects = () => {
   return (
     <Fragment>
-      <Head metadata={metadata} />
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>Christopher Ksiazak - Projects</title>
+        <meta
+          name='description'
+          content='Building new projects using new technologies'
+        />
+      </Helmet>
       <TransitionPortal>
         <Navigation />
       </TransitionPortal>

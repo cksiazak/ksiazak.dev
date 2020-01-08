@@ -23,12 +23,13 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
     background: '#276FBF',
-    boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)'
+    boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)',
+    padding: '50px 0px'
   },
   techHeader: {
     fontSize: '3.5rem',
     borderBottom: '2px solid red',
-    padding: '25px 0px 10px'
+    padding: '25px 0px 20px'
   },
   listStyle: {
     display: 'flex',

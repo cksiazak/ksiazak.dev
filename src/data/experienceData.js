@@ -4,9 +4,9 @@ export const workHistory = [
     title: 'Project Coordinator',
     date: 'March 2017 - Current',
     description: [
-      'I joined C3i solutions in March of 2017, starting off as a support representative for our client Castlight Health. I assisted in developing our program from a support oriented role into a more technical one.',
-      'As we transitioned through several product launches, I assisted in knowledge base development, processing reporting checks via Salesforce and JIRA, and reviewing/triaging support incidents.',
-      "At the moment, I assist in maintaining the client's relationship with Anthem by overseeing support requests, analyzing flat files, and API requests."
+      'I joined C3i solutions in March of 2017, starting off as a support representative for our client Castlight Health. I was promptly promoted to Project Coordinator. From there, I assisted in developing our program from a support oriented role into a technical one.',
+      'As we transitioned through several product launches, I assisted in knowledge base development, processing reporting checks via Salesforce and JIRA, and quantified that data to determine trends.',
+      "At the moment, I assist in maintaining the client's relationship with Anthem by overseeing support incidents, analyzing flat files, and validating API requests."
     ]
   },
   {

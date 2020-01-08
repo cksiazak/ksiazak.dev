@@ -31,9 +31,6 @@ const useStyles = createUseStyles({
     zIndex: '0',
     '&:nth-child(even)': {
       borderRadius: '0px 25px'
-    },
-    '&:hover': {
-      transform: 'scale(1.01)'
     }
   },
   jobInfo: {
@@ -75,7 +72,7 @@ const Experiences = () => {
   return (
     <section className={mainSection}>
       <div className={innerContainer}>
-        <h2 className={sectionHeading}>02. Experiences</h2>
+        <h2 className={sectionHeading}>Experiences</h2>
         {workHistory.map((job, id) => (
           <div key={id} className={experienceContainer}>
             <div className={jobInfo}>

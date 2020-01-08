@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
     top: '0',
     zIndex: '10',
     width: '100%',
-    background: '#E26D5C'
+    background: '#BBC3C0'
   },
   innerNavContainer: {
     width: '85%',
@@ -47,7 +47,7 @@ const Navigation = () => {
         <AniLink
           paintDrip
           hex='#0F0326'
-          duration={1}
+          duration={0.75}
           to='/'
           className={linkStyle}
         >
@@ -58,11 +58,11 @@ const Navigation = () => {
             <AniLink
               paintDrip
               hex='#0F0326'
-              duration={1}
+              duration={0.75}
               to='/'
               className={linkStyle}
             >
-              00. Home
+              Home
             </AniLink>
           </li>
           {navData.map((link, i) => (
@@ -70,6 +70,7 @@ const Navigation = () => {
               <AniLink
                 cover
                 to={link.url}
+                duration={0.75}
                 direction='right'
                 className={linkStyle}
                 title={link.title}
