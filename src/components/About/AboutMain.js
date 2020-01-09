@@ -16,20 +16,20 @@ const useStyles = createUseStyles({
   },
   aboutHeading: {
     fontSize: '3.5rem',
-    color: '#CACAC9'
+    color: '#F0AE4E'
   },
   outerInfoContainer: {
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
     padding: '40px 0px',
-    alignItems: 'center'
+    alignItems: 'flex-end'
   },
   textContainer: {
     fontSize: '2.25rem',
     lineHeight: '125%',
-    width: '55%',
-    color: '#899D9E'
+    width: '60%',
+    color: '#F7EDDB'
   },
   selfImage: {
     width: 'auto',

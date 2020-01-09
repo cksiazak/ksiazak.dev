@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
     top: '0',
     zIndex: '10',
     width: '100%',
-    background: '#BBC3C0'
+    background: '#E9E6FF'
   },
   innerNavContainer: {
     width: '85%',
@@ -33,7 +33,7 @@ const useStyles = createUseStyles({
     color: 'black',
     transition: '.3s',
     '&:hover': {
-      color: 'blue'
+      color: '#D81E5B'
     }
   }
 });

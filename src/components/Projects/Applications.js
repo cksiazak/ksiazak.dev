@@ -2,6 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { projects } from '../../data/projectData';
+import { IoLogoGithub } from 'react-icons/io';
 
 const useStyles = createUseStyles({
   mainProjectSection: {
@@ -16,7 +17,9 @@ const useStyles = createUseStyles({
     padding: '50px 0px',
     width: '100%',
     textAlign: 'center',
-    boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)'
+    boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)',
+    color: '#011502',
+    background: '#C9936B'
   },
   projectContainer: {
     display: 'flex',
@@ -24,10 +27,12 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
     padding: '50px 0px',
+    background: '#E9E6FF',
     '&:nth-child(3)': {
       boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)'
     },
     '&:nth-child(odd)': {
+      background: '#C5D1EB',
       '& .reverseContainer': {
         flexDirection: 'row-reverse'
       },
@@ -41,18 +46,38 @@ const useStyles = createUseStyles({
     width: '75%',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    padding: '25px 0px'
+    padding: '25px 0px',
+    alignItems: 'center'
   },
   textContainer: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
     width: '60%',
     height: '100%'
   },
+  projectHeadingContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingBottom: '50px',
+    fontSize: '3rem'
+  },
   projectHeader: {
-    fontSize: '3rem',
-    paddingBottom: '20px'
+    textDecoration: 'none',
+    color: '#22223B',
+    transition: '0.2s',
+    borderBottom: '2px solid',
+    '&:hover': {
+      color: '#D81E5B'
+    }
+  },
+  gitLink: {
+    textDecoration: 'none',
+    color: '#22223B',
+    transition: '0.2s',
+    '&:hover': {
+      color: '#D81E5B'
+    }
   },
   projectDesc: {
     fontSize: '2rem'
@@ -89,13 +114,26 @@ const IndividualApp = ({
     projectDesc,
     innerProjectDesc,
     listStyle,
-    imageStyle
+    imageStyle,
+    projectHeadingContainer,
+    gitLink
   } = useStyles();
   return (
     <div className={projectContainer}>
       <div className={`${innerContainer} reverseContainer`}>
         <div className={`${textContainer} reverseTitle`}>
-          <h3 className={projectHeader}>{title}</h3>
+          <div className={projectHeadingContainer}>
+            <a href={url} className={projectHeader} title={title}>
+              {title}
+            </a>
+            <a
+              href={githubLink}
+              title={`${title} Github`}
+              className={gitLink}
+            >
+              <IoLogoGithub />
+            </a>
+          </div>
           <div className={projectDesc}>
             <div className={innerProjectDesc}>
               {description.map((desc, i) => (
@@ -120,7 +158,7 @@ const Applications = () => {
   const { mainProjectSection, sectionHeader } = useStyles();
   return (
     <section className={mainProjectSection}>
-      <h2 className={sectionHeader}>03. Projects</h2>
+      <h2 className={sectionHeader}>Projects</h2>
       {projects.map((proj, i) => (
         <IndividualApp key={i} data={proj} />
       ))}

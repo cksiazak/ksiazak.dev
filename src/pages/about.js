@@ -11,7 +11,6 @@ import AboutMain from '../components/About/AboutMain';
 import Technologies from '../components/About/Technologies';
 // Contact Component Here
 import Footer from '../components/Global/Footer';
-import { Link } from 'gatsby';
 
 const About = () => {
   return (

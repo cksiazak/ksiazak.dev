@@ -34,7 +34,7 @@ const Header = () => {
         <p className={headingInfo}>
           most of my experience comes from the support side of things, but I
           have worked with several groups, learning new techniques and
-          technologies, and participated in code reviews. I like to help and
+          technologies, contributing toward a common goal. I enjoy helping and
           learn where I can.
         </p>
       </div>

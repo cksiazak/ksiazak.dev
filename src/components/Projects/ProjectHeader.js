@@ -18,12 +18,14 @@ const useStyles = createUseStyles({
     }
   },
   header: {
-    fontSize: '5.4rem'
+    fontSize: '5.4rem',
+    color: '#D36582'
   },
   headerDesc: {
     fontSize: '3.2rem',
     lineHeight: '125%',
-    width: '80%'
+    width: '80%',
+    color: '#E9E6FF'
   }
 });
 

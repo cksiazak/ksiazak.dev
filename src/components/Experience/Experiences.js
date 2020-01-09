@@ -17,18 +17,19 @@ const useStyles = createUseStyles({
   sectionHeading: {
     fontSize: '4rem',
     padding: '0px 0px 50px',
-    fontFamily: "'Roboto', 'sans-serif'"
+    color: '#E9E6FF'
   },
   experienceContainer: {
     display: 'flex',
     flexDirection: 'column',
     margin: '25px 0px',
     padding: '20px 30px',
-    background: '#2E294E',
+    background: '#5E6572',
     borderRadius: '25px 0px',
     transition: '.4s',
     position: 'relative',
     zIndex: '0',
+    boxShadow: '4px 4px 6px rgba(0, 0, 0, .4)',
     '&:nth-child(even)': {
       borderRadius: '0px 25px'
     }
@@ -40,20 +41,20 @@ const useStyles = createUseStyles({
   },
   jobLocation: {
     fontSize: '3.2rem',
-    color: '#FBB13C'
+    color: '#FC7753'
   },
   jobTitle: {
     fontSize: '2.2rem',
     padding: '3px 0px',
-    color: '#D81159'
+    color: '#D36582'
   },
   jobDates: {
     fontSize: '2.2rem',
-    color: '#D81159'
+    color: '#D36582'
   },
   jobDesc: {
     fontSize: '2.2rem',
-    color: '#F1E9DA'
+    color: '#22223B'
   }
 });
 

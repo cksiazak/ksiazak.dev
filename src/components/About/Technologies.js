@@ -22,14 +22,15 @@ const useStyles = createUseStyles({
     width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
-    background: '#276FBF',
+    background: '#8C4843',
     boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)',
     padding: '50px 0px'
   },
   techHeader: {
     fontSize: '3.5rem',
-    borderBottom: '2px solid red',
-    padding: '25px 0px 20px'
+    borderBottom: '2px solid',
+    padding: '25px 0px 20px',
+    color: '#F0AE4E'
   },
   listStyle: {
     display: 'flex',
@@ -40,7 +41,8 @@ const useStyles = createUseStyles({
   },
   listItem: {
     padding: '15px',
-    fontSize: '2.2rem'
+    fontSize: '2.2rem',
+    color: '#011502'
   }
 });
 
