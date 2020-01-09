@@ -22,12 +22,15 @@ const useStyles = createUseStyles({
   },
   sectionHeader: {
     fontSize: '3.5rem',
-    padding: '15px 0px 25px'
+    padding: '15px 0px 25px',
+    fontFamily: "'Permanent Marker', cursive"
+
   },
   sectionInfo: {
     fontSize: '2.2rem',
     textAlign: 'center',
-    lineHeight: '125%'
+    lineHeight: '125%',
+    fontFamily: "'Rubik', sans-serif"
   }
 });
 

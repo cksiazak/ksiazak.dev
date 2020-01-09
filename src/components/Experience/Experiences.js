@@ -17,7 +17,8 @@ const useStyles = createUseStyles({
   sectionHeading: {
     fontSize: '4rem',
     padding: '0px 0px 50px',
-    color: '#E9E6FF'
+    color: '#E9E6FF',
+    fontFamily: "'Permanent Marker', cursive"
   },
   experienceContainer: {
     display: 'flex',
@@ -37,7 +38,8 @@ const useStyles = createUseStyles({
   jobInfo: {
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: '25px'
+    paddingBottom: '25px',
+    fontFamily: "'Monda', sans-serif"
   },
   jobLocation: {
     fontSize: '3.2rem',
@@ -54,7 +56,8 @@ const useStyles = createUseStyles({
   },
   jobDesc: {
     fontSize: '2.2rem',
-    color: '#22223B'
+    color: '#22223B',
+    fontFamily: "'Monda', sans-serif"
   }
 });
 

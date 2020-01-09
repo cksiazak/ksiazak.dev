@@ -16,7 +16,9 @@ const useStyles = createUseStyles({
   },
   aboutHeading: {
     fontSize: '3.5rem',
-    color: '#F0AE4E'
+    color: '#F0AE4E',
+    fontFamily: "'Permanent Marker', cursive"
+
   },
   outerInfoContainer: {
     display: 'flex',
@@ -29,7 +31,9 @@ const useStyles = createUseStyles({
     fontSize: '2.25rem',
     lineHeight: '125%',
     width: '60%',
-    color: '#F7EDDB'
+    color: '#F7EDDB',
+    fontFamily: "'Rubik', sans-serif"
+
   },
   selfImage: {
     width: 'auto',

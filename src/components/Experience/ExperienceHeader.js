@@ -6,20 +6,21 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    padding: '175px 0px 300px',
+    padding: '175px 0px 250px',
     background: 'linear-gradient(135deg, #540D6E, #FC7A57)',
     color: 'white'
   },
   headingContainer: {
     display: 'flex',
     flexDirection: 'column',
-    width: '60%'
+    width: '60%',
+    fontFamily: "'Permanent Marker', cursive"
   },
   headingTitle: {
-    fontSize: '5rem'
+    fontSize: '4.5rem'
   },
   headingInfo: {
-    fontSize: '3rem',
+    fontSize: '3.25rem',
     lineHeight: '125%',
     padding: '10px 0px'
   }
@@ -35,7 +36,7 @@ const Header = () => {
           most of my experience comes from the support side of things, but I
           have worked with several groups, learning new techniques and
           technologies, contributing toward a common goal. I enjoy helping and
-          learn where I can.
+          learning where I can.
         </p>
       </div>
     </section>

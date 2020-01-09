@@ -27,22 +27,24 @@ const useStyles = createUseStyles({
     padding: '50px 0px'
   },
   techHeader: {
-    fontSize: '3.5rem',
+    fontSize: '3rem',
     borderBottom: '2px solid',
-    padding: '25px 0px 20px',
-    color: '#F0AE4E'
+    padding: '25px 0px 10px',
+    color: '#F0AE4E',
+    fontFamily: "'Permanent Marker', cursive"
   },
   listStyle: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
     padding: '25px 0px',
-    width: '30%'
+    width: '35%'
   },
   listItem: {
     padding: '15px',
     fontSize: '2.2rem',
-    color: '#011502'
+    color: '#011502',
+    fontFamily: "'Rubik', sans-serif"
   }
 });
 

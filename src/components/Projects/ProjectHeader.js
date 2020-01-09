@@ -6,19 +6,20 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    padding: '150px 0px 250px'
+    padding: '150px 0px 250px',
+    fontFamily: "'Courgette', cursive"
   },
   innerProjectContainer: {
     display: 'flex',
     flexDirection: 'column',
-    width: '40%',
+    width: '53%',
     '& hr': {
       margin: '25px 0px',
       width: '75%'
     }
   },
   header: {
-    fontSize: '5.4rem',
+    fontSize: '6rem',
     color: '#D36582'
   },
   headerDesc: {
@@ -40,12 +41,10 @@ const ProjectHeader = () => {
     <section className={ProjectHeader}>
       <div className={innerProjectContainer}>
         <h2 className={header}>
-          Building digital experiences and bringing ideas to life
+          Building digital experiences and bringing plans to life
         </h2>
         <hr />
-        <p className={headerDesc}>
-          Participating in remote teams working towards a common goal
-        </p>
+        <p className={headerDesc}>Distributed teams with distributed ideas</p>
       </div>
     </section>
   );

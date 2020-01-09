@@ -16,12 +16,15 @@ const useStyles = createUseStyles({
   },
   header: {
     fontSize: '3.75rem',
-    paddingBottom: '50px'
+    paddingBottom: '50px',
+    fontFamily: "'Courgette', cursive"
   },
   underHeader: {
     fontSize: '2.8rem',
     textAlign: 'center',
-    lineHeight: '125%'
+    lineHeight: '125%',
+    fontFamily: "'Rubik', sans-serif"
+
   },
   resumeButton: {
     textDecoration: 'none',
@@ -32,8 +35,8 @@ const useStyles = createUseStyles({
     borderRadius: '10px',
     color: '#22223B',
     transition: '0.3s',
+    fontFamily: "'Rubik', sans-serif",
     '&:hover': {
-      // color: '#E9E6FF',
       background: 'rgba(233, 230, 255, 0.4)'
     }
   }
@@ -51,7 +54,7 @@ const ContactHeader = () => {
   return (
     <section className={headerWrap}>
       <div className={innerContainer}>
-        <h2 className={header}>Thank you in advance for visiting.</h2>
+        <h2 className={header}>Thank you for visiting.</h2>
         <p className={underHeader}>
           I'm currently available and actively looking for positions. Feel free
           to download my resume and reach out to me at my contact points below,

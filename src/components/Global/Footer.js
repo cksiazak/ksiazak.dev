@@ -12,12 +12,17 @@ const useStyles = createUseStyles({
   },
   githubLink: {
     textDecoration: 'none',
-    color: 'darkorchid',
+    color: '#8C4843',
     transition: '0.3s',
     fontSize: '1.5rem',
     display: 'flex',
     alignItems: 'center',
-    padding: '20px'
+    padding: '20px',
+    transition: '0.2s',
+    fontFamily: "'Rubik', sans-serif",
+    '&:hover': {
+      color: '#E9E6FF'
+    }
   }
 });
 

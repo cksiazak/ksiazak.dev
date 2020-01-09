@@ -17,7 +17,7 @@ const About = () => {
     <Fragment>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>'Christopher Ksiazak - About Me'</title>
+        <title>Christopher Ksiazak - About Me</title>
         <meta
           name='description'
           content='A history about me, my values, and what I can do'

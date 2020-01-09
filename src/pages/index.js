@@ -33,7 +33,7 @@ const useStyles = createUseStyles({
   mainHeading: {
     fontSize: '4rem',
     paddingBottom: '10px',
-    fontFamily: "'Fugaz One', cursive"
+    fontFamily: "'Permanent Marker', cursive"
   },
   underHeading: {
     fontSize: '2rem',

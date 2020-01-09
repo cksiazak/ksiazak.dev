@@ -13,13 +13,14 @@ const useStyles = createUseStyles({
     padding: '50px 0px 0px'
   },
   sectionHeader: {
-    fontSize: '3.5rem',
+    fontSize: '4rem',
     padding: '50px 0px',
     width: '100%',
     textAlign: 'center',
     boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)',
     color: '#011502',
-    background: '#C9936B'
+    background: '#C9936B',
+    fontFamily: "'Permanent Marker', cursive"
   },
   projectContainer: {
     display: 'flex',
@@ -28,6 +29,7 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     padding: '50px 0px',
     background: '#E9E6FF',
+
     '&:nth-child(3)': {
       boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)'
     },
@@ -52,7 +54,7 @@ const useStyles = createUseStyles({
   textContainer: {
     display: 'flex',
     flexDirection: 'column',
-    width: '60%',
+    width: '55%',
     height: '100%'
   },
   projectHeadingContainer: {
@@ -60,7 +62,8 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBottom: '50px',
-    fontSize: '3rem'
+    fontSize: '3rem',
+    fontFamily: "'Courgette', cursive"
   },
   projectHeader: {
     textDecoration: 'none',
@@ -80,7 +83,8 @@ const useStyles = createUseStyles({
     }
   },
   projectDesc: {
-    fontSize: '2rem'
+    fontSize: '2rem',
+    fontFamily: "'Rubik', sans-serif"
   },
   innerProjectDesc: {
     lineHeight: '125%',
@@ -126,11 +130,7 @@ const IndividualApp = ({
             <a href={url} className={projectHeader} title={title}>
               {title}
             </a>
-            <a
-              href={githubLink}
-              title={`${title} Github`}
-              className={gitLink}
-            >
+            <a href={githubLink} title={`${title} Github`} className={gitLink}>
               <IoLogoGithub />
             </a>
           </div>

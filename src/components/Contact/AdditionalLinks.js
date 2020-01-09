@@ -19,12 +19,14 @@ const useStyles = createUseStyles({
       fontSize: '3.5rem',
       margin: '25px 0px',
       borderBottom: '2px solid',
-      color: '#E9E6FF'
+      color: '#E9E6FF',
+      fontFamily: "'Permanent Marker', cursive"
     }
   },
   linkWrapper: {
     display: 'flex',
     flexDirection: 'column',
+    fontFamily: "'Rubik', sans-serif",
     '& a': {
       display: 'flex',
       fontSize: '3rem',

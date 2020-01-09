@@ -20,22 +20,26 @@ const useStyles = createUseStyles({
 
     '& span': {
       fontSize: '2.4rem',
-      color: '#BBC3C0'
+      color: '#BBC3C0',
+      fontFamily: "'Lobster', cursive"
     },
     '& h1': {
       fontSize: '8.2rem',
-      color: '#B41F15'
+      color: '#B41F15',
+      fontFamily: "'Courgette', cursive"
     },
     '& p': {
       fontSize: '5rem',
-      color: '#CACAC9'
+      color: '#CACAC9',
+      fontFamily: "'Lobster', cursive"
     }
   },
   shortBio: {
     fontSize: '2.5rem',
-    width: '90%',
+    width: '85%',
     lineHeight: '125%',
-    color: '#CACAC9'
+    color: '#CACAC9',
+    fontFamily: "'Rubik', sans-serif"
   }
 });
 
