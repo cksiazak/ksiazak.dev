@@ -19,13 +19,22 @@ const useStyles = createUseStyles({
     width: '85%',
     display: 'flex',
     justifyContent: 'space-between',
-    fontSize: '1.8rem'
+    fontSize: '1.8rem',
+    '@media (max-width: 1200px)': {
+      width: '95%'
+    }
   },
   listStyle: {
     width: '45%',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 1200px)': {
+      width: '50%'
+    },
+    '@media (max-width: 1000px)': {
+      width: '60%'
+    }
   },
   linkStyle: {
     textDecoration: 'none',
