@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
     position: 'fixed',
     '@media (max-width: 900px)': {
       position: 'relative',
-      background: 'white'
+      borderBottom: '2px solid white'
     }
   },
   headingContainer: {
@@ -37,9 +37,10 @@ const useStyles = createUseStyles({
     marginTop: '25px',
     borderRadius: '50px',
     '@media (max-width: 900px)': {
-      marginTop: '0px',
-      background: 'white',
-      color: '#0F0326'
+      marginTop: '0px'
+    },
+    '@media (max-width: 300px)': {
+      textAlign: 'center'
     }
   },
   mainHeading: {
