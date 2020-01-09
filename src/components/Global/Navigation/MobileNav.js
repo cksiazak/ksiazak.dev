@@ -60,7 +60,8 @@ const useStyles = createUseStyles({
     transition: '.2s',
     fontFamily: "'Courgette', cursive",
     '&:hover': {
-      color: '#D81E5B'
+      color: '#D81E5B',
+      background: '#22223B'
     }
   },
   menuOpen: {

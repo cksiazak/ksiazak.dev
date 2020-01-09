@@ -12,13 +12,19 @@ import '../styles/global.css';
 const useStyles = createUseStyles({
   pageContainer: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    '@media (max-width: 900px)': {
+      flexDirection: 'column'
+    }
   },
   pageHeadingUpper: {
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    position: 'fixed'
+    position: 'fixed',
+    '@media (max-width: 900px)': {
+      position: 'relative'
+    }
   },
   headingContainer: {
     color: 'white',
@@ -28,12 +34,18 @@ const useStyles = createUseStyles({
     background: '#0F0326',
     padding: '10px 25px',
     marginTop: '25px',
-    borderRadius: '50px'
+    borderRadius: '50px',
+    '@media (max-width: 900px)': {
+      marginTop: '0px'
+    }
   },
   mainHeading: {
     fontSize: '4rem',
     paddingBottom: '10px',
-    fontFamily: "'Permanent Marker', cursive"
+    fontFamily: "'Permanent Marker', cursive",
+    '@media (max-width: 900px)': {
+      fontSize: '4rem'
+    }
   },
   underHeading: {
     fontSize: '2rem',
@@ -47,7 +59,11 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'space-evenly',
     listStyle: 'none',
-    background: 'linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)'
+    background:
+      'linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)',
+    '@media (max-width: 900px)': {
+      flexDirection: 'column'
+    }
   },
   navItem: {
     height: '100vh',
@@ -61,19 +77,33 @@ const useStyles = createUseStyles({
     background: '#0F0326',
     transition: '.4s',
     color: '#F4F4F8',
-
     '&:hover': {
       background: 'transparent',
       color: '#0F0326',
-
       '& hr': {
         borderBottom: '3px solid #2A324B'
       }
+    },
+    '@media (max-width: 1300px)': {
+      padding: '0px 35px'
+    },
+    '@media (max-width: 1000px)': {
+      padding: '0px 20px'
+    },
+    '@media (max-width: 900px)': {
+      height: '22vh',
+      width: '100%'
     }
   },
   pageHeading: {
     fontSize: '4.5rem',
-    fontFamily: "'Lobster', cursive"
+    fontFamily: "'Lobster', cursive",
+    '@media (max-width: 1300px)': {
+      fontSize: '4rem'
+    },
+    '@media (max-width: 1000px)': {
+      fontSize: '3.5rem'
+    }
   },
   pageBreak: {
     display: 'block',
@@ -81,13 +111,23 @@ const useStyles = createUseStyles({
     borderBottom: '3px solid rgba(199, 204, 219, 0.5)',
     margin: '25px 0px',
     width: '50%',
-    transition: '.4s'
+    transition: '.4s',
+    '@media (max-width: 1000px)': {
+      width: '75%'
+    },
+    '@media (max-width: 900px)': {
+      margin: '15px 0px',
+      width: '40%'
+    }
   },
   linkDesc: {
     fontSize: '2.2rem',
     textAlign: 'center',
     lineHeight: '125%',
-    fontFamily: "'Courgette', cursive"
+    fontFamily: "'Courgette', cursive",
+    '@media (max-width: 1300px)': {
+      fontSize: '2rem'
+    }
   }
 });
 

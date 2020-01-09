@@ -12,7 +12,7 @@ export const navData = [
   {
     url: '/projects',
     title: 'Projects',
-    desc: 'Learn about my ability to solve problems and create new things'
+    desc: 'Learn about my ability to create new things'
   },
   {
     url: '/contact',
