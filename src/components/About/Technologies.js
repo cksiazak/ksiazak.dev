@@ -31,20 +31,46 @@ const useStyles = createUseStyles({
     borderBottom: '2px solid',
     padding: '25px 0px 10px',
     color: '#F0AE4E',
-    fontFamily: "'Permanent Marker', cursive"
+    fontFamily: "'Permanent Marker', cursive",
+    '@media (max-width: 1000px)': {
+      fontSize: '2.5rem'
+    },
+    '@media (max-width: 750px)': {
+      fontSize: '2rem'
+    },
+    '@media (max-width: 500px)': {
+      borderBottom: '0px',
+      textAlign: 'center',
+      width: '80%'
+    }
   },
   listStyle: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
     padding: '25px 0px',
-    width: '35%'
+    width: '35%',
+    '@media (max-width: 1000px)': {
+      width: '50%'
+    },
+    '@media (max-width: 750px)': {
+      width: '70%'
+    },
+    '@media (max-width: 600px)': {
+      width: '90%'
+    }
   },
   listItem: {
     padding: '15px',
     fontSize: '2.2rem',
     color: '#011502',
-    fontFamily: "'Rubik', sans-serif"
+    fontFamily: "'Rubik', sans-serif",
+    '@media (max-width: 1000px)': {
+      fontSize: '2rem'
+    },
+    '@media (max-width: 750px)': {
+      fontSize: '1.75rem'
+    }
   }
 });
 

@@ -7,39 +7,76 @@ const useStyles = createUseStyles({
     display: 'flex',
     width: '100%',
     justifyContent: 'center',
-    padding: '125px 0px'
+    padding: '125px 0px',
+    '@media (max-width: 950px)': {
+      padding: '75px 0px'
+    }
   },
   innerSection: {
     display: 'flex',
     width: '70%',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    '@media (max-width: 1400px)': {
+      width: '80%'
+    },
+    '@media (max-width: 1200px)': {
+      width: '90%'
+    },
+    '@media (max-width: 950px)': {
+      alignItems: 'center'
+    },
+    '@media (max-width: 650px)': {
+      width: '95%'
+    }
   },
   aboutHeading: {
     fontSize: '3.5rem',
     color: '#F0AE4E',
     fontFamily: "'Permanent Marker', cursive"
-
   },
   outerInfoContainer: {
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
     padding: '40px 0px',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    '@media (max-width: 950px)': {
+      flexDirection: 'column-reverse',
+      alignItems: 'center',
+      padding: '50px 0px 0px'
+    }
   },
   textContainer: {
     fontSize: '2.25rem',
     lineHeight: '125%',
     width: '60%',
     color: '#F7EDDB',
-    fontFamily: "'Rubik', sans-serif"
-
+    fontFamily: "'Rubik', sans-serif",
+    '@media (max-width: 950px)': {
+      padding: '50px 0px 0px',
+      width: '75%'
+    },
+    '@media (max-width: 750px)': {
+      fontSize: '1.75rem'
+    },
+    '@media (max-width: 650px)': {
+      width: '90%'
+    }
   },
   selfImage: {
     width: 'auto',
     height: '350px',
     marginRight: '100px',
-    borderRadius: '25px 0px'
+    borderRadius: '25px 0px',
+    '@media (max-width: 1400px)': {
+      marginRight: '50px'
+    },
+    '@media (max-width: 1200px)': {
+      marginRight: '0px'
+    },
+    '@media (max-width: 750px)': {
+      height: '250px'
+    }
   }
 });
 

@@ -15,22 +15,33 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '50%'
+    width: '50%',
+    '@media (max-width: 800px)': {
+      width: '90%'
+    }
   },
   sectionLogo: {
-    fontSize: '4.5rem'
+    fontSize: '4.5rem',
+    '@media (max-width: 700px)': {
+      fontSize: '3.5rem'
+    }
   },
   sectionHeader: {
     fontSize: '3.5rem',
     padding: '15px 0px 25px',
-    fontFamily: "'Permanent Marker', cursive"
-
+    fontFamily: "'Permanent Marker', cursive",
+    '@media (max-width: 700px)': {
+      fontSize: '2.75rem'
+    }
   },
   sectionInfo: {
     fontSize: '2.2rem',
     textAlign: 'center',
     lineHeight: '125%',
-    fontFamily: "'Rubik', sans-serif"
+    fontFamily: "'Rubik', sans-serif",
+    '@media (max-width: 700px)': {
+      fontSize: '1.75rem'
+    }
   }
 });
 
