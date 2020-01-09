@@ -33,13 +33,20 @@ const useStyles = createUseStyles({
   }
 });
 
-const HamburgerMenu = ({ hamburgerHelper, hamburgerOpen }) => {
+const HamburgerMenu = ({
+  hamburgerHelper,
+  hamburgerOpen,
+  hamburgerHelperKey
+}) => {
   const { hamburger, isActive } = useStyles();
 
   return (
     <div
       className={!hamburgerOpen ? hamburger : `${hamburger} ${isActive}`}
       onClick={hamburgerHelper}
+      onKeyDown={hamburgerHelperKey}
+      role='button'
+      tabIndex='0'
     >
       <span className='line'></span>
       <span className='line'></span>

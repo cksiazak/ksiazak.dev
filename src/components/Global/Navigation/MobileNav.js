@@ -16,7 +16,6 @@ const useStyles = createUseStyles({
     zIndex: '10',
     width: '100%',
     background: '#E9E6FF',
-    zIndex: '5',
     boxShadow: '2px 2px 1px rgba(42, 42, 42, 0.8)'
   },
   innerNav: {
@@ -74,6 +73,11 @@ const MobileNav = () => {
   const hamburgerHelper = () => {
     !hamburgerOpen ? setHamburgerOpen(true) : setHamburgerOpen(false);
   };
+  const hamburgerHelperKey = e => {
+    if (e.keyCode === 13) {
+      hamburgerHelper();
+    }
+  };
 
   const {
     mobileNav,
@@ -101,6 +105,7 @@ const MobileNav = () => {
             <HambugerMenu
               hamburgerOpen={hamburgerOpen}
               hamburgerHelper={hamburgerHelper}
+              hamburgerHelperKey={hamburgerHelperKey}
             />
           </div>
         </div>

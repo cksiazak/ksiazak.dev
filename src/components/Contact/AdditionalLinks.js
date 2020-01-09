@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   IoMdMail,
-  IoMdDocument,
   IoLogoGithub,
   IoLogoLinkedin,
   IoLogoTwitter

@@ -18,7 +18,6 @@ const useStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     padding: '20px',
-    transition: '0.2s',
     fontFamily: "'Rubik', sans-serif",
     '&:hover': {
       color: '#E9E6FF'
