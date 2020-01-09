@@ -23,7 +23,8 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     position: 'fixed',
     '@media (max-width: 900px)': {
-      position: 'relative'
+      position: 'relative',
+      background: 'white'
     }
   },
   headingContainer: {
@@ -36,7 +37,9 @@ const useStyles = createUseStyles({
     marginTop: '25px',
     borderRadius: '50px',
     '@media (max-width: 900px)': {
-      marginTop: '0px'
+      marginTop: '0px',
+      background: 'white',
+      color: '#0F0326'
     }
   },
   mainHeading: {
@@ -45,11 +48,26 @@ const useStyles = createUseStyles({
     fontFamily: "'Permanent Marker', cursive",
     '@media (max-width: 900px)': {
       fontSize: '4rem'
+    },
+    '@media (max-width: 600px)': {
+      fontSize: '3rem'
+    },
+    '@media (max-width: 450px)': {
+      fontSize: '2.5rem'
+    },
+    '@media (max-width: 400px)': {
+      fontSize: '2.25rem'
     }
   },
   underHeading: {
     fontSize: '2rem',
-    fontFamily: "'Courgette', cursive"
+    fontFamily: "'Courgette', cursive",
+    '@media (max-width: 600px)': {
+      fontSize: '1.75rem'
+    },
+    '@media (max-width: 450px)': {
+      fontSize: '1.5rem'
+    }
   },
   navContainer: {
     width: '100%',
@@ -103,6 +121,9 @@ const useStyles = createUseStyles({
     },
     '@media (max-width: 1000px)': {
       fontSize: '3.5rem'
+    },
+    '@media (max-width: 600px)': {
+      fontSize: '2.75rem'
     }
   },
   pageBreak: {
@@ -127,6 +148,12 @@ const useStyles = createUseStyles({
     fontFamily: "'Courgette', cursive",
     '@media (max-width: 1300px)': {
       fontSize: '2rem'
+    },
+    '@media (max-width: 600px)': {
+      fontSize: '1.75rem'
+    },
+    '@media (max-width: 450px)': {
+      fontSize: '1.5rem'
     }
   }
 });
