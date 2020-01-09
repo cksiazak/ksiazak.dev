@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     margin: '25px 0px',
     padding: '20px 30px',
-    background: '#5E6572',
+    background: '#993955',
     borderRadius: '25px 0px',
     transition: '.4s',
     position: 'relative',
@@ -41,16 +41,16 @@ const useStyles = createUseStyles({
   },
   jobLocation: {
     fontSize: '3.2rem',
-    color: '#FC7753'
+    color: '#10294C'
   },
   jobTitle: {
     fontSize: '2.2rem',
     padding: '3px 0px',
-    color: '#D36582'
+    color: '#E9E6FF'
   },
   jobDates: {
     fontSize: '2.2rem',
-    color: '#D36582'
+    color: '#E9E6FF'
   },
   jobDesc: {
     fontSize: '2.2rem',

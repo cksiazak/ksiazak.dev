@@ -5,6 +5,8 @@ import Helmet from 'react-helmet';
 // import components
 import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
+import ContactHeader from '../components/Contact/contactHeader';
+import AdditionalLinks from '../components/Contact/AdditionalLinks';
 import Footer from '../components/Global/Footer';
 
 const Contact = () => {
@@ -22,8 +24,8 @@ const Contact = () => {
         <Navigation />
       </TransitionPortal>
       <PageWrapper>
-        Contact
-        {/* Placeholder */}
+        <ContactHeader />
+        <AdditionalLinks />
       </PageWrapper>
       <Footer />
     </Fragment>
