@@ -102,13 +102,13 @@ const AboutMain = () => {
             </p>
             <br />
             <p>
-              Currently, I serve as a Project Coordinator at C3i Solutions. I
-              work in collaboration with our client, Castlight Health. Before
-              this, I attended the University of Texas at El Paso (UTEP). I
-              realized that Electrical Engineering wasn't a topic that I
-              enjoyed. I joined the Full Stack Web Development program at Lambda
-              School, which has provided me valuable experience in application
-              development with distributed teams.
+              Currently, I serve as a Project Coordinator at C3i Solutions, I'd
+ say I'm about 95% autonomous as I collaborate with our client across 
+various time zones. Before this, I attended the University of Texas at 
+El Paso (UTEP). I realized that Electrical Engineering wasn't a topic 
+that I quite enjoyed, so I joined the Full Stack Web Development program 
+at Lambda School, which has provided me valuable experience in application 
+development with distributed teams.
             </p>
           </div>
           <img className={selfImage} src={avatar} alt='Christopher Ksiazak' />
