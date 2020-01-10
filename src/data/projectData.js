@@ -7,7 +7,7 @@ export const projects = [
       "Ksiazak.dev is my personal portfolio page. Version 2.0 is built using Gatsby, has full SEO, and is completely responsive. Stylized with JSS.",
       'Currently, the data is hard-coded, but in the future, I plan on connecting a headless CMS and querying it using GraphQL.'
     ],
-    technologies: ['Gatsbyjs', 'CSS-in-JS', 'SEO', 'GSAP'],
+    technologies: ['Gatsbyjs', 'CSS-in-JS', 'SEO'],
     imgurl: 'https://i.imgur.com/CeK2lxH.png?1'
   },
   {
