@@ -20,7 +20,11 @@ const useStyles = createUseStyles({
     boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)',
     color: '#011502',
     background: '#C9936B',
-    fontFamily: "'Permanent Marker', cursive"
+    fontFamily: "'Permanent Marker', cursive",
+    '@media (max-width: 850px)': {
+      padding: '25px 0px',
+      fontSize: '3.5rem'
+    }
   },
   projectContainer: {
     display: 'flex',
@@ -29,14 +33,16 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     padding: '50px 0px',
     background: '#E9E6FF',
-
     '&:nth-child(3)': {
       boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)'
     },
     '&:nth-child(odd)': {
       background: '#C5D1EB',
       '& .reverseContainer': {
-        flexDirection: 'row-reverse'
+        flexDirection: 'row-reverse',
+        '@media (max-width: 1050px)': {
+          flexDirection: 'column-reverse'
+        }
       },
       '& .reverseTitle': {
         alignItems: 'flex-end'
@@ -49,13 +55,23 @@ const useStyles = createUseStyles({
     justifyContent: 'space-between',
     flexDirection: 'row',
     padding: '25px 0px',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 1250px)': {
+      width: '90%'
+    },
+    '@media (max-width: 1050px)': {
+      flexDirection: 'column-reverse'
+    }
   },
   textContainer: {
     display: 'flex',
     flexDirection: 'column',
     width: '55%',
-    height: '100%'
+    height: '100%',
+    '@media (max-width: 1050px)': {
+      paddingTop: '50px',
+      width: '90%'
+    }
   },
   projectHeadingContainer: {
     display: 'flex',
@@ -63,7 +79,8 @@ const useStyles = createUseStyles({
     justifyContent: 'space-between',
     paddingBottom: '50px',
     fontSize: '3rem',
-    fontFamily: "'Courgette', cursive"
+    fontFamily: "'Courgette', cursive",
+    width: '100%'
   },
   projectHeader: {
     textDecoration: 'none',
@@ -72,6 +89,9 @@ const useStyles = createUseStyles({
     borderBottom: '2px solid',
     '&:hover': {
       color: '#D81E5B'
+    },
+    '@media (max-width: 500px)': {
+      borderBottom: '0px'
     }
   },
   gitLink: {
@@ -99,11 +119,19 @@ const useStyles = createUseStyles({
   },
   listStyle: {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    '@media (max-width: 1050px)': {
+      flexDirection: 'column',
+      flexWrap: 'wrap',
+      height: '50px'
+    }
   },
   imageStyle: {
     width: 'auto',
-    height: '300px'
+    height: '300px',
+    '@media (max-width: 500px)': {
+      height: '250px'
+    }
   }
 });
 

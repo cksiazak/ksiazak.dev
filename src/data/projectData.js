@@ -8,15 +8,15 @@ export const projects = [
       'In the future, I plan on connecting a headless CMS and querying it using GraphQL.'
     ],
     technologies: ['Gatsbyjs', 'CSS-in-JS', 'SEO', 'GSAP'],
-    imgurl: 'https://i.imgur.com/a5kUeLM.jpg'
+    imgurl: 'https://i.imgur.com/CeK2lxH.png?1'
   },
   {
-    title: 'AirBnB Optimal Pricing API (WIP)',
+    title: 'AirBnB Optimal Pricing API',
     url: 'https://optimal-airbnb-pricing-api.herokuapp.com/',
     githubLink: 'https://github.com/Build-Week-AirBnB-Optimal-Price/Backend',
     description: [
       'For this project, I am the sole back end developer. Here, I used expressjs (Node) for my server, Knex (SQL query builder) to migrate and seed the database, and PostgreSQL. It is hosted on Heroku, features JWT authentication and bcrypt for hashing passwords.',
-      "I've worked with both the Front End and Data Science teams to ensure the data is processed and parsed without issue."
+      "I've worked with both the Front End and Data Science teams to ensure the data is processed and parsed without issue. As I am experienced in React, I assisted the front end team in debugging any issues."
     ],
     technologies: ['Nodejs', 'PostgreSQL', 'JWT', 'bcrypt', 'Knex', 'Jest'],
     imgurl: 'https://i.imgur.com/UrRiOHS.jpg'

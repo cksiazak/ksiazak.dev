@@ -6,8 +6,11 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    padding: '150px 0px 250px',
-    fontFamily: "'Courgette', cursive"
+    padding: '175px 0px 150px',
+    fontFamily: "'Courgette', cursive",
+    '@media (max-width: 650px)': {
+      padding: '150px 0px 125px'
+    }
   },
   innerProjectContainer: {
     display: 'flex',
@@ -16,17 +19,32 @@ const useStyles = createUseStyles({
     '& hr': {
       margin: '25px 0px',
       width: '75%'
+    },
+    '@media (max-width: 1400px)': {
+      width: '65%'
+    },
+    '@media (max-width: 900px)': {
+      width: '75%'
+    },
+    '@media (max-width: 750px)': {
+      width: '90%'
     }
   },
   header: {
     fontSize: '6rem',
-    color: '#D36582'
+    color: '#D36582',
+    '@media (max-width: 650px)': {
+      fontSize: '3.5rem'
+    }
   },
   headerDesc: {
     fontSize: '3.2rem',
     lineHeight: '125%',
     width: '80%',
-    color: '#E9E6FF'
+    color: '#E9E6FF',
+    '@media (max-width: 650px)': {
+      fontSize: '2.75rem'
+    }
   }
 });
 

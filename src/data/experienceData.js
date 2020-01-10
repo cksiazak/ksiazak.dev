@@ -11,7 +11,7 @@ export const workHistory = [
   },
   {
     location: 'Best Buy',
-    title: 'Samsung Sales Consultant - Home Theater',
+    title: 'Samsung Theater Consultant',
     date: 'June 2014 – March 2015',
     description: [
       "At Best Buy, I strove to meet sales goals by listening to the customer's needs, wants, and desires, then using that information, I was able to provide a total solution based on my product knowledge.",

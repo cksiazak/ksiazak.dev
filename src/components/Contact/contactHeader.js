@@ -12,19 +12,30 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '40%'
+    width: '40%',
+    '@media (max-width: 1100px)': {
+      width: '75%'
+    },
+    '@media (max-width: 650px)': {
+      width: '90%'
+    }
   },
   header: {
     fontSize: '3.75rem',
     paddingBottom: '50px',
-    fontFamily: "'Courgette', cursive"
+    fontFamily: "'Courgette', cursive",
+    '@media (max-width: 650px)': {
+      fontSize: '3rem'
+    }
   },
   underHeader: {
     fontSize: '2.8rem',
     textAlign: 'center',
     lineHeight: '125%',
-    fontFamily: "'Rubik', sans-serif"
-
+    fontFamily: "'Rubik', sans-serif",
+    '@media (max-width: 650px)': {
+      fontSize: '2.25rem'
+    }
   },
   resumeButton: {
     textDecoration: 'none',
@@ -38,6 +49,9 @@ const useStyles = createUseStyles({
     fontFamily: "'Rubik', sans-serif",
     '&:hover': {
       background: 'rgba(233, 230, 255, 0.4)'
+    },
+    '@media (max-width: 650px)': {
+      fontSize: '2.25rem'
     }
   }
 });

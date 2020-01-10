@@ -19,7 +19,11 @@ const useStyles = createUseStyles({
       margin: '25px 0px',
       borderBottom: '2px solid',
       color: '#E9E6FF',
-      fontFamily: "'Permanent Marker', cursive"
+      fontFamily: "'Permanent Marker', cursive",
+      '@media (max-width: 600px)': {
+        fontSize: '2.75rem',
+        borderBottom: '0px',
+      }
     }
   },
   linkWrapper: {
@@ -35,6 +39,9 @@ const useStyles = createUseStyles({
       transition: '0.3s',
       '&:hover': {
         color: '#A3C3D9'
+      },
+      '@media (max-width: 600px)': {
+        fontSize: '2.75rem'
       }
     }
   }

@@ -8,21 +8,44 @@ const useStyles = createUseStyles({
     width: '100%',
     padding: '175px 0px 250px',
     background: 'linear-gradient(135deg, #540D6E, #FC7A57)',
-    color: 'white'
+    color: 'white',
+    '@media (max-width: 650px)': {
+      padding: '150px 0px'
+    }
   },
   headingContainer: {
     display: 'flex',
     flexDirection: 'column',
     width: '60%',
-    fontFamily: "'Permanent Marker', cursive"
+    fontFamily: "'Rubik', sans-serif",
+    '@media (max-width:1250px )': {
+      width: '75%'
+    },
+    '@media (max-width:850px )': {
+      width: '90%'
+    }
   },
   headingTitle: {
-    fontSize: '4.5rem'
+    fontSize: '4.5rem',
+    fontFamily: "'Lobster', cursive",
+    '@media (max-width:850px )': {
+      fontSize: '4rem'
+    },
+    '@media (max-width:600px )': {
+      fontSize: '3.5rem'
+    }
   },
   headingInfo: {
     fontSize: '3.25rem',
     lineHeight: '125%',
-    padding: '10px 0px'
+    padding: '10px 0px',
+    fontFamily: "'Monda', sans-serif",
+    '@media (max-width:850px )': {
+      fontSize: '2.75rem'
+    },
+    '@media (max-width:600px )': {
+      fontSize: '2.25rem'
+    }
   }
 });
 
@@ -35,7 +58,7 @@ const Header = () => {
         <p className={headingInfo}>
           most of my experience comes from the support side of things, but I
           have worked with several groups, learning new techniques and
-          technologies, contributing toward a common goal. I enjoy helping and
+          technologies, moving toward a common goal. I enjoy helping and
           learning where I can.
         </p>
       </div>

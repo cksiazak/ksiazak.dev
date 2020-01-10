@@ -6,19 +6,31 @@ const useStyles = createUseStyles({
   mainSection: {
     display: 'flex',
     justifyContent: 'center',
-    padding: '75px 0px'
+    padding: '75px 0px',
+    '@media (max-width: 650px)': {
+      padding: '50px 0px'
+    }
   },
   innerContainer: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '65%'
+    width: '65%',
+    '@media (max-width: 1100px)': {
+      width: '80%'
+    },
+    '@media (max-width: 800px)': {
+      width: '90%'
+    }
   },
   sectionHeading: {
     fontSize: '4rem',
     padding: '0px 0px 50px',
     color: '#E9E6FF',
-    fontFamily: "'Permanent Marker', cursive"
+    fontFamily: "'Permanent Marker', cursive",
+    '@media (max-width: 650px)': {
+      padding: '0px 0px 25px'
+    }
   },
   experienceContainer: {
     display: 'flex',
@@ -43,21 +55,33 @@ const useStyles = createUseStyles({
   },
   jobLocation: {
     fontSize: '3.2rem',
-    color: '#10294C'
+    color: '#10294C',
+    '@media (max-width: 800px)': {
+      fontSize: '2.75rem'
+    }
   },
   jobTitle: {
     fontSize: '2.2rem',
     padding: '3px 0px',
-    color: '#E9E6FF'
+    color: '#E9E6FF',
+    '@media (max-width: 800px)': {
+      fontSize: '1.8rem'
+    }
   },
   jobDates: {
     fontSize: '2.2rem',
-    color: '#E9E6FF'
+    color: '#E9E6FF',
+    '@media (max-width: 800px)': {
+      fontSize: '1.8rem'
+    }
   },
   jobDesc: {
     fontSize: '2.2rem',
     color: '#22223B',
-    fontFamily: "'Monda', sans-serif"
+    fontFamily: "'Monda', sans-serif",
+    '@media (max-width: 800px)': {
+      fontSize: '1.8rem'
+    }
   }
 });
 
