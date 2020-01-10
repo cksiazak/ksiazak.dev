@@ -1,0 +1,95 @@
+import React from 'react';
+import { createUseStyles } from 'react-jss';
+
+const tech = [
+  'HTML5',
+  'CSS',
+  'Javascript',
+  'LESS/SCSS/JSS',
+  'React',
+  'Redux',
+  'Gatsby',
+  'Nextjs',
+  'Nodejs',
+  'SQL',
+  'Sqlite3',
+  'Postgres'
+];
+
+const useStyles = createUseStyles({
+  mainTechnology: {
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    background: '#8C4843',
+    boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)',
+    padding: '50px 0px'
+  },
+  techHeader: {
+    fontSize: '3rem',
+    borderBottom: '2px solid',
+    padding: '25px 0px 10px',
+    color: '#F0AE4E',
+    fontFamily: "'Permanent Marker', cursive",
+    '@media (max-width: 1000px)': {
+      fontSize: '2.5rem'
+    },
+    '@media (max-width: 750px)': {
+      fontSize: '2rem'
+    },
+    '@media (max-width: 500px)': {
+      borderBottom: '0px',
+      textAlign: 'center',
+      width: '80%'
+    }
+  },
+  listStyle: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    padding: '25px 0px',
+    width: '35%',
+    '@media (max-width: 1000px)': {
+      width: '50%'
+    },
+    '@media (max-width: 750px)': {
+      width: '70%'
+    },
+    '@media (max-width: 600px)': {
+      width: '90%'
+    }
+  },
+  listItem: {
+    padding: '15px',
+    fontSize: '2.2rem',
+    color: '#011502',
+    fontFamily: "'Rubik', sans-serif",
+    '@media (max-width: 1000px)': {
+      fontSize: '2rem'
+    },
+    '@media (max-width: 750px)': {
+      fontSize: '1.75rem'
+    }
+  }
+});
+
+const Technologies = () => {
+  const { mainTechnology, techHeader, listStyle, listItem } = useStyles();
+  return (
+    <section className={mainTechnology}>
+      <h2 className={techHeader}>
+        Here are a few technologies I'm working with
+      </h2>
+      <ul className={listStyle}>
+        {tech.map((item, i) => (
+          <li key={i} className={listItem}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+export default Technologies;
