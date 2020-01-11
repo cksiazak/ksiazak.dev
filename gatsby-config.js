@@ -16,8 +16,8 @@ module.exports = {
         start_url: '/',
         background_color: '#1C1F33',
         theme_color: '#ABA8B2',
-        display: 'browser'
-        // icon: 'src/images/icon.png'
+        display: 'browser',
+        icon: 'src/images/icon.png'
       }
     },
     `gatsby-plugin-robots-txt`,
