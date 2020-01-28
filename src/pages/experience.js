@@ -20,6 +20,10 @@ const Experience = () => {
           name='description'
           content='A few of my professional roles and accomplishments'
         />
+        <meta
+          name='keywords'
+          content='Christopher Ksiazak, Chris Ksiazak, Ksiazak, developer, web developer, frontend, backend, react, engineer, nodejs, experiences, work history, javascript'
+        />
       </Helmet>
       <TransitionPortal>
         <Navigation />

@@ -183,6 +183,10 @@ const Index = () => {
           name='description'
           content='A personal developer portfolio and art piece by Christopher Ksiazak'
         />
+        <meta
+          name='keywords'
+          content='Christopher Ksiazak, Chris Ksiazak, Ksiazak, developer, web, frontend, backend, react, engineer, nodejs, javascript'
+        />
       </Helmet>
       <div className={pageContainer}>
         <div className={pageHeadingUpper}>

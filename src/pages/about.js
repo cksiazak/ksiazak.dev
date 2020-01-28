@@ -22,6 +22,10 @@ const About = () => {
           name='description'
           content='A history about me, my values, and what I can do'
         />
+        <meta
+          name='keywords'
+          content='Christopher Ksiazak, Chris Ksiazak, Ksiazak, developer, web developer, frontend developer, backend developer, react, engineer, nodejs developer, about me, javascript'
+        />
       </Helmet>
       <TransitionPortal>
         <Navigation />

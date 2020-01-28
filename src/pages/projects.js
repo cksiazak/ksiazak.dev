@@ -20,6 +20,10 @@ const Projects = () => {
           name='description'
           content='Building new projects using new technologies'
         />
+        <meta
+          name='keywords'
+          content='Christopher Ksiazak, Chris Ksiazak, Ksiazak, developer, web developer, frontend, backend, react, engineer, nodejs, experiences, projects, javascript'
+        />
       </Helmet>
       <TransitionPortal>
         <Navigation />

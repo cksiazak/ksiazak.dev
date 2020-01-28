@@ -19,6 +19,10 @@ const Contact = () => {
           name='description'
           content='My contact information and ways to reach me'
         />
+        <meta
+          name='keywords'
+          content='Christopher Ksiazak, Chris Ksiazak, Ksiazak, developer, web, frontend, backend, react, engineer, nodejs, contact information, javascript'
+        />
       </Helmet>
       <TransitionPortal>
         <Navigation />
