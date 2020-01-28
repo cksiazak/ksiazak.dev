@@ -40,12 +40,19 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Oswald`,
-            subsets: [`latin`]
+            family: `Courgette`
           },
           {
-            family: `Open Sans`,
-            variants: [`400`, `700`]
+            family: `Lobster`
+          },
+          {
+            family: `Monda`
+          },
+          {
+            family: `Permanent+Marker`
+          },
+          {
+            family: `Rubik`
           }
         ]
       }
