@@ -38,10 +38,13 @@ const useStyles = createUseStyles({
     '@media (max-width: 750px)': {
       fontSize: '2rem'
     },
-    '@media (max-width: 500px)': {
+    '@media (max-width: 650px)': {
+      fontSize: '1.8rem',
       borderBottom: '0px',
-      textAlign: 'center',
-      width: '80%'
+      textAlign: 'center'
+    },
+    '@media (max-width: 550px)': {
+      width: '75%'
     }
   },
   listStyle: {
@@ -70,6 +73,9 @@ const useStyles = createUseStyles({
     },
     '@media (max-width: 750px)': {
       fontSize: '1.75rem'
+    },
+    '@media (max-width: 650px)': {
+      fontSize: '1.50rem'
     }
   }
 });
