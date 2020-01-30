@@ -9,6 +9,28 @@ module.exports = {
     `gatsby-plugin-jss`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Courgette`
+          },
+          {
+            family: `Lobster`
+          },
+          {
+            family: `Monda`
+          },
+          {
+            family: `Permanent+Marker`
+          },
+          {
+            family: `Rubik`
+          }
+        ]
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Christopher Ksiazak',
@@ -33,28 +55,6 @@ module.exports = {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: 'en'
-      }
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Courgette`
-          },
-          {
-            family: `Lobster`
-          },
-          {
-            family: `Monda`
-          },
-          {
-            family: `Permanent+Marker`
-          },
-          {
-            family: `Rubik`
-          }
-        ]
       }
     }
   ]
