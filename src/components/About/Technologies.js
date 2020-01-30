@@ -39,7 +39,6 @@ const useStyles = createUseStyles({
       fontSize: '2rem'
     },
     '@media (max-width: 650px)': {
-      fontSize: '1.8rem',
       borderBottom: '0px',
       textAlign: 'center'
     },
