@@ -22,7 +22,10 @@ const useStyles = createUseStyles({
     display: 'flex',
     width: '100%',
     boxShadow: '1px 1px 3px 1px rgba(42, 42, 42, 0.8)',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    background: '#E9E6FF',
+    position: 'relative',
+    zIndex: '2'
   },
   navTopper: {
     display: 'flex',
@@ -30,7 +33,7 @@ const useStyles = createUseStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'relative',
-    zIndex: '6',
+    zIndex: '4',
     background: '#E9E6FF'
   },
   logo: {
@@ -45,9 +48,9 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     alignItems: 'center',
     position: 'relative',
-    zIndex: '2',
+    zIndex: '0',
     width: '100%',
-    marginTop: '-250px',
+    marginTop: '-275px',
     transition: '0.4s'
   },
   menuLinks: {

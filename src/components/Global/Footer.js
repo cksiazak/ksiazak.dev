@@ -22,6 +22,9 @@ const useStyles = createUseStyles({
     '&:hover': {
       color: '#E9E6FF'
     },
+    '@media (max-width: 650px)': {
+      fontSize: '1rem'
+    },
     '@media (max-width: 550px)': {
       flexWrap: 'wrap',
       textAlign: 'center',

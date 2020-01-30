@@ -14,12 +14,9 @@ const useStyles = createUseStyles({
   headingContainer: {
     display: 'flex',
     flexDirection: 'column',
-    width: '50%',
-    '@media (max-width: 1500px)': {
-      width: '65%'
-    },
-    '@media (max-width: 1100px)': {
-      width: '75%'
+    width: '65%',
+    '@media (max-width: 1300px)': {
+      width: '85%'
     },
     '@media (max-width: 950px)': {
       width: '90%'

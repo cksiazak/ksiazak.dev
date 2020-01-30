@@ -15,16 +15,16 @@ const useStyles = createUseStyles({
   innerProjectContainer: {
     display: 'flex',
     flexDirection: 'column',
-    width: '53%',
+    width: '60%',
     '& hr': {
       margin: '25px 0px',
       width: '75%'
     },
     '@media (max-width: 1400px)': {
-      width: '65%'
+      width: '75%'
     },
     '@media (max-width: 900px)': {
-      width: '75%'
+      width: '80%'
     },
     '@media (max-width: 750px)': {
       width: '90%'

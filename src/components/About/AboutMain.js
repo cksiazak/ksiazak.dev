@@ -14,12 +14,12 @@ const useStyles = createUseStyles({
   },
   innerSection: {
     display: 'flex',
-    width: '70%',
+    width: '85%',
     flexDirection: 'column',
     '@media (max-width: 1400px)': {
       width: '80%'
     },
-    '@media (max-width: 1200px)': {
+    '@media (max-width: 1300px)': {
       width: '90%'
     },
     '@media (max-width: 950px)': {
@@ -39,7 +39,7 @@ const useStyles = createUseStyles({
     width: '100%',
     justifyContent: 'space-between',
     padding: '40px 0px',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     '@media (max-width: 950px)': {
       flexDirection: 'column-reverse',
       alignItems: 'center',
@@ -65,13 +65,22 @@ const useStyles = createUseStyles({
   },
   selfImage: {
     width: 'auto',
-    height: '350px',
+    height: '500px',
     marginRight: '100px',
     borderRadius: '25px 0px',
-    '@media (max-width: 1400px)': {
-      marginRight: '50px'
+    '@media (max-width: 1650px)': {
+      height: '400px'
     },
-    '@media (max-width: 1200px)': {
+    '@media (max-width: 1500px)': {
+      marginRight: '75px'
+    },
+    '@media (max-width: 1400px)': {
+      marginRight: '25px'
+    },
+    '@media (max-width: 1000px)': {
+      height: '300px'
+    },
+    '@media (max-width: 1300px)': {
       marginRight: '0px'
     },
     '@media (max-width: 750px)': {
@@ -103,12 +112,13 @@ const AboutMain = () => {
             <br />
             <p>
               Currently, I serve as a Project Coordinator at C3i Solutions, I'd
- say I'm about 95% autonomous as I collaborate with our client across 
-various time zones. Before this, I attended the University of Texas at 
-El Paso (UTEP). I realized that Electrical Engineering wasn't a topic 
-that I quite enjoyed, so I joined the Full Stack Web Development program 
-at Lambda School, which has provided me valuable experience in application 
-development with distributed teams.
+              say I'm about 95% autonomous as I collaborate with our client
+              across various time zones. Before this, I attended the University
+              of Texas at El Paso (UTEP). I realized that Electrical Engineering
+              wasn't a topic that I quite enjoyed, so I joined the Full Stack
+              Web Development program at Lambda School, which has provided me
+              valuable experience in application development with distributed
+              teams.
             </p>
           </div>
           <img className={selfImage} src={avatar} alt='Christopher Ksiazak' />

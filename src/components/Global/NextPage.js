@@ -15,7 +15,15 @@ const useStyles = createUseStyles({
     fontSize: '3.5rem',
     padding: '25px 0px',
     fontFamily: "'Courgette', cursive",
-    color: titleCol
+    color: titleCol,
+    textAlign: 'center',
+    '@media (max-width: 950px)': {
+      fontSize: '3rem'
+    },
+    '@media (max-width: 650px)': {
+      fontSize: '2.75rem',
+      width: '90%'
+    }
   }),
   buttonStyle: ({ sectBg }) => ({
     textDecoration: 'none',
@@ -31,6 +39,12 @@ const useStyles = createUseStyles({
       background: 'rgba(233, 230, 255, 0.4)',
       color: sectBg,
       border: '2px solid rgba(233, 230, 255, 1.0)'
+    },
+    '@media (max-width: 950px)': {
+      fontSize: '1.75rem'
+    },
+    '@media (max-width: 650px)': {
+      fontSize: '1.5rem'
     }
   })
 });
