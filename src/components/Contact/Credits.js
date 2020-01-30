@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
       textAlign: 'center'
     },
     '@media (max-width: 500px)': {
-        width: '60%',
+        width: '80%',
       }
   },
   hrefStyle: {
