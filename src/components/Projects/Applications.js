@@ -123,7 +123,7 @@ const useStyles = createUseStyles({
     '@media (max-width: 1050px)': {
       flexDirection: 'column',
       flexWrap: 'wrap',
-      height: '50px'
+      height: '75px'
     }
   },
   imageStyle: {
