@@ -42,6 +42,9 @@ const useStyles = createUseStyles({
       },
       '@media (max-width: 600px)': {
         fontSize: '2.75rem'
+      },
+      '@media (max-width: 500px)': {
+        fontSize: '2.25rem'
       }
     }
   }

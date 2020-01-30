@@ -7,6 +7,7 @@ import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
 import ContactHeader from '../components/Contact/contactHeader';
 import AdditionalLinks from '../components/Contact/AdditionalLinks';
+import Credits from '../components/Contact/Credits';
 import Footer from '../components/Global/Footer';
 
 const Contact = () => {
@@ -30,6 +31,7 @@ const Contact = () => {
       <PageWrapper>
         <ContactHeader />
         <AdditionalLinks />
+        <Credits />
       </PageWrapper>
       <Footer />
     </Fragment>

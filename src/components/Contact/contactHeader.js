@@ -23,6 +23,7 @@ const useStyles = createUseStyles({
   header: {
     fontSize: '3.75rem',
     paddingBottom: '50px',
+    textAlign: 'center',
     fontFamily: "'Courgette', cursive",
     '@media (max-width: 650px)': {
       fontSize: '3rem'
@@ -47,6 +48,7 @@ const useStyles = createUseStyles({
     color: '#22223B',
     transition: '0.3s',
     fontFamily: "'Rubik', sans-serif",
+    textAlign: 'center',
     '&:hover': {
       background: 'rgba(233, 230, 255, 0.4)'
     },

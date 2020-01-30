@@ -28,7 +28,8 @@ const useStyles = createUseStyles({
     '@media (max-width: 550px)': {
       flexWrap: 'wrap',
       textAlign: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      width: '70%'
     }
   }
 });
