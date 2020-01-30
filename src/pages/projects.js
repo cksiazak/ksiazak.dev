@@ -7,7 +7,7 @@ import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
 import Header from '../components/Projects/ProjectHeader';
 import Applications from '../components/Projects/Applications';
-// Contact section here
+import NextPage from '../components/Global/NextPage';
 import Footer from '../components/Global/Footer';
 
 const Projects = () => {
@@ -31,6 +31,13 @@ const Projects = () => {
       <PageWrapper>
         <Header />
         <Applications />
+        <NextPage
+          heading='Want to get in touch?'
+          link={{ url: '/contact', linkTitle: 'Contact Me' }}
+          sectBg='#f46036'
+          titleCol='#20063b'
+          seeNext='Feel free to reach out'
+        />
       </PageWrapper>
       <Footer />
     </Fragment>

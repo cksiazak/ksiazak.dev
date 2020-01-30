@@ -7,7 +7,7 @@ import Navigation from '../components/Global/Navigation';
 import PageWrapper from '../components/Global/PageWrapper';
 import Header from '../components/Experience/ExperienceHeader';
 import Experiences from '../components/Experience/Experiences';
-// Conact Sections here
+import NextPage from '../components/Global/NextPage';
 import Footer from '../components/Global/Footer';
 
 const Experience = () => {
@@ -31,6 +31,13 @@ const Experience = () => {
       <PageWrapper>
         <Header />
         <Experiences />
+        <NextPage
+          heading="See what I'm working on"
+          link={{ url: '/projects', linkTitle: 'Projects' }}
+          sectBg='#D36582'
+          titleCol="#20063b"
+          seeNext='View projects'
+        />
       </PageWrapper>
       <Footer />
     </Fragment>

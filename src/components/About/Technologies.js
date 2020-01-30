@@ -22,7 +22,7 @@ const useStyles = createUseStyles({
     width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
-    background: '#8C4843',
+    background: '#C5D1EB',
     boxShadow: 'inset 0px 2px 8px -2px rgba(42,42,42,0.4)',
     padding: '50px 0px'
   },
@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
     fontSize: '3rem',
     borderBottom: '2px solid',
     padding: '25px 0px 10px',
-    color: '#F0AE4E',
+    color: '#153b50',
     fontFamily: "'Permanent Marker', cursive",
     '@media (max-width: 1000px)': {
       fontSize: '2.5rem'

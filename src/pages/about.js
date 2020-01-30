@@ -9,7 +9,7 @@ import Header from '../components/About/AboutHeader';
 import FrameOfMind from '../components/About/FrameOfMind';
 import AboutMain from '../components/About/AboutMain';
 import Technologies from '../components/About/Technologies';
-// Contact Component Here
+import NextPage from '../components/Global/NextPage';
 import Footer from '../components/Global/Footer';
 
 const About = () => {
@@ -35,6 +35,13 @@ const About = () => {
         <FrameOfMind />
         <AboutMain />
         <Technologies />
+        <NextPage
+          heading="Check out where I've worked"
+          link={{ url: '/experience', linkTitle: 'Experience' }}
+          sectBg='#153b50'
+          titleCol='#D36582'
+          seeNext='Proceed to experiences'
+        />
       </PageWrapper>
       <Footer />
     </Fragment>
