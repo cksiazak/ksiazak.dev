@@ -1,15 +1,25 @@
 {
   "name": "ksiazak.dev",
-  "version": "0.1.0",
-  "private": true,
+  "version": "3.0.0",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "cypress open"
   },
   "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
     "next": "9.2.1",
+    "next-ga": "^2.3.4",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "styled-components": "^5.0.1",
+    "styled-reset": "^4.1.0",
+    "swr": "^0.1.16"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "cypress": "^4.0.1"
   }
 }
