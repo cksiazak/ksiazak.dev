@@ -3,7 +3,7 @@ import App from 'next/app';
 import Router from 'next/router';
 import withGA from 'next-ga';
 
-import ThemeContext from '../lib/ThemeContext';
+import ThemeContext from '../utils/ThemeContext';
 import { GlobalStyle } from '../styles/GlobalStyles';
 
 class MyApp extends App {
