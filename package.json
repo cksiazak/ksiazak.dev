@@ -2,6 +2,7 @@
   "name": "ksiazak.dev",
   "version": "3.0.0",
   "private": false,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

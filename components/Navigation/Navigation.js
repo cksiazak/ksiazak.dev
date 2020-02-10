@@ -7,7 +7,7 @@ const NavSection = styled.section`
 `;
 
 const NavWrapper = styled.nav`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -25,8 +25,16 @@ const Navigation = () => {
           <a>{`<CK/>`}</a>
         </Link>
         <ListWrap>
-          <li>/uses</li>
-          <li>/about</li>
+          <li>
+            <Link href='/'>
+              <a>/uses</a>
+            </Link>
+          </li>
+          <li>
+            <Link href='/'>
+              <a>/contact</a>
+            </Link>
+          </li>
           <li>
             <label className='switch'>
               <input type='checkbox' />
