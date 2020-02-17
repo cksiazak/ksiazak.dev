@@ -1,6 +1,13 @@
 import React, { Fragment } from 'react';
 
+import AppWrapper from '../components/Global/AppWrapper';
+
 const Home = () => {
-  return <div>TEST</div>;
+  return (
+    <AppWrapper>
+      TEST
+    </AppWrapper>
+  );
 };
+
 export default Home;
