@@ -111,14 +111,23 @@ const AboutMain = () => {
             </p>
             <br />
             <p>
-              Currently, I serve as a Project Coordinator at C3i Solutions, I'd
-              say I'm about 95% autonomous as I collaborate with our client
-              across various time zones. Before this, I attended the University
-              of Texas at El Paso (UTEP). I realized that Electrical Engineering
-              wasn't a topic that I quite enjoyed, so I joined the Full Stack
-              Web Development program at Lambda School, which has provided me
-              valuable experience in application development with distributed
-              teams.
+              I am proficient in HTML, CSS and Javascript including various
+              technologies such as React, Redux, and Nodejs. In my last position
+              as a Software Engineer at E-Dealer Direct, I served as part of the
+              core engineering team working along side the CTO and VP of
+              Engineering in developing our product. I produced prototypes, had
+              discussions regarding the architecture, and built out not only the
+              React views, but also the API using Ruby on Rails and
+              Elasticsearch, both of which I learned on the fly. Unfortunately,
+              due to COVID-19 affecting the market, I was laid off as the
+              company scaled back operations.
+            </p>
+            <br />
+            <p>
+              Currently, I attend Lambda School for Full Stack Web Development.
+              I've worked with various, distributed teams of different skill
+              sets (ranging from Data Science to UX design, as well as other
+              developers) and planned through various projects.
             </p>
           </div>
           <img className={selfImage} src={avatar} alt='Christopher Ksiazak' />

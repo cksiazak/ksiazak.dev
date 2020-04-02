@@ -12,8 +12,9 @@ const tech = [
   'Nextjs',
   'Nodejs',
   'SQL',
-  'Sqlite3',
-  'Postgres'
+  'Postgres',
+  'Ruby on Rails',
+  'Elasticsearch'
 ];
 
 const useStyles = createUseStyles({
