@@ -3,7 +3,7 @@ export const projects = [
     title: 'SwagDragon (WIP)',
     url: '',
     githubLink:
-      'https://github.com/orgs/Lambda-School-Labs/teams/labs-pt7-merchos',
+      '',
     description: [
       'SwagDragon is a drag and drop store builder that allows you to create your own store and products without needing to keep anything in stock. We accomplish this by hooking into a drop shipping service so that the product you create is only made when someone orders it.', "This product is still a work in progress, but I'm working with 4 other developers and a UI expert in developing this application. As of right now, I've created most of the back end using Nodejs/express, and a few pages using Nextjs and Redux. We're looking at a completion around the end of May."
     ],
