@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-
-const NavData = [
-  { title: 'Uses', href: '/uses' },
-  { title: 'Contact', href: '/contact' }
-];
+import ThemeContext from '../lib/ThemeContext';
 
 const NavSection = styled.section`
   width: 100%;
-  box-shadow: 0px 2px 10px -2px rgba(42, 42, 42, 0.6);
+  position: fixed;
+  top: 0;
+  box-shadow: ${props =>
+    props.scrolled
+      ? '0px 2px 10px -2px rgba(42, 42, 42, 0.6)'
+      : 'none'};
+  background: white;
+  height: 65px;
 `;
 const InnerNav = styled.div`
   width: 80%;
@@ -43,9 +46,42 @@ const Nav = styled.nav`
   }
 `;
 
+const ThemeButton = styled.button`
+  background: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
 const Navigation = () => {
+  const { darkMode, themeController } = useContext(ThemeContext);
+  const [awayFromTop, setAwayFromTop] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
+
+  const scrollListener = () => {
+    const position = window.pageYOffset;
+    position > 20 ? setAwayFromTop(true) : setAwayFromTop(false);
+  };
+
+  const NavData = [
+    { title: 'Uses', href: '/uses' },
+    { title: 'Contact', href: '/contact' }
+  ];
+
   return (
-    <NavSection>
+    <NavSection scrolled={awayFromTop}>
       <InnerNav>
         <Link href='/'>
           <a>{`<CK/>`}</a>
@@ -59,8 +95,19 @@ const Navigation = () => {
                 </Link>
               </li>
             ))}
-            <li>🌙</li>
-            <li>☀️</li>
+            {darkMode ? (
+              <li>
+                <ThemeButton type='button' onClick={themeController}>
+                  🌙
+                </ThemeButton>
+              </li>
+            ) : (
+              <li>
+                <ThemeButton type='button' onClick={themeController}>
+                  ☀️
+                </ThemeButton>
+              </li>
+            )}
           </ul>
         </Nav>
       </InnerNav>

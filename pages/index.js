@@ -1,12 +1,10 @@
 import React, { Fragment } from 'react';
 
-import AppWrapper from '../components/Global/AppWrapper';
-
 const Home = () => {
   return (
-    <AppWrapper>
+    <Fragment>
       TEST
-    </AppWrapper>
+    </Fragment>
   );
 };
 
