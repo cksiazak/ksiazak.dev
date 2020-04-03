@@ -4,7 +4,7 @@ export const workHistory = [
     title: 'Software Engineer',
     date: 'March 2020 - April 2020',
     description: [
-      "I joined E-Dealer Direct as part of the core engineering team. I worked alongside the CTO and VP of Engineering in architecture discussion, code reviews, and product planning. In my time here, I planned and developed a new feature, from discussion, to creating a mockup/prototype using Figma, to development. I originally came on to take over the React and React Native applications, but I also worked on the back end API as needed using Ruby on Rails and Elasticsearch, both of which I learned on the spot.", "Unfortunately, due to COVID-19 affecting our market, I was laid off as the company scaled back."
+      "I joined E-Dealer Direct as part of the core engineering team. I worked alongside the CTO and VP of Engineering in architecture discussion, code reviews, and product planning. In my time here, I planned and developed a new feature, from discussion, to creating a mockup/prototype using Figma, to development. I originally came on to take over the React and React Native applications, but I also worked on the back end API as needed using Ruby on Rails and Elasticsearch, both of which I learned on the spot.", "Unfortunately, due to COVID-19 affecting our market, I was downsized as the company scaled back."
     ]
   },
   {

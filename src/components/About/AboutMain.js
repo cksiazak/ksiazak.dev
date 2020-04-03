@@ -119,7 +119,7 @@ const AboutMain = () => {
               discussions regarding the architecture, and built out not only the
               React views, but also the API using Ruby on Rails and
               Elasticsearch, both of which I learned on the fly. Unfortunately,
-              due to COVID-19 affecting the market, I was laid off as the
+              due to COVID-19 affecting the market, I was downsized as the
               company scaled back operations.
             </p>
             <br />
