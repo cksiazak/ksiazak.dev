@@ -1,21 +1,27 @@
 import React, { useState, useEffect, useContext } from 'react';
-import Link from 'next/link';
+
+// styling
 import styled from 'styled-components';
-import ThemeContext from '../lib/ThemeContext';
+import ThemeContext from '../../lib/ThemeContext';
+import { theme } from '../../constants/themes';
+
+// components
+import ThemeSwitcher from './Navigation/ThemeSwitcher'
+import NavLink from './Navigation/NavLink'
 
 const NavSection = styled.section`
   width: 100%;
   position: fixed;
   top: 0;
   box-shadow: ${props =>
-    props.scrolled
-      ? '0px 2px 10px -2px rgba(42, 42, 42, 0.6)'
-      : 'none'};
-  background: white;
+    props.scrolled ? '0px 2px 10px -2px rgba(42, 42, 42, 0.6)' : 'none'};
+  background: ${props =>
+    props.darkMode ? theme.darkMode.background : theme.lightMode.background};
   height: 65px;
+  transition: ${theme.global.transitionTime};
 `;
 const InnerNav = styled.div`
-  width: 80%;
+  width: ${theme.global.pageWidth};
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -25,7 +31,7 @@ const InnerNav = styled.div`
   a {
     text-decoration: none;
     color: black;
-    transition: 0.2s;
+    transition: ${theme.global.transitionTime};
     &:hover {
       color: red;
     }
@@ -46,17 +52,6 @@ const Nav = styled.nav`
   }
 `;
 
-const ThemeButton = styled.button`
-  background: none;
-  border: none;
-
-  &:hover {
-    cursor: pointer;
-  }
-  &:focus {
-    outline: none;
-  }
-`;
 
 const Navigation = () => {
   const { darkMode, themeController } = useContext(ThemeContext);
@@ -75,38 +70,17 @@ const Navigation = () => {
     position > 20 ? setAwayFromTop(true) : setAwayFromTop(false);
   };
 
-  const NavData = [
-    { title: 'Uses', href: '/uses' },
-    { title: 'Contact', href: '/contact' }
-  ];
-
   return (
-    <NavSection scrolled={awayFromTop}>
+    <NavSection scrolled={awayFromTop} darkMode={darkMode}>
       <InnerNav>
-        <Link href='/'>
-          <a>{`<CK/>`}</a>
-        </Link>
+        <NavLink title='<CK/>' href='/' />
         <Nav>
           <ul>
-            {NavData.map((link, i) => (
-              <li key={i}>
-                <Link href={link.href}>
-                  <a title={link.title}>/ {link.title}</a>
-                </Link>
-              </li>
-            ))}
+            <NavLink href='/uses' title='/Uses' />
             {darkMode ? (
-              <li>
-                <ThemeButton type='button' onClick={themeController}>
-                  🌙
-                </ThemeButton>
-              </li>
+              <ThemeSwitcher icon='🌙' themeController={themeController} />
             ) : (
-              <li>
-                <ThemeButton type='button' onClick={themeController}>
-                  ☀️
-                </ThemeButton>
-              </li>
+              <ThemeSwitcher icon='☀️' themeController={themeController} />
             )}
           </ul>
         </Nav>

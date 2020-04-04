@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
+
+import Projects from '../components/Projects';
 
 const Home = () => {
   return (
     <Fragment>
-      TEST
+      <Projects />
     </Fragment>
   );
 };

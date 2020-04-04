@@ -4,31 +4,34 @@ import Router from 'next/router';
 import withGA from 'next-ga';
 
 // Global Components
-import Navigation from '../components/Navigation';
+import Navigation from '../components/Global/Navigation';
+import Footer from '../components/Global/Footer';
 
 // Themes
 import ThemeContext from '../lib/ThemeContext';
 import { normalize } from 'styled-normalize';
 import styled, { createGlobalStyle } from 'styled-components';
+import { theme } from '../constants/themes';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize};
 
   * {
     box-sizing: border-box;
-    transition: 0.2s;
   }
 
   html {
     font-size: 62.5%;
-    background: ${props => (!props.darkMode ? 'white' : '#2D3047')}
+    background: ${props => (!props.darkMode ? 'white' : '#2D3047')};
+    transition: ${theme.global.transitionTime};
   }
 `;
 
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  align-items: center;
+  width: 100%;
   margin: 65px auto 0px;
 `;
 
@@ -40,6 +43,26 @@ class MyApp extends App {
     };
 
     this.themeController = this.themeController.bind(this);
+  }
+
+  componentDidMount() {
+    const data = window.localStorage.getItem('dark-mode');
+    const isDark = JSON.parse(data);
+
+    if (isDark) {
+      this.setState({
+        darkMode: isDark
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.darkMode !== prevState.darkMode) {
+      window.localStorage.setItem(
+        'dark-mode',
+        JSON.stringify(this.state.darkMode)
+      );
+    }
   }
 
   themeController() {
@@ -63,6 +86,7 @@ class MyApp extends App {
         <AppWrapper>
           <Component {...pageProps} />
         </AppWrapper>
+        <Footer />
       </ThemeContext.Provider>
     );
   }
