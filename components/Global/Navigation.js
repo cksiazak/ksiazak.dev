@@ -17,16 +17,18 @@ const NavSection = styled.section`
     props.scrolled ? '0px 2px 10px -2px rgba(42, 42, 42, 0.6)' : 'none'};
   background: ${props =>
     props.darkMode ? theme.darkMode.background : theme.lightMode.background};
-  height: 65px;
   transition: ${theme.global.transitionTime};
+  z-index: 10;
 `;
 const InnerNav = styled.div`
   width: ${theme.global.pageWidth};
+  max-width: ${theme.global.maxPageWidth};
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
+  padding: 15px 0px;
 
   a {
     text-decoration: none;
@@ -39,12 +41,14 @@ const InnerNav = styled.div`
 `;
 
 const Nav = styled.nav`
-  width: 30%;
+  width: 10%;
 
   ul {
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    margin: 0px;
+    padding: 0px;
 
     li {
       cursor: pointer;
@@ -76,7 +80,10 @@ const Navigation = () => {
         <NavLink title='<CK/>' href='/' />
         <Nav>
           <ul>
-            <NavLink href='/uses' title='/Uses' />
+            {/* <NavLink href='/about-me' title='/About Me' /> */}
+            {/* <NavLink href='/contact' title='/Contact' /> */}
+            {/* <NavLink href='/uses' title='/Uses' /> */}
+            {/* <NavLink href='/blog' title='/Blog' /> */}
             {darkMode ? (
               <ThemeSwitcher icon='🌙' themeController={themeController} />
             ) : (

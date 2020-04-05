@@ -16,13 +16,17 @@ import { theme } from '../constants/themes';
 const GlobalStyle = createGlobalStyle`
   ${normalize};
 
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
+
   * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+//  font-family: 'Rubik', sans-serif;
   }
 
   html {
     font-size: 62.5%;
-    background: ${props => (!props.darkMode ? 'white' : '#2D3047')};
+    background: ${(props) => (!props.darkMode ? 'white' : '#2D3047')};
     transition: ${theme.global.transitionTime};
   }
 `;
@@ -32,14 +36,13 @@ const AppWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 65px auto 0px;
 `;
 
 class MyApp extends App {
   constructor() {
     super();
     this.state = {
-      darkMode: false
+      darkMode: false,
     };
 
     this.themeController = this.themeController.bind(this);
@@ -51,7 +54,7 @@ class MyApp extends App {
 
     if (isDark) {
       this.setState({
-        darkMode: isDark
+        darkMode: isDark,
       });
     }
   }
@@ -66,8 +69,8 @@ class MyApp extends App {
   }
 
   themeController() {
-    this.setState(prevState => ({
-      darkMode: !prevState.darkMode
+    this.setState((prevState) => ({
+      darkMode: !prevState.darkMode,
     }));
   }
 
@@ -76,7 +79,7 @@ class MyApp extends App {
 
     const themeValue = {
       darkMode: this.state.darkMode,
-      themeController: this.themeController
+      themeController: this.themeController,
     };
 
     return (

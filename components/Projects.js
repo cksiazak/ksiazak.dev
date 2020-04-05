@@ -15,18 +15,25 @@ import * as SongSight from '../data/projects/song-sight.mdx';
 
 const ProjectSection = styled.section`
   display: flex;
-  justify-content: center;
-  background: #0E79B2;
+  flex-direction: column;
+  align-items: center;
+  background: #0e79b2;
   box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.6);
+  width: 100%;
 `;
 
 const InnerProjectWrapper = styled.div`
   width: ${theme.global.pageWidth};
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Projects = () => {
   return (
     <ProjectSection>
+      <h2>Projects</h2>
       <InnerProjectWrapper>
         <ProjectCard project={SwagDragon} />
         <ProjectCard project={Ksiazakdev} />
