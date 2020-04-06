@@ -19,9 +19,7 @@ const NavSection = styled.section`
     if (!props.scrolled) {
       return 'transparent';
     } else if (props.scrolled) {
-      return props.darkMode
-        ? theme.darkMode.background
-        : theme.lightMode.background;
+      return props.darkMode ? '#403F4C' : theme.lightMode.background;
     }
   }};
   transition: ${theme.global.transitionTime};
@@ -39,10 +37,10 @@ const InnerNav = styled.div`
 
   a {
     text-decoration: none;
-    color: black;
+    color: ${(props) => (props.darkMode ? 'white' : 'black')};
     transition: ${theme.global.transitionTime};
     &:hover {
-      color: red;
+      color: ${theme.lightMode.linkHover};
     }
   }
 `;
@@ -82,7 +80,7 @@ const Navigation = () => {
 
   return (
     <NavSection scrolled={awayFromTop} darkMode={darkMode}>
-      <InnerNav>
+      <InnerNav darkMode={darkMode}>
         <NavLink title='<CK/>' href='/' />
         <Nav>
           <ul>

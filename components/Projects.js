@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 // themes
 import styled from 'styled-components';
 import { theme } from '../constants/themes';
+import ThemeContext from '../lib/ThemeContext';
 
 // Components
 import ProjectCard from './Projects/ProjectCard';
@@ -18,11 +19,13 @@ const ProjectSection = styled.section`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding-top: 75px;
 `;
 
 const SectionHeader = styled.h2`
   font-size: 3.5rem;
-`
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+`;
 
 const InnerProjectWrapper = styled.div`
   width: ${theme.global.pageWidth};
@@ -32,9 +35,10 @@ const InnerProjectWrapper = styled.div`
 `;
 
 const Projects = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <ProjectSection>
-      <SectionHeader>Things I've Built</SectionHeader>
+      <SectionHeader darkMode={darkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
         <ProjectCard project={SwagDragon} />
         <ProjectCard project={Ksiazakdev} />

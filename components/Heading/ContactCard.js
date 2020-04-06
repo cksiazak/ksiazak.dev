@@ -38,9 +38,11 @@ const SocialList = styled.ul`
       display: flex;
       color: white;
       transition: ${theme.global.transitionTime};
+      filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
 
       &:hover {
-        color: red;
+        transform: scale(1.05);
+        filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
       }
     }
   }

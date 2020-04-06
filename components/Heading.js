@@ -30,6 +30,7 @@ const Intro = styled.span`
   z-index: 1;
   left: 12.5%;
   top: 200px;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const Name = styled.h1`
@@ -39,6 +40,7 @@ const Name = styled.h1`
   z-index: 1;
   left: 12.5%;
   top: 220px;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const Desc = styled.span`
@@ -47,6 +49,7 @@ const Desc = styled.span`
   z-index: 1;
   left: 12.5%;
   top: 300px;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const UnderHeading = styled.p`
@@ -57,6 +60,7 @@ const UnderHeading = styled.p`
   left: 12.5%;
   top: 325px;
   width: 30%;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const Heading = () => {
@@ -68,10 +72,10 @@ const Heading = () => {
         <Particles darkMode={darkMode} />
       </ParticleWrapper>
       <ContactCard />
-      <Intro>Hello, my name is</Intro>
-      <Name>Christopher Ksiazak</Name>
-      <Desc>& I like to build things</Desc>
-      <UnderHeading>
+      <Intro darkMode={darkMode}>Hello, my name is</Intro>
+      <Name darkMode={darkMode}>Christopher Ksiazak</Name>
+      <Desc darkMode={darkMode}>& I like to build things</Desc>
+      <UnderHeading darkMode={darkMode}>
         I am a (mostly) self taught developer from El Paso, Texas. Apart from
         English and Spanish, I also speak HTML, CSS, and Javascript.
       </UnderHeading>

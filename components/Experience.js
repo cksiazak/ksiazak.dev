@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 // stylings
 import styled from 'styled-components';
@@ -10,9 +10,10 @@ import ExperienceCard from './Experience/ExperienceCard';
 // data
 import * as EDealer from '../data/experiences/e-dealer-direct.mdx';
 import * as C3i from '../data/experiences/c3i-solutions.mdx';
+import ThemeContext from '../lib/ThemeContext';
 
 const WorkSection = styled.section`
-  padding: 0px 0px 30px;
+  padding: 75px 0px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +21,7 @@ const WorkSection = styled.section`
 
 const SectionHeading = styled.h2`
   font-size: 3.5rem;
-  margin-bottom: 0px;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const InnerWrap = styled.div`
@@ -31,9 +32,10 @@ const InnerWrap = styled.div`
 `;
 
 const Experience = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <WorkSection>
-      <SectionHeading>Experiences</SectionHeading>
+      <SectionHeading darkMode={darkMode}>Experiences</SectionHeading>
       <InnerWrap>
         <ExperienceCard work={EDealer} />
         <ExperienceCard work={C3i} />

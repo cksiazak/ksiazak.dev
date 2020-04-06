@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 // stylings
 import styled from 'styled-components';
+import { theme } from '../constants/themes';
+import ThemeContext from '../lib/ThemeContext';
 
 import * as Content from '../data/aboutme/about-me.mdx';
-import { theme } from '../constants/themes';
 
 const AboutMeSection = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);;
-  box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.6);
+  background: ${(props) =>
+    props.darkMode
+      ? 'rgba(90,92,106,1)'
+      : 'linear-gradient(90deg, #d53369 0%, #daae51 100%)'};
+  box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.8);
   padding: 50px 0px 75px;
 `;
 
@@ -26,6 +30,7 @@ const SectionHeading = styled.h2`
   font-size: 3.5rem;
   margin: 0px;
   margin-bottom: 25px;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const SectionContent = styled.div`
@@ -37,6 +42,7 @@ const SectionContent = styled.div`
 const AboutInfo = styled.div`
   width: 60%;
   font-size: 1.75rem;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const SelfImage = styled.img`
@@ -56,12 +62,13 @@ const TechList = styled.ul`
 `;
 
 const AboutMe = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
-    <AboutMeSection>
+    <AboutMeSection darkMode={darkMode}>
       <InnerContainer>
-        <SectionHeading>About Me</SectionHeading>
+        <SectionHeading darkMode={darkMode}>About Me</SectionHeading>
         <SectionContent>
-          <AboutInfo>
+          <AboutInfo darkMode={darkMode}>
             <Content.default />
             <TechList>
               {Content.meta.tech.map((tech, i) => (

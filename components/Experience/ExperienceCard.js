@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import styled from 'styled-components';
+import ThemeContext from '../../lib/ThemeContext';
 
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px 25px;
-  background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background: ${(props) =>
+    props.darkMode
+      ? 'rgba(118,124,163,1)'
+      : 'linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)'};
   margin: 50px 0px 0px;
   width: 70%;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
   p {
     font-size: 1.6rem;
     margin: 10px 0px;
   }
 `;
+
 
 const MetaWrapper = styled.div`
   display: flex;
@@ -34,9 +40,10 @@ const MetaWrapper = styled.div`
 `;
 
 const ExperienceCard = ({ work: { default: WorkContent, meta } }) => {
+  const { darkMode } = useContext(ThemeContext);
   return (
-    <CardWrapper>
-      <MetaWrapper>
+    <CardWrapper darkMode={darkMode}>
+      <MetaWrapper darkMode={darkMode}>
         <h3>{meta.location}</h3>
         <span>{meta.position}</span>
         <span>{meta.dates}</span>

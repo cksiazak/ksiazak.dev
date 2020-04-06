@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoLogoGithub, IoIosLink } from 'react-icons/io';
 
 // styling
 import styled from 'styled-components';
 import { theme } from '../../constants/themes';
+import ThemeContext from '../../lib/ThemeContext';
 
 const CardContainer = styled.div`
   width: 100%;
@@ -47,7 +48,10 @@ const CardInfo = styled.div`
 
 const Content = styled.div`
   max-width: 600px;
-  background: linear-gradient(315deg, rgba(179, 205, 209, 0.94) 0%, rgba(159, 164, 196, 0.94) 74%);
+  background: ${(props) =>
+    props.darkMode
+      ? 'rgba(90,92,106, 0.95)'
+      : 'linear-gradient(315deg,rgba(179, 205, 209, 0.94) 0%,rgba(159, 164, 196, 0.94) 74%)'};
   margin-right: -125px;
   margin-left: 0px;
   margin-top: 15px;
@@ -55,6 +59,7 @@ const Content = styled.div`
   position: relative;
   z-index: 2;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
   p {
     padding: 5px 15px;
@@ -75,6 +80,7 @@ const Content = styled.div`
 const Metadata = styled.div`
   display: flex;
   flex-direction: column;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const TitleWrapper = styled.div`
@@ -93,15 +99,16 @@ const LinkContainer = styled.div`
   padding-bottom: 10px;
 
   a {
+    color: ${(props) => (props.darkMode ? 'white' : 'black')};
+    text-decoration: none;
+    transition: ${theme.global.transitionTime};
+
     &:nth-child(2) {
       padding: 0px 5px;
     }
 
-    text-decoration: none;
-    transition: ${theme.global.transitionTime};
-
     &:hover {
-      color: yellow;
+      color: ${theme.lightMode.linkHover};
       transform: scale(1.25);
     }
   }
@@ -109,6 +116,7 @@ const LinkContainer = styled.div`
 
 const TechWrapper = styled.div`
   font-size: 1.8rem;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
 `;
 
 const ImgContainer = styled.div`
@@ -124,10 +132,11 @@ const ImgContainer = styled.div`
 `;
 
 const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <CardContainer>
       <CardInfo className='card-information'>
-        <LinkContainer className='project-links'>
+        <LinkContainer className='project-links' darkMode={darkMode}>
           {meta.href && (
             <a href={meta.href}>
               <IoLogoGithub />
@@ -139,15 +148,15 @@ const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
             </a>
           )}
         </LinkContainer>
-        <Metadata className='project-meta'>
+        <Metadata className='project-meta' darkMode={darkMode}>
           <TitleWrapper className='project-title'>
             <Title>{meta.title}</Title>
           </TitleWrapper>
         </Metadata>
-        <Content className='project-card-info'>
+        <Content className='project-card-info' darkMode={darkMode}>
           <ProjectContent />
         </Content>
-        <TechWrapper className='project-tech'>
+        <TechWrapper className='project-tech' darkMode={darkMode}>
           <span>{meta.tech.join(' | ')}</span>
         </TechWrapper>
       </CardInfo>
