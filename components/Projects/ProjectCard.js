@@ -47,13 +47,14 @@ const CardInfo = styled.div`
 
 const Content = styled.div`
   max-width: 600px;
-  background: red;
+  background: linear-gradient(315deg, rgba(179, 205, 209, 0.94) 0%, rgba(159, 164, 196, 0.94) 74%);
   margin-right: -125px;
   margin-left: 0px;
   margin-top: 15px;
   margin-bottom: 15px;
   position: relative;
   z-index: 2;
+  box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
 
   p {
     padding: 5px 15px;
@@ -114,6 +115,7 @@ const ImgContainer = styled.div`
   width: 600px;
   position: relative;
   z-index: 1;
+  box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
 
   img {
     height: auto;

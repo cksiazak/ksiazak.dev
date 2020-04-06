@@ -32,7 +32,7 @@ const SocialList = styled.ul`
   justify-content: space-evenly;
   align-items: center;
   font-size: 3.5rem;
-  
+
   li {
     a {
       display: flex;
@@ -70,23 +70,31 @@ const ContactCard = () => {
       <CardTitle>Let's Connect</CardTitle>
       <SocialList>
         <li>
-          <a href=''>
+          <a href='https://www.linkedin.com/in/cksiazak/' title='LinkedIn'>
             <IoLogoLinkedin />
           </a>
         </li>
         <li>
-          <a href=''>
+          <a href='https://github.com/cksiazak' title='Github'>
             <IoLogoGithub />
           </a>
         </li>
         <li>
-          <a href=''>
+          <a href='https://twitter.com/cksiazak_dev' title='Twitter'>
             <IoLogoTwitter />
           </a>
         </li>
       </SocialList>
-      <LinkButton href=''>Resume</LinkButton>
-      <LinkButton href=''>Email Me</LinkButton>
+      <LinkButton
+        href='/assets/Cksiazak_Resume.pdf'
+        title='Resume'
+        download='cksiazak_resume.pdf'
+      >
+        Resume
+      </LinkButton>
+      <LinkButton href='mailto:cksiazak@gmail.com' title='Email'>
+        Email Me
+      </LinkButton>
     </CardWrapper>
   );
 };

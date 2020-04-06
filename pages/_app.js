@@ -16,8 +16,6 @@ import { theme } from '../constants/themes';
 const GlobalStyle = createGlobalStyle`
   ${normalize};
 
-  @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
-
   * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;

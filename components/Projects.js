@@ -17,13 +17,11 @@ const ProjectSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #0e79b2;
-  box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.6);
   width: 100%;
 `;
 
 const SectionHeader = styled.h2`
-  font-size: 4rem;
+  font-size: 3.5rem;
 `
 
 const InnerProjectWrapper = styled.div`

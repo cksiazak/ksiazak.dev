@@ -13,6 +13,7 @@ const HeadingSection = styled.section`
   position: relative;
   z-index: 0;
   width: 100%;
+  max-width: ${theme.global.maxPageWidth};
 `;
 
 const ParticleWrapper = styled.div`
