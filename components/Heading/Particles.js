@@ -14,7 +14,7 @@ const HeadingParticles = ({ darkMode }) => {
             },
           },
           color: {
-            value: !darkMode ? '#4D5057' : '#FFF',
+            value: !darkMode ? '#4F5057' : '#FFF',
           },
           shape: {
             type: 'circle',
@@ -23,7 +23,12 @@ const HeadingParticles = ({ darkMode }) => {
               color: '#000000',
             },
             polygon: {
-              nb_sides: 5,
+              nb_sides: 6,
+            },
+            image: {
+              src: 'img/github.svg',
+              width: 100,
+              height: 100,
             },
           },
           opacity: {
@@ -37,7 +42,7 @@ const HeadingParticles = ({ darkMode }) => {
             },
           },
           size: {
-            value: 3,
+            value: 4.008755121184665,
             random: true,
             anim: {
               enable: false,
@@ -47,10 +52,10 @@ const HeadingParticles = ({ darkMode }) => {
             },
           },
           line_linked: {
-            enable: false,
-            distance: 150,
-            color: !darkMode ? '#4D5057' : '#FFF',
-            opacity: 0.4,
+            enable: true,
+            distance: 96.21012290843196,
+            color: !darkMode ? '#4F5057' : '#FFF',
+            opacity: 0.40087551211846645,
             width: 1,
           },
           move: {
@@ -72,11 +77,11 @@ const HeadingParticles = ({ darkMode }) => {
           detect_on: 'canvas',
           events: {
             onhover: {
-              enable: true,
-              mode: 'grab',
+              enable: false,
+              mode: 'bubble',
             },
             onclick: {
-              enable: true,
+              enable: false,
               mode: 'repulse',
             },
             resize: true,
@@ -85,18 +90,18 @@ const HeadingParticles = ({ darkMode }) => {
             grab: {
               distance: 400,
               line_linked: {
-                opacity: 0.6,
+                opacity: 1,
               },
             },
             bubble: {
-              distance: 250,
+              distance: 100,
               size: 0,
               duration: 2,
               opacity: 0,
               speed: 3,
             },
             repulse: {
-              distance: 400,
+              distance: 200,
               duration: 0.4,
             },
             push: {

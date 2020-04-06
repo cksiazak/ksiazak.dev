@@ -68,7 +68,7 @@ const AboutInfo = styled.div`
     width: 100%;
   }
   @media (max-width: 575px) {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 `;
 
