@@ -133,7 +133,7 @@ const AboutMe = () => {
               ))}
             </TechList>
           </AboutInfo>
-          <SelfImage src={Content.meta.image} />
+          <SelfImage src={Content.meta.image} alt="Picture of myself"/>
         </SectionContent>
       </InnerContainer>
     </AboutMeSection>

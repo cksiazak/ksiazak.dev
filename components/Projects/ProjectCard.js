@@ -213,12 +213,12 @@ const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
       <CardInfo className='card-information'>
         <LinkContainer className='project-links' darkMode={darkMode}>
           {meta.href !== '' ? (
-            <a href={meta.href}>
+            <a href={meta.href} title={`${meta.title} github`}>
               <IoLogoGithub />
             </a>
           ) : null}
           {meta.git !== '' ? (
-            <a href={meta.git}>
+            <a href={meta.git} title={`${meta.title} deployment`}>
               <IoIosLink />
             </a>
           ) : null}

@@ -11,10 +11,6 @@ const Home = () => {
   return (
     <Fragment>
       <Head>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap'
-          rel='stylesheet'
-        />
         <meta charSet='utf-8' />
         <title>Christopher Ksiazak - Full Stack Software Developer</title>
         <meta
