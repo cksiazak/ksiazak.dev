@@ -22,9 +22,12 @@ const ProjectSection = styled.section`
   width: 100%;
 `;
 
+const SectionHeader = styled.h2`
+  font-size: 4rem;
+`
+
 const InnerProjectWrapper = styled.div`
   width: ${theme.global.pageWidth};
-  padding: 50px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +36,7 @@ const InnerProjectWrapper = styled.div`
 const Projects = () => {
   return (
     <ProjectSection>
-      <h2>Projects</h2>
+      <SectionHeader>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
         <ProjectCard project={SwagDragon} />
         <ProjectCard project={Ksiazakdev} />

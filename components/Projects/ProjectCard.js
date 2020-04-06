@@ -48,7 +48,6 @@ const CardInfo = styled.div`
 const Content = styled.div`
   max-width: 600px;
   background: red;
-  padding: 15px;
   margin-right: -125px;
   margin-left: 0px;
   margin-top: 15px;
@@ -57,6 +56,16 @@ const Content = styled.div`
   z-index: 2;
 
   p {
+    padding: 5px 15px;
+
+    &:first-child {
+      padding-top: 15px;
+    }
+
+    &:last-child {
+      padding-bottom: 15px;
+    }
+
     margin: 0px;
     font-size: 1.8rem;
   }
@@ -71,15 +80,15 @@ const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 2.5rem;
 `;
 
 const Title = styled.h3`
   margin: 0px;
+  font-size: 3rem;
 `;
 
 const LinkContainer = styled.div`
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding-bottom: 10px;
 
   a {
@@ -98,7 +107,6 @@ const LinkContainer = styled.div`
 `;
 
 const TechWrapper = styled.div`
-  padding: 10px 0px;
   font-size: 1.8rem;
 `;
 

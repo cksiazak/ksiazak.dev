@@ -6,17 +6,24 @@ import ThemeContext from '../../lib/ThemeContext';
 import { theme } from '../../constants/themes';
 
 // components
-import ThemeSwitcher from './Navigation/ThemeSwitcher'
-import NavLink from './Navigation/NavLink'
+import ThemeSwitcher from './Navigation/ThemeSwitcher';
+import NavLink from './Navigation/NavLink';
 
 const NavSection = styled.section`
   width: 100%;
   position: fixed;
   top: 0;
-  box-shadow: ${props =>
+  box-shadow: ${(props) =>
     props.scrolled ? '0px 2px 10px -2px rgba(42, 42, 42, 0.6)' : 'none'};
-  background: ${props =>
-    props.darkMode ? theme.darkMode.background : theme.lightMode.background};
+  background: ${(props) => {
+    if (!props.scrolled) {
+      return 'transparent';
+    } else if (props.scrolled) {
+      return props.darkMode
+        ? theme.darkMode.background
+        : theme.lightMode.background;
+    }
+  }};
   transition: ${theme.global.transitionTime};
   z-index: 10;
 `;
@@ -55,7 +62,6 @@ const Nav = styled.nav`
     }
   }
 `;
-
 
 const Navigation = () => {
   const { darkMode, themeController } = useContext(ThemeContext);

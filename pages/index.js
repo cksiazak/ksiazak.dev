@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import Heading from '../components/Heading';
 import Projects from '../components/Projects';
+import AboutMe from '../components/AboutMe';
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         />
       </Head>
       <Heading />
+      <AboutMe />
       <Projects />
     </Fragment>
   );

@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     background: ${(props) => (!props.darkMode ? 'white' : '#2D3047')};
     transition: ${theme.global.transitionTime};
+    -webkit-backface-visibility: hidden;
   }
 `;
 
