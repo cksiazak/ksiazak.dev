@@ -1,43 +1,29 @@
 {
   "name": "ksiazak.dev",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "3.0.0",
+  "private": false,
+  "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cksiazak/ksiazak.dev.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cksiazak/ksiazak.dev/issues"
-  },
-  "homepage": "https://github.com/cksiazak/ksiazak.dev#readme",
   "dependencies": {
-    "gatsby": "^2.17.10",
-    "gatsby-plugin-google-analytics": "^2.1.31",
-    "gatsby-plugin-html-attributes": "^1.0.5",
-    "gatsby-plugin-jss": "^2.1.17",
-    "gatsby-plugin-manifest": "^2.2.34",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
-    "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-robots-txt": "^1.5.0",
-    "gatsby-plugin-transition-link": "^1.17.7",
-    "gsap": "^3.0.4",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-helmet": "^5.2.1",
-    "react-icons": "^3.8.0",
-    "react-jss": "^10.0.3",
-    "use-media": "^1.4.0"
+    "@mdx-js/loader": "^1.5.8",
+    "@next/mdx": "^9.3.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "9.2.1",
+    "next-ga": "^2.3.4",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-icons": "^3.9.0",
+    "react-particles-js": "^2.7.1",
+    "styled-components": "^5.0.1",
+    "styled-normalize": "^8.0.7",
+    "swr": "^0.1.16"
   },
-  "resolutions": {
-    "react-helmet/react-side-effect": "2.1.0"
+  "devDependencies": {
+    "@types/styled-components": "^5.0.1",
+    "babel-plugin-styled-components": "^1.10.7"
   }
 }
