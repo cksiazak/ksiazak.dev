@@ -17,18 +17,34 @@ const CardContainer = styled.div`
   &:nth-child(even) {
     flex-direction: row-reverse;
 
+    @media (max-width: 800px) {
+      flex-direction: column-reverse;
+    }
+
     .card-information {
       align-items: flex-end;
+
+      @media (max-width: 800px) {
+        align-items: center;
+      }
 
       .project-meta {
         .project-title {
           justify-content: flex-end;
+
+          @media (max-width: 800px) {
+            justify-content: center;
+          }
         }
       }
 
       .project-card-info {
         margin-left: -125px;
         margin-right: 0px;
+
+        @media (max-width: 800px) {
+          margin-left: 0px;
+        }
       }
 
       .project-tech {
@@ -38,12 +54,20 @@ const CardContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media (max-width: 800px) {
+    align-items: center;
+  }
 `;
 
 const Content = styled.div`
@@ -74,6 +98,19 @@ const Content = styled.div`
 
     margin: 0px;
     font-size: 1.8rem;
+
+    @media (max-width: 1000px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    margin-right: 0px;
+  }
+
+  @media (max-width: 800px) {
+    order: 3;
+    margin-top: 0px;
   }
 `;
 
@@ -92,11 +129,29 @@ const TitleWrapper = styled.div`
 const Title = styled.h3`
   margin: 0px;
   font-size: 3rem;
+
+  @media (max-width: 1000px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 800px) {
+    order: 1;
+    padding: 10px 0px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 2.25rem;
+  }
 `;
 
 const LinkContainer = styled.div`
   font-size: 2.5rem;
   padding-bottom: 10px;
+
+  @media (max-width: 800px) {
+    order: 2;
+    padding-bottom: 10px;
+  }
 
   a {
     color: ${(props) => (props.darkMode ? 'white' : 'black')};
@@ -117,6 +172,14 @@ const LinkContainer = styled.div`
 const TechWrapper = styled.div`
   font-size: 1.8rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1000px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 800px) {
+    order: 4;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -129,6 +192,18 @@ const ImgContainer = styled.div`
     height: auto;
     width: 100%;
   }
+
+  @media (max-width: 1000px) {
+    width: 500px;
+  }
+
+  @media (max-width: 800px) {
+    width: 450px;
+  }
+
+  @media (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
@@ -137,16 +212,16 @@ const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
     <CardContainer>
       <CardInfo className='card-information'>
         <LinkContainer className='project-links' darkMode={darkMode}>
-          {meta.href && (
+          {meta.href !== '' ? (
             <a href={meta.href}>
               <IoLogoGithub />
             </a>
-          )}
-          {meta.git && (
+          ) : null}
+          {meta.git !== '' ? (
             <a href={meta.git}>
               <IoIosLink />
             </a>
-          )}
+          ) : null}
         </LinkContainer>
         <Metadata className='project-meta' darkMode={darkMode}>
           <TitleWrapper className='project-title'>

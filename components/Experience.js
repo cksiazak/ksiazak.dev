@@ -17,11 +17,17 @@ const WorkSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 900px) {
+    padding: 50px 0px 30px;
+  }
 `;
 
 const SectionHeading = styled.h2`
   font-size: 3.5rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  @media (max-width: 900px) {
+    margin: 0px;
+  }
 `;
 
 const InnerWrap = styled.div`
@@ -29,6 +35,9 @@ const InnerWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const Experience = () => {

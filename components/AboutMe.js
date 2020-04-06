@@ -24,6 +24,13 @@ const InnerContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: ${theme.global.pageWidth};
+
+  @media (max-width: 1000px) {
+    width: 85%;
+  }
+  @media (max-width: 850px) {
+    align-items: center;
+  }
 `;
 
 const SectionHeading = styled.h2`
@@ -37,12 +44,32 @@ const SectionContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    align-items: flex-start;
+  }
+
+  @media (max-width: 850px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 `;
 
 const AboutInfo = styled.div`
   width: 60%;
   font-size: 1.75rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 850px) {
+    width: 80%;
+    font-size: 2rem;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+  @media (max-width: 575px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const SelfImage = styled.img`
@@ -51,6 +78,23 @@ const SelfImage = styled.img`
   border-radius: 25px 0px;
   margin-right: 100px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
+
+  @media (max-width: 1300px) {
+    margin-right: 50px;
+  }
+  @media (max-width: 1200px) {
+    margin-right: 0px;
+  }
+  @media (max-width: 1000px) {
+    height: 275px;
+  }
+  @media (max-width: 850px) {
+    margin: 50px 0px;
+  }
+  @media (max-width: 575px) {
+    height: 200px;
+    margin: 0px 0px 25px;
+  }
 `;
 
 const TechList = styled.ul`
@@ -59,6 +103,19 @@ const TechList = styled.ul`
   font-size: 1.6rem;
   width: 60%;
   padding: 0px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 350px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const AboutMe = () => {

@@ -22,6 +22,14 @@ const ParticleWrapper = styled.div`
   width: 100%;
   height: 750px;
   overflow: hidden;
+
+  div {
+    height: 100%;
+  }
+
+  @media (max-width: 450px) {
+    height: 675px;
+  }
 `;
 
 const Intro = styled.span`
@@ -31,6 +39,19 @@ const Intro = styled.span`
   left: 12.5%;
   top: 200px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1100px) {
+    left: 7.25%;
+  }
+  @media (max-width: 775px) {
+    top: 150px;
+  }
+  @media (max-width: 600px) {
+    left: 5%;
+  }
+  @media (max-width: 350px) {
+    font-size: 1.65rem;
+  }
 `;
 
 const Name = styled.h1`
@@ -41,6 +62,29 @@ const Name = styled.h1`
   left: 12.5%;
   top: 220px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1100px) {
+    left: 7.25%;
+  }
+  @media (max-width: 1000px) {
+    font-size: 5.5rem;
+  }
+  @media (max-width: 775px) {
+    top: 170px;
+  }
+  @media (max-width: 600px) {
+    left: 5%;
+  }
+  @media (max-width: 550px) {
+    font-size: 4.5rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 350px) {
+    font-size: 3.25rem;
+  }
+  
 `;
 
 const Desc = styled.span`
@@ -50,6 +94,34 @@ const Desc = styled.span`
   left: 12.5%;
   top: 300px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1100px) {
+    left: 7.25%;
+  }
+
+  @media (max-width: 1000px) {
+    top: 290px;
+  }
+
+  @media (max-width: 775px) {
+    top: 240px;
+  }
+
+  @media (max-width: 600px) {
+    left: 5%;
+  }
+
+  @media (max-width: 550px) {
+    top: 225px;
+  }
+
+  @media (max-width: 450px) {
+    top: 210px;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const UnderHeading = styled.p`
@@ -61,6 +133,36 @@ const UnderHeading = styled.p`
   top: 325px;
   width: 30%;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1100px) {
+    left: 7.25%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 45%;
+    font-size: 1.75rem;
+  }
+
+  @media (max-width: 775px) {
+    top: 275px;
+    margin: 50px 0px 0px;
+    width: 50%;
+  }
+
+  @media (max-width: 600px) {
+    width: 60%;
+    left: 5%;
+  }
+
+  @media (max-width: 550px) {
+    width: 80%;
+  }
+
+  @media (max-width: 450px) {
+    top: 225px;
+    width: 85%;
+    font-size: 1.6rem;
+  }
 `;
 
 const Heading = () => {

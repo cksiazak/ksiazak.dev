@@ -14,6 +14,10 @@ const Section = styled.section`
 const ContactHead = styled.h2`
   font-size: 3rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 400px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Sentence = styled.p`
@@ -22,6 +26,17 @@ const Sentence = styled.p`
   font-size: 2rem;
   padding-bottom: 25px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 750px) {
+    width: 60%;
+  }
+
+  @media (max-width: 500px) {
+    width: 80%;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.75rem;
+  }
 `;
 
 const Email = styled.a`

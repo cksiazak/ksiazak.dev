@@ -19,9 +19,22 @@ const CardWrapper = styled.div`
   p {
     font-size: 1.6rem;
     margin: 10px 0px;
+
+    @media (max-width: 500px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    width: 80%;
+  }
+  @media (max-width: 850px) {
+    width: 90%;
+  }
+  @media (max-width: 750px) {
+    width: 100%;
   }
 `;
-
 
 const MetaWrapper = styled.div`
   display: flex;
@@ -32,10 +45,18 @@ const MetaWrapper = styled.div`
   h3 {
     margin: 0px;
     font-size: 2.5rem;
+
+    @media (max-width: 500px) {
+      font-size: 2.2rem;
+    }
   }
 
   span {
     font-size: 1.8rem;
+
+    @media (max-width: 500px) {
+      font-size: 1.6rem;
+    }
   }
 `;
 

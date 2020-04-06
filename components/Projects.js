@@ -20,11 +20,20 @@ const ProjectSection = styled.section`
   align-items: center;
   width: 100%;
   padding-top: 75px;
+
+  @media (max-width: 800px) {
+    padding-top: 50px;
+  }
 `;
 
 const SectionHeader = styled.h2`
   font-size: 3.5rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 800px) {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
 `;
 
 const InnerProjectWrapper = styled.div`
@@ -32,6 +41,13 @@ const InnerProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    width: 80%;
+  }
+  @media (max-width: 1100px) {
+    width: 90%;
+  }
 `;
 
 const Projects = () => {

@@ -25,6 +25,7 @@ const NavSection = styled.section`
   transition: ${theme.global.transitionTime};
   z-index: 10;
 `;
+
 const InnerNav = styled.div`
   width: ${theme.global.pageWidth};
   max-width: ${theme.global.maxPageWidth};
@@ -42,6 +43,18 @@ const InnerNav = styled.div`
     &:hover {
       color: ${theme.lightMode.linkHover};
     }
+  }
+
+  @media (max-width: 1350px) {
+    width: 80%;
+  }
+
+  @media (max-width: 1150px) {
+    width: 85%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 95%;
   }
 `;
 

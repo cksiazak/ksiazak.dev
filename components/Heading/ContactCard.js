@@ -15,12 +15,37 @@ const CardWrapper = styled.div`
   padding: 30px 25px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
   border-radius: 5px;
+
+  @media (max-width: 1350px) {
+    right: 15%;
+  }
+  @media (max-width: 1250px) {
+    right: 10%;
+  }
+  @media (max-width: 1150px) {
+    right: 5%;
+  }
+  @media (max-width: 900px) {
+    padding: 20px 15px;
+  }
+  @media (max-width: 775px) {
+    top: 475px;
+    left: 20%;
+    right: 20%;
+  }
+  @media (max-width: 450px) {
+    top: 400px;
+  }
 `;
 
 const CardTitle = styled.span`
   font-size: 2.75rem;
   color: white;
   font-weight: bold;
+
+  @media (max-width: 900px) {
+    font-size: 2.25rem;
+  }
 `;
 
 const SocialList = styled.ul`
@@ -38,13 +63,17 @@ const SocialList = styled.ul`
       display: flex;
       color: white;
       transition: ${theme.global.transitionTime};
-      filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, .7));
+      filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.7));
 
       &:hover {
         transform: scale(1.05);
-        filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
+        filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.7));
       }
     }
+  }
+
+  @media (max-width: 900px) {
+    font-size: 2.5rem;
   }
 `;
 
@@ -63,6 +92,10 @@ const LinkButton = styled.a`
   &:hover {
     background: white;
     color: #5183f5;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 1.75rem;
   }
 `;
 
