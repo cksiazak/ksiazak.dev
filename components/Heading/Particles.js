@@ -1,6 +1,8 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
+import { isMobile } from 'react-device-detect';
+
 const HeadingParticles = ({ darkMode }) => {
   return (
     <Particles
@@ -52,7 +54,7 @@ const HeadingParticles = ({ darkMode }) => {
             },
           },
           line_linked: {
-            enable: true,
+            enable: isMobile ? false : true,
             distance: 96.21012290843196,
             color: !darkMode ? '#4F5057' : '#FFF',
             opacity: 0.40087551211846645,
@@ -77,11 +79,11 @@ const HeadingParticles = ({ darkMode }) => {
           detect_on: 'canvas',
           events: {
             onhover: {
-              enable: false,
-              mode: 'bubble',
+              enable: isMobile ? false : true,
+              mode: 'grab',
             },
             onclick: {
-              enable: false,
+              enable: isMobile ? false : true,
               mode: 'repulse',
             },
             resize: true,
