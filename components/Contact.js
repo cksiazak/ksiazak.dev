@@ -27,6 +27,10 @@ const Sentence = styled.p`
   padding-bottom: 25px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
+  @media (max-width: 1800px) {
+    font-size: 2rem;
+  }
+
   @media (max-width: 1500px) {
     width: 50%;
   }

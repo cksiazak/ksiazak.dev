@@ -27,7 +27,7 @@ const CardWrapper = styled.div`
     right: 10%;
   }
   @media (max-width: 1150px) {
-    right: 5%;
+    right: 7.5%;
   }
   @media (max-width: 900px) {
     padding: 20px 15px;
@@ -48,7 +48,7 @@ const CardTitle = styled.span`
   font-weight: bold;
 
   @media (max-width: 1650px) {
-    font-size: 3.25rem;
+    font-size: 2.75rem;
   }
 
   @media (max-width: 900px) {
@@ -83,7 +83,7 @@ const SocialList = styled.ul`
   }
 
   @media (max-width: 1650px) {
-    font-size: 3.75rem;
+    font-size: 3rem;
   }
 
   @media (max-width: 900px) {
@@ -109,7 +109,7 @@ const LinkButton = styled.a`
   }
 
   @media (max-width: 1650px) {
-    font-size: 2.75rem;
+    font-size: 2rem;
   }
 
   @media (max-width: 900px) {

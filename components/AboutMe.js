@@ -37,7 +37,7 @@ const SectionHeading = styled.h2`
   margin-bottom: 25px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1800px) {
     font-size: 3.25rem;
   }
 `;
@@ -62,7 +62,7 @@ const AboutInfo = styled.div`
   font-size: 2.2rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1800px) {
     font-size: 2rem;
   }
 
@@ -109,7 +109,7 @@ const TechList = styled.ul`
   width: 80%;
   padding: 0px;
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1800px) {
     font-size: 1.75rem;
   }
 

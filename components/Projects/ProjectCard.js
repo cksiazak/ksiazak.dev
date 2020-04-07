@@ -98,7 +98,7 @@ const Content = styled.div`
     font-size: 2.2rem;
     
 
-    @media (max-width: 1600px) {
+    @media (max-width: 1800px) {
       font-size: 2rem;
     }
 
