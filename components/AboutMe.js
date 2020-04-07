@@ -57,7 +57,6 @@ const AboutInfo = styled.div`
   width: 60%;
   font-size: 2.2rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
-  letter-spacing: 1px;
 
   @media (max-width: 1000px) {
     width: 80%;
