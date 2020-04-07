@@ -20,10 +20,14 @@ const CardWrapper = styled.div`
     font-size: 2.2rem;
     margin: 10px 0px;
 
+    @media (max-width: 1600px) {
+      font-size: 2rem;
+    }
+
     @media (max-width: 800px) {
       font-size: 1.8rem;
     }
-    
+
     @media (max-width: 500px) {
       font-size: 1.6rem;
     }

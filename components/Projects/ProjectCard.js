@@ -17,14 +17,14 @@ const CardContainer = styled.div`
   &:nth-child(even) {
     flex-direction: row-reverse;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 900px) {
       flex-direction: column-reverse;
     }
 
     .card-information {
       align-items: flex-end;
 
-      @media (max-width: 1000px) {
+      @media (max-width: 900px) {
         align-items: center;
       }
 
@@ -32,7 +32,7 @@ const CardContainer = styled.div`
         .project-title {
           justify-content: flex-end;
 
-          @media (max-width: 1000px) {
+          @media (max-width: 900px) {
             justify-content: center;
           }
         }
@@ -46,14 +46,14 @@ const CardContainer = styled.div`
           margin-left: -100px;
         }
 
-        @media (max-width: 1000px) {
+        @media (max-width: 900px) {
           margin-left: 0px;
         }
       }
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     flex-direction: column-reverse;
   }
 `;
@@ -63,7 +63,7 @@ const CardInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     align-items: center;
   }
 `;
@@ -98,7 +98,7 @@ const Content = styled.div`
     font-size: 2.2rem;
     
 
-    @media (max-width: 1500px) {
+    @media (max-width: 1600px) {
       font-size: 2rem;
     }
 
@@ -106,7 +106,7 @@ const Content = styled.div`
       font-size: 1.8rem;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 900px) {
       font-size: 1.8rem;
     }
 
@@ -120,7 +120,7 @@ const Content = styled.div`
     max-width: 800px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     margin-right: 0px;
     order: 3;
     margin-top: 0px;
@@ -143,7 +143,7 @@ const Title = styled.h3`
   margin: 0px;
   font-size: 3.5rem;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     font-size: 3rem;
     order: 1;
     padding: 15px 0px 10px;
@@ -162,7 +162,7 @@ const LinkContainer = styled.div`
   font-size: 3rem;
   padding-bottom: 10px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     order: 2;
     padding-bottom: 10px;
   }
@@ -195,7 +195,7 @@ const TechWrapper = styled.div`
     font-size: 2rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     font-size: 1.8rem;
     order: 4;
   }
@@ -224,7 +224,7 @@ const ImgContainer = styled.div`
     width: 575px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     width: 90%;
   }
 `;

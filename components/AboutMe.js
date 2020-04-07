@@ -36,6 +36,10 @@ const SectionHeading = styled.h2`
   margin: 0px;
   margin-bottom: 25px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1600px) {
+    font-size: 3.25rem;
+  }
 `;
 
 const SectionContent = styled.div`
@@ -58,9 +62,12 @@ const AboutInfo = styled.div`
   font-size: 2.2rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
+  @media (max-width: 1600px) {
+    font-size: 2rem;
+  }
+
   @media (max-width: 1000px) {
     width: 80%;
-    font-size: 2rem;
   }
   @media (max-width: 750px) {
     width: 100%;
@@ -102,7 +109,7 @@ const TechList = styled.ul`
   width: 80%;
   padding: 0px;
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1600px) {
     font-size: 1.75rem;
   }
 

@@ -21,7 +21,7 @@ const ProjectSection = styled.section`
   width: 100%;
   padding-top: 75px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     padding-top: 50px;
   }
 `;
@@ -30,7 +30,7 @@ const SectionHeader = styled.h2`
   font-size: 3.75rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     margin-top: 0px;
     margin-bottom: 10px;
   }
@@ -42,9 +42,6 @@ const InnerProjectWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 1200px) {
-    width: 80%;
-  }
   @media (max-width: 1200px) {
     width: 90%;
   }
