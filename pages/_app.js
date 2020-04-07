@@ -19,6 +19,11 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+
+    @media (max-width: 450px) {
+      letter-spacing: 0px;
+    }
   }
 
   html {

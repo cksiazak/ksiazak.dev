@@ -17,14 +17,14 @@ const CardContainer = styled.div`
   &:nth-child(even) {
     flex-direction: row-reverse;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       flex-direction: column-reverse;
     }
 
     .card-information {
       align-items: flex-end;
 
-      @media (max-width: 800px) {
+      @media (max-width: 1000px) {
         align-items: center;
       }
 
@@ -32,7 +32,7 @@ const CardContainer = styled.div`
         .project-title {
           justify-content: flex-end;
 
-          @media (max-width: 800px) {
+          @media (max-width: 1000px) {
             justify-content: center;
           }
         }
@@ -42,20 +42,18 @@ const CardContainer = styled.div`
         margin-left: -125px;
         margin-right: 0px;
 
-        @media (max-width: 800px) {
+        @media (max-width: 1350px) {
+          margin-left: -100px;
+        }
+
+        @media (max-width: 1000px) {
           margin-left: 0px;
         }
-      }
-
-      .project-tech {
-      }
-
-      .project-links {
       }
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     flex-direction: column-reverse;
   }
 `;
@@ -65,13 +63,13 @@ const CardInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     align-items: center;
   }
 `;
 
 const Content = styled.div`
-  max-width: 600px;
+  max-width: 700px;
   background: ${(props) =>
     props.darkMode
       ? 'rgba(90,92,106, 0.95)'
@@ -97,18 +95,33 @@ const Content = styled.div`
     }
 
     margin: 0px;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    
+
+    @media (max-width: 1500px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 1350px) {
+      font-size: 1.8rem;
+    }
 
     @media (max-width: 1000px) {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 500px) {
       font-size: 1.6rem;
     }
   }
 
-  @media (max-width: 800px) {
-    margin-right: 0px;
+  @media (max-width: 1350px) {
+    margin-right: -100px;
+    max-width: 800px;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
+    margin-right: 0px;
     order: 3;
     margin-top: 0px;
   }
@@ -128,29 +141,34 @@ const TitleWrapper = styled.div`
 
 const Title = styled.h3`
   margin: 0px;
-  font-size: 3rem;
+  font-size: 3.5rem;
 
   @media (max-width: 1000px) {
+    font-size: 3rem;
+    order: 1;
+    padding: 15px 0px 10px;
+  }
+
+  @media (max-width: 450px) {
     font-size: 2.5rem;
   }
 
-  @media (max-width: 800px) {
-    order: 1;
-    padding: 10px 0px;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 2.25rem;
+  @media (max-width: 450px) {
+    font-size: 2rem;
   }
 `;
 
 const LinkContainer = styled.div`
-  font-size: 2.5rem;
+  font-size: 3rem;
   padding-bottom: 10px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     order: 2;
     padding-bottom: 10px;
+  }
+  
+  @media (max-width: 450px) {
+    font-size: 2.5rem;
   }
 
   a {
@@ -170,20 +188,29 @@ const LinkContainer = styled.div`
 `;
 
 const TechWrapper = styled.div`
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
+  @media (max-width: 1500px) {
+    font-size: 2rem;
+  }
+
   @media (max-width: 1000px) {
+    font-size: 1.8rem;
+    order: 4;
+  }
+
+  @media (max-width: 500px) {
     font-size: 1.6rem;
   }
 
-  @media (max-width: 800px) {
-    order: 4;
+  @media (max-width: 450px) {
+    font-size: 1.4rem;
   }
 `;
 
 const ImgContainer = styled.div`
-  width: 600px;
+  width: 650px;
   position: relative;
   z-index: 1;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
@@ -193,15 +220,11 @@ const ImgContainer = styled.div`
     width: 100%;
   }
 
+  @media (max-width: 1500px) {
+    width: 575px;
+  }
+
   @media (max-width: 1000px) {
-    width: 500px;
-  }
-
-  @media (max-width: 800px) {
-    width: 450px;
-  }
-
-  @media (max-width: 800px) {
     width: 90%;
   }
 `;

@@ -27,14 +27,12 @@ const InnerContainer = styled.div`
 
   @media (max-width: 1000px) {
     width: 85%;
-  }
-  @media (max-width: 850px) {
     align-items: center;
   }
 `;
 
 const SectionHeading = styled.h2`
-  font-size: 3.5rem;
+  font-size: 3.75rem;
   margin: 0px;
   margin-bottom: 25px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
@@ -49,7 +47,7 @@ const SectionContent = styled.div`
     align-items: flex-start;
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 1000px) {
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -57,10 +55,11 @@ const SectionContent = styled.div`
 
 const AboutInfo = styled.div`
   width: 60%;
-  font-size: 1.75rem;
+  font-size: 2.2rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  letter-spacing: 1px;
 
-  @media (max-width: 850px) {
+  @media (max-width: 1000px) {
     width: 80%;
     font-size: 2rem;
   }
@@ -74,10 +73,11 @@ const AboutInfo = styled.div`
 
 const SelfImage = styled.img`
   width: auto;
-  height: 325px;
+  height: 350px;
   border-radius: 25px 0px;
   margin-right: 100px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
+  margin-bottom: 100px;
 
   @media (max-width: 1300px) {
     margin-right: 50px;
@@ -87,10 +87,9 @@ const SelfImage = styled.img`
   }
   @media (max-width: 1000px) {
     height: 275px;
-  }
-  @media (max-width: 850px) {
     margin: 50px 0px;
   }
+
   @media (max-width: 575px) {
     height: 200px;
     margin: 0px 0px 25px;
@@ -99,21 +98,30 @@ const SelfImage = styled.img`
 
 const TechList = styled.ul`
   column-count: 3;
-  list-style: inside square;
-  font-size: 1.6rem;
-  width: 60%;
+  list-style: none;
+  font-size: 2rem;
+  width: 80%;
   padding: 0px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
+    font-size: 1.75rem;
+  }
+
+  @media (max-width: 1300px) {
     width: 100%;
   }
+
+  @media (max-width: 1100px) {
+    font-size: 1.6rem;
+  }
+
   @media (max-width: 500px) {
     font-size: 1.4rem;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     font-size: 1.2rem;
   }
-  @media (max-width: 350px) {
+  @media (max-width: 375px) {
     font-size: 1.1rem;
   }
 `;
@@ -133,7 +141,7 @@ const AboutMe = () => {
               ))}
             </TechList>
           </AboutInfo>
-          <SelfImage src={Content.meta.image} alt="Picture of myself"/>
+          <SelfImage src={Content.meta.image} alt='Picture of myself' />
         </SectionContent>
       </InnerContainer>
     </AboutMeSection>

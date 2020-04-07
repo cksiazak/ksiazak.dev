@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 // styling
 import ThemeContext from '../lib/ThemeContext';
 import styled from 'styled-components';
-import { theme } from '../constants/themes';
 
 // Components
 import ContactCard from './Heading/ContactCard';
@@ -13,7 +12,6 @@ const HeadingSection = styled.section`
   position: relative;
   z-index: 0;
   width: 100%;
-  max-width: ${theme.global.maxPageWidth};
 `;
 
 const ParticleWrapper = styled.div`
@@ -33,23 +31,27 @@ const ParticleWrapper = styled.div`
 `;
 
 const Intro = styled.span`
-  font-size: 1.8rem;
+  font-size: 3rem;
   position: absolute;
   z-index: 1;
   left: 12.5%;
   top: 200px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
+  @media (max-width: 1650px) {
+    font-size: 2.5rem;
+  }
   @media (max-width: 1100px) {
     left: 7.25%;
   }
-  @media (max-width: 775px) {
+  @media (max-width: 800px) {
     top: 150px;
   }
   @media (max-width: 600px) {
     left: 5%;
   }
-  @media (max-width: 350px) {
+  @media (max-width: 400px) {
+    top: 160px;
     font-size: 1.65rem;
   }
 `;
@@ -60,17 +62,20 @@ const Name = styled.h1`
   position: absolute;
   z-index: 1;
   left: 12.5%;
-  top: 220px;
+  top: 235px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
+  @media (max-width: 1650px) {
+    font-size: 6rem;
+  }
   @media (max-width: 1100px) {
     left: 7.25%;
   }
   @media (max-width: 1000px) {
     font-size: 5.5rem;
   }
-  @media (max-width: 775px) {
-    top: 170px;
+  @media (max-width: 800px) {
+    top: 180px;
   }
   @media (max-width: 600px) {
     left: 5%;
@@ -81,19 +86,23 @@ const Name = styled.h1`
   @media (max-width: 450px) {
     font-size: 3.5rem;
   }
-  @media (max-width: 350px) {
+  @media (max-width: 400px) {
     font-size: 3.25rem;
   }
-  
 `;
 
 const Desc = styled.span`
-  font-size: 2.8rem;
+  font-size: 3.8rem;
   position: absolute;
   z-index: 1;
   left: 12.5%;
-  top: 300px;
+  top: 320px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1650px) {
+    font-size: 3.4rem;
+    top: 310px;
+  }
 
   @media (max-width: 1100px) {
     left: 7.25%;
@@ -103,7 +112,7 @@ const Desc = styled.span`
     top: 290px;
   }
 
-  @media (max-width: 775px) {
+  @media (max-width: 800px) {
     top: 240px;
   }
 
@@ -112,27 +121,32 @@ const Desc = styled.span`
   }
 
   @media (max-width: 550px) {
-    top: 225px;
+    top: 230px;
   }
 
   @media (max-width: 450px) {
-    top: 210px;
+    top: 215px;
   }
 
-  @media (max-width: 350px) {
+  @media (max-width: 400px) {
     font-size: 2.5rem;
+    top: 218px;
   }
 `;
 
 const UnderHeading = styled.p`
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 100px 0px 0px;
   position: absolute;
   z-index: 1;
   left: 12.5%;
   top: 325px;
-  width: 30%;
+  width: 40%;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1650px) {
+    font-size: 2.5rem;
+  }
 
   @media (max-width: 1100px) {
     left: 7.25%;
@@ -143,7 +157,7 @@ const UnderHeading = styled.p`
     font-size: 1.75rem;
   }
 
-  @media (max-width: 775px) {
+  @media (max-width: 800px) {
     top: 275px;
     margin: 50px 0px 0px;
     width: 50%;

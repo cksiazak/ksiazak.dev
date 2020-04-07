@@ -12,43 +12,51 @@ const Section = styled.section`
 `;
 
 const ContactHead = styled.h2`
-  font-size: 3rem;
+  font-size: 3.75rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
-  @media (max-width: 400px) {
-    font-size: 2.5rem;
+  @media (max-width: 600px) {
+    font-size: 2.25rem;
   }
 `;
 
 const Sentence = styled.p`
   width: 40%;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding-bottom: 25px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
-  @media (max-width: 750px) {
+  @media (max-width: 1500px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1000px) {
     width: 60%;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     width: 80%;
+    font-size: 1.6rem;
   }
-  @media (max-width: 400px) {
-    font-size: 1.75rem;
+  @media (max-width: 600px) {
   }
 `;
 
 const Email = styled.a`
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 15px 20px;
   border: 2px solid ${(props) => (props.darkMode ? 'white' : 'black')};
   text-align: center;
   margin: 5px 0px;
   border-radius: 5px;
   transition: ${theme.global.transitionTime};
+
+  @media (max-width: 450px) {
+    font-size: 1.75rem;
+  }
 
   &:hover {
     border: 2px solid ${theme.lightMode.linkHover};

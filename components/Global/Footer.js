@@ -26,7 +26,7 @@ const FooterInner = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 550px) {
+  @media (max-width: 700px) {
     width: 90%;
   }
 `;
@@ -35,7 +35,7 @@ const BranchLink = styled.a`
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   padding: 10px 0px;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
   transition: ${theme.global.transitionTime};
@@ -44,7 +44,15 @@ const BranchLink = styled.a`
     color: ${theme.lightMode.linkHover};
   }
 
-  @media (max-width: 475px) {
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.35rem;
+  }
+
+  @media (max-width: 500px) {
     font-size: 1.2rem;
   }
 
@@ -63,7 +71,7 @@ const IconList = styled.ul`
     a {
       display: flex;
       text-decoration: none;
-      font-size: 3rem;
+      font-size: 3.25rem;
       padding: 10px 15px;
       transition: ${theme.global.transitionTime};
       color: ${(props) => (props.darkMode ? 'white' : 'black')};

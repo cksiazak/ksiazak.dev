@@ -33,7 +33,7 @@ const InnerNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 15px 0px;
 
   a {
@@ -45,12 +45,16 @@ const InnerNav = styled.div`
     }
   }
 
+  @media (max-width: 1650px) {
+    font-size: 2.5rem;
+  }
+
   @media (max-width: 1350px) {
     width: 80%;
   }
 
-  @media (max-width: 1150px) {
-    width: 85%;
+  @media (max-width: 1250px) {
+    width: 90%;
   }
 
   @media (max-width: 1000px) {

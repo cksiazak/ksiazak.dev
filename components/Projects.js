@@ -21,16 +21,16 @@ const ProjectSection = styled.section`
   width: 100%;
   padding-top: 75px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     padding-top: 50px;
   }
 `;
 
 const SectionHeader = styled.h2`
-  font-size: 3.5rem;
+  font-size: 3.75rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     margin-top: 0px;
     margin-bottom: 10px;
   }
@@ -45,7 +45,7 @@ const InnerProjectWrapper = styled.div`
   @media (max-width: 1200px) {
     width: 80%;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     width: 90%;
   }
 `;

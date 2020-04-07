@@ -17,9 +17,13 @@ const CardWrapper = styled.div`
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
   p {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     margin: 10px 0px;
 
+    @media (max-width: 800px) {
+      font-size: 1.8rem;
+    }
+    
     @media (max-width: 500px) {
       font-size: 1.6rem;
     }
@@ -44,7 +48,11 @@ const MetaWrapper = styled.div`
 
   h3 {
     margin: 0px;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+
+    @media (max-width: 800px) {
+      font-size: 2.5rem;
+    }
 
     @media (max-width: 500px) {
       font-size: 2.2rem;
@@ -52,7 +60,11 @@ const MetaWrapper = styled.div`
   }
 
   span {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+
+    @media (max-width: 800px) {
+      font-size: 2rem;
+    }
 
     @media (max-width: 500px) {
       font-size: 1.6rem;

@@ -16,6 +16,10 @@ const CardWrapper = styled.div`
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
   border-radius: 5px;
 
+  @media (max-width: 1650px) {
+    right: 17.5%;
+  }
+
   @media (max-width: 1350px) {
     right: 15%;
   }
@@ -28,7 +32,7 @@ const CardWrapper = styled.div`
   @media (max-width: 900px) {
     padding: 20px 15px;
   }
-  @media (max-width: 775px) {
+  @media (max-width: 800px) {
     top: 475px;
     left: 20%;
     right: 20%;
@@ -39,9 +43,13 @@ const CardWrapper = styled.div`
 `;
 
 const CardTitle = styled.span`
-  font-size: 2.75rem;
+  font-size: 3.75rem;
   color: white;
   font-weight: bold;
+
+  @media (max-width: 1650px) {
+    font-size: 3.25rem;
+  }
 
   @media (max-width: 900px) {
     font-size: 2.25rem;
@@ -56,7 +64,9 @@ const SocialList = styled.ul`
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
+
+ 
 
   li {
     a {
@@ -72,6 +82,10 @@ const SocialList = styled.ul`
     }
   }
 
+  @media (max-width: 1650px) {
+    font-size: 3.75rem;
+  }
+
   @media (max-width: 900px) {
     font-size: 2.5rem;
   }
@@ -80,18 +94,22 @@ const SocialList = styled.ul`
 const LinkButton = styled.a`
   color: white;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 10px 5px;
   border: 2px solid white;
   width: 100%;
   text-align: center;
-  margin: 5px 0px;
+  margin: 10px 0px;
   border-radius: 5px;
   transition: ${theme.global.transitionTime};
 
   &:hover {
     background: white;
     color: #5183f5;
+  }
+
+  @media (max-width: 1650px) {
+    font-size: 2.75rem;
   }
 
   @media (max-width: 900px) {

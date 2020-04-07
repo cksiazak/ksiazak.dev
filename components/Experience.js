@@ -23,7 +23,7 @@ const WorkSection = styled.section`
 `;
 
 const SectionHeading = styled.h2`
-  font-size: 3.5rem;
+  font-size: 3.75rem;
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
   @media (max-width: 900px) {
     margin: 0px;
