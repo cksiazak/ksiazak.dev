@@ -84,7 +84,7 @@ const HeadingParticles = ({ darkMode }) => {
             },
             onclick: {
               enable: isMobile ? false : true,
-              mode: 'repulse',
+              mode: 'push',
             },
             resize: true,
           },
