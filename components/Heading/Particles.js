@@ -62,7 +62,7 @@ const HeadingParticles = ({ darkMode }) => {
           },
           move: {
             enable: true,
-            speed: 1,
+            speed: 4,
             direction: 'none',
             random: true,
             straight: false,
