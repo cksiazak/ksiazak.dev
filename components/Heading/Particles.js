@@ -62,7 +62,7 @@ const HeadingParticles = ({ darkMode }) => {
           },
           move: {
             enable: true,
-            speed: 1,
+            speed: 4,
             direction: 'none',
             random: true,
             straight: false,
@@ -84,7 +84,7 @@ const HeadingParticles = ({ darkMode }) => {
             },
             onclick: {
               enable: isMobile ? false : true,
-              mode: 'repulse',
+              mode: 'push',
             },
             resize: true,
           },
