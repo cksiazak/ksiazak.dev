@@ -96,7 +96,6 @@ const Content = styled.div`
 
     margin: 0px;
     font-size: 2.2rem;
-    
 
     @media (max-width: 1800px) {
       font-size: 2rem;
@@ -166,7 +165,7 @@ const LinkContainer = styled.div`
     order: 2;
     padding-bottom: 10px;
   }
-  
+
   @media (max-width: 450px) {
     font-size: 2.5rem;
   }
@@ -235,13 +234,13 @@ const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
     <CardContainer>
       <CardInfo className='card-information'>
         <LinkContainer className='project-links' darkMode={darkMode}>
-          {meta.href !== '' ? (
-            <a href={meta.href} title={`${meta.title} github`}>
+          {meta.git !== '' ? (
+            <a href={meta.git} title={`${meta.title} github`}>
               <IoLogoGithub />
             </a>
           ) : null}
-          {meta.git !== '' ? (
-            <a href={meta.git} title={`${meta.title} deployment`}>
+          {meta.href !== '' ? (
+            <a href={meta.href} title={`${meta.title} deployment`}>
               <IoIosLink />
             </a>
           ) : null}
