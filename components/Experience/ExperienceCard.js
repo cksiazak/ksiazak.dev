@@ -16,6 +16,10 @@ const CardWrapper = styled.div`
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
+
+  ul {
+    padding: 0px;
+  }
   p {
     font-size: 2.2rem;
     margin: 10px 0px;
