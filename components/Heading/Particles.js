@@ -1,7 +1,7 @@
-import React from 'react';
-import Particles from 'react-particles-js';
+import React from 'react'
+import Particles from 'react-particles-js'
 
-import { isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect'
 
 const HeadingParticles = ({ darkMode }) => {
   return (
@@ -9,14 +9,16 @@ const HeadingParticles = ({ darkMode }) => {
       params={{
         particles: {
           number: {
-            value: 160,
+            value: 200,
             density: {
               enable: true,
               value_area: 800,
             },
           },
           color: {
-            value: !darkMode ? '#4F5057' : '#FFF',
+            value: !darkMode
+              ? '#4F5057'
+              : ['#BD10E0', '#B8E986', '#50E3C2', '#FFD300', '#E86363'],
           },
           shape: {
             type: 'circle',
@@ -54,7 +56,7 @@ const HeadingParticles = ({ darkMode }) => {
             },
           },
           line_linked: {
-            enable: isMobile ? false : true,
+            enable: !isMobile ? (darkMode ? false : true) : false,
             distance: 96.21012290843196,
             color: !darkMode ? '#4F5057' : '#FFF',
             opacity: 0.40087551211846645,
@@ -62,7 +64,7 @@ const HeadingParticles = ({ darkMode }) => {
           },
           move: {
             enable: true,
-            speed: 4,
+            speed: 3,
             direction: 'none',
             random: true,
             straight: false,
@@ -80,7 +82,7 @@ const HeadingParticles = ({ darkMode }) => {
           events: {
             onhover: {
               enable: isMobile ? false : true,
-              mode: 'grab',
+              mode: 'bubble',
             },
             onclick: {
               enable: isMobile ? false : true,
@@ -96,10 +98,10 @@ const HeadingParticles = ({ darkMode }) => {
               },
             },
             bubble: {
-              distance: 100,
-              size: 0,
+              distance: 150,
+              size: 6,
               duration: 2,
-              opacity: 0,
+              opacity: 1,
               speed: 3,
             },
             repulse: {
@@ -117,7 +119,7 @@ const HeadingParticles = ({ darkMode }) => {
         retina_detect: true,
       }}
     />
-  );
-};
+  )
+}
 
-export default HeadingParticles;
+export default HeadingParticles
