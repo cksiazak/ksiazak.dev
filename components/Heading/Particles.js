@@ -56,7 +56,7 @@ const HeadingParticles = ({ darkMode }) => {
             },
           },
           line_linked: {
-            enable: !isMobile ? (darkMode ? false : true) : false,
+            enable: false,
             distance: 96.21012290843196,
             color: !darkMode ? '#4F5057' : '#FFF',
             opacity: 0.40087551211846645,
