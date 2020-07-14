@@ -12,7 +12,7 @@ const CardWrapper = styled.div`
       ? 'rgba(118,124,163,1)'
       : 'linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)'};
   margin: 50px 0px 0px;
-  width: 90%;
+  width: 60%;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
   color: ${(props) => (props.darkMode ? 'white' : 'black')};
 
@@ -63,7 +63,7 @@ const MetaWrapper = styled.div`
     }
 
     @media (max-width: 500px) {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
   }
 
@@ -75,7 +75,7 @@ const MetaWrapper = styled.div`
     }
 
     @media (max-width: 500px) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 `;

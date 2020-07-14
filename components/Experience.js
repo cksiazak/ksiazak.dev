@@ -8,7 +8,7 @@ import { theme } from '../constants/themes'
 import ExperienceCard from './Experience/ExperienceCard'
 
 // data
-import * as PatrickThomas from '../data/experiences/patrick-thomas.mdx'
+import * as AriannaSuisse from '../data/experiences/arianna-suisse.mdx'
 import * as EDealer from '../data/experiences/e-dealer-direct.mdx'
 import * as C3i from '../data/experiences/c3i-solutions.mdx'
 import ThemeContext from '../lib/ThemeContext'
@@ -47,7 +47,7 @@ const Experience = () => {
     <WorkSection>
       <SectionHeading darkMode={darkMode}>Experiences</SectionHeading>
       <InnerWrap>
-        <ExperienceCard work={PatrickThomas} />
+        <ExperienceCard work={AriannaSuisse} />
         <ExperienceCard work={EDealer} />
         <ExperienceCard work={C3i} />
       </InnerWrap>
