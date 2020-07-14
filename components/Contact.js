@@ -75,11 +75,10 @@ const Contact = () => {
     <Section>
       <ContactHead darkMode={darkMode}>Thanks for visiting!</ContactHead>
       <Sentence darkMode={darkMode}>
-        I'm currently available and actively looking for positions. Fee free to
+        I'm not actively looking for positions, but feel free to
         reach out to me, even if you just want to talk. I'll get back to you as
         soon as possible.
       </Sentence>
-
       <Email href='mailto:cksiazak@gmail.com' title='email' darkMode={darkMode}>
         Get in touch
       </Email>
