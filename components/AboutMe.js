@@ -79,21 +79,28 @@ const AboutInfo = styled.div`
 
 const SelfImage = styled.img`
   width: auto;
-  height: 350px;
+  height: 450px;
   border-radius: 25px 0px;
   margin-right: 100px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
   margin-bottom: 100px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1600px) {
     margin-right: 50px;
+    height: 375px;
   }
+
+  @media (max-width: 1400px) {
+    margin-right: 25px;
+  }
+
   @media (max-width: 1200px) {
     margin-right: 0px;
   }
+
   @media (max-width: 1000px) {
-    height: 275px;
-    margin: 50px 0px;
+    height: 350px;
+    margin: 25px 0px;
   }
 
   @media (max-width: 575px) {

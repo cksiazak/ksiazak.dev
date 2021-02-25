@@ -25,7 +25,7 @@ const Home = () => {
       <Heading />
       <AboutMe />
       <Experience />
-      <Projects />
+      {/* <Projects /> */}
       <Contact />
     </Fragment>
   );

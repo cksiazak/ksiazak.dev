@@ -18,12 +18,12 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
   }
 
   html {
     font-size: 62.5%;
-    background: ${(props) => (!props.darkMode ? 'white' : '#2D3047')};
+    background: ${(props) => (!props.darkMode ? 'linear-gradient(0deg ,#f0f3f5, #fff);' : '#2D3047')};
     transition: ${theme.global.transitionTime};
     -webkit-backface-visibility: hidden;
   }
