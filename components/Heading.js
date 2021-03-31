@@ -193,7 +193,7 @@ const Heading = () => {
       <Desc darkMode={darkMode}>& I like to build things</Desc>
       <UnderHeading darkMode={darkMode}>
         I am a (mostly) self taught developer from El Paso, Texas. Apart from
-        English and Spanish, I also speak HTML, CSS, and Javascript.
+        English and Spanish, I also speak Javascript/Typescript and Ruby.
       </UnderHeading>
     </HeadingSection>
   );

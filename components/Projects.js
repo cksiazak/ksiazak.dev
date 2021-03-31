@@ -46,12 +46,68 @@ const InnerProjectWrapper = styled.div`
   }
 `
 
+const Sentence = styled.p`
+  width: 40%;
+  text-align: center;
+  font-size: 2.5rem;
+  padding-bottom: 25px;
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+
+  @media (max-width: 1800px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 1500px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 60%;
+  }
+
+  @media (max-width: 600px) {
+    width: 80%;
+    font-size: 1.6rem;
+  }
+  @media (max-width: 600px) {
+  }
+`;
+
+const GithubLink = styled.a`
+  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  text-decoration: none;
+  font-size: 2.5rem;
+  padding: 15px 20px;
+  border: 2px solid ${(props) => (props.darkMode ? 'white' : 'black')};
+  text-align: center;
+  margin: 5px 0px;
+  border-radius: 5px;
+  transition: ${theme.global.transitionTime};
+  margin-bottom: 4rem;
+
+  @media (max-width: 450px) {
+    font-size: 1.75rem;
+  }
+
+  &:hover {
+    border: 2px solid ${theme.lightMode.linkHover};
+    background: ${theme.lightMode.linkHover};
+    color: ${(props) => (props.darkMode ? theme.darkMode.background : 'white')};
+  }
+`;
+
 const Projects = () => {
   const { darkMode } = useContext(ThemeContext)
   return (
     <ProjectSection>
       <SectionHeader darkMode={darkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
+      <Sentence darkMode={darkMode}>
+        I've been pretty busy over the last year that the projects currently listed below don't exactly meet my current abilities. In the meantime, feel free to poke through my github for anything new and upcoming!
+      </Sentence>
+      <GithubLink href='https://github.com/cksiazak' title='Cksiazak Github' darkMode={darkMode}>
+        Onward to Github!
+      </GithubLink>
         <ProjectCard project={Ksiazakdev} />
         <ProjectCard project={AirBnBPricing} />
         <ProjectCard project={SongSight} />
