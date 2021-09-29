@@ -8,11 +8,6 @@ import ThemeContext from '../lib/ThemeContext'
 // Components
 import ProjectCard from './Projects/ProjectCard'
 
-// Markdown Data
-import * as Ksiazakdev from '../data/projects/ksiazak-dev.mdx'
-import * as AirBnBPricing from '../data/projects/airbnb-optimal-pricing.mdx'
-import * as SongSight from '../data/projects/song-sight.mdx'
-
 const ProjectSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -103,14 +98,11 @@ const Projects = () => {
       <SectionHeader darkMode={darkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
       <Sentence darkMode={darkMode}>
-        I've been pretty busy over the last year that the projects currently listed below don't exactly meet my current abilities. In the meantime, feel free to poke through my github for anything new and upcoming!
+        I've been pretty busy over the last two years (what with COVID and all, plus I've been working many contracts at the same time) that the projects I had before didn't exactly meet my current abilities. So I removed them all and am planning to create bigger and better things.
       </Sentence>
       <GithubLink href='https://github.com/cksiazak' title='Cksiazak Github' darkMode={darkMode}>
         Onward to Github!
       </GithubLink>
-        <ProjectCard project={Ksiazakdev} />
-        <ProjectCard project={AirBnBPricing} />
-        <ProjectCard project={SongSight} />
       </InnerProjectWrapper>
     </ProjectSection>
   )

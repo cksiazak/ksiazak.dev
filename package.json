@@ -21,7 +21,8 @@
     "react-particles-js": "^3.4.1",
     "styled-components": "5.2.3",
     "styled-normalize": "^8.0.7",
-    "swr": "^0.5.5"
+    "swr": "^0.5.5",
+    "tsparticles": "^1.35.2"
   },
   "devDependencies": {
     "@types/styled-components": "^5.0.1",
