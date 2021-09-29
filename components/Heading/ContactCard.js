@@ -4,6 +4,8 @@ import { IoLogoTwitter, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
 import styled from 'styled-components';
 import { theme } from '../../constants/themes';
 
+import * as ga from '../../lib/ga';
+
 const CardWrapper = styled.div`
   position: absolute;
   top: 225px;
@@ -117,35 +119,40 @@ const LinkButton = styled.a`
   }
 `;
 
+const ContactCardLink = ({ href, title, Component }) => {
+
+  const handleCardLinkClick = () => ga.event({ action: 'Click link in contact card', params: { link: title } });
+
+  return (
+    <li>
+      <a href={href} title={title} onClick={handleCardLinkClick}>
+        <Component />
+      </a>
+    </li>
+  )
+}
+
 const ContactCard = () => {
+  const handleResumeClick = () => ga.event({ action: 'Click resume in contact card' });
+  const handleEmailClick = () => ga.event({ action: 'Click email in contact card' });
+
   return (
     <CardWrapper>
       <CardTitle>Let's Connect</CardTitle>
       <SocialList>
-        <li>
-          <a href='https://www.linkedin.com/in/cksiazak/' title='LinkedIn'>
-            <IoLogoLinkedin />
-          </a>
-        </li>
-        <li>
-          <a href='https://github.com/cksiazak' title='Github'>
-            <IoLogoGithub />
-          </a>
-        </li>
-        <li>
-          <a href='https://twitter.com/cksiazak_dev' title='Twitter'>
-            <IoLogoTwitter />
-          </a>
-        </li>
+        <ContactCardLink href='https://www.linkedin.com/in/cksiazak/' title='LinkedIn' Component={IoLogoLinkedin} />
+        <ContactCardLink href='https://github.com/cksiazak' title='Github' Component={IoLogoGithub} />
+        <ContactCardLink href='https://twitter.com/cksiazak_dev' title='Twitter' Component={IoLogoTwitter} />
       </SocialList>
       <LinkButton
         href='/assets/Cksiazak_Resume.pdf'
         title='Resume'
         download='cksiazak_resume.pdf'
+        onClick={handleResumeClick}
       >
         Resume
       </LinkButton>
-      <LinkButton href='mailto:cksiazak@gmail.com' title='Email'>
+      <LinkButton href='mailto:cksiazak@gmail.com' title='Email' onClick={handleEmailClick}>
         Email Me
       </LinkButton>
     </CardWrapper>

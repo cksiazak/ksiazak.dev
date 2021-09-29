@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import App from 'next/app';
-import Router from 'next/router';
-import withGA from 'next-ga';
+import React, { useEffect, Fragment, useState } from 'react';
+import { useRouter } from 'next/router'
+
+import * as ga from '../lib/ga'
 
 // Global Components
 import Navigation from '../components/Global/Navigation';
@@ -12,6 +12,9 @@ import ThemeContext from '../lib/ThemeContext';
 import { normalize } from 'styled-normalize';
 import styled, { createGlobalStyle } from 'styled-components';
 import { theme } from '../constants/themes';
+
+// Hooks
+import { usePrevious } from '../hooks/usePrevious'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize};
@@ -36,61 +39,60 @@ const AppWrapper = styled.div`
   width: 100%;
 `;
 
-class MyApp extends App {
-  constructor() {
-    super();
-    this.state = {
-      darkMode: false,
-    };
+const MyApp = ({ Component, pageProps }) => {
+  const router = useRouter()
 
-    this.themeController = this.themeController.bind(this);
-  }
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange)
 
-  componentDidMount() {
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
+  const [darkMode, setDarkMode] = useState(false)
+  const prevDarkMode = usePrevious(darkMode)
+
+  const themeController = () => setDarkMode(prevState => !prevState)
+
+  useEffect(() => {
     const data = window.localStorage.getItem('dark-mode');
     const isDark = JSON.parse(data);
 
     if (isDark) {
-      this.setState({
-        darkMode: isDark,
-      });
+      setDarkMode(isDark)
     }
-  }
+  }, []);
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.darkMode !== prevState.darkMode) {
+  useEffect(() => {
+    if (darkMode !== prevDarkMode) {
       window.localStorage.setItem(
         'dark-mode',
-        JSON.stringify(this.state.darkMode)
+        JSON.stringify(darkMode)
       );
     }
-  }
+  }, [darkMode, prevDarkMode])
 
-  themeController() {
-    this.setState((prevState) => ({
-      darkMode: !prevState.darkMode,
-    }));
-  }
+  const themeValue = {
+    darkMode,
+    themeController,
+  };
 
-  render() {
-    const { Component, pageProps } = this.props;
-
-    const themeValue = {
-      darkMode: this.state.darkMode,
-      themeController: this.themeController,
-    };
-
-    return (
-      <ThemeContext.Provider value={themeValue}>
-        <GlobalStyle darkMode={this.state.darkMode} />
-        <Navigation />
-        <AppWrapper>
-          <Component {...pageProps} />
-        </AppWrapper>
-        <Footer />
-      </ThemeContext.Provider>
-    );
-  }
+  return (
+    <ThemeContext.Provider value={themeValue}>
+      <GlobalStyle darkMode={darkMode} />
+      <Navigation />
+      <AppWrapper>
+        <Component {...pageProps} />
+      </AppWrapper>
+      <Footer />
+    </ThemeContext.Provider>
+  )
 }
 
-export default withGA('UA-154417992-1', Router)(MyApp);
+export default MyApp

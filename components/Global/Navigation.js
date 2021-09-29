@@ -9,6 +9,8 @@ import { theme } from '../../constants/themes';
 import ThemeSwitcher from './Navigation/ThemeSwitcher';
 import NavLink from './Navigation/NavLink';
 
+import * as ga from '../../lib/ga';
+
 const NavSection = styled.section`
   width: 100%;
   position: fixed;
@@ -82,6 +84,19 @@ const Navigation = () => {
   const { darkMode, themeController } = useContext(ThemeContext);
   const [awayFromTop, setAwayFromTop] = useState(false);
 
+  const scrollListener = () => {
+    const position = window.pageYOffset;
+    position > 20 ? setAwayFromTop(true) : setAwayFromTop(false);
+
+    if (position > 20) {
+      ga.event({ action: 'scrolled down page', params: { distance: 'More than 20' } })
+    }
+
+    if (position > 200) {
+      ga.event({ action: 'scrolled down page', params: { distance: 'More than 200' } })
+    }
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', scrollListener);
 
@@ -90,10 +105,12 @@ const Navigation = () => {
     };
   }, []);
 
-  const scrollListener = () => {
-    const position = window.pageYOffset;
-    position > 20 ? setAwayFromTop(true) : setAwayFromTop(false);
-  };
+  const handleDarkModePress = () => ga.event({ action: 'Clicked dark mode', params: { darkmode_preference: darkMode ? 'on' : 'off' } });
+
+  const handleThemePress = () => {
+    themeController()
+    handleDarkModePress();
+  }
 
   return (
     <NavSection scrolled={awayFromTop} darkMode={darkMode}>
@@ -101,15 +118,7 @@ const Navigation = () => {
         <NavLink title='<CK/>' href='/' />
         <Nav>
           <ul>
-            {/* <NavLink href='/about-me' title='/About Me' /> */}
-            {/* <NavLink href='/contact' title='/Contact' /> */}
-            {/* <NavLink href='/uses' title='/Uses' /> */}
-            {/* <NavLink href='/blog' title='/Blog' /> */}
-            {darkMode ? (
-              <ThemeSwitcher icon='🌙' themeController={themeController} />
-            ) : (
-              <ThemeSwitcher icon='☀️' themeController={themeController} />
-            )}
+            <ThemeSwitcher icon={darkMode ? '🌙' : '☀️'} themeController={handleThemePress} />
           </ul>
         </Nav>
       </InnerNav>

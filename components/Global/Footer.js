@@ -13,6 +13,8 @@ import {
 import { theme } from '../../constants/themes';
 import ThemeContext from '../../lib/ThemeContext';
 
+import * as ga from '../../lib/ga'
+
 const FooterMain = styled.footer`
   width: 100%;
   display: flex;
@@ -88,9 +90,10 @@ const IconList = styled.ul`
 `;
 
 const LinkIcon = ({ component: Component, href, title }) => {
+  const handleLinkIconClick = () => ga.event({ action: 'Click on footer link', params: { link: title } })
   return (
     <li>
-      <a href={href} title={title}>
+      <a href={href} title={title} onClick={handleLinkIconClick}>
         <Component />
       </a>
     </li>
@@ -99,6 +102,9 @@ const LinkIcon = ({ component: Component, href, title }) => {
 
 const Footer = () => {
   const { darkMode } = useContext(ThemeContext);
+
+  const handleDesignedByLink = () => ga.event({ action: 'Click on footer link', params: { link: 'Designed by myself' } })
+
   return (
     <FooterMain>
       <FooterInner>
@@ -133,6 +139,7 @@ const Footer = () => {
           title='Ksiazak.dev Repo'
           href='https://github.com/cksiazak/ksiazak.dev'
           darkMode={darkMode}
+          onClick={handleDesignedByLink}
         >
           This website was created and designed by Christopher Ksiazak
           <span>

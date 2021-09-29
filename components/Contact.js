@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { theme } from '../constants/themes';
 import ThemeContext from '../lib/ThemeContext';
 
+import * as ga from '../lib/ga'
+
 const Section = styled.section`
   padding: 100px 0px;
   display: flex;
@@ -71,6 +73,12 @@ const Email = styled.a`
 
 const Contact = () => {
   const { darkMode } = useContext(ThemeContext);
+
+  const handleEmailClick = () => ga.event({
+    action: 'Click on email button',
+    params: { section: 'Contact' },
+  })
+
   return (
     <Section>
       <ContactHead darkMode={darkMode}>Thanks for visiting!</ContactHead>
@@ -79,7 +87,7 @@ const Contact = () => {
         reach out to me, even if you just want to talk. I'll get back to you as
         soon as possible.
       </Sentence>
-      <Email href='mailto:cksiazak@gmail.com' title='email' darkMode={darkMode}>
+      <Email onClick={handleEmailClick} href='mailto:cksiazak@gmail.com' title='email' darkMode={darkMode}>
         Get in touch
       </Email>
     </Section>

@@ -5,8 +5,7 @@ import styled from 'styled-components'
 import { theme } from '../constants/themes'
 import ThemeContext from '../lib/ThemeContext'
 
-// Components
-import ProjectCard from './Projects/ProjectCard'
+import * as ga from '../lib/ga'
 
 const ProjectSection = styled.section`
   display: flex;
@@ -93,16 +92,22 @@ const GithubLink = styled.a`
 
 const Projects = () => {
   const { darkMode } = useContext(ThemeContext)
+
+  const navigateToGithub = () => ga.event({
+    action: "Navigate to github",
+    params: { section: "Projects" }
+  })
+
   return (
     <ProjectSection>
       <SectionHeader darkMode={darkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
-      <Sentence darkMode={darkMode}>
-        I've been pretty busy over the last two years (what with COVID and all, plus I've been working many contracts at the same time) that the projects I had before didn't exactly meet my current abilities. So I removed them all and am planning to create bigger and better things.
-      </Sentence>
-      <GithubLink href='https://github.com/cksiazak' title='Cksiazak Github' darkMode={darkMode}>
-        Onward to Github!
-      </GithubLink>
+        <Sentence darkMode={darkMode}>
+          I've been pretty busy over the last two years (what with COVID and all, plus I've been working many contracts at the same time) that the projects I had before didn't exactly meet my current abilities. So I removed them all and am planning to create bigger and better things.
+        </Sentence>
+        <GithubLink onClick={navigateToGithub} href='https://github.com/cksiazak' title='Cksiazak Github' darkMode={darkMode}>
+          Onward to Github!
+        </GithubLink>
       </InnerProjectWrapper>
     </ProjectSection>
   )
