@@ -1,20 +1,22 @@
-import React, { useContext } from "react"
-
+import { FC, ComponentType } from "react"
 import styled from "styled-components"
-import ThemeContext from "../../theme/ThemeContext"
 
-const CardWrapper = styled.div`
+import { useTheme } from '../../theme'
+
+const CardWrapper = styled.div<{
+  darkMode: boolean
+}>`
   display: flex;
   flex-direction: column;
   padding: 20px 25px;
-  background: ${(props) =>
-    props.darkMode
+  background: ${({ darkMode }) =>
+    darkMode
       ? "rgba(118,124,163,1)"
       : "linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)"};
   margin: 50px 0px 0px;
   width: 60%;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   ul {
     padding: 0px;
@@ -47,7 +49,9 @@ const CardWrapper = styled.div`
   }
 `
 
-const MetaWrapper = styled.div`
+const MetaWrapper = styled.div<{
+  darkMode: boolean
+}>`
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
@@ -78,9 +82,20 @@ const MetaWrapper = styled.div`
     }
   }
 `
+export type ExperienceCardProps = {
+  work: {
+    default: ComponentType,
+    meta: {
+      location: string,
+      position: string,
+      dates: string
+    }
+  }
+}
 
-const ExperienceCard = ({ work: { default: WorkContent, meta } }) => {
-  const { darkMode } = useContext(ThemeContext)
+const ExperienceCard: FC<ExperienceCardProps> = ({ work: { default: WorkContent, meta } }) => {
+  const { darkMode } = useTheme()
+
   return (
     <CardWrapper darkMode={darkMode}>
       <MetaWrapper darkMode={darkMode}>

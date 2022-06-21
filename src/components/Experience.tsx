@@ -1,17 +1,17 @@
-import React, { useContext } from "react"
+import styled from "styled-components"
 
 // stylings
-import styled from "styled-components"
-import { theme } from "../theme/themes"
+import { theme, useTheme } from "../theme"
 
 // components
 import ExperienceCard from "./Experience/ExperienceCard"
+import type { ExperienceCardProps } from './Experience/ExperienceCard'
 
 // data
-import * as AriannaSuisse from "../data/experiences/arianna-suisse.mdx"
+import * as Kinsta from '../data/experiences/kinsta.mdx'
+import * as PatrickThomas from "../data/experiences/patrick-thomas.mdx"
 import * as EDealer from "../data/experiences/e-dealer-direct.mdx"
 import * as C3i from "../data/experiences/c3i-solutions.mdx"
-import ThemeContext from "../theme/ThemeContext"
 
 const WorkSection = styled.section`
   padding: 75px 0px 30px;
@@ -23,9 +23,11 @@ const WorkSection = styled.section`
   }
 `
 
-const SectionHeading = styled.h2`
+const SectionHeading = styled.h2<{
+  darkMode: boolean
+}>`
   font-size: 3.75rem;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
   @media (max-width: 900px) {
     margin: 0px;
   }
@@ -42,14 +44,16 @@ const InnerWrap = styled.div`
 `
 
 const Experience = () => {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useTheme()
+
   return (
     <WorkSection>
       <SectionHeading darkMode={darkMode}>Experiences</SectionHeading>
       <InnerWrap>
-        <ExperienceCard work={AriannaSuisse} />
-        <ExperienceCard work={EDealer} />
-        <ExperienceCard work={C3i} />
+        <ExperienceCard work={Kinsta as ExperienceCardProps["work"]} />
+        <ExperienceCard work={EDealer as ExperienceCardProps["work"]} />
+        <ExperienceCard work={PatrickThomas as ExperienceCardProps["work"]} />
+        <ExperienceCard work={C3i as ExperienceCardProps["work"]} />
       </InnerWrap>
     </WorkSection>
   )

@@ -1,8 +1,6 @@
-import React, { useContext } from "react"
-
 import styled from "styled-components"
-import { theme } from "../theme/themes"
-import ThemeContext from "../theme/ThemeContext"
+
+import { useTheme, theme } from "../theme"
 
 import * as ga from "../lib/ga"
 
@@ -13,21 +11,25 @@ const Section = styled.section`
   align-items: center;
 `
 
-const ContactHead = styled.h2`
+const ContactHead = styled.h2<{
+  darkMode: boolean
+}>`
   font-size: 3.75rem;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 600px) {
     font-size: 2.25rem;
   }
 `
 
-const Sentence = styled.p`
+const Sentence = styled.p<{
+  darkMode: boolean
+}>`
   width: 40%;
   text-align: center;
   font-size: 2.5rem;
   padding-bottom: 25px;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -49,12 +51,14 @@ const Sentence = styled.p`
   }
 `
 
-const Email = styled.a`
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+const Email = styled.a<{
+  darkMode: boolean
+}>`
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
   text-decoration: none;
   font-size: 2.5rem;
   padding: 15px 20px;
-  border: 2px solid ${(props) => (props.darkMode ? "white" : "black")};
+  border: 2px solid ${({ darkMode }) => (darkMode ? "white" : "black")};
   text-align: center;
   margin: 5px 0px;
   border-radius: 5px;
@@ -67,12 +71,12 @@ const Email = styled.a`
   &:hover {
     border: 2px solid ${theme.lightMode.linkHover};
     background: ${theme.lightMode.linkHover};
-    color: ${(props) => (props.darkMode ? theme.darkMode.background : "white")};
+    color: ${({ darkMode }) => (darkMode ? theme.darkMode.background : "white")};
   }
 `
 
 const Contact = () => {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useTheme()
 
   const handleEmailClick = () =>
     ga.event({

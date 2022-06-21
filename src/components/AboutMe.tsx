@@ -1,18 +1,18 @@
-import React, { useContext } from "react"
+import styled from "styled-components"
 
 // stylings
-import styled from "styled-components"
-import { theme } from "../theme/themes"
-import ThemeContext from "../theme/ThemeContext"
+import { useTheme, theme } from "../theme"
 
 import * as Content from "../data/aboutme/about-me.mdx"
 
-const AboutMeSection = styled.section`
+const AboutMeSection = styled.section<{
+  darkMode: boolean
+}>`
   display: flex;
   justify-content: center;
   width: 100%;
-  background: ${(props) =>
-    props.darkMode
+  background: ${({ darkMode }) =>
+    darkMode
       ? "rgba(90,92,106,1)"
       : "linear-gradient(90deg, #d53369 0%, #daae51 100%)"};
   box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.8);
@@ -31,11 +31,13 @@ const InnerContainer = styled.div`
   }
 `
 
-const SectionHeading = styled.h2`
+const SectionHeading = styled.h2<{
+  darkMode: boolean
+}>`
   font-size: 3.75rem;
   margin: 0px;
   margin-bottom: 25px;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 3.25rem;
@@ -57,10 +59,12 @@ const SectionContent = styled.div`
   }
 `
 
-const AboutInfo = styled.div`
+const AboutInfo = styled.div<{
+  darkMode: boolean
+}>`
   width: 60%;
   font-size: 2.2rem;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -79,7 +83,7 @@ const AboutInfo = styled.div`
 
 const SelfImage = styled.img`
   width: auto;
-  height: 450px;
+  height: 350px;
   border-radius: 25px 0px;
   margin-right: 100px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
@@ -139,8 +143,15 @@ const TechList = styled.ul`
   }
 `
 
+type ContectData = {
+  meta: {
+    tech: string[],
+    image: string
+  }
+}
+
 const AboutMe = () => {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useTheme()
   return (
     <AboutMeSection darkMode={darkMode}>
       <InnerContainer>
@@ -149,12 +160,12 @@ const AboutMe = () => {
           <AboutInfo darkMode={darkMode}>
             <Content.default />
             <TechList>
-              {Content.meta.tech.map((tech, i) => (
+              {(Content as unknown as ContectData).meta.tech.map((tech, i) => (
                 <li key={i}>{tech}</li>
               ))}
             </TechList>
           </AboutInfo>
-          <SelfImage src={Content.meta.image} alt="Picture of myself" />
+          <SelfImage src={(Content as unknown as ContectData).meta.image} alt="Picture of myself" />
         </SectionContent>
       </InnerContainer>
     </AboutMeSection>

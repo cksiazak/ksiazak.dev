@@ -1,8 +1,7 @@
-import React, { useContext } from "react"
+import styled from "styled-components"
 
 // styling
-import ThemeContext from "../theme/ThemeContext"
-import styled from "styled-components"
+ import { useTheme } from "../theme"
 
 // Components
 import ContactCard from "./Heading/ContactCard"
@@ -30,13 +29,15 @@ const ParticleWrapper = styled.div`
   }
 `
 
-const Intro = styled.span`
+const Intro = styled.span<{
+  darkMode: boolean
+}>`
   font-size: 3rem;
   position: absolute;
   z-index: 1;
   left: 12.5%;
   top: 200px;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -56,14 +57,16 @@ const Intro = styled.span`
   }
 `
 
-const Name = styled.h1`
+const Name = styled.h1<{
+  darkMode: boolean
+}>`
   font-size: 7rem;
   margin: 0px;
   position: absolute;
   z-index: 1;
   left: 12.5%;
   top: 235px;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 6rem;
@@ -91,13 +94,15 @@ const Name = styled.h1`
   }
 `
 
-const Desc = styled.span`
+const Desc = styled.span<{
+  darkMode: boolean
+}>`
   font-size: 3.8rem;
   position: absolute;
   z-index: 1;
   left: 12.5%;
   top: 320px;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 3.4rem;
@@ -134,7 +139,9 @@ const Desc = styled.span`
   }
 `
 
-const UnderHeading = styled.p`
+const UnderHeading = styled.p<{
+  darkMode: boolean
+}>`
   font-size: 3rem;
   margin: 100px 0px 0px;
   position: absolute;
@@ -142,7 +149,7 @@ const UnderHeading = styled.p`
   left: 12.5%;
   top: 325px;
   width: 40%;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -180,20 +187,20 @@ const UnderHeading = styled.p`
 `
 
 const Heading = () => {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useTheme()
 
   return (
     <HeadingSection>
       <ParticleWrapper>
-        <Particles darkMode={darkMode} />
+        <Particles />
       </ParticleWrapper>
       <ContactCard />
       <Intro darkMode={darkMode}>Hello, my name is</Intro>
       <Name darkMode={darkMode}>Christopher Ksiazak</Name>
       <Desc darkMode={darkMode}>& I like to build things</Desc>
       <UnderHeading darkMode={darkMode}>
-        I am a (mostly) self taught developer from El Paso, Texas. Apart from
-        English and Spanish, I also speak Javascript/Typescript and Ruby.
+        I am a (mostly) self taught developer from El Paso, Texas.
+        Apart from English and Spanish, I also speak Typescript.
       </UnderHeading>
     </HeadingSection>
   )

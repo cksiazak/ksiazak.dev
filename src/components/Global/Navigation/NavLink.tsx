@@ -1,9 +1,14 @@
-import React from "react"
+import { FC } from "react"
 import Link from "next/link"
 
 import * as ga from "../../../lib/ga"
 
-const NavLink = ({ href, title }) => {
+type NavLinkProps = {
+  href: string,
+  title: string
+}
+
+const NavLink: FC<NavLinkProps> = ({ href, title }) => {
   const handleNavLinkClick = () =>
     ga.event({
       action: "Clicked home button",
@@ -11,8 +16,8 @@ const NavLink = ({ href, title }) => {
     })
 
   return (
-    <Link href={href} onClick={handleNavLinkClick}>
-      <a title={title}>{title}</a>
+    <Link href={href}>
+      <a title={title} onClick={handleNavLinkClick}>{title}</a>
     </Link>
   )
 }

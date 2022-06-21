@@ -1,7 +1,7 @@
-import React from "react"
+import { ComponentType, FC } from "react"
 import { IoLogoTwitter, IoLogoLinkedin, IoLogoGithub } from "react-icons/io"
-
 import styled from "styled-components"
+
 import { theme } from "../../theme/themes"
 
 import * as ga from "../../lib/ga"
@@ -117,7 +117,13 @@ const LinkButton = styled.a`
   }
 `
 
-const ContactCardLink = ({ href, title, Component }) => {
+type ContactCardLinkProps = {
+  href: string,
+  title: string,
+  Component: ComponentType
+}
+
+const ContactCardLink: FC<ContactCardLinkProps> = ({ href, title, Component }) => {
   const handleCardLinkClick = () =>
     ga.event({ action: "Click link in contact card", params: { link: title } })
 

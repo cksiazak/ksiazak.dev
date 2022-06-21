@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
+import styled from "styled-components"
 
 // styling
-import styled from "styled-components"
-import ThemeContext from "../../theme/ThemeContext"
-import { theme } from "../../theme/themes"
+import { theme, useTheme } from "../../theme"
 
 // components
 import ThemeSwitcher from "./Navigation/ThemeSwitcher"
@@ -11,24 +10,29 @@ import NavLink from "./Navigation/NavLink"
 
 import * as ga from "../../lib/ga"
 
-const NavSection = styled.section`
+const NavSection = styled.section<{
+  scrolled: boolean,
+  darkMode: boolean
+}>`
   width: 100%;
   position: fixed;
   top: 0;
-  box-shadow: ${(props) =>
-    props.scrolled ? "0px 2px 10px -2px rgba(42, 42, 42, 0.6)" : "none"};
-  background: ${(props) => {
-    if (!props.scrolled) {
+  box-shadow: ${({ scrolled }) =>
+    scrolled ? "0px 2px 10px -2px rgba(42, 42, 42, 0.6)" : "none"};
+  background: ${({ scrolled, darkMode }) => {
+    if (!scrolled) {
       return "transparent"
-    } else if (props.scrolled) {
-      return props.darkMode ? "#403F4C" : theme.lightMode.background
+    } else if (scrolled) {
+      return darkMode ? "#403F4C" : theme.lightMode.background
     }
   }};
   transition: ${theme.global.transitionTime};
   z-index: 10;
 `
 
-const InnerNav = styled.div`
+const InnerNav = styled.div<{
+  darkMode: boolean
+}>`
   width: ${theme.global.pageWidth};
   max-width: ${theme.global.maxPageWidth};
   margin: 0 auto;
@@ -40,7 +44,7 @@ const InnerNav = styled.div`
 
   a {
     text-decoration: none;
-    color: ${(props) => (props.darkMode ? "white" : "black")};
+    color: ${({ darkMode }) => (darkMode ? "white" : "black")};
     transition: ${theme.global.transitionTime};
     &:hover {
       color: ${theme.lightMode.linkHover};
@@ -81,7 +85,7 @@ const Nav = styled.nav`
 `
 
 const Navigation = () => {
-  const { darkMode, themeController } = useContext(ThemeContext)
+  const { darkMode, themeController } = useTheme()
   const [awayFromTop, setAwayFromTop] = useState(false)
 
   const scrollListener = () => {

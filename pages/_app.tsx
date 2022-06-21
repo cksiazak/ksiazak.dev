@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"
+import { useEffect, FC } from "react"
+import { AppProps } from 'next/app'
 import { useRouter } from "next/router"
 import { normalize } from "styled-normalize"
 import styled, { createGlobalStyle } from "styled-components"
@@ -31,21 +32,21 @@ const GlobalStyle = createGlobalStyle<{
     transition: ${theme.global.transitionTime};
     -webkit-backface-visibility: hidden;
   }
-`;
+`
 
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-`;
+`
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
   const { darkMode } = useTheme()
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       ga.pageview(url)
     }
     //When the component is mounted, subscribe to router changes

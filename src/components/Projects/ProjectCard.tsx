@@ -1,10 +1,11 @@
-import React, { useContext } from "react"
+import { ComponentType, FC } from "react"
+import styled from "styled-components"
 import { IoLogoGithub, IoIosLink } from "react-icons/io"
+import Image from 'next/image'
 
 // styling
-import styled from "styled-components"
 import { theme } from "../../theme/themes"
-import ThemeContext from "../../theme/ThemeContext"
+ import { useTheme } from "../../theme/ThemeContext"
 
 const CardContainer = styled.div`
   width: 100%;
@@ -68,10 +69,12 @@ const CardInfo = styled.div`
   }
 `
 
-const Content = styled.div`
+const Content = styled.div<{
+  darkMode: boolean
+}>`
   max-width: 700px;
-  background: ${(props) =>
-    props.darkMode
+  background: ${({ darkMode }) =>
+    darkMode
       ? "rgba(90,92,106, 0.95)"
       : "linear-gradient(315deg,rgba(179, 205, 209, 0.94) 0%,rgba(159, 164, 196, 0.94) 74%)"};
   margin-right: -125px;
@@ -81,7 +84,7 @@ const Content = styled.div`
   position: relative;
   z-index: 2;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   p {
     padding: 5px 15px;
@@ -126,10 +129,12 @@ const Content = styled.div`
   }
 `
 
-const Metadata = styled.div`
+const Metadata = styled.div<{
+  darkMode: boolean
+}>`
   display: flex;
   flex-direction: column;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 `
 
 const TitleWrapper = styled.div`
@@ -157,7 +162,9 @@ const Title = styled.h3`
   }
 `
 
-const LinkContainer = styled.div`
+const LinkContainer = styled.div<{
+  darkMode: boolean
+}>`
   font-size: 3rem;
   padding-bottom: 10px;
 
@@ -171,7 +178,7 @@ const LinkContainer = styled.div`
   }
 
   a {
-    color: ${(props) => (props.darkMode ? "white" : "black")};
+    color: ${({ darkMode }) => (darkMode ? "white" : "black")};
     text-decoration: none;
     transition: ${theme.global.transitionTime};
 
@@ -186,9 +193,11 @@ const LinkContainer = styled.div`
   }
 `
 
-const TechWrapper = styled.div`
+const TechWrapper = styled.div<{
+  darkMode: boolean
+}>`
   font-size: 2.2rem;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1500px) {
     font-size: 2rem;
@@ -228,8 +237,21 @@ const ImgContainer = styled.div`
   }
 `
 
-const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
-  const { darkMode } = useContext(ThemeContext)
+type ProjectCardProps = {
+  project: {
+    default: ComponentType,
+    meta: {
+      git: string,
+      title: string,
+      href: string,
+      image: string,
+      tech: string[]
+    }
+  }
+}
+
+const ProjectCard: FC<ProjectCardProps> = ({ project: { default: ProjectContent, meta } }) => {
+  const { darkMode } = useTheme()
   return (
     <CardContainer>
       <CardInfo className="card-information">
@@ -258,7 +280,7 @@ const ProjectCard = ({ project: { default: ProjectContent, meta } }) => {
         </TechWrapper>
       </CardInfo>
       <ImgContainer>
-        <img src={meta.image} alt={`${meta.title} image`} />
+        <Image src={meta.image} alt={`${meta.title} image`} />
       </ImgContainer>
     </CardContainer>
   )

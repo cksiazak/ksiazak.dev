@@ -1,9 +1,7 @@
-import React, { useContext } from "react"
+import styled from "styled-components"
 
 // themes
-import styled from "styled-components"
-import { theme } from "../theme/themes"
-import ThemeContext from "../theme/ThemeContext"
+import { useTheme, theme } from "../theme"
 
 import * as ga from "../lib/ga"
 
@@ -19,9 +17,11 @@ const ProjectSection = styled.section`
   }
 `
 
-const SectionHeader = styled.h2`
+const SectionHeader = styled.h2<{
+  darkMode: boolean
+}>`
   font-size: 3.75rem;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 900px) {
     margin-top: 0px;
@@ -40,12 +40,14 @@ const InnerProjectWrapper = styled.div`
   }
 `
 
-const Sentence = styled.p`
+const Sentence = styled.p<{
+  darkMode: boolean
+}>`
   width: 40%;
   text-align: center;
   font-size: 2.5rem;
   padding-bottom: 25px;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -67,12 +69,14 @@ const Sentence = styled.p`
   }
 `
 
-const GithubLink = styled.a`
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+const GithubLink = styled.a<{
+  darkMode: boolean
+}>`
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
   text-decoration: none;
   font-size: 2.5rem;
   padding: 15px 20px;
-  border: 2px solid ${(props) => (props.darkMode ? "white" : "black")};
+  border: 2px solid ${({ darkMode }) => (darkMode ? "white" : "black")};
   text-align: center;
   margin: 5px 0px;
   border-radius: 5px;
@@ -86,12 +90,12 @@ const GithubLink = styled.a`
   &:hover {
     border: 2px solid ${theme.lightMode.linkHover};
     background: ${theme.lightMode.linkHover};
-    color: ${(props) => (props.darkMode ? theme.darkMode.background : "white")};
+    color: ${({ darkMode }) => (darkMode ? theme.darkMode.background : "white")};
   }
 `
 
 const Projects = () => {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useTheme()
 
   const navigateToGithub = () =>
     ga.event({
@@ -104,18 +108,17 @@ const Projects = () => {
       <SectionHeader darkMode={darkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
         <Sentence darkMode={darkMode}>
-          I've been pretty busy over the last two years (what with COVID and
-          all, plus I've been working many contracts at the same time) that the
-          projects I had before didn't exactly meet my current abilities. So I
-          removed them all and am planning to create bigger and better things.
+          I've been pretty busy over the last few years (what with COVID and all),
+          that the projects I had before didn't exactly meet anywhere near my current abilities.
+          So I removed them all and am planning to create bigger and better things.
         </Sentence>
         <GithubLink
           onClick={navigateToGithub}
           href="https://github.com/cksiazak"
-          title="Cksiazak Github"
+          title="Cksiazak GitHub"
           darkMode={darkMode}
         >
-          Onward to Github!
+          Check out my GitHub anyway?
         </GithubLink>
       </InnerProjectWrapper>
     </ProjectSection>

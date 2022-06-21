@@ -1,5 +1,10 @@
 {
-  "extends": ["next/core-web-vitals"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "semi": ["error", "never"],
     "no-unused-vars": "off",
@@ -10,8 +15,11 @@
 		],
     "react/no-unescaped-entities": "off",
     "no-multiple-empty-lines": "error",
-    "no-explicit-any": "error",
-    "eol-last": "error"
+    "eol-last": "error",
+    "@typescript-eslint/no-explicit-any": "error"
   },
-  "plugins": ["unused-imports"]
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  "ignorePatterns": [
+    "next.config.js"
+  ]
 }

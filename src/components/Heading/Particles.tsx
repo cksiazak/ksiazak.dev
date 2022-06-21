@@ -1,13 +1,17 @@
 import React from "react"
 import Particles from "react-tsparticles"
 import { loadFull } from "tsparticles"
-
+import type { Engine } from "tsparticles-engine"
 import { isMobile } from "react-device-detect"
 
-const HeadingParticles = ({ darkMode }) => {
-  const particlesInit = async (main) => {
+import { useTheme } from "../../theme"
+
+const HeadingParticles = () => {
+  const particlesInit = async (main: Engine) => {
     await loadFull(main)
   }
+
+  const { darkMode } = useTheme()
 
   return (
     <Particles
@@ -111,7 +115,6 @@ const HeadingParticles = ({ darkMode }) => {
               size: 6,
               duration: 2,
               opacity: 1,
-              speed: 3,
             },
             repulse: {
               distance: 200,

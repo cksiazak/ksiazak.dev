@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import { FC, ComponentType } from "react"
 import styled from "styled-components"
 
 // components
@@ -11,7 +11,7 @@ import {
   IoMdDocument,
 } from "react-icons/io"
 import { theme } from "../../theme/themes"
-import ThemeContext from "../../theme/ThemeContext"
+ import { useTheme } from "../../theme/ThemeContext"
 
 import * as ga from "../../lib/ga"
 
@@ -33,13 +33,15 @@ const FooterInner = styled.div`
   }
 `
 
-const BranchLink = styled.a`
+const BranchLink = styled.a<{
+  darkMode: boolean
+}>`
   text-decoration: none;
   display: flex;
   align-items: center;
   font-size: 1.75rem;
   padding: 10px 0px;
-  color: ${(props) => (props.darkMode ? "white" : "black")};
+  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
   transition: ${theme.global.transitionTime};
 
   &:hover {
@@ -63,7 +65,9 @@ const BranchLink = styled.a`
   }
 `
 
-const IconList = styled.ul`
+const IconList = styled.ul<{
+  darkMode: boolean
+}>`
   list-style: none;
   display: flex;
   padding: 0px;
@@ -76,7 +80,7 @@ const IconList = styled.ul`
       font-size: 3.25rem;
       padding: 10px 15px;
       transition: ${theme.global.transitionTime};
-      color: ${(props) => (props.darkMode ? "white" : "black")};
+      color: ${({ darkMode }) => (darkMode ? "white" : "black")};
 
       @media (max-width: 500px) {
         font-size: 2.5rem;
@@ -89,7 +93,13 @@ const IconList = styled.ul`
   }
 `
 
-const LinkIcon = ({ component: Component, href, title }) => {
+type LinkIconProps = {
+  component: ComponentType,
+  href: string
+  title: string
+}
+
+const LinkIcon: FC<LinkIconProps> = ({ component: Component, href, title }) => {
   const handleLinkIconClick = () =>
     ga.event({ action: "Click on footer link", params: { link: title } })
   return (
@@ -102,7 +112,7 @@ const LinkIcon = ({ component: Component, href, title }) => {
 }
 
 const Footer = () => {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useTheme()
 
   const handleDesignedByLink = () =>
     ga.event({

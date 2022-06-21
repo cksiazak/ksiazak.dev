@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, FC, ReactNode } from 'react'
 import { usePrevious } from '../hooks/usePrevious'
 
 type ThemeContextType = {
@@ -8,32 +8,32 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType>({
   darkMode: false,
-  themeController: () => {},
-});
+  themeController: () => null,
+})
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext)
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false)
   const prevDarkMode = usePrevious(darkMode)
 
   const themeController = () => setDarkMode(prevState => !prevState)
 
   useEffect(() => {
-    const data = window.localStorage.getItem('dark-mode');
-    const isDark = JSON.parse(data);
+    const data = window.localStorage.getItem('dark-mode')
+    const isDark = JSON.parse(data as string)
 
     if (isDark) {
       setDarkMode(isDark)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (darkMode !== prevDarkMode) {
       window.localStorage.setItem(
         'dark-mode',
         JSON.stringify(darkMode)
-      );
+      )
     }
   }, [darkMode, prevDarkMode])
 
@@ -48,4 +48,4 @@ const ThemeProvider = ({ children }) => {
   )
 }
 
-export default ThemeProvider;
+export default ThemeProvider
