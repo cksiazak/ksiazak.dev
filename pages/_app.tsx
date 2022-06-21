@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle<{
   }
 `
 
-const AppWrapper = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,15 +59,23 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   }, [router.events])
 
   return (
-    <ThemeProvider>
+    <>
       <GlobalStyle darkMode={darkMode} />
       <Navigation />
-      <AppWrapper>
+      <Content>
         <Component {...pageProps} />
-      </AppWrapper>
+      </Content>
       <Footer />
+    </>
+  )
+}
+
+const AppWrapper: FC<AppProps> = (props) => {
+  return (
+    <ThemeProvider>
+      <MyApp {...props} />
     </ThemeProvider>
   )
 }
 
-export default MyApp
+export default AppWrapper

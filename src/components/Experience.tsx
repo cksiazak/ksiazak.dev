@@ -14,10 +14,11 @@ import * as EDealer from "../data/experiences/e-dealer-direct.mdx"
 import * as C3i from "../data/experiences/c3i-solutions.mdx"
 
 const WorkSection = styled.section`
-  padding: 75px 0px 30px;
+  padding: 75px 0px 75px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (max-width: 900px) {
     padding: 50px 0px 30px;
   }

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 // styling
- import { useTheme } from "../theme"
+import { useTheme } from "../theme"
 
 // Components
 import ContactCard from "./Heading/ContactCard"
