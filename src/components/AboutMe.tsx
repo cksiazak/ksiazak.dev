@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react"
 
 // stylings
-import styled from 'styled-components';
-import { theme } from '../constants/themes';
-import ThemeContext from '../lib/ThemeContext';
+import styled from "styled-components"
+import { theme } from "../theme/themes"
+import ThemeContext from "../theme/ThemeContext"
 
-import * as Content from '../data/aboutme/about-me.mdx';
+import * as Content from "../data/aboutme/about-me.mdx"
 
 const AboutMeSection = styled.section`
   display: flex;
@@ -13,11 +13,11 @@ const AboutMeSection = styled.section`
   width: 100%;
   background: ${(props) =>
     props.darkMode
-      ? 'rgba(90,92,106,1)'
-      : 'linear-gradient(90deg, #d53369 0%, #daae51 100%)'};
+      ? "rgba(90,92,106,1)"
+      : "linear-gradient(90deg, #d53369 0%, #daae51 100%)"};
   box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.8);
   padding: 50px 0px 75px;
-`;
+`
 
 const InnerContainer = styled.div`
   display: flex;
@@ -29,18 +29,18 @@ const InnerContainer = styled.div`
     width: 85%;
     align-items: center;
   }
-`;
+`
 
 const SectionHeading = styled.h2`
   font-size: 3.75rem;
   margin: 0px;
   margin-bottom: 25px;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 3.25rem;
   }
-`;
+`
 
 const SectionContent = styled.div`
   display: flex;
@@ -55,12 +55,12 @@ const SectionContent = styled.div`
     flex-direction: column-reverse;
     align-items: center;
   }
-`;
+`
 
 const AboutInfo = styled.div`
   width: 60%;
   font-size: 2.2rem;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -75,7 +75,7 @@ const AboutInfo = styled.div`
   @media (max-width: 575px) {
     font-size: 1.6rem;
   }
-`;
+`
 
 const SelfImage = styled.img`
   width: auto;
@@ -107,7 +107,7 @@ const SelfImage = styled.img`
     height: 200px;
     margin: 0px 0px 25px;
   }
-`;
+`
 
 const TechList = styled.ul`
   column-count: 3;
@@ -137,10 +137,10 @@ const TechList = styled.ul`
   @media (max-width: 375px) {
     font-size: 1.1rem;
   }
-`;
+`
 
 const AboutMe = () => {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode } = useContext(ThemeContext)
   return (
     <AboutMeSection darkMode={darkMode}>
       <InnerContainer>
@@ -154,11 +154,11 @@ const AboutMe = () => {
               ))}
             </TechList>
           </AboutInfo>
-          <SelfImage src={Content.meta.image} alt='Picture of myself' />
+          <SelfImage src={Content.meta.image} alt="Picture of myself" />
         </SectionContent>
       </InnerContainer>
     </AboutMeSection>
-  );
-};
+  )
+}
 
-export default AboutMe;
+export default AboutMe

@@ -1,0 +1,17 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "semi": ["error", "never"],
+    "no-unused-vars": "off",
+		"unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			"warn",
+			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		],
+    "react/no-unescaped-entities": "off",
+    "no-multiple-empty-lines": "error",
+    "no-explicit-any": "error",
+    "eol-last": "error"
+  },
+  "plugins": ["unused-imports"]
+}

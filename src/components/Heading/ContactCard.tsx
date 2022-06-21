@@ -1,10 +1,10 @@
-import React from 'react';
-import { IoLogoTwitter, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
+import React from "react"
+import { IoLogoTwitter, IoLogoLinkedin, IoLogoGithub } from "react-icons/io"
 
-import styled from 'styled-components';
-import { theme } from '../../constants/themes';
+import styled from "styled-components"
+import { theme } from "../../theme/themes"
 
-import * as ga from '../../lib/ga';
+import * as ga from "../../lib/ga"
 
 const CardWrapper = styled.div`
   position: absolute;
@@ -42,7 +42,7 @@ const CardWrapper = styled.div`
   @media (max-width: 450px) {
     top: 400px;
   }
-`;
+`
 
 const CardTitle = styled.span`
   font-size: 3.75rem;
@@ -56,7 +56,7 @@ const CardTitle = styled.span`
   @media (max-width: 900px) {
     font-size: 2.25rem;
   }
-`;
+`
 
 const SocialList = styled.ul`
   display: flex;
@@ -67,8 +67,6 @@ const SocialList = styled.ul`
   justify-content: space-evenly;
   align-items: center;
   font-size: 4.5rem;
-
- 
 
   li {
     a {
@@ -91,7 +89,7 @@ const SocialList = styled.ul`
   @media (max-width: 900px) {
     font-size: 2.5rem;
   }
-`;
+`
 
 const LinkButton = styled.a`
   color: white;
@@ -117,11 +115,11 @@ const LinkButton = styled.a`
   @media (max-width: 900px) {
     font-size: 1.75rem;
   }
-`;
+`
 
 const ContactCardLink = ({ href, title, Component }) => {
-
-  const handleCardLinkClick = () => ga.event({ action: 'Click link in contact card', params: { link: title } });
+  const handleCardLinkClick = () =>
+    ga.event({ action: "Click link in contact card", params: { link: title } })
 
   return (
     <li>
@@ -133,30 +131,48 @@ const ContactCardLink = ({ href, title, Component }) => {
 }
 
 const ContactCard = () => {
-  const handleResumeClick = () => ga.event({ action: 'Click resume in contact card' });
-  const handleEmailClick = () => ga.event({ action: 'Click email in contact card' });
+  const handleResumeClick = () =>
+    ga.event({ action: "Click resume in contact card" })
+  const handleEmailClick = () =>
+    ga.event({ action: "Click email in contact card" })
 
   return (
     <CardWrapper>
       <CardTitle>Let's Connect</CardTitle>
       <SocialList>
-        <ContactCardLink href='https://www.linkedin.com/in/cksiazak/' title='LinkedIn' Component={IoLogoLinkedin} />
-        <ContactCardLink href='https://github.com/cksiazak' title='Github' Component={IoLogoGithub} />
-        <ContactCardLink href='https://twitter.com/cksiazak_dev' title='Twitter' Component={IoLogoTwitter} />
+        <ContactCardLink
+          href="https://www.linkedin.com/in/cksiazak/"
+          title="LinkedIn"
+          Component={IoLogoLinkedin}
+        />
+        <ContactCardLink
+          href="https://github.com/cksiazak"
+          title="Github"
+          Component={IoLogoGithub}
+        />
+        <ContactCardLink
+          href="https://twitter.com/cksiazak_dev"
+          title="Twitter"
+          Component={IoLogoTwitter}
+        />
       </SocialList>
       <LinkButton
-        href='/assets/Cksiazak_Resume.pdf'
-        title='Resume'
-        download='cksiazak_resume.pdf'
+        href="/assets/Cksiazak_Resume.pdf"
+        title="Resume"
+        download="cksiazak_resume.pdf"
         onClick={handleResumeClick}
       >
         Resume
       </LinkButton>
-      <LinkButton href='mailto:cksiazak@gmail.com' title='Email' onClick={handleEmailClick}>
+      <LinkButton
+        href="mailto:cksiazak@gmail.com"
+        title="Email"
+        onClick={handleEmailClick}
+      >
         Email Me
       </LinkButton>
     </CardWrapper>
-  );
-};
+  )
+}
 
-export default ContactCard;
+export default ContactCard

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import styled from 'styled-components';
+import React, { useContext } from "react"
+import styled from "styled-components"
 
 // components
 import {
@@ -9,18 +9,18 @@ import {
   IoLogoGithub,
   IoIosMail,
   IoMdDocument,
-} from 'react-icons/io';
-import { theme } from '../../constants/themes';
-import ThemeContext from '../../lib/ThemeContext';
+} from "react-icons/io"
+import { theme } from "../../theme/themes"
+import ThemeContext from "../../theme/ThemeContext"
 
-import * as ga from '../../lib/ga'
+import * as ga from "../../lib/ga"
 
 const FooterMain = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
   padding-top: 25px;
-`;
+`
 
 const FooterInner = styled.div`
   width: ${theme.global.pageWidth};
@@ -31,7 +31,7 @@ const FooterInner = styled.div`
   @media (max-width: 700px) {
     width: 90%;
   }
-`;
+`
 
 const BranchLink = styled.a`
   text-decoration: none;
@@ -39,7 +39,7 @@ const BranchLink = styled.a`
   align-items: center;
   font-size: 1.75rem;
   padding: 10px 0px;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
   transition: ${theme.global.transitionTime};
 
   &:hover {
@@ -61,7 +61,7 @@ const BranchLink = styled.a`
   @media (max-width: 400px) {
     font-size: 1rem;
   }
-`;
+`
 
 const IconList = styled.ul`
   list-style: none;
@@ -76,7 +76,7 @@ const IconList = styled.ul`
       font-size: 3.25rem;
       padding: 10px 15px;
       transition: ${theme.global.transitionTime};
-      color: ${(props) => (props.darkMode ? 'white' : 'black')};
+      color: ${(props) => (props.darkMode ? "white" : "black")};
 
       @media (max-width: 500px) {
         font-size: 2.5rem;
@@ -87,23 +87,28 @@ const IconList = styled.ul`
       }
     }
   }
-`;
+`
 
 const LinkIcon = ({ component: Component, href, title }) => {
-  const handleLinkIconClick = () => ga.event({ action: 'Click on footer link', params: { link: title } })
+  const handleLinkIconClick = () =>
+    ga.event({ action: "Click on footer link", params: { link: title } })
   return (
     <li>
       <a href={href} title={title} onClick={handleLinkIconClick}>
         <Component />
       </a>
     </li>
-  );
-};
+  )
+}
 
 const Footer = () => {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode } = useContext(ThemeContext)
 
-  const handleDesignedByLink = () => ga.event({ action: 'Click on footer link', params: { link: 'Designed by myself' } })
+  const handleDesignedByLink = () =>
+    ga.event({
+      action: "Click on footer link",
+      params: { link: "Designed by myself" },
+    })
 
   return (
     <FooterMain>
@@ -111,33 +116,33 @@ const Footer = () => {
         <IconList darkMode={darkMode}>
           <LinkIcon
             component={IoLogoLinkedin}
-            href='https://linkedin.com/in/cksiazak'
-            title='LinkedIn'
+            href="https://linkedin.com/in/cksiazak"
+            title="LinkedIn"
           />
           <LinkIcon
             component={IoLogoGithub}
-            href='https://github.com/cksiazak'
-            title='Github'
+            href="https://github.com/cksiazak"
+            title="Github"
           />
           <LinkIcon
             component={IoLogoTwitter}
-            href='https://twitter.com/cksiazak_dev'
-            title='Twitter'
+            href="https://twitter.com/cksiazak_dev"
+            title="Twitter"
           />
           <LinkIcon
             component={IoIosMail}
-            href='mailto:cksiazak@gmail.com'
-            title='Mail'
+            href="mailto:cksiazak@gmail.com"
+            title="Mail"
           />
           <LinkIcon
             component={IoMdDocument}
-            href='/assets/Cksiazak_Resume.pdf'
-            title='Resume'
+            href="/assets/Cksiazak_Resume.pdf"
+            title="Resume"
           />
         </IconList>
         <BranchLink
-          title='Ksiazak.dev Repo'
-          href='https://github.com/cksiazak/ksiazak.dev'
+          title="Ksiazak.dev Repo"
+          href="https://github.com/cksiazak/ksiazak.dev"
           darkMode={darkMode}
           onClick={handleDesignedByLink}
         >
@@ -148,7 +153,7 @@ const Footer = () => {
         </BranchLink>
       </FooterInner>
     </FooterMain>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

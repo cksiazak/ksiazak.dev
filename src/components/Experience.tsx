@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react"
 
 // stylings
-import styled from 'styled-components'
-import { theme } from '../constants/themes'
+import styled from "styled-components"
+import { theme } from "../theme/themes"
 
 // components
-import ExperienceCard from './Experience/ExperienceCard'
+import ExperienceCard from "./Experience/ExperienceCard"
 
 // data
-import * as AriannaSuisse from '../data/experiences/arianna-suisse.mdx'
-import * as EDealer from '../data/experiences/e-dealer-direct.mdx'
-import * as C3i from '../data/experiences/c3i-solutions.mdx'
-import ThemeContext from '../lib/ThemeContext'
+import * as AriannaSuisse from "../data/experiences/arianna-suisse.mdx"
+import * as EDealer from "../data/experiences/e-dealer-direct.mdx"
+import * as C3i from "../data/experiences/c3i-solutions.mdx"
+import ThemeContext from "../theme/ThemeContext"
 
 const WorkSection = styled.section`
   padding: 75px 0px 30px;
@@ -25,7 +25,7 @@ const WorkSection = styled.section`
 
 const SectionHeading = styled.h2`
   font-size: 3.75rem;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
   @media (max-width: 900px) {
     margin: 0px;
   }

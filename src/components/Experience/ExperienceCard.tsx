@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react"
 
-import styled from 'styled-components';
-import ThemeContext from '../../lib/ThemeContext';
+import styled from "styled-components"
+import ThemeContext from "../../theme/ThemeContext"
 
 const CardWrapper = styled.div`
   display: flex;
@@ -9,13 +9,12 @@ const CardWrapper = styled.div`
   padding: 20px 25px;
   background: ${(props) =>
     props.darkMode
-      ? 'rgba(118,124,163,1)'
-      : 'linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)'};
+      ? "rgba(118,124,163,1)"
+      : "linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)"};
   margin: 50px 0px 0px;
   width: 60%;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
-
+  color: ${(props) => (props.darkMode ? "white" : "black")};
 
   ul {
     padding: 0px;
@@ -46,7 +45,7 @@ const CardWrapper = styled.div`
   @media (max-width: 750px) {
     width: 100%;
   }
-`;
+`
 
 const MetaWrapper = styled.div`
   display: flex;
@@ -78,10 +77,10 @@ const MetaWrapper = styled.div`
       font-size: 1.4rem;
     }
   }
-`;
+`
 
 const ExperienceCard = ({ work: { default: WorkContent, meta } }) => {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode } = useContext(ThemeContext)
   return (
     <CardWrapper darkMode={darkMode}>
       <MetaWrapper darkMode={darkMode}>
@@ -91,7 +90,7 @@ const ExperienceCard = ({ work: { default: WorkContent, meta } }) => {
       </MetaWrapper>
       <WorkContent />
     </CardWrapper>
-  );
-};
+  )
+}
 
-export default ExperienceCard;
+export default ExperienceCard

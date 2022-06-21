@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react"
 
 // styling
-import ThemeContext from '../lib/ThemeContext';
-import styled from 'styled-components';
+import ThemeContext from "../theme/ThemeContext"
+import styled from "styled-components"
 
 // Components
-import ContactCard from './Heading/ContactCard';
-import Particles from './Heading/Particles';
+import ContactCard from "./Heading/ContactCard"
+import Particles from "./Heading/Particles"
 
 const HeadingSection = styled.section`
   position: relative;
   z-index: 0;
   width: 100%;
-`;
+`
 
 const ParticleWrapper = styled.div`
   position: relative;
@@ -28,7 +28,7 @@ const ParticleWrapper = styled.div`
   @media (max-width: 450px) {
     height: 675px;
   }
-`;
+`
 
 const Intro = styled.span`
   font-size: 3rem;
@@ -36,7 +36,7 @@ const Intro = styled.span`
   z-index: 1;
   left: 12.5%;
   top: 200px;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -54,7 +54,7 @@ const Intro = styled.span`
     top: 160px;
     font-size: 1.65rem;
   }
-`;
+`
 
 const Name = styled.h1`
   font-size: 7rem;
@@ -63,7 +63,7 @@ const Name = styled.h1`
   z-index: 1;
   left: 12.5%;
   top: 235px;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 6rem;
@@ -89,7 +89,7 @@ const Name = styled.h1`
   @media (max-width: 400px) {
     font-size: 3.25rem;
   }
-`;
+`
 
 const Desc = styled.span`
   font-size: 3.8rem;
@@ -97,7 +97,7 @@ const Desc = styled.span`
   z-index: 1;
   left: 12.5%;
   top: 320px;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 3.4rem;
@@ -132,7 +132,7 @@ const Desc = styled.span`
     font-size: 2.5rem;
     top: 218px;
   }
-`;
+`
 
 const UnderHeading = styled.p`
   font-size: 3rem;
@@ -142,7 +142,7 @@ const UnderHeading = styled.p`
   left: 12.5%;
   top: 325px;
   width: 40%;
-  color: ${(props) => (props.darkMode ? 'white' : 'black')};
+  color: ${(props) => (props.darkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -177,10 +177,10 @@ const UnderHeading = styled.p`
     width: 85%;
     font-size: 1.6rem;
   }
-`;
+`
 
 const Heading = () => {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode } = useContext(ThemeContext)
 
   return (
     <HeadingSection>
@@ -196,7 +196,7 @@ const Heading = () => {
         English and Spanish, I also speak Javascript/Typescript and Ruby.
       </UnderHeading>
     </HeadingSection>
-  );
-};
+  )
+}
 
-export default Heading;
+export default Heading
