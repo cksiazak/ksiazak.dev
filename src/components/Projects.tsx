@@ -108,9 +108,10 @@ const Projects = () => {
       <SectionHeader isDarkMode={isDarkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
         <Sentence isDarkMode={isDarkMode}>
-          I've been pretty busy over the last few years (what with COVID and all),
-          that the projects I had before didn't exactly meet anywhere near my current abilities.
-          So I removed them all and am planning to create bigger and better things.
+          I've been pretty busy over the last few years between COVID and dedicating myself to my work that I deleted all my projects as they don't accurately reflect who I am or what I can do.
+          <br />
+          <br />
+          Plus... I tend to dislike what I create as it's never really 'perfect'. 😒
         </Sentence>
         <GithubLink
           onClick={navigateToGithub}
