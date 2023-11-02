@@ -19,7 +19,7 @@ type ThemeSwitcherProps = {
 }
 
 const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ icon, themeController }) => (
-  <li>
+  <li key="theme_button">
     <ThemeButton type="button" onClick={themeController}>
       {icon}
     </ThemeButton>

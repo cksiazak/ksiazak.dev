@@ -2,45 +2,45 @@ import { createContext, useContext, useEffect, useState, FC, ReactNode } from 'r
 import { usePrevious } from '../hooks/usePrevious'
 
 type ThemeContextType = {
-  darkMode: boolean
+  isDarkMode: boolean
   themeController: () => void
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  darkMode: false,
+  isDarkMode: false,
   themeController: () => null,
 })
 
 export const useTheme = () => useContext(ThemeContext)
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false)
-  const prevDarkMode = usePrevious(darkMode)
+  const [isDarkMode, setisDarkMode] = useState(false)
+  const previsDarkMode = usePrevious(isDarkMode)
 
-  const themeController = () => setDarkMode(prevState => !prevState)
+  const themeController = () => setisDarkMode(prevState => !prevState)
 
   useEffect(() => {
     const data = window.localStorage.getItem('dark-mode')
     const isDark = JSON.parse(data as string)
 
     if (isDark) {
-      setDarkMode(isDark)
+      setisDarkMode(isDark)
     }
   }, [])
 
   useEffect(() => {
-    if (darkMode !== prevDarkMode) {
+    if (isDarkMode !== previsDarkMode) {
       window.localStorage.setItem(
         'dark-mode',
-        JSON.stringify(darkMode)
+        JSON.stringify(isDarkMode)
       )
     }
-  }, [darkMode, prevDarkMode])
+  }, [isDarkMode, previsDarkMode])
 
 
   return (
     <ThemeContext.Provider value={{
-      darkMode,
+      isDarkMode,
       themeController,
     }}>
       {children}

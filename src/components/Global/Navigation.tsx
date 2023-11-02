@@ -8,22 +8,22 @@ import { theme, useTheme } from "../../theme"
 import ThemeSwitcher from "./Navigation/ThemeSwitcher"
 import NavLink from "./Navigation/NavLink"
 
-import * as ga from "../../lib/ga"
+import * as ga from "../../../lib/ga"
 
 const NavSection = styled.section<{
   scrolled: boolean,
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   width: 100%;
   position: fixed;
   top: 0;
   box-shadow: ${({ scrolled }) =>
     scrolled ? "0px 2px 10px -2px rgba(42, 42, 42, 0.6)" : "none"};
-  background: ${({ scrolled, darkMode }) => {
+  background: ${({ scrolled, isDarkMode }) => {
     if (!scrolled) {
       return "transparent"
     } else if (scrolled) {
-      return darkMode ? "#403F4C" : theme.lightMode.background
+      return isDarkMode ? "#403F4C" : theme.lightMode.background
     }
   }};
   transition: ${theme.global.transitionTime};
@@ -31,7 +31,7 @@ const NavSection = styled.section<{
 `
 
 const InnerNav = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   width: ${theme.global.pageWidth};
   max-width: ${theme.global.maxPageWidth};
@@ -44,7 +44,7 @@ const InnerNav = styled.div<{
 
   a {
     text-decoration: none;
-    color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+    color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
     transition: ${theme.global.transitionTime};
     &:hover {
       color: ${theme.lightMode.linkHover};
@@ -85,12 +85,12 @@ const Nav = styled.nav`
 `
 
 const Navigation = () => {
-  const { darkMode, themeController } = useTheme()
-  const [awayFromTop, setAwayFromTop] = useState(false)
+  const { isDarkMode, themeController } = useTheme()
+  const [isAwayFromTop, setIsAwayFromTop] = useState(false)
 
   const scrollListener = () => {
     const position = window.pageYOffset
-    position > 20 ? setAwayFromTop(true) : setAwayFromTop(false)
+    setIsAwayFromTop(position > 20)
 
     if (position > 20) {
       ga.event({
@@ -115,25 +115,25 @@ const Navigation = () => {
     }
   }, [])
 
-  const handleDarkModePress = () =>
+  const handleisDarkModePress = () =>
     ga.event({
       action: "Clicked dark mode",
-      params: { darkmode_preference: darkMode ? "on" : "off" },
+      params: { isDarkMode_preference: isDarkMode ? "on" : "off" },
     })
 
   const handleThemePress = () => {
     themeController()
-    handleDarkModePress()
+    handleisDarkModePress()
   }
 
   return (
-    <NavSection scrolled={awayFromTop} darkMode={darkMode}>
-      <InnerNav darkMode={darkMode}>
+    <NavSection scrolled={isAwayFromTop} isDarkMode={isDarkMode}>
+      <InnerNav isDarkMode={isDarkMode}>
         <NavLink title="<CK/>" href="/" />
         <Nav>
           <ul>
             <ThemeSwitcher
-              icon={darkMode ? "🌙" : "☀️"}
+              icon={isDarkMode ? "🌙" : "☀️"}
               themeController={handleThemePress}
             />
           </ul>

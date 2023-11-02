@@ -4,19 +4,19 @@ import styled from "styled-components"
 import { useTheme } from '../../theme'
 
 const CardWrapper = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   display: flex;
   flex-direction: column;
   padding: 20px 25px;
-  background: ${({ darkMode }) =>
-    darkMode
+  background: ${({ isDarkMode }) =>
+    isDarkMode
       ? "rgba(118,124,163,1)"
       : "linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)"};
   margin: 50px 0px 0px;
   width: 60%;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   ul {
     padding: 0px;
@@ -50,7 +50,7 @@ const CardWrapper = styled.div<{
 `
 
 const MetaWrapper = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   display: flex;
   flex-direction: column;
@@ -94,11 +94,11 @@ export type ExperienceCardProps = {
 }
 
 const ExperienceCard: FC<ExperienceCardProps> = ({ work: { default: WorkContent, meta } }) => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
 
   return (
-    <CardWrapper darkMode={darkMode}>
-      <MetaWrapper darkMode={darkMode}>
+    <CardWrapper isDarkMode={isDarkMode}>
+      <MetaWrapper isDarkMode={isDarkMode}>
         <h3>{meta.location}</h3>
         <span>{meta.position}</span>
         <span>{meta.dates}</span>

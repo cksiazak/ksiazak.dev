@@ -1,10 +1,10 @@
 import { ComponentType, FC } from "react"
-import { IoLogoTwitter, IoLogoLinkedin, IoLogoGithub } from "react-icons/io"
+import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io"
 import styled from "styled-components"
 
 import { theme } from "../../theme/themes"
 
-import * as ga from "../../lib/ga"
+import * as ga from "../../../lib/ga"
 
 const CardWrapper = styled.div`
   position: absolute;
@@ -128,7 +128,7 @@ const ContactCardLink: FC<ContactCardLinkProps> = ({ href, title, Component }) =
     ga.event({ action: "Click link in contact card", params: { link: title } })
 
   return (
-    <li>
+    <li key={title}>
       <a href={href} title={title} onClick={handleCardLinkClick}>
         <Component />
       </a>
@@ -155,11 +155,6 @@ const ContactCard = () => {
           href="https://github.com/cksiazak"
           title="Github"
           Component={IoLogoGithub}
-        />
-        <ContactCardLink
-          href="https://twitter.com/cksiazak_dev"
-          title="Twitter"
-          Component={IoLogoTwitter}
         />
       </SocialList>
       <LinkButton

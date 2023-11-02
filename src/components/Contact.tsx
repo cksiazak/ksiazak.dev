@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import { useTheme, theme } from "../theme"
 
-import * as ga from "../lib/ga"
+import * as ga from "../../lib/ga"
 
 const Section = styled.section`
   padding: 100px 0px;
@@ -12,10 +12,10 @@ const Section = styled.section`
 `
 
 const ContactHead = styled.h2<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3.75rem;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 600px) {
     font-size: 2.25rem;
@@ -23,13 +23,13 @@ const ContactHead = styled.h2<{
 `
 
 const Sentence = styled.p<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   width: 40%;
   text-align: center;
   font-size: 2.5rem;
   padding-bottom: 25px;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -52,13 +52,13 @@ const Sentence = styled.p<{
 `
 
 const Email = styled.a<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-decoration: none;
   font-size: 2.5rem;
   padding: 15px 20px;
-  border: 2px solid ${({ darkMode }) => (darkMode ? "white" : "black")};
+  border: 2px solid ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-align: center;
   margin: 5px 0px;
   border-radius: 5px;
@@ -71,12 +71,12 @@ const Email = styled.a<{
   &:hover {
     border: 2px solid ${theme.lightMode.linkHover};
     background: ${theme.lightMode.linkHover};
-    color: ${({ darkMode }) => (darkMode ? theme.darkMode.background : "white")};
+    color: ${({ isDarkMode }) => (isDarkMode ? theme.isDarkMode.background : "white")};
   }
 `
 
 const Contact = () => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
 
   const handleEmailClick = () =>
     ga.event({
@@ -86,8 +86,8 @@ const Contact = () => {
 
   return (
     <Section>
-      <ContactHead darkMode={darkMode}>Thanks for visiting!</ContactHead>
-      <Sentence darkMode={darkMode}>
+      <ContactHead isDarkMode={isDarkMode}>Thanks for visiting!</ContactHead>
+      <Sentence isDarkMode={isDarkMode}>
         I'm not actively looking for positions, but feel free to reach out to
         me, even if you just want to talk. I'll get back to you as soon as
         possible.
@@ -96,7 +96,7 @@ const Contact = () => {
         onClick={handleEmailClick}
         href="mailto:cksiazak@gmail.com"
         title="email"
-        darkMode={darkMode}
+        isDarkMode={isDarkMode}
       >
         Get in touch
       </Email>

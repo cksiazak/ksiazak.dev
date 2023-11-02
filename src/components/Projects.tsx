@@ -3,7 +3,7 @@ import styled from "styled-components"
 // themes
 import { useTheme, theme } from "../theme"
 
-import * as ga from "../lib/ga"
+import * as ga from "../../lib/ga"
 
 const ProjectSection = styled.section`
   display: flex;
@@ -18,10 +18,10 @@ const ProjectSection = styled.section`
 `
 
 const SectionHeader = styled.h2<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3.75rem;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 900px) {
     margin-top: 0px;
@@ -41,13 +41,13 @@ const InnerProjectWrapper = styled.div`
 `
 
 const Sentence = styled.p<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   width: 40%;
   text-align: center;
   font-size: 2.5rem;
   padding-bottom: 25px;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -70,13 +70,13 @@ const Sentence = styled.p<{
 `
 
 const GithubLink = styled.a<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-decoration: none;
   font-size: 2.5rem;
   padding: 15px 20px;
-  border: 2px solid ${({ darkMode }) => (darkMode ? "white" : "black")};
+  border: 2px solid ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-align: center;
   margin: 5px 0px;
   border-radius: 5px;
@@ -90,12 +90,12 @@ const GithubLink = styled.a<{
   &:hover {
     border: 2px solid ${theme.lightMode.linkHover};
     background: ${theme.lightMode.linkHover};
-    color: ${({ darkMode }) => (darkMode ? theme.darkMode.background : "white")};
+    color: ${({ isDarkMode }) => (isDarkMode ? theme.isDarkMode.background : "white")};
   }
 `
 
 const Projects = () => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
 
   const navigateToGithub = () =>
     ga.event({
@@ -105,9 +105,9 @@ const Projects = () => {
 
   return (
     <ProjectSection>
-      <SectionHeader darkMode={darkMode}>Things I've Built</SectionHeader>
+      <SectionHeader isDarkMode={isDarkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
-        <Sentence darkMode={darkMode}>
+        <Sentence isDarkMode={isDarkMode}>
           I've been pretty busy over the last few years (what with COVID and all),
           that the projects I had before didn't exactly meet anywhere near my current abilities.
           So I removed them all and am planning to create bigger and better things.
@@ -116,7 +116,7 @@ const Projects = () => {
           onClick={navigateToGithub}
           href="https://github.com/cksiazak"
           title="Cksiazak GitHub"
-          darkMode={darkMode}
+          isDarkMode={isDarkMode}
         >
           Check out my GitHub anyway?
         </GithubLink>

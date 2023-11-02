@@ -70,11 +70,11 @@ const CardInfo = styled.div`
 `
 
 const Content = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   max-width: 700px;
-  background: ${({ darkMode }) =>
-    darkMode
+  background: ${({ isDarkMode }) =>
+    isDarkMode
       ? "rgba(90,92,106, 0.95)"
       : "linear-gradient(315deg,rgba(179, 205, 209, 0.94) 0%,rgba(159, 164, 196, 0.94) 74%)"};
   margin-right: -125px;
@@ -84,7 +84,7 @@ const Content = styled.div<{
   position: relative;
   z-index: 2;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   p {
     padding: 5px 15px;
@@ -130,11 +130,11 @@ const Content = styled.div<{
 `
 
 const Metadata = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   display: flex;
   flex-direction: column;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 `
 
 const TitleWrapper = styled.div`
@@ -163,7 +163,7 @@ const Title = styled.h3`
 `
 
 const LinkContainer = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3rem;
   padding-bottom: 10px;
@@ -178,7 +178,7 @@ const LinkContainer = styled.div<{
   }
 
   a {
-    color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+    color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
     text-decoration: none;
     transition: ${theme.global.transitionTime};
 
@@ -194,10 +194,10 @@ const LinkContainer = styled.div<{
 `
 
 const TechWrapper = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 2.2rem;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1500px) {
     font-size: 2rem;
@@ -251,11 +251,11 @@ type ProjectCardProps = {
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ project: { default: ProjectContent, meta } }) => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
   return (
     <CardContainer>
       <CardInfo className="card-information">
-        <LinkContainer className="project-links" darkMode={darkMode}>
+        <LinkContainer className="project-links" isDarkMode={isDarkMode}>
           {meta.git !== "" ? (
             <a href={meta.git} title={`${meta.title} github`}>
               <IoLogoGithub />
@@ -267,15 +267,15 @@ const ProjectCard: FC<ProjectCardProps> = ({ project: { default: ProjectContent,
             </a>
           ) : null}
         </LinkContainer>
-        <Metadata className="project-meta" darkMode={darkMode}>
+        <Metadata className="project-meta" isDarkMode={isDarkMode}>
           <TitleWrapper className="project-title">
             <Title>{meta.title}</Title>
           </TitleWrapper>
         </Metadata>
-        <Content className="project-card-info" darkMode={darkMode}>
+        <Content className="project-card-info" isDarkMode={isDarkMode}>
           <ProjectContent />
         </Content>
-        <TechWrapper className="project-tech" darkMode={darkMode}>
+        <TechWrapper className="project-tech" isDarkMode={isDarkMode}>
           <span>{meta.tech.join(" | ")}</span>
         </TechWrapper>
       </CardInfo>

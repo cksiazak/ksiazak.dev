@@ -12,16 +12,9 @@ const Home = () => {
   return (
     <Fragment>
       <Head>
-        <meta charSet="utf-8" />
-        <title>Christopher Ksiazak - Full Stack Software Developer</title>
-        <meta
-          name="description"
-          content="A personal developer portfolio and art piece by Christopher Ksiazak"
-        />
-        <meta
-          name="keywords"
-          content="Christopher Ksiazak, Chris Ksiazak, Ksiazak, developer, web development, frontend, backend, full stack, software developer, software engineer"
-        />
+        <title
+          key="title"
+        >Christopher Ksiazak - Full Stack Software Developer</title>
       </Head>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

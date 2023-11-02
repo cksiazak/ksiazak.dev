@@ -2,9 +2,10 @@ import { useEffect, FC } from "react"
 import { AppProps } from 'next/app'
 import { useRouter } from "next/router"
 import { normalize } from "styled-normalize"
-import styled, { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle, StyleSheetManager } from "styled-components"
 
-import * as ga from "../src/lib/ga"
+import * as ga from "../lib/ga"
+import StyledComponentsRegistry from './../lib/registry'
 
 // Global Components
 import Navigation from "../src/components/Global/Navigation"
@@ -13,10 +14,8 @@ import Footer from "../src/components/Global/Footer"
 // Themes
 import ThemeProvider, { theme, useTheme } from "../src/theme"
 
-// Hooks
-
 const GlobalStyle = createGlobalStyle<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   ${normalize};
 
@@ -27,8 +26,8 @@ const GlobalStyle = createGlobalStyle<{
 
   html {
     font-size: 62.5%;
-    background: ${({ darkMode }) =>
-      !darkMode ? "linear-gradient(0deg ,#f0f3f5, #fff);" : "#2D3047"};
+    background: ${({ isDarkMode }) =>
+    !isDarkMode ? "linear-gradient(0deg ,#f0f3f5, #fff);" : "#2D3047"};
     transition: ${theme.global.transitionTime};
     -webkit-backface-visibility: hidden;
   }
@@ -43,7 +42,7 @@ const Content = styled.div`
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -60,7 +59,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <>
-      <GlobalStyle darkMode={darkMode} />
+      <GlobalStyle isDarkMode={isDarkMode} />
       <Navigation />
       <Content>
         <Component {...pageProps} />
@@ -70,10 +69,23 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   )
 }
 
+const nonForwardedProps = ['scrolled', 'isDarkMode']
+
 const AppWrapper: FC<AppProps> = (props) => {
+  const handleForwardedProps = (prop: string) => {
+    if (nonForwardedProps.includes(prop)) {
+      return false
+    }
+    return true
+  }
+
   return (
     <ThemeProvider>
-      <MyApp {...props} />
+      <StyledComponentsRegistry>
+        <StyleSheetManager shouldForwardProp={handleForwardedProps}>
+          <MyApp {...props} />
+        </StyleSheetManager>
+      </StyledComponentsRegistry>
     </ThemeProvider>
   )
 }

@@ -13,31 +13,15 @@ const HeadingSection = styled.section`
   width: 100%;
 `
 
-const ParticleWrapper = styled.div`
-  position: relative;
-  z-index: -1;
-  width: 100%;
-  height: 750px;
-  overflow: hidden;
-
-  div {
-    height: 100%;
-  }
-
-  @media (max-width: 450px) {
-    height: 675px;
-  }
-`
-
 const Intro = styled.span<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3rem;
   position: absolute;
   z-index: 1;
   left: 12.5%;
   top: 200px;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -58,7 +42,7 @@ const Intro = styled.span<{
 `
 
 const Name = styled.h1<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 7rem;
   margin: 0px;
@@ -66,7 +50,7 @@ const Name = styled.h1<{
   z-index: 1;
   left: 12.5%;
   top: 235px;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 6rem;
@@ -95,14 +79,14 @@ const Name = styled.h1<{
 `
 
 const Desc = styled.span<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3.8rem;
   position: absolute;
   z-index: 1;
   left: 12.5%;
   top: 320px;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 3.4rem;
@@ -140,7 +124,7 @@ const Desc = styled.span<{
 `
 
 const UnderHeading = styled.p<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3rem;
   margin: 100px 0px 0px;
@@ -149,7 +133,7 @@ const UnderHeading = styled.p<{
   left: 12.5%;
   top: 325px;
   width: 40%;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -187,18 +171,16 @@ const UnderHeading = styled.p<{
 `
 
 const Heading = () => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
 
   return (
     <HeadingSection>
-      <ParticleWrapper>
-        <Particles />
-      </ParticleWrapper>
+      <Particles />
       <ContactCard />
-      <Intro darkMode={darkMode}>Hello, my name is</Intro>
-      <Name darkMode={darkMode}>Christopher Ksiazak</Name>
-      <Desc darkMode={darkMode}>& I like to build things</Desc>
-      <UnderHeading darkMode={darkMode}>
+      <Intro isDarkMode={isDarkMode}>Hello, my name is</Intro>
+      <Name isDarkMode={isDarkMode}>Christopher Ksiazak</Name>
+      <Desc isDarkMode={isDarkMode}>& I like to build things</Desc>
+      <UnderHeading isDarkMode={isDarkMode}>
         I am a (mostly) self taught developer from El Paso, Texas.
         Apart from English and Spanish, I also speak Typescript.
       </UnderHeading>

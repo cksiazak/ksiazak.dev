@@ -9,7 +9,7 @@ export const theme = {
     textColor: 'black',
     linkHover: '#5183f5',
   },
-  darkMode: {
+  isDarkMode: {
     background: '#2D3047',
   },
 };

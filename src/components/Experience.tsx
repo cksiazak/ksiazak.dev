@@ -25,10 +25,10 @@ const WorkSection = styled.section`
 `
 
 const SectionHeading = styled.h2<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3.75rem;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   @media (max-width: 900px) {
     margin: 0px;
   }
@@ -45,11 +45,11 @@ const InnerWrap = styled.div`
 `
 
 const Experience = () => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
 
   return (
     <WorkSection>
-      <SectionHeading darkMode={darkMode}>Experiences</SectionHeading>
+      <SectionHeading isDarkMode={isDarkMode}>Experiences</SectionHeading>
       <InnerWrap>
         <ExperienceCard work={Kinsta as ExperienceCardProps["work"]} />
         <ExperienceCard work={EDealer as ExperienceCardProps["work"]} />

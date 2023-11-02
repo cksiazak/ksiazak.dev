@@ -1,7 +1,7 @@
 import { FC } from "react"
 import Link from "next/link"
 
-import * as ga from "../../../lib/ga"
+import * as ga from "../../../../lib/ga"
 
 type NavLinkProps = {
   href: string,
@@ -16,8 +16,8 @@ const NavLink: FC<NavLinkProps> = ({ href, title }) => {
     })
 
   return (
-    <Link href={href}>
-      <a title={title} onClick={handleNavLinkClick}>{title}</a>
+    <Link href={href} title={title} onClick={handleNavLinkClick}>
+      {title}
     </Link>
   )
 }

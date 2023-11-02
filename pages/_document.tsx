@@ -2,40 +2,25 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 import { ServerStyleSheet } from 'styled-components'
 
 export default class CustomDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
-
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        })
-
-      const initialProps = await Document.getInitialProps(ctx)
-
-      return {
-        ...initialProps,
-        styles: [
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ],
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
-
   render() {
     return (
       <Html lang='en'>
         <Head>
+          <meta charSet="utf-8" key="char_set" />
+          <meta
+            name="description"
+            content="A personal developer portfolio and art piece by Christopher Ksiazak"
+            key="description"
+          />
+          <meta
+            name="keywords"
+            content="Christopher Ksiazak, Chris Ksiazak, Ksiazak, developer, web development, frontend, backend, full stack, software developer, software engineer"
+            key="keywords"
+          />
           <link
             href='https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap'
             rel='stylesheet'
+            key='stylesheet'
           />
         </Head>
         <body>

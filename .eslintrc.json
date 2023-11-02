@@ -1,25 +1,6 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
+  "extends": "next/core-web-vitals",
   "rules": {
-    "semi": ["error", "never"],
-    "no-unused-vars": "off",
-		"unused-imports/no-unused-imports": "error",
-		"unused-imports/no-unused-vars": [
-			"warn",
-			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
-		],
-    "react/no-unescaped-entities": "off",
-    "no-multiple-empty-lines": "error",
-    "eol-last": "error",
-    "@typescript-eslint/no-explicit-any": "error"
-  },
-  "plugins": ["@typescript-eslint", "unused-imports"],
-  "ignorePatterns": [
-    "next.config.js"
-  ]
+    "react/no-unescaped-entities": "off"
+  }
 }

@@ -4,7 +4,6 @@ import styled from "styled-components"
 // components
 import {
   IoMdGitBranch,
-  IoLogoTwitter,
   IoLogoLinkedin,
   IoLogoGithub,
   IoIosMail,
@@ -13,7 +12,7 @@ import {
 import { theme } from "../../theme/themes"
  import { useTheme } from "../../theme/ThemeContext"
 
-import * as ga from "../../lib/ga"
+import * as ga from "../../../lib/ga"
 
 const FooterMain = styled.footer`
   width: 100%;
@@ -34,14 +33,14 @@ const FooterInner = styled.div`
 `
 
 const BranchLink = styled.a<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   text-decoration: none;
   display: flex;
   align-items: center;
   font-size: 1.75rem;
   padding: 10px 0px;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   transition: ${theme.global.transitionTime};
 
   &:hover {
@@ -66,7 +65,7 @@ const BranchLink = styled.a<{
 `
 
 const IconList = styled.ul<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   list-style: none;
   display: flex;
@@ -80,7 +79,7 @@ const IconList = styled.ul<{
       font-size: 3.25rem;
       padding: 10px 15px;
       transition: ${theme.global.transitionTime};
-      color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+      color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
       @media (max-width: 500px) {
         font-size: 2.5rem;
@@ -103,7 +102,7 @@ const LinkIcon: FC<LinkIconProps> = ({ component: Component, href, title }) => {
   const handleLinkIconClick = () =>
     ga.event({ action: "Click on footer link", params: { link: title } })
   return (
-    <li>
+    <li key={title}>
       <a href={href} title={title} onClick={handleLinkIconClick}>
         <Component />
       </a>
@@ -112,7 +111,7 @@ const LinkIcon: FC<LinkIconProps> = ({ component: Component, href, title }) => {
 }
 
 const Footer = () => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
 
   const handleDesignedByLink = () =>
     ga.event({
@@ -123,7 +122,7 @@ const Footer = () => {
   return (
     <FooterMain>
       <FooterInner>
-        <IconList darkMode={darkMode}>
+        <IconList isDarkMode={isDarkMode}>
           <LinkIcon
             component={IoLogoLinkedin}
             href="https://linkedin.com/in/cksiazak"
@@ -133,11 +132,6 @@ const Footer = () => {
             component={IoLogoGithub}
             href="https://github.com/cksiazak"
             title="Github"
-          />
-          <LinkIcon
-            component={IoLogoTwitter}
-            href="https://twitter.com/cksiazak_dev"
-            title="Twitter"
           />
           <LinkIcon
             component={IoIosMail}
@@ -153,7 +147,7 @@ const Footer = () => {
         <BranchLink
           title="Ksiazak.dev Repo"
           href="https://github.com/cksiazak/ksiazak.dev"
-          darkMode={darkMode}
+          isDarkMode={isDarkMode}
           onClick={handleDesignedByLink}
         >
           This website was created and designed by Christopher Ksiazak

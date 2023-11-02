@@ -6,13 +6,13 @@ import { useTheme, theme } from "../theme"
 import * as Content from "../data/aboutme/about-me.mdx"
 
 const AboutMeSection = styled.section<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   display: flex;
   justify-content: center;
   width: 100%;
-  background: ${({ darkMode }) =>
-    darkMode
+  background: ${({ isDarkMode }) =>
+    isDarkMode
       ? "rgba(90,92,106,1)"
       : "linear-gradient(90deg, #d53369 0%, #daae51 100%)"};
   box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.8);
@@ -32,12 +32,12 @@ const InnerContainer = styled.div`
 `
 
 const SectionHeading = styled.h2<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   font-size: 3.75rem;
   margin: 0px;
   margin-bottom: 25px;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 3.25rem;
@@ -60,11 +60,11 @@ const SectionContent = styled.div`
 `
 
 const AboutInfo = styled.div<{
-  darkMode: boolean
+  isDarkMode: boolean
 }>`
   width: 60%;
   font-size: 2.2rem;
-  color: ${({ darkMode }) => (darkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -151,13 +151,13 @@ type ContectData = {
 }
 
 const AboutMe = () => {
-  const { darkMode } = useTheme()
+  const { isDarkMode } = useTheme()
   return (
-    <AboutMeSection darkMode={darkMode}>
+    <AboutMeSection isDarkMode={isDarkMode}>
       <InnerContainer>
-        <SectionHeading darkMode={darkMode}>About Me</SectionHeading>
+        <SectionHeading isDarkMode={isDarkMode}>About Me</SectionHeading>
         <SectionContent>
-          <AboutInfo darkMode={darkMode}>
+          <AboutInfo isDarkMode={isDarkMode}>
             <Content.default />
             <TechList>
               {(Content as unknown as ContectData).meta.tech.map((tech, i) => (
