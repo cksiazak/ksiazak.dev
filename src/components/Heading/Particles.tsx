@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import { loadFull } from "tsparticles"
 import Particles from "react-tsparticles"
-import type { Container, Engine } from "tsparticles-engine";
+import type { Engine } from "tsparticles-engine";
 import { isMobile } from "react-device-detect"
 import styled from "styled-components"
 
@@ -40,7 +40,7 @@ const ParticlesContainer = () => {
           },
           particles: {
             number: {
-              value: 200,
+              value: 150,
               density: {
                 enable: true,
                 value_area: 800,
@@ -77,7 +77,7 @@ const ParticlesContainer = () => {
               },
             },
             size: {
-              value: 4.008755121184665,
+              value: 5,
               random: true,
               anim: {
                 enable: false,
@@ -87,15 +87,15 @@ const ParticlesContainer = () => {
               },
             },
             line_linked: {
-              enable: false,
-              distance: 96.21012290843196,
+              enable: true,
+              distance: 96,
               color: !isDarkMode ? "#4F5057" : "#FFF",
-              opacity: 0.40087551211846645,
+              opacity: 0.3,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 3,
+              speed: 2,
               direction: "none",
               random: true,
               straight: false,
@@ -130,7 +130,7 @@ const ParticlesContainer = () => {
               },
               bubble: {
                 distance: 150,
-                size: 6,
+                size: 7,
                 duration: 2,
                 opacity: 1,
               },
