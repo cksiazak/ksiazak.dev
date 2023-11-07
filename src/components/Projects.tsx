@@ -111,7 +111,7 @@ const Projects = () => {
           I've been pretty busy over the last few years between COVID and dedicating myself to my work that I deleted all my projects as they don't accurately reflect who I am or what I can do.
           <br />
           <br />
-          Plus... I tend to dislike what I create as it's never really 'perfect'. 😒
+          Plus... I tend to never be fully satisfied with what I create as it's not 'perfect'. 😒
         </Sentence>
         <GithubLink
           onClick={navigateToGithub}
