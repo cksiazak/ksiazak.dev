@@ -88,9 +88,7 @@ const Contact = () => {
     <Section>
       <ContactHead isDarkMode={isDarkMode}>Thanks for visiting!</ContactHead>
       <Sentence isDarkMode={isDarkMode}>
-        I'm not actively looking for positions, but feel free to reach out to
-        me, even if you just want to talk. I'll get back to you as soon as
-        possible.
+        I'm actively in search of my next position where I can grow and develop (literally) something great. Feel free to reach out!
       </Sentence>
       <Email
         onClick={handleEmailClick}
