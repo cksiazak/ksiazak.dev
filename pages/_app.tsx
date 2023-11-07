@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import { useRouter } from "next/router"
 import { normalize } from "styled-normalize"
 import styled, { createGlobalStyle, StyleSheetManager } from "styled-components"
+import { Analytics } from '@vercel/analytics/react'
 
 import * as ga from "../lib/ga"
 import StyledComponentsRegistry from './../lib/registry'
@@ -65,6 +66,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       </Content>
       <Footer />
+      <Analytics />
     </>
   )
 }
