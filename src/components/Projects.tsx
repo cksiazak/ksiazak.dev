@@ -108,7 +108,7 @@ const Projects = () => {
       <SectionHeader isDarkMode={isDarkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
         <Sentence isDarkMode={isDarkMode}>
-          I've been pretty busy over the last few years between COVID and dedicating myself to my work that I deleted all my projects as they don't accurately reflect who I am or what I can do.
+          I've been pretty busy over the last few years between COVID, dedicating myself to my work and side hobbies, that I deleted all my projects as they don't accurately reflect who I am, what I do, or my current abilities.
           <br />
           <br />
           Plus... I tend to never be fully satisfied with what I create as it's not 'perfect'. 😒
