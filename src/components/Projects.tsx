@@ -74,7 +74,7 @@ const GithubLink = styled.a<{
 }>`
   color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   padding: 15px 20px;
   border: 2px solid ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-align: center;
@@ -111,7 +111,7 @@ const Projects = () => {
           I've been pretty busy over the last few years between COVID, dedicating myself to my work and side hobbies, that I deleted all my projects as they don't accurately reflect who I am, what I do, or my current abilities.
           <br />
           <br />
-          Plus... I tend to never be fully satisfied with what I create as it's not 'perfect'. 😒
+          I'm working on new things :)
         </Sentence>
         <GithubLink
           onClick={navigateToGithub}
@@ -119,7 +119,7 @@ const Projects = () => {
           title="Cksiazak GitHub"
           isDarkMode={isDarkMode}
         >
-          Check out my GitHub anyway?
+          Check out my GitHub?
         </GithubLink>
       </InnerProjectWrapper>
     </ProjectSection>

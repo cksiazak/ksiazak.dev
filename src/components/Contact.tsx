@@ -56,7 +56,7 @@ const Email = styled.a<{
 }>`
   color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-decoration: none;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   padding: 15px 20px;
   border: 2px solid ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
   text-align: center;
