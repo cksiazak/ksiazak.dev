@@ -1,7 +1,6 @@
-import React, { useCallback } from "react"
-import { loadFull } from "tsparticles"
-import Particles from "react-tsparticles"
-import type { Engine } from "tsparticles-engine";
+import React, { useState, useEffect } from "react"
+import Particles, { initParticlesEngine } from "@tsparticles/react"
+import { loadSlim } from '@tsparticles/slim'
 import { isMobile } from "react-device-detect"
 import styled from "styled-components"
 
@@ -25,130 +24,110 @@ const ParticleWrapper = styled.div`
 
 const ParticlesContainer = () => {
   const { isDarkMode } = useTheme()
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
   return (
     <ParticleWrapper>
-      <Particles
-        id="particles"
-        init={particlesInit}
-        options={{
-          style: {
-            position: "relative",
-          },
-          particles: {
-            number: {
-              value: 150,
-              density: {
-                enable: true,
-                value_area: 800,
-              },
+      {init &&
+        <Particles
+          id="particles"
+          options={{
+            style: {
+              position: 'relative',
             },
-            color: {
-              value: !isDarkMode
-                ? "#4F5057"
-                : ["#BD10E0", "#B8E986", "#50E3C2", "#FFD300", "#E86363"],
-            },
-            shape: {
-              type: "circle",
-              stroke: {
-                width: 0,
-                color: "#000000",
-              },
-              polygon: {
-                nb_sides: 6,
-              },
-              image: {
-                src: "img/github.svg",
-                width: 100,
-                height: 100,
-              },
-            },
-            opacity: {
-              value: 1,
-              random: true,
-              anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0,
-                sync: false,
-              },
-            },
-            size: {
-              value: 5,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 4,
-                size_min: 0.3,
-                sync: false,
-              },
-            },
-            line_linked: {
-              enable: true,
-              distance: 96,
-              color: !isDarkMode ? "#4F5057" : "#FFF",
-              opacity: 0.3,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 2,
-              direction: "none",
-              random: true,
-              straight: false,
-              out_mode: "out",
-              bounce: false,
-              attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 600,
-              },
-            },
-          },
-          interactivity: {
-            detect_on: "canvas",
-            events: {
-              onhover: {
-                enable: isMobile ? false : true,
-                mode: "bubble",
-              },
-              onclick: {
-                enable: isMobile ? false : true,
-                mode: "push",
-              },
-              resize: true,
-            },
-            modes: {
-              grab: {
-                distance: 400,
-                line_linked: {
-                  opacity: 1,
+            particles: {
+              number: {
+                value: 120,
+                density: {
+                  enable: true,
                 },
               },
-              bubble: {
+              color: {
+                value: "#000",
+              },
+              shape: {
+                type: "circle",
+              },
+              opacity: {
+                value: {
+                  min: 0.1,
+                  max: 0.5,
+                },
+                animation: {
+                  enable: true,
+                  speed: 1,
+                  sync: false,
+                },
+              },
+              size: {
+                value: {
+                  min: 1,
+                  max: 7,
+                },
+                animation: {
+                  enable: true,
+                  speed: 20,
+                  sync: false,
+                },
+              },
+              links: {
+                enable: true,
                 distance: 150,
-                size: 7,
-                duration: 2,
-                opacity: 1,
+                color: "#000",
+                opacity: 0.4,
+                width: 1,
               },
-              repulse: {
-                distance: 200,
-                duration: 0.4,
-              },
-              push: {
-                particles_nb: 4,
-              },
-              remove: {
-                particles_nb: 2,
+              move: {
+                enable: true,
+                speed: 1,
               },
             },
-          },
-          retina_detect: true,
-        }}
-      />
+            interactivity: {
+              events: {
+                onHover: {
+                  enable: true,
+                  mode: "grab",
+                },
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+              modes: {
+                grab: {
+                  distance: 200,
+                  links: {
+                    opacity: 1,
+                  },
+                },
+                bubble: {
+                  distance: 400,
+                  size: 40,
+                  duration: 2,
+                  opacity: 0.8,
+                },
+                repulse: {
+                  distance: 200,
+                },
+                push: {
+                  quantity: 4,
+                },
+                remove: {
+                  quantity: 2,
+                },
+              },
+            },
+          }}
+        />
+      }
     </ParticleWrapper>
   )
 }
