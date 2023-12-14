@@ -1,29 +1,29 @@
-import { useState, useEffect } from "react"
-import styled from "styled-components"
+import { useState, useEffect } from 'react'
+import styled from 'styled-components'
 
 // styling
-import { theme, useTheme } from "../../theme"
+import { theme, useTheme } from '../../theme'
 
 // components
-import ThemeSwitcher from "./Navigation/ThemeSwitcher"
-import NavLink from "./Navigation/NavLink"
+import ThemeSwitcher from './Navigation/ThemeSwitcher'
+import NavLink from './Navigation/NavLink'
 
-import * as ga from "../../../lib/ga"
+import * as ga from '../../../lib/ga'
 
 const NavSection = styled.section<{
-  scrolled: boolean,
+  scrolled: boolean
   isDarkMode: boolean
 }>`
   width: 100%;
   position: fixed;
   top: 0;
   box-shadow: ${({ scrolled }) =>
-    scrolled ? "0px 2px 10px -2px rgba(42, 42, 42, 0.6)" : "none"};
+    scrolled ? '0px 2px 10px -2px rgba(42, 42, 42, 0.6)' : 'none'};
   background: ${({ scrolled, isDarkMode }) => {
     if (!scrolled) {
-      return "transparent"
+      return 'transparent'
     } else if (scrolled) {
-      return isDarkMode ? "#403F4C" : theme.lightMode.background
+      return isDarkMode ? '#403F4C' : theme.lightMode.background
     }
   }};
   transition: ${theme.global.transitionTime};
@@ -44,7 +44,7 @@ const InnerNav = styled.div<{
 
   a {
     text-decoration: none;
-    color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+    color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
     transition: ${theme.global.transitionTime};
     &:hover {
       color: ${theme.lightMode.linkHover};
@@ -94,46 +94,47 @@ const Navigation = () => {
 
     if (position > 20) {
       ga.event({
-        action: "scrolled down page",
-        params: { distance: "More than 20" },
+        action: 'scrolled down page',
+        params: { distance: 'More than 20' },
       })
     }
 
     if (position > 200) {
       ga.event({
-        action: "scrolled down page",
-        params: { distance: "More than 200" },
+        action: 'scrolled down page',
+        params: { distance: 'More than 200' },
       })
     }
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", scrollListener)
+    window.addEventListener('scroll', scrollListener)
 
     return () => {
-      window.removeEventListener("scroll", scrollListener)
+      window.removeEventListener('scroll', scrollListener)
     }
   }, [])
 
   const handleisDarkModePress = () =>
     ga.event({
-      action: "Clicked dark mode",
-      params: { isDarkMode_preference: isDarkMode ? "on" : "off" },
+      action: 'Clicked dark mode',
+      params: { isDarkMode_preference: isDarkMode ? 'on' : 'off' },
     })
 
   const handleThemePress = () => {
     themeController()
+
     handleisDarkModePress()
   }
 
   return (
     <NavSection scrolled={isAwayFromTop} isDarkMode={isDarkMode}>
       <InnerNav isDarkMode={isDarkMode}>
-        <NavLink title="<CK/>" href="/" />
+        <NavLink title='<CK/>' href='/' />
         <Nav>
           <ul>
             <ThemeSwitcher
-              icon={isDarkMode ? "🌙" : "☀️"}
+              icon={isDarkMode ? '🌙' : '☀️'}
               themeController={handleThemePress}
             />
           </ul>

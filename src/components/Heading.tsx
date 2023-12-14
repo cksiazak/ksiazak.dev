@@ -1,16 +1,18 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 // styling
-import { useTheme } from "../theme"
+import { useTheme } from '../theme'
 
 // Components
-import ContactCard from "./Heading/ContactCard"
-import Particles from "./Heading/Particles"
+import ContactCard from './Heading/ContactCard'
+import Particles from './Heading/Particles'
 
 const HeadingSection = styled.section`
   position: relative;
   z-index: 0;
   width: 100%;
+  height: 100dvh;
+  display: flex;
 `
 
 const Intro = styled.span<{
@@ -21,7 +23,7 @@ const Intro = styled.span<{
   z-index: 1;
   left: 12.5%;
   top: 200px;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -50,7 +52,7 @@ const Name = styled.h1<{
   z-index: 1;
   left: 12.5%;
   top: 235px;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1650px) {
     font-size: 6rem;
@@ -86,7 +88,7 @@ const Desc = styled.span<{
   z-index: 1;
   left: 12.5%;
   top: 320px;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1650px) {
     font-size: 3.4rem;
@@ -133,7 +135,7 @@ const UnderHeading = styled.p<{
   left: 12.5%;
   top: 325px;
   width: 40%;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1650px) {
     font-size: 2.5rem;
@@ -181,8 +183,8 @@ const Heading = () => {
       <Name isDarkMode={isDarkMode}>Christopher Ksiazak</Name>
       <Desc isDarkMode={isDarkMode}>& I like to build things</Desc>
       <UnderHeading isDarkMode={isDarkMode}>
-        I am a (mostly) self taught developer from El Paso, Texas.
-        Apart from English and Spanish, I also speak Typescript.
+        I am a (mostly) self taught developer from El Paso, Texas. Apart from
+        English and Spanish, I also speak Typescript.
       </UnderHeading>
     </HeadingSection>
   )

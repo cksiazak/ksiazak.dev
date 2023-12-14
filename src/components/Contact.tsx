@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { useTheme, theme } from "../theme"
+import { useTheme, theme } from '../theme'
 
-import * as ga from "../../lib/ga"
+import * as ga from '../../lib/ga'
 
 const Section = styled.section`
   padding: 100px 0px;
@@ -15,7 +15,7 @@ const ContactHead = styled.h2<{
   isDarkMode: boolean
 }>`
   font-size: 3.75rem;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 600px) {
     font-size: 2.25rem;
@@ -29,7 +29,7 @@ const Sentence = styled.p<{
   text-align: center;
   font-size: 2.5rem;
   padding-bottom: 25px;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -54,11 +54,11 @@ const Sentence = styled.p<{
 const Email = styled.a<{
   isDarkMode: boolean
 }>`
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
   text-decoration: none;
   font-size: 2.2rem;
   padding: 15px 20px;
-  border: 2px solid ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  border: 2px solid ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
   text-align: center;
   margin: 5px 0px;
   border-radius: 5px;
@@ -71,7 +71,8 @@ const Email = styled.a<{
   &:hover {
     border: 2px solid ${theme.lightMode.linkHover};
     background: ${theme.lightMode.linkHover};
-    color: ${({ isDarkMode }) => (isDarkMode ? theme.isDarkMode.background : "white")};
+    color: ${({ isDarkMode }) =>
+      isDarkMode ? theme.isDarkMode.background : 'white'};
   }
 `
 
@@ -80,20 +81,21 @@ const Contact = () => {
 
   const handleEmailClick = () =>
     ga.event({
-      action: "Click on email button",
-      params: { section: "Contact" },
+      action: 'Click on email button',
+      params: { section: 'Contact' },
     })
 
   return (
     <Section>
       <ContactHead isDarkMode={isDarkMode}>Thanks for visiting!</ContactHead>
       <Sentence isDarkMode={isDarkMode}>
-        I'm actively in search of my next position where I can grow and develop (literally) something great. Feel free to reach out!
+        I'm actively in search of my next position where I can grow and develop
+        (literally) something great. Feel free to reach out!
       </Sentence>
       <Email
         onClick={handleEmailClick}
-        href="mailto:cksiazak@gmail.com"
-        title="email"
+        href='mailto:cksiazak@gmail.com'
+        title='email'
         isDarkMode={isDarkMode}
       >
         Get in touch

@@ -1,5 +1,5 @@
-import { FC, ComponentType } from "react"
-import styled from "styled-components"
+import { FC, ComponentType } from 'react'
+import styled from 'styled-components'
 
 // components
 import {
@@ -8,11 +8,11 @@ import {
   IoLogoGithub,
   IoIosMail,
   IoMdDocument,
-} from "react-icons/io"
-import { theme } from "../../theme/themes"
- import { useTheme } from "../../theme/ThemeContext"
+} from 'react-icons/io'
+import { theme } from '../../theme/themes'
+import { useTheme } from '../../theme/ThemeContext'
 
-import * as ga from "../../../lib/ga"
+import * as ga from '../../../lib/ga'
 
 const FooterMain = styled.footer`
   width: 100%;
@@ -40,7 +40,7 @@ const BranchLink = styled.a<{
   align-items: center;
   font-size: 1.75rem;
   padding: 10px 0px;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
   transition: ${theme.global.transitionTime};
 
   &:hover {
@@ -79,7 +79,7 @@ const IconList = styled.ul<{
       font-size: 3.25rem;
       padding: 10px 15px;
       transition: ${theme.global.transitionTime};
-      color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+      color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
       @media (max-width: 500px) {
         font-size: 2.5rem;
@@ -93,14 +93,14 @@ const IconList = styled.ul<{
 `
 
 type LinkIconProps = {
-  component: ComponentType,
+  component: ComponentType
   href: string
   title: string
 }
 
 const LinkIcon: FC<LinkIconProps> = ({ component: Component, href, title }) => {
   const handleLinkIconClick = () =>
-    ga.event({ action: "Click on footer link", params: { link: title } })
+    ga.event({ action: 'Click on footer link', params: { link: title } })
   return (
     <li key={title}>
       <a href={href} title={title} onClick={handleLinkIconClick}>
@@ -115,8 +115,8 @@ const Footer = () => {
 
   const handleDesignedByLink = () =>
     ga.event({
-      action: "Click on footer link",
-      params: { link: "Designed by myself" },
+      action: 'Click on footer link',
+      params: { link: 'Designed by myself' },
     })
 
   return (
@@ -125,28 +125,28 @@ const Footer = () => {
         <IconList isDarkMode={isDarkMode}>
           <LinkIcon
             component={IoLogoLinkedin}
-            href="https://linkedin.com/in/cksiazak"
-            title="LinkedIn"
+            href='https://linkedin.com/in/cksiazak'
+            title='LinkedIn'
           />
           <LinkIcon
             component={IoLogoGithub}
-            href="https://github.com/cksiazak"
-            title="Github"
+            href='https://github.com/cksiazak'
+            title='Github'
           />
           <LinkIcon
             component={IoIosMail}
-            href="mailto:cksiazak@gmail.com"
-            title="Mail"
+            href='mailto:cksiazak@gmail.com'
+            title='Mail'
           />
           <LinkIcon
             component={IoMdDocument}
-            href="/assets/Cksiazak_Resume.pdf"
-            title="Resume"
+            href='/assets/Cksiazak_Resume.pdf'
+            title='Resume'
           />
         </IconList>
         <BranchLink
-          title="Ksiazak.dev Repo"
-          href="https://github.com/cksiazak/ksiazak.dev"
+          title='Ksiazak.dev Repo'
+          href='https://github.com/cksiazak/ksiazak.dev'
           isDarkMode={isDarkMode}
           onClick={handleDesignedByLink}
         >

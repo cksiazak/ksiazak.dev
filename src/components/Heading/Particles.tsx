@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react"
-import Particles, { initParticlesEngine } from "@tsparticles/react"
+import React, { useState, useEffect } from 'react'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
-import { isMobile } from "react-device-detect"
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { useTheme } from "../../theme"
+import { useTheme } from '../../theme'
 
 const ParticleWrapper = styled.div`
   position: relative;
   z-index: -1;
   width: 100%;
-  height: 750px;
+  height: 100%;
   overflow: hidden;
 
   div {
@@ -24,21 +23,21 @@ const ParticleWrapper = styled.div`
 
 const ParticlesContainer = () => {
   const { isDarkMode } = useTheme()
-  const [init, setInit] = useState(false);
+  const [init, setInit] = useState(false)
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
+      await loadSlim(engine)
     }).then(() => {
-      setInit(true);
-    });
-  }, []);
+      setInit(true)
+    })
+  }, [])
 
   return (
     <ParticleWrapper>
-      {init &&
+      {init && (
         <Particles
-          id="particles"
+          id='particles'
           options={{
             style: {
               position: 'relative',
@@ -51,10 +50,10 @@ const ParticlesContainer = () => {
                 },
               },
               color: {
-                value: "#000",
+                value: '#000',
               },
               shape: {
-                type: "circle",
+                type: 'circle',
               },
               opacity: {
                 value: {
@@ -81,7 +80,7 @@ const ParticlesContainer = () => {
               links: {
                 enable: true,
                 distance: 150,
-                color: "#000",
+                color: '#000',
                 opacity: 0.4,
                 width: 1,
               },
@@ -94,11 +93,11 @@ const ParticlesContainer = () => {
               events: {
                 onHover: {
                   enable: true,
-                  mode: "grab",
+                  mode: 'grab',
                 },
                 onClick: {
                   enable: true,
-                  mode: "push",
+                  mode: 'push',
                 },
               },
               modes: {
@@ -125,9 +124,37 @@ const ParticlesContainer = () => {
                 },
               },
             },
+            responsive: [
+              {
+                maxWidth: 600,
+                options: {
+                  particles: {
+                    color: {
+                      value: '#0000ff',
+                    },
+                    number: {
+                      value: 40,
+                    },
+                  },
+                },
+              },
+              {
+                maxWidth: 1000,
+                options: {
+                  particles: {
+                    color: {
+                      value: '#00ff00',
+                    },
+                    number: {
+                      value: 60,
+                    },
+                  },
+                },
+              },
+            ],
           }}
         />
-      }
+      )}
     </ParticleWrapper>
   )
 }

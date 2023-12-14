@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 // themes
-import { useTheme, theme } from "../theme"
+import { useTheme, theme } from '../theme'
 
-import * as ga from "../../lib/ga"
+import * as ga from '../../lib/ga'
 
 const ProjectSection = styled.section`
   display: flex;
@@ -21,7 +21,7 @@ const SectionHeader = styled.h2<{
   isDarkMode: boolean
 }>`
   font-size: 3.75rem;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 900px) {
     margin-top: 0px;
@@ -47,7 +47,7 @@ const Sentence = styled.p<{
   text-align: center;
   font-size: 2.5rem;
   padding-bottom: 25px;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -72,11 +72,11 @@ const Sentence = styled.p<{
 const GithubLink = styled.a<{
   isDarkMode: boolean
 }>`
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
   text-decoration: none;
   font-size: 2.2rem;
   padding: 15px 20px;
-  border: 2px solid ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  border: 2px solid ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
   text-align: center;
   margin: 5px 0px;
   border-radius: 5px;
@@ -90,7 +90,8 @@ const GithubLink = styled.a<{
   &:hover {
     border: 2px solid ${theme.lightMode.linkHover};
     background: ${theme.lightMode.linkHover};
-    color: ${({ isDarkMode }) => (isDarkMode ? theme.isDarkMode.background : "white")};
+    color: ${({ isDarkMode }) =>
+      isDarkMode ? theme.isDarkMode.background : 'white'};
   }
 `
 
@@ -99,8 +100,8 @@ const Projects = () => {
 
   const navigateToGithub = () =>
     ga.event({
-      action: "Navigate to github",
-      params: { section: "Projects" },
+      action: 'Navigate to github',
+      params: { section: 'Projects' },
     })
 
   return (
@@ -108,15 +109,18 @@ const Projects = () => {
       <SectionHeader isDarkMode={isDarkMode}>Things I've Built</SectionHeader>
       <InnerProjectWrapper>
         <Sentence isDarkMode={isDarkMode}>
-          I've been pretty busy over the last few years between COVID, dedicating myself to my work and side hobbies, that I deleted all my projects as they don't accurately reflect who I am, what I do, or my current abilities.
+          I've been pretty busy over the last few years between COVID,
+          dedicating myself to my work and side hobbies, that I deleted all my
+          projects as they don't accurately reflect who I am, what I do, or my
+          current abilities.
           <br />
           <br />
           I'm working on new things :)
         </Sentence>
         <GithubLink
           onClick={navigateToGithub}
-          href="https://github.com/cksiazak"
-          title="Cksiazak GitHub"
+          href='https://github.com/cksiazak'
+          title='Cksiazak GitHub'
           isDarkMode={isDarkMode}
         >
           Check out my GitHub?

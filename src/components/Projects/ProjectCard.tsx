@@ -1,11 +1,11 @@
-import { ComponentType, FC } from "react"
-import styled from "styled-components"
-import { IoLogoGithub, IoIosLink } from "react-icons/io"
+import { ComponentType, FC } from 'react'
+import styled from 'styled-components'
+import { IoLogoGithub, IoIosLink } from 'react-icons/io'
 import Image from 'next/image'
 
 // styling
-import { theme } from "../../theme/themes"
- import { useTheme } from "../../theme/ThemeContext"
+import { theme } from '../../theme/themes'
+import { useTheme } from '../../theme/ThemeContext'
 
 const CardContainer = styled.div`
   width: 100%;
@@ -75,8 +75,8 @@ const Content = styled.div<{
   max-width: 700px;
   background: ${({ isDarkMode }) =>
     isDarkMode
-      ? "rgba(90,92,106, 0.95)"
-      : "linear-gradient(315deg,rgba(179, 205, 209, 0.94) 0%,rgba(159, 164, 196, 0.94) 74%)"};
+      ? 'rgba(90,92,106, 0.95)'
+      : 'linear-gradient(315deg,rgba(179, 205, 209, 0.94) 0%,rgba(159, 164, 196, 0.94) 74%)'};
   margin-right: -125px;
   margin-left: 0px;
   margin-top: 15px;
@@ -84,7 +84,7 @@ const Content = styled.div<{
   position: relative;
   z-index: 2;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   p {
     padding: 5px 15px;
@@ -134,7 +134,7 @@ const Metadata = styled.div<{
 }>`
   display: flex;
   flex-direction: column;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 `
 
 const TitleWrapper = styled.div`
@@ -178,7 +178,7 @@ const LinkContainer = styled.div<{
   }
 
   a {
-    color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+    color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
     text-decoration: none;
     transition: ${theme.global.transitionTime};
 
@@ -197,7 +197,7 @@ const TechWrapper = styled.div<{
   isDarkMode: boolean
 }>`
   font-size: 2.2rem;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1500px) {
     font-size: 2rem;
@@ -239,44 +239,46 @@ const ImgContainer = styled.div`
 
 type ProjectCardProps = {
   project: {
-    default: ComponentType,
+    default: ComponentType
     meta: {
-      git: string,
-      title: string,
-      href: string,
-      image: string,
+      git: string
+      title: string
+      href: string
+      image: string
       tech: string[]
     }
   }
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({ project: { default: ProjectContent, meta } }) => {
+const ProjectCard: FC<ProjectCardProps> = ({
+  project: { default: ProjectContent, meta },
+}) => {
   const { isDarkMode } = useTheme()
   return (
     <CardContainer>
-      <CardInfo className="card-information">
-        <LinkContainer className="project-links" isDarkMode={isDarkMode}>
-          {meta.git !== "" ? (
+      <CardInfo className='card-information'>
+        <LinkContainer className='project-links' isDarkMode={isDarkMode}>
+          {meta.git !== '' ? (
             <a href={meta.git} title={`${meta.title} github`}>
               <IoLogoGithub />
             </a>
           ) : null}
-          {meta.href !== "" ? (
+          {meta.href !== '' ? (
             <a href={meta.href} title={`${meta.title} deployment`}>
               <IoIosLink />
             </a>
           ) : null}
         </LinkContainer>
-        <Metadata className="project-meta" isDarkMode={isDarkMode}>
-          <TitleWrapper className="project-title">
+        <Metadata className='project-meta' isDarkMode={isDarkMode}>
+          <TitleWrapper className='project-title'>
             <Title>{meta.title}</Title>
           </TitleWrapper>
         </Metadata>
-        <Content className="project-card-info" isDarkMode={isDarkMode}>
+        <Content className='project-card-info' isDarkMode={isDarkMode}>
           <ProjectContent />
         </Content>
-        <TechWrapper className="project-tech" isDarkMode={isDarkMode}>
-          <span>{meta.tech.join(" | ")}</span>
+        <TechWrapper className='project-tech' isDarkMode={isDarkMode}>
+          <span>{meta.tech.join(' | ')}</span>
         </TechWrapper>
       </CardInfo>
       <ImgContainer>

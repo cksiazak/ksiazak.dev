@@ -1,18 +1,18 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 // stylings
-import { theme, useTheme } from "../theme"
+import { theme, useTheme } from '../theme'
 
 // components
-import ExperienceCard from "./Experience/ExperienceCard"
+import ExperienceCard from './Experience/ExperienceCard'
 import type { ExperienceCardProps } from './Experience/ExperienceCard'
 
 // data
 import * as Kinsta from '../data/experiences/kinsta.mdx'
 import * as Function from '../data/experiences/function.mdx'
-import * as PatrickThomas from "../data/experiences/patrick-thomas.mdx"
-import * as EDealer from "../data/experiences/e-dealer-direct.mdx"
-import * as C3i from "../data/experiences/c3i-solutions.mdx"
+import * as PatrickThomas from '../data/experiences/patrick-thomas.mdx'
+import * as EDealer from '../data/experiences/e-dealer-direct.mdx'
+import * as C3i from '../data/experiences/c3i-solutions.mdx'
 
 const WorkSection = styled.section`
   padding: 75px 0px 75px;
@@ -29,7 +29,7 @@ const SectionHeading = styled.h2<{
   isDarkMode: boolean
 }>`
   font-size: 3.75rem;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
   @media (max-width: 900px) {
     margin: 0px;
   }
@@ -52,11 +52,11 @@ const Experience = () => {
     <WorkSection>
       <SectionHeading isDarkMode={isDarkMode}>Experiences</SectionHeading>
       <InnerWrap>
-        <ExperienceCard work={Kinsta as ExperienceCardProps["work"]} />
-        <ExperienceCard work={Function as ExperienceCardProps["work"]} />
-        <ExperienceCard work={EDealer as ExperienceCardProps["work"]} />
-        <ExperienceCard work={PatrickThomas as ExperienceCardProps["work"]} />
-        <ExperienceCard work={C3i as ExperienceCardProps["work"]} />
+        <ExperienceCard work={Kinsta as ExperienceCardProps['work']} />
+        <ExperienceCard work={Function as ExperienceCardProps['work']} />
+        <ExperienceCard work={EDealer as ExperienceCardProps['work']} />
+        <ExperienceCard work={PatrickThomas as ExperienceCardProps['work']} />
+        <ExperienceCard work={C3i as ExperienceCardProps['work']} />
       </InnerWrap>
     </WorkSection>
   )

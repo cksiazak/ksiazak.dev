@@ -1,18 +1,18 @@
-import { FC } from "react"
-import Link from "next/link"
+import { FC } from 'react'
+import Link from 'next/link'
 
-import * as ga from "../../../../lib/ga"
+import * as ga from '../../../../lib/ga'
 
 type NavLinkProps = {
-  href: string,
+  href: string
   title: string
 }
 
 const NavLink: FC<NavLinkProps> = ({ href, title }) => {
   const handleNavLinkClick = () =>
     ga.event({
-      action: "Clicked home button",
-      params: { section: "Navigation" },
+      action: 'Clicked home button',
+      params: { section: 'Navigation' },
     })
 
   return (

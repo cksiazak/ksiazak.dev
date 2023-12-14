@@ -1,19 +1,19 @@
-import { useEffect, FC } from "react"
+import { useEffect, FC } from 'react'
 import { AppProps } from 'next/app'
-import { useRouter } from "next/router"
-import { normalize } from "styled-normalize"
-import styled, { createGlobalStyle, StyleSheetManager } from "styled-components"
+import { useRouter } from 'next/router'
+import { normalize } from 'styled-normalize'
+import styled, { createGlobalStyle, StyleSheetManager } from 'styled-components'
 import { Analytics } from '@vercel/analytics/react'
 
-import * as ga from "../lib/ga"
+import * as ga from '../lib/ga'
 import StyledComponentsRegistry from './../lib/registry'
 
 // Global Components
-import Navigation from "../src/components/Global/Navigation"
-import Footer from "../src/components/Global/Footer"
+import Navigation from '../src/components/Global/Navigation'
+import Footer from '../src/components/Global/Footer'
 
 // Themes
-import ThemeProvider, { theme, useTheme } from "../src/theme"
+import ThemeProvider, { theme, useTheme } from '../src/theme'
 
 const GlobalStyle = createGlobalStyle<{
   isDarkMode: boolean
@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle<{
   html {
     font-size: 62.5%;
     background: ${({ isDarkMode }) =>
-    !isDarkMode ? "linear-gradient(0deg ,#f0f3f5, #fff);" : "#2D3047"};
+      !isDarkMode ? 'linear-gradient(0deg ,#f0f3f5, #fff);' : '#2D3047'};
     transition: ${theme.global.transitionTime};
     -webkit-backface-visibility: hidden;
   }
@@ -51,10 +51,10 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
     }
     //When the component is mounted, subscribe to router changes
     //and log those page views
-    router.events.on("routeChangeComplete", handleRouteChange)
+    router.events.on('routeChangeComplete', handleRouteChange)
 
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange)
+      router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
 
@@ -78,6 +78,7 @@ const AppWrapper: FC<AppProps> = (props) => {
     if (nonForwardedProps.includes(prop)) {
       return false
     }
+
     return true
   }
 

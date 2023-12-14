@@ -1,10 +1,10 @@
-import { ComponentType, FC } from "react"
-import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io"
-import styled from "styled-components"
+import { ComponentType, FC } from 'react'
+import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io'
+import styled from 'styled-components'
 
-import { theme } from "../../theme/themes"
+import { theme } from '../../theme/themes'
 
-import * as ga from "../../../lib/ga"
+import * as ga from '../../../lib/ga'
 
 const CardWrapper = styled.div`
   position: absolute;
@@ -118,14 +118,18 @@ const LinkButton = styled.a`
 `
 
 type ContactCardLinkProps = {
-  href: string,
-  title: string,
+  href: string
+  title: string
   Component: ComponentType
 }
 
-const ContactCardLink: FC<ContactCardLinkProps> = ({ href, title, Component }) => {
+const ContactCardLink: FC<ContactCardLinkProps> = ({
+  href,
+  title,
+  Component,
+}) => {
   const handleCardLinkClick = () =>
-    ga.event({ action: "Click link in contact card", params: { link: title } })
+    ga.event({ action: 'Click link in contact card', params: { link: title } })
 
   return (
     <li key={title}>
@@ -138,36 +142,36 @@ const ContactCardLink: FC<ContactCardLinkProps> = ({ href, title, Component }) =
 
 const ContactCard = () => {
   const handleResumeClick = () =>
-    ga.event({ action: "Click resume in contact card" })
+    ga.event({ action: 'Click resume in contact card' })
   const handleEmailClick = () =>
-    ga.event({ action: "Click email in contact card" })
+    ga.event({ action: 'Click email in contact card' })
 
   return (
     <CardWrapper>
       <CardTitle>Let's Connect</CardTitle>
       <SocialList>
         <ContactCardLink
-          href="https://www.linkedin.com/in/cksiazak/"
-          title="LinkedIn"
+          href='https://www.linkedin.com/in/cksiazak/'
+          title='LinkedIn'
           Component={IoLogoLinkedin}
         />
         <ContactCardLink
-          href="https://github.com/cksiazak"
-          title="Github"
+          href='https://github.com/cksiazak'
+          title='Github'
           Component={IoLogoGithub}
         />
       </SocialList>
       <LinkButton
-        href="/assets/Cksiazak_Resume.pdf"
-        title="Resume"
-        download="cksiazak_resume.pdf"
+        href='/assets/Cksiazak_Resume.pdf'
+        title='Resume'
+        download='cksiazak_resume.pdf'
         onClick={handleResumeClick}
       >
         Resume
       </LinkButton>
       <LinkButton
-        href="mailto:cksiazak@gmail.com"
-        title="Email"
+        href='mailto:cksiazak@gmail.com'
+        title='Email'
         onClick={handleEmailClick}
       >
         Email Me

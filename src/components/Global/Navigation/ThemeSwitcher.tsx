@@ -1,5 +1,5 @@
-import { FC } from "react"
-import styled from "styled-components"
+import { FC } from 'react'
+import styled from 'styled-components'
 
 const ThemeButton = styled.button`
   background: none;
@@ -14,13 +14,13 @@ const ThemeButton = styled.button`
 `
 
 type ThemeSwitcherProps = {
-  icon: string,
+  icon: string
   themeController: () => void
 }
 
 const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ icon, themeController }) => (
-  <li key="theme_button">
-    <ThemeButton type="button" onClick={themeController}>
+  <li key='theme_button'>
+    <ThemeButton type='button' onClick={themeController}>
       {icon}
     </ThemeButton>
   </li>

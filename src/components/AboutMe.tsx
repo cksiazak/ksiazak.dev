@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 // stylings
-import { useTheme, theme } from "../theme"
+import { useTheme, theme } from '../theme'
 
-import * as Content from "../data/aboutme/about-me.mdx"
+import * as Content from '../data/aboutme/about-me.mdx'
 
 const AboutMeSection = styled.section<{
   isDarkMode: boolean
@@ -13,8 +13,8 @@ const AboutMeSection = styled.section<{
   width: 100%;
   background: ${({ isDarkMode }) =>
     isDarkMode
-      ? "rgba(90,92,106,1)"
-      : "linear-gradient(90deg, #d53369 0%, #daae51 100%)"};
+      ? 'rgba(90,92,106,1)'
+      : 'linear-gradient(90deg, #d53369 0%, #daae51 100%)'};
   box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.8);
   padding: 50px 0px 75px;
 `
@@ -37,7 +37,7 @@ const SectionHeading = styled.h2<{
   font-size: 3.75rem;
   margin: 0px;
   margin-bottom: 25px;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1800px) {
     font-size: 3.25rem;
@@ -64,7 +64,7 @@ const AboutInfo = styled.div<{
 }>`
   width: 60%;
   font-size: 2.2rem;
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   @media (max-width: 1800px) {
     font-size: 2rem;
@@ -145,13 +145,14 @@ const TechList = styled.ul`
 
 type ContectData = {
   meta: {
-    tech: string[],
+    tech: string[]
     image: string
   }
 }
 
 const AboutMe = () => {
   const { isDarkMode } = useTheme()
+
   return (
     <AboutMeSection isDarkMode={isDarkMode}>
       <InnerContainer>
@@ -165,7 +166,10 @@ const AboutMe = () => {
               ))}
             </TechList>
           </AboutInfo>
-          <SelfImage src={(Content as unknown as ContectData).meta.image} alt="Picture of myself" />
+          <SelfImage
+            src={(Content as unknown as ContectData).meta.image}
+            alt='Picture of myself'
+          />
         </SectionContent>
       </InnerContainer>
     </AboutMeSection>

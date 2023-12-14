@@ -1,5 +1,5 @@
-import { FC, ComponentType } from "react"
-import styled from "styled-components"
+import { FC, ComponentType } from 'react'
+import styled from 'styled-components'
 
 import { useTheme } from '../../theme'
 
@@ -11,12 +11,12 @@ const CardWrapper = styled.div<{
   padding: 20px 25px;
   background: ${({ isDarkMode }) =>
     isDarkMode
-      ? "rgba(118,124,163,1)"
-      : "linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)"};
+      ? 'rgba(118,124,163,1)'
+      : 'linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)'};
   margin: 50px 0px 0px;
   width: 60%;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
+  color: ${({ isDarkMode }) => (isDarkMode ? 'white' : 'black')};
 
   ul {
     padding: 0px;
@@ -84,16 +84,18 @@ const MetaWrapper = styled.div<{
 `
 export type ExperienceCardProps = {
   work: {
-    default: ComponentType,
+    default: ComponentType
     meta: {
-      location: string,
-      position: string,
+      location: string
+      position: string
       dates: string
     }
   }
 }
 
-const ExperienceCard: FC<ExperienceCardProps> = ({ work: { default: WorkContent, meta } }) => {
+const ExperienceCard: FC<ExperienceCardProps> = ({
+  work: { default: WorkContent, meta },
+}) => {
   const { isDarkMode } = useTheme()
 
   return (
