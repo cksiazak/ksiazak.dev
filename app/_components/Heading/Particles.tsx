@@ -1,12 +1,12 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import styled from 'styled-components'
 
-import { useTheme } from '../../theme'
-
 const ParticleWrapper = styled.div`
-  position: relative;
+  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -15,15 +15,12 @@ const ParticleWrapper = styled.div`
   div {
     height: 100%;
   }
-
-  @media (max-width: 450px) {
-    height: 675px;
-  }
 `
 
 const ParticlesContainer = () => {
-  const { isDarkMode } = useTheme()
-  const [init, setInit] = useState(false)
+  const [
+    init, setInit
+  ] = useState(false)
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -40,7 +37,9 @@ const ParticlesContainer = () => {
           id='particles'
           options={{
             style: {
-              position: 'relative',
+              position: 'absolute',
+              animation: 'fade-in 3s',
+              zIndex: '0',
             },
             particles: {
               number: {
@@ -50,7 +49,7 @@ const ParticlesContainer = () => {
                 },
               },
               color: {
-                value: '#000',
+                value: '#fff',
               },
               shape: {
                 type: 'circle',
@@ -58,7 +57,7 @@ const ParticlesContainer = () => {
               opacity: {
                 value: {
                   min: 0.1,
-                  max: 0.5,
+                  max: 0.4,
                 },
                 animation: {
                   enable: true,
@@ -80,7 +79,7 @@ const ParticlesContainer = () => {
               links: {
                 enable: true,
                 distance: 150,
-                color: '#000',
+                color: '#fff',
                 opacity: 0.4,
                 width: 1,
               },
@@ -137,8 +136,7 @@ const ParticlesContainer = () => {
                     },
                   },
                 },
-              },
-              {
+              }, {
                 maxWidth: 1000,
                 options: {
                   particles: {

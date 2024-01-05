@@ -69,17 +69,31 @@
     "max-len": [
       "error",
       {
-        "code": 100
+        "code": 100,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
       }
     ],
     "array-element-newline": [
       "error",
-      "always"
+      {
+        "minItems": 3
+      }
     ],
     "array-bracket-newline": [
       "error",
       {
         "minItems": 2
+      }
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "return": "parens-new-line"
       }
     ]
   }

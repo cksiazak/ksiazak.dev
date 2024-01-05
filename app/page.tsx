@@ -1,5 +1,9 @@
 import { Metadata } from 'next'
 
+import { PageWrapper } from './page.styles'
+import Heading from './_components/Heading'
+import AboutMe from './_components/AboutMe'
+
 export const metadata: Metadata = {
   title: 'Christopher Ksiazak - Full Stack Software Developer',
   keywords: [
@@ -18,6 +22,13 @@ export const metadata: Metadata = {
   description: 'A personal developer portfolio and art piece by Christopher Ksiazak'
 }
 
-export default function Page() {
-  return <h1>Hello, Home page!</h1>
+const Page = () => {
+  return (
+    <PageWrapper>
+      <Heading />
+      <AboutMe />
+    </PageWrapper>
+  )
 }
+
+export default Page

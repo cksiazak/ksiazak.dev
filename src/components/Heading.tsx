@@ -5,7 +5,7 @@ import { useTheme } from '../theme'
 
 // Components
 import ContactCard from './Heading/ContactCard'
-import Particles from './Heading/Particles'
+import Particles from '../../app/_components/Heading/Particles'
 
 const HeadingSection = styled.section`
   position: relative;
