@@ -14,6 +14,8 @@ const ParticleWrapper = styled.div`
 
   div {
     height: 100%;
+    animation-duration: 0.5s;
+    animation-name: fadeIn;
   }
 `
 

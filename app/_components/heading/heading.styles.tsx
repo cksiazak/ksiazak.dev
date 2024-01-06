@@ -11,15 +11,9 @@ export const Heading = styled.section`
 
   & > div:first-of-type {
     position: absolute;
-    z-index: 0;
-    border-radius: 50%;
-    margin-top: -225px;
-    height: 300px;
     width: 300px;
-
-    & > img {
-      position: relative;
-    }
+    z-index: 0;
+    margin-top: -225px;
   }
 `
 
@@ -50,4 +44,6 @@ export const Typing = styled.a`
   scroll-behavior: smooth;
   text-decoration: none;
   cursor: url('/assets/imdoingmypart.jpg'), pointer;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
 `

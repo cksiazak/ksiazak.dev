@@ -9,5 +9,4 @@ export const PageWrapper = styled.div`
   align-items: center;
   z-index: 0;
   width: 100%;
-  height: 10000px;
 `

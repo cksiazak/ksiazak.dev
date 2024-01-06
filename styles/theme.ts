@@ -4,6 +4,11 @@ const theme = {
     bottomBlue: '#001d3d',
     offWhite: '#FBFAF5',
   },
+  size: {
+    max: {
+      innerWidth: '80%'
+    }
+  }
 }
 
 export default theme

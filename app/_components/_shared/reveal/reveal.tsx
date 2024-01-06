@@ -7,12 +7,13 @@ import { RevealWrapper } from './reveal.styles'
 
 type RevealProps = {
   children: React.ReactNode
+  type?: 'fade' | 'scroll'
   width?: 'fit-content' | '100%'
   delay?: number
 }
 
 
-const Reveal = ({ children, width='fit-content', delay=0.25 }: RevealProps) => {
+const Reveal = ({ children, type='scroll', width='fit-content', delay=0.25 }: RevealProps) => {
   const ref = useRef(null)
   const isInView = useInView(ref, {once: true })
 
@@ -30,7 +31,7 @@ const Reveal = ({ children, width='fit-content', delay=0.25 }: RevealProps) => {
     <RevealWrapper ref={ref} width={width}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
+          hidden: { opacity: 0, y: type === 'fade' ? 0 : 50 },
           visible: { opacity: 1, y: 0 }
         }}
         initial="hidden"

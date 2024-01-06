@@ -3,6 +3,8 @@ import { Metadata } from 'next'
 import { PageWrapper } from './page.styles'
 import Heading from './_components/heading'
 import AboutMe from './_components/about-me'
+import Footer from './_components/footer'
+
 
 export const metadata: Metadata = {
   title: 'Christopher Ksiazak - Full Stack Software Developer',
@@ -31,6 +33,7 @@ const Page = () => {
       {/* skills */}
       {/*  projects */}
       {/* constact card */}
+      <Footer />
     </PageWrapper>
   )
 }

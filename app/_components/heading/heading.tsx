@@ -1,17 +1,18 @@
 'use client'
 
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
 import Reveal from '../_shared/reveal'
 import Particles from './particles'
 import * as Styled from './heading.styles'
+import avatar from './avatar.jpg'
 
 const HeadingSection = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [])
 
   const doYouWantToKnowMore = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -22,10 +23,21 @@ const HeadingSection = () => {
 
   return (
     <Styled.Heading>
-      <Reveal>
-        <Image src={'/assets/avatar.jpg'} alt="Chris's head" fill />
+      <Reveal type='fade'>
+        <Image
+          src={avatar}
+          alt="Chris's head"
+          style={{
+            width: '100%',
+            height: 'auto',
+            borderRadius: '50%',
+            margin: '50px 0px'
+          }}
+          width={300}
+          height={300}
+        />
       </Reveal>
-      <Reveal delay={0.5}>
+      <Reveal delay={0.5} type='fade'>
         <Styled.HeadingText>
           <span>Hi, my name is</span>
           <h1>Christopher Ksiazak</h1>

@@ -31,17 +31,10 @@ const styles = css`
       );
     background-repeat: none;
     background-size: cover;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  
-    @keyframes fadeInAnimation {
-      0% {
-          opacity: 0;
-      }
-      100% {
-          opacity: 1;
-       }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
   }
 `
