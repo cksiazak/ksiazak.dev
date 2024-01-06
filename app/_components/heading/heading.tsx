@@ -3,8 +3,10 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
-import Particles from './Particles'
-import * as Styled from './Heading.styles'
+
+import Reveal from '../_shared/reveal'
+import Particles from './particles'
+import * as Styled from './heading.styles'
 
 const HeadingSection = () => {
   useEffect(() => {
@@ -20,16 +22,20 @@ const HeadingSection = () => {
 
   return (
     <Styled.Heading>
-      <Image src={'/assets/avatar.jpg'} alt="Chris's head" width={300} height={300} />
-      <Styled.HeadingText>
-        <span>Hi, my name is</span>
-        <h1>Christopher Ksiazak</h1>
-        <span>and I like to build things that live on the web</span>
-      </Styled.HeadingText>
+      <Reveal>
+        <Image src={'/assets/avatar.jpg'} alt="Chris's head" fill />
+      </Reveal>
+      <Reveal delay={0.5}>
+        <Styled.HeadingText>
+          <span>Hi, my name is</span>
+          <h1>Christopher Ksiazak</h1>
+          <span>and I like to build things that live on the web</span>
+        </Styled.HeadingText>
+      </Reveal>
       <Styled.Typing href="#aboutMe" onClick={doYouWantToKnowMore}>
         <TypeAnimation
           sequence={[
-            4000, 'Would you like to know more?'
+            2000, 'Would you like to know more?'
           ]}
           wrapper="span"
           speed={50}

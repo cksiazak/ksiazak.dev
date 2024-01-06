@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 import { PageWrapper } from './page.styles'
-import Heading from './_components/Heading'
-import AboutMe from './_components/AboutMe'
+import Heading from './_components/heading'
+import AboutMe from './_components/about-me'
 
 export const metadata: Metadata = {
   title: 'Christopher Ksiazak - Full Stack Software Developer',
@@ -27,6 +27,10 @@ const Page = () => {
     <PageWrapper>
       <Heading />
       <AboutMe />
+      {/* experiences */}
+      {/* skills */}
+      {/*  projects */}
+      {/* constact card */}
     </PageWrapper>
   )
 }

@@ -5,8 +5,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from 'styled-components'
 
 import StyledComponentsRegistry from '../lib/registry'
-import GoogleAnalytics from './_components/GoogleAnalytics'
-import GlobalStyles from '../styles/GlobalStyles'
+import GoogleAnalytics from './_components/google-analytics'
+import GlobalStyles from '../styles/global-styles'
 import theme from '../styles/theme'
 
 const inter = Inter({

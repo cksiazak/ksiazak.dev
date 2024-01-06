@@ -8,13 +8,18 @@ export const Heading = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: fade-in 3s;
 
-  img {
+  & > div:first-of-type {
     position: absolute;
     z-index: 0;
     border-radius: 50%;
     margin-top: -225px;
+    height: 300px;
+    width: 300px;
+
+    & > img {
+      position: relative;
+    }
   }
 `
 
