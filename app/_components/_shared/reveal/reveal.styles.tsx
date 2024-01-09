@@ -7,5 +7,4 @@ type RevealWrapperProps = {
 export const RevealWrapper = styled.div<RevealWrapperProps>`
   position: relative;
   width: ${({ width = 'fit-content' }) => width};
-  overflow: hidden;
 `

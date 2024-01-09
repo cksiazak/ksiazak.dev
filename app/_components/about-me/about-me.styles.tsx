@@ -2,15 +2,23 @@
 
 import styled from 'styled-components'
 
-export const Inner = styled.div`
-  width: ${({ theme }) => theme.size.max.innerWidth };
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+import { Section } from '../_shared/styles'
+
+export const Outer = styled(Section)`
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.8);
 `
 
 export const AboutWrapper = styled.div`
-  width: 40%;
+  width: 60%;
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
 `
 
 export const SelfieWrapper = styled.div`

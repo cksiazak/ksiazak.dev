@@ -47,5 +47,4 @@ export const Typing = styled.a`
   cursor: url('/assets/imdoingmypart.jpg'), pointer;
   animation-name: fadeIn;
   animation-duration: 0.5s;
-  font-weight: bold;
 `

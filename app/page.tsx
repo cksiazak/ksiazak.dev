@@ -3,6 +3,8 @@ import { Metadata } from 'next'
 import { PageWrapper } from './page.styles'
 import Heading from './_components/heading'
 import AboutMe from './_components/about-me'
+import Experiences from './_components/experiences'
+import Contact from './_components/contact'
 import Footer from './_components/footer'
 
 
@@ -29,10 +31,9 @@ const Page = () => {
     <PageWrapper>
       <Heading />
       <AboutMe />
-      {/* experiences */}
-      {/* skills */}
+      <Experiences />
       {/*  projects */}
-      {/* constact card */}
+      <Contact />
       <Footer />
     </PageWrapper>
   )
