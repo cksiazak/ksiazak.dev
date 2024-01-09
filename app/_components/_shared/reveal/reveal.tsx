@@ -10,10 +10,17 @@ type RevealProps = {
   type?: 'fade' | 'scroll'
   width?: 'fit-content' | '100%'
   delay?: number
+  isActive?: boolean
 }
 
 
-const Reveal = ({ children, type='scroll', width='fit-content', delay=0.25 }: RevealProps) => {
+const Reveal = ({
+  children,
+  type = 'scroll',
+  width = 'fit-content',
+  delay = 0.25,
+  isActive = true
+}: RevealProps) => {
   const ref = useRef(null)
   const isInView = useInView(ref, {once: true })
 
@@ -34,7 +41,7 @@ const Reveal = ({ children, type='scroll', width='fit-content', delay=0.25 }: Re
           hidden: { opacity: 0, y: type === 'fade' ? 0 : 50 },
           visible: { opacity: 1, y: 0 }
         }}
-        initial="hidden"
+        initial={isActive ? 'hidden' : 'visible' }
         animate={revealControls}
         transition={{ duration: 0.5, delay }}
       >

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
 import Reveal from '../_shared/reveal'
+import Externals from '../_shared/externals'
 import Particles from './particles'
 import * as Styled from './heading.styles'
 import avatar from './avatar.jpg'
@@ -23,7 +24,7 @@ const HeadingSection = () => {
 
   return (
     <Styled.Heading>
-      <Reveal type='fade'>
+      <Reveal>
         <Image
           src={avatar}
           alt="Chris's head"
@@ -37,13 +38,14 @@ const HeadingSection = () => {
           height={300}
         />
       </Reveal>
-      <Reveal delay={0.5} type='fade'>
+      <Reveal delay={0.75} type='fade'>
         <Styled.HeadingText>
           <span>Hi, my name is</span>
           <h1>Christopher Ksiazak</h1>
           <span>and I like to build things that live on the web</span>
         </Styled.HeadingText>
       </Reveal>
+      <Externals reveal delay={1}/>
       <Styled.Typing href="#aboutMe" onClick={doYouWantToKnowMore}>
         <TypeAnimation
           sequence={[

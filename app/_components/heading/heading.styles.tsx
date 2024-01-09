@@ -24,7 +24,8 @@ export const HeadingText = styled.div`
   align-items: center;
   color: ${({ theme }) => theme.main.offWhite};
   text-shadow: 1px 3px 3px #000;
-  margin-top: 150px;
+  margin-top: 210px;
+  margin-bottom: 10px;
 
   & > span {
     font-size: 1.6rem;
@@ -46,4 +47,5 @@ export const Typing = styled.a`
   cursor: url('/assets/imdoingmypart.jpg'), pointer;
   animation-name: fadeIn;
   animation-duration: 0.5s;
+  font-weight: bold;
 `
