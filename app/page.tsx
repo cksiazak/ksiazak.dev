@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 import { PageWrapper } from './page.styles'
+import NavLinks from './_components/nav-links'
 import Heading from './_components/heading'
 import AboutMe from './_components/about-me'
 import Experiences from './_components/experiences'
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <PageWrapper>
+      <NavLinks />
       <Heading />
       <AboutMe />
       <Experiences />

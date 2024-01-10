@@ -36,7 +36,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
       {meta?.links?.length && (
         <Styled.LinksWrapper>
           {meta?.links?.map(link => (
-            <Link href={link.href}>
+            <Link href={link.href} key={link.href}>
               {link.text} <IoIosLink/>
             </Link>
           ))}

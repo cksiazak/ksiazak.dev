@@ -42,30 +42,32 @@ const AboutMe = () => {
             <Content.default />
           </Reveal>
           <div>
-            <h3>Skills</h3>
+            <Reveal width='100%'>
+              <h3>Skills</h3>
+            </Reveal>
             <ul>
               {skills.map((skill, i) => (
-                <Reveal delay={0.1 * i}>
+                <Reveal delay={0.25 + (0.1 * i)} key={skill}>
                   <li>{skill}</li>
                 </Reveal>
               ))}
             </ul>
           </div>
         </Styled.AboutWrapper>
-          <Reveal> 
-            <Image
-              src={selfie}
-              alt="Chris's selfie"
-              style={{
-                width: '100%',
-                height: 'auto',
-                margin: '50px 0px',
-                borderRadius: '25px 0px',
-              }}
-              width={300}
-              height={300}
-            />
-          </Reveal>
+        <Reveal> 
+          <Image
+            src={selfie}
+            alt="Chris's selfie"
+            style={{
+              width: '100%',
+              height: 'auto',
+              margin: '50px 0px',
+              borderRadius: '25px 0px',
+            }}
+            width={300}
+            height={300}
+          />
+        </Reveal>
       </Inner>
     </Styled.Outer>
   )

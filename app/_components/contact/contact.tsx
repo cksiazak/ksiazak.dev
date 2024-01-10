@@ -12,7 +12,7 @@ const Contact = () => {
         <Styled.Email
           href='mailto:cksiazak@gmail.com'
           title='email'
-          >
+        >
           Get in touch
         </Styled.Email>
       </Styled.Inner>
