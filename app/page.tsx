@@ -7,6 +7,7 @@ import AboutMe from './_components/about-me'
 import Experiences from './_components/experiences'
 import Contact from './_components/contact'
 import Footer from './_components/footer'
+import Projects from './_components/projects'
 
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ const Page = () => {
       <Heading />
       <AboutMe />
       <Experiences />
-      {/*  projects */}
+      <Projects />
       <Contact />
       <Footer />
     </PageWrapper>
