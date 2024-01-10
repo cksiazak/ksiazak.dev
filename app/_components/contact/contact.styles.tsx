@@ -34,6 +34,6 @@ export const Email = styled.a`
   text-align: center;
 
   &:hover {
-    color: white;
+    color: ${({ theme }) => theme.main.softRed};
   }
 `

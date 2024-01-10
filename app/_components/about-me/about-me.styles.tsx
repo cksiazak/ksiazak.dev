@@ -16,12 +16,34 @@ export const AboutWrapper = styled.div`
     font-size: 1.75rem;
   }
 
+  h3 {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
   p {
     font-size: 1.1rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    
+    li {
+      padding: 5px;
+      margin: 5px;
+      border-radius: 5px;
+      background: ${({ theme }) => theme.main.softRed};
+      color: ${({ theme }) => theme.main.deepPurple};
+      box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
+    }
   }
 `
 
 export const SelfieWrapper = styled.div`
-  box-shadow: '3px 3px 8px 0px rgba(42, 42, 42, 0.6)'
-  width: 40%;
+  box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
 `

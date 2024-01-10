@@ -16,7 +16,8 @@ export const IconList = styled.ul`
       color: white;
 
       &:hover {
-        color: blue;
+        color: ${({ theme }) => theme.main.softRed};
+        transform: scale(1.2);
       }
     }
   }

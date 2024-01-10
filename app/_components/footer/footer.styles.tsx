@@ -25,6 +25,6 @@ export const BranchLink = styled.a`
   transition: 0.2s;
 
   &:hover {
-    color: blue;
+    color: ${({ theme }) => theme.main.softRed};
   }
 `

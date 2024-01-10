@@ -49,7 +49,7 @@ const HeadingSection = () => {
       <Styled.Typing href="#aboutMe" onClick={doYouWantToKnowMore}>
         <TypeAnimation
           sequence={[
-            2000, 'Would you like to know more?'
+            3000, 'Would you like to know more?'
           ]}
           wrapper="span"
           speed={50}

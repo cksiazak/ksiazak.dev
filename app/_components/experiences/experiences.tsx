@@ -16,7 +16,6 @@ const Experiences = () => {
   return (
     <Styled.Section>
       <Styled.Inner>
-        <div>
           <Reveal>
             <h2>Experiences</h2>
           </Reveal>
@@ -35,12 +34,6 @@ const Experiences = () => {
           <Reveal>
             <ExperienceCard work={C3i as ExperienceCardProps['work']} />
           </Reveal>
-        </div>
-        <div>
-        <Reveal>
-          <h2>Technologies</h2>
-        </Reveal>
-        </div>
       </Styled.Inner>
     </Styled.Section>
   )

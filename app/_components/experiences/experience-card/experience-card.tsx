@@ -1,6 +1,13 @@
 import { FC, ComponentType } from 'react'
+import Link from 'next/link'
+import { IoIosLink } from 'react-icons/io'
 
 import * as Styled from './experience-card.styles'
+
+type LinkType = {
+  href: string,
+  text: string
+}
 
 export type ExperienceCardProps = {
   work: {
@@ -8,7 +15,8 @@ export type ExperienceCardProps = {
     meta: {
       location: string
       position: string
-      dates: string
+      dates: string,
+      links?: LinkType[]
     }
   }
 }
@@ -25,6 +33,15 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
         <span>{meta.dates}</span>
       </Styled.MetaWrapper>
       <WorkContent />
+      {meta?.links?.length && (
+        <Styled.LinksWrapper>
+          {meta?.links?.map(link => (
+            <Link href={link.href}>
+              {link.text} <IoIosLink/>
+            </Link>
+          ))}
+        </Styled.LinksWrapper>
+      )}
     </Styled.CardWrapper>
   )
 }

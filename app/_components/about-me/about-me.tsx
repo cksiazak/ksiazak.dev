@@ -5,8 +5,32 @@ import Image from 'next/image'
 import Reveal from '../_shared/reveal'
 import { Inner } from '../_shared/styles'
 import * as Styled from './about-me.styles'
-import * as Content from './about-me.mdx'
+import * as Content from './data/about-me.mdx'
 import selfie from './selfie.jpg'
+
+const skills = [
+  'Javascript/Typescript',
+  'React/React Native',
+  'CSS',
+  'Redux',
+  'Node',
+  'SQL',
+  'Apollo GraphQL',
+  'Ruby on Rails',
+  'Docker',
+  'GCP',
+  'AWS',
+  'TDD/BDD',
+  'Kubernetes/Helm',
+  'Redis',
+  'Pub/Sub',
+  'BigQuery',
+  'Prisma',
+  'JIRA',
+  'Tableau',
+  'DataDog',
+  'MixPanel'
+]
 
 const AboutMe = () => {
   return (
@@ -17,12 +41,21 @@ const AboutMe = () => {
             <h2>About Me</h2>
             <Content.default />
           </Reveal>
+          <div>
+            <h3>Skills</h3>
+            <ul>
+              {skills.map((skill, i) => (
+                <Reveal delay={0.1 * i}>
+                  <li>{skill}</li>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
         </Styled.AboutWrapper>
-        <Styled.SelfieWrapper>
           <Reveal> 
             <Image
               src={selfie}
-              alt="Chris's head"
+              alt="Chris's selfie"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -33,7 +66,6 @@ const AboutMe = () => {
               height={300}
             />
           </Reveal>
-        </Styled.SelfieWrapper>
       </Inner>
     </Styled.Outer>
   )
