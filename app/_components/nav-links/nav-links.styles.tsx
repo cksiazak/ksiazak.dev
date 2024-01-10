@@ -1,14 +1,14 @@
 import { styled } from 'styled-components'
 
 export const Nav = styled.nav<{
-  isscrolled?: boolean
+  $isScrolled?: boolean
 }>`
   position: fixed;
   right: 0px;
   z-index: 3;
   top: 0;
   transition: 0.3s;
-  margin-right: ${({ isscrolled }) => isscrolled ? 0 : -100}px;
+  margin-right: ${({ $isScrolled }) => $isScrolled ? 0 : -100}px;
   border-radius: 0px 0px 0px 10px;
   overflow: hidden;
 

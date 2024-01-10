@@ -30,9 +30,7 @@ const Reveal = ({
     if (isInView) {
       revealControls.start('visible')
     }
-  }, [
-    isInView, revealControls
-  ])
+  }, [isInView, revealControls])
 
   return (
     <RevealWrapper ref={ref} width={width}>

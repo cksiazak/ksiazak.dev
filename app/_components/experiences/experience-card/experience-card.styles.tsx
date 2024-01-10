@@ -5,11 +5,12 @@ import styled from 'styled-components'
 export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px 25px;
+  padding: 20px;
   background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   margin: 50px 0px 0px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
   color: black;
+  border-radius: 15px;
 
   ul {
     padding: 0px;

@@ -6,11 +6,7 @@ import ExperienceCard from './experience-card'
 import type { ExperienceCardProps } from './experience-card'
 
 // data
-import * as Kinsta from './data/kinsta.mdx'
-import * as Function from './data/function.mdx'
-import * as PatrickThomas from './data/patrick-thomas.mdx'
-import * as EDealer from './data/e-dealer-direct.mdx'
-import * as C3i from './data/c3i-solutions.mdx'
+import { Kinsta, Function, PatrickThomas, EDealer, C3i } from './data'
 
 const Experiences = () => {
   return (
