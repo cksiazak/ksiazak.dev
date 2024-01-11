@@ -6,11 +6,41 @@ export const Outer = styled.div`
   justify-content: space-between;
   border-radius: 15px;
   overflow: hidden;
+
+  @media (max-width: 1200px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 
 export const Details = styled.div`
   padding: 20px;
-  width: 60%;
+  width: auto;
+  font-size: 1.35rem;
+
+  @media (max-width: 1800px) {
+    width: 80%;
+  }
+
+  @media (max-width: 1700px) {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    width: auto;
+  }
 `
 
 export const Meta = styled.div`
@@ -20,11 +50,42 @@ export const Meta = styled.div`
   h3 {
     margin: 0px;
     margin-bottom: 5px;
+    color: ${({ theme }) => theme.main.softBlack};
+    font-size: 1.8rem;
+
+    @media (max-width: 1700px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  span {
+    color: ${({ theme }) => theme.main.softBlack};
+    font-size: 1.35rem;
+
+    @media (max-width: 1600px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 1000px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 0.8rem;
+    }
   }
 `
 
 export const ImageWrapper = styled.div`
-  width: 40%;
+  min-width: 40%;
 
   img {
     height: 100%;

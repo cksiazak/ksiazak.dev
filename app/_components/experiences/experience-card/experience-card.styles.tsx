@@ -13,12 +13,27 @@ export const Card = styled.div`
   color: #0e1111;
   border-radius: 15px;
 
+  @media (max-width: 700px) {
+    width: 90%;
+    margin: 50px 0px 0px;
+  }
+
   ul {
     padding: 0px;
   }
 
   p {
     margin: 10px 0px;
+    color: ${({ theme }) => theme.main.softBlack};
+    font-size: 1.35rem;
+
+    @media (max-width: 1700px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 1200px) {
+      font-size: 1.1rem;
+    }
   }
 `
 
@@ -31,6 +46,37 @@ export const MetaWrapper = styled.div`
 
   h3 {
     margin: 0px;
+    color: ${({ theme }) => theme.main.softBlack};
+    font-size: 1.8rem;
+
+    @media (max-width: 1700px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  span {
+    color: ${({ theme }) => theme.main.softBlack};
+    font-size: 1.35rem;
+
+    @media (max-width: 1600px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 1000px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 0.8rem;
+    }
   }
 `
 

@@ -15,6 +15,10 @@ export const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 `
 
 export const BranchLink = styled.a`
@@ -22,8 +26,12 @@ export const BranchLink = styled.a`
   display: flex;
   align-items: center;
   padding: 10px 0px;
-  color: white;
+  color: ${({ theme }) => theme.main.offWhite};
   transition: 0.2s;
+
+  @media (max-width: 600px) {
+    font-size: 0.7rem;
+  }
 
   &:hover {
     color: ${({ theme }) => theme.main.softRed};

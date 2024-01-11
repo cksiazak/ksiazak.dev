@@ -20,10 +20,6 @@ export const Inner = styled(SharedInner)`
   h2 {
     color: ${({ theme }) => theme.main.offWhite};
   }
-
-  > div {
-    width: 80%;
-  }
 `
 
 export const ProjectsWrapper = styled.div`

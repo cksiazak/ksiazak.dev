@@ -21,5 +21,18 @@ export const Inner = styled(SharedInner)`
   h2 {
     color: ${({ theme }) => theme.main.offWhite};
     text-align: center;
+    font-size: 2.1rem;
+
+    @media (max-width: 1700px) {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 1200px) {
+      margin: 10px 0px;
+    }
+
+    @media (max-width: 1100px) {
+      text-align: center;
+    }
   }
 `

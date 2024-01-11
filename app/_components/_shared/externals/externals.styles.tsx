@@ -13,11 +13,31 @@ export const IconList = styled.ul`
       font-size: 2.8rem;
       padding: 10px 15px;
       transition: 0.2s;
-      color: white;
+      color: ${({ theme }) => theme.main.offWhite};
 
       &:hover {
         color: ${({ theme }) => theme.main.softRed};
         transform: scale(1.2);
+      }
+
+      @media (max-width: 1600px) {
+        font-size: 2.4rem;
+      }
+
+      @media (max-width: 1000px) {
+        font-size: 2rem;
+      }
+
+      @media (max-width: 700px) {
+        font-size: 1.8rem;
+      }
+
+      @media (max-width: 500px) {
+        font-size: 1.7rem;
+      }
+
+      @media (max-width: 400px) {
+        font-size: 1.5rem;
       }
     }
   }

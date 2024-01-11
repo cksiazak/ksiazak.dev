@@ -1,6 +1,6 @@
 'use client'
 
-// import { useEffect } from 'react'
+import { useEffect } from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
@@ -11,9 +11,11 @@ import * as Styled from './heading.styles'
 import avatar from './avatar.jpg'
 
 const HeadingSection = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0)
-  // }, [])
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+  }, [])
 
   const doYouWantToKnowMore = (e: React.SyntheticEvent) => {
     e.preventDefault()

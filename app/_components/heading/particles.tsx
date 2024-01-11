@@ -123,31 +123,6 @@ const ParticlesContainer = () => {
                 },
               },
             },
-            responsive: [{
-              maxWidth: 600,
-              options: {
-                particles: {
-                  color: {
-                    value: '#0000ff',
-                  },
-                  number: {
-                    value: 40,
-                  },
-                },
-              },
-            }, {
-              maxWidth: 1000,
-              options: {
-                particles: {
-                  color: {
-                    value: '#00ff00',
-                  },
-                  number: {
-                    value: 60,
-                  },
-                },
-              },
-            },],
           }}
         />
       )}

@@ -16,8 +16,21 @@ export const Inner = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: 1536px;
+  margin: 100px 0px;
 
-  @media (max-width: 1600px) {
-    justify-content: space-evenly;
+  @media (max-width: 1400px) {
+    width: 90%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 90%;
+  }
+
+  @media (max-width: 1100px) {
+    flex-direction: column-reverse;
+  }
+
+  @media (max-width: 700px) {
+    width: 90%;
   }
 `
