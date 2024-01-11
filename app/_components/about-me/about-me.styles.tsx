@@ -22,10 +22,10 @@ export const AboutWrapper = styled.div`
   }
 
   h2 {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
 
     @media (max-width: 1700px) {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     @media (max-width: 1200px) {
@@ -40,10 +40,10 @@ export const AboutWrapper = styled.div`
   h3 {
     text-align: center;
     color: ${({ theme }) => theme.main.softBlack};
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 
     @media (max-width: 1700px) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
 
     @media (max-width: 1200px) {
@@ -53,14 +53,14 @@ export const AboutWrapper = styled.div`
 
   p {
     color: ${({ theme }) => theme.main.softBlack};
-    font-size: 1.35rem;
+    font-size: 1.25rem;
 
     @media (max-width: 1700px) {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     @media (max-width: 1200px) {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 `
@@ -92,10 +92,10 @@ export const Skills = styled.div`
       color: ${({ theme }) => theme.main.deepPurple};
       box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
 
       @media (max-width: 1700px) {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       @media (max-width: 1200px) {

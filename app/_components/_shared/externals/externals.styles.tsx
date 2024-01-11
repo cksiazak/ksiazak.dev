@@ -10,7 +10,7 @@ export const IconList = styled.ul`
     a {
       display: flex;
       text-decoration: none;
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       padding: 10px 15px;
       transition: 0.2s;
       color: ${({ theme }) => theme.main.offWhite};
@@ -21,23 +21,23 @@ export const IconList = styled.ul`
       }
 
       @media (max-width: 1600px) {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
       }
 
       @media (max-width: 1000px) {
-        font-size: 2rem;
-      }
-
-      @media (max-width: 700px) {
         font-size: 1.8rem;
       }
 
+      @media (max-width: 700px) {
+        font-size: 1.6rem;
+      }
+
       @media (max-width: 500px) {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
       }
 
       @media (max-width: 400px) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
     }
   }

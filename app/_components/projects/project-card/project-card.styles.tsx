@@ -19,19 +19,19 @@ export const Outer = styled.div`
 export const Details = styled.div`
   padding: 20px;
   width: auto;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
 
   @media (max-width: 1800px) {
     width: 80%;
   }
 
   @media (max-width: 1700px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 90%;
   }
 
   @media (max-width: 1200px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   @media (max-width: 1000px) {
@@ -51,35 +51,35 @@ export const Meta = styled.div`
     margin: 0px;
     margin-bottom: 5px;
     color: ${({ theme }) => theme.main.softBlack};
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 
     @media (max-width: 1700px) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 
   span {
     color: ${({ theme }) => theme.main.softBlack};
-    font-size: 1.35rem;
+    font-size: 1.25rem;
 
     @media (max-width: 1600px) {
-      font-size: 1.2rem;
-    }
-
-    @media (max-width: 1000px) {
       font-size: 1.1rem;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 1000px) {
       font-size: 1rem;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
       font-size: 0.9rem;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       font-size: 0.8rem;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 0.7rem;
     }
   }
 `

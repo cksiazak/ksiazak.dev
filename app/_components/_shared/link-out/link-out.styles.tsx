@@ -10,10 +10,10 @@ export const Wrapper = styled.div`
 
   h2 {
     color: ${({ theme }) => theme.main.offWhite};
-    font-size: 2.1rem;
+    font-size: 1.8rem;
 
     @media (max-width: 1700px) {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     @media (max-width: 1200px) {

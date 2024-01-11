@@ -30,7 +30,7 @@ export const BranchLink = styled.a`
   transition: 0.2s;
 
   @media (max-width: 600px) {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   &:hover {

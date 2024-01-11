@@ -8,7 +8,7 @@ const theme = {
     softBlack: '#0e1111'
   },
   size: {
-    innerWidth: '80%' // 1536px @ 1920px
+    innerWidth: '70%' // 1536px @ 1920px
   }
 }
 
