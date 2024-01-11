@@ -39,11 +39,11 @@ export const Sentence = styled.p`
   width: 75%;
   text-align: center;
   margin: 50px 0px 75px;
-  color: white;
+  color: ${({ theme }) => theme.main.offWhite};
 `
 
 export const Link = styled.a`
-  color: white;
+  color: ${({ theme }) => theme.main.offWhite};
   text-decoration: none;
   padding: 20px;
   background: linear-gradient(90deg, #d53369 0%, #daae51 100%);

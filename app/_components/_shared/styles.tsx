@@ -8,7 +8,6 @@ export const Section = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 0px;
 `
 
 export const Inner = styled.div`
