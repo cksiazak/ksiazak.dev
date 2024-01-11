@@ -7,15 +7,15 @@ export const Nav = styled.nav<{
   right: 0px;
   z-index: 3;
   top: 0;
+  right: 25px;
   transition: 0.3s;
-  margin-right: ${({ $isScrolled }) => $isScrolled ? 0 : -100}px;
-  border-radius: 0px 0px 0px 10px;
+  margin-top: ${({ $isScrolled }) => $isScrolled ? 0 : -100}px;
+  border-radius: 0px 0px 10px 10px;
   overflow: hidden;
 
   ul {
     z-index: 5;
     position: relative;
-    flex-direction: column;
   }
 `
 

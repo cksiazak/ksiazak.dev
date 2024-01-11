@@ -2,12 +2,13 @@
 
 import styled from 'styled-components'
 
-export const CardWrapper = styled.div`
+export const Card = styled.div`
+  width: 80%;
   display: flex;
   flex-direction: column;
   padding: 20px;
   background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-  margin: 50px 0px 0px;
+  margin: 75px 0px 0px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
   color: black;
   border-radius: 15px;
@@ -24,7 +25,8 @@ export const CardWrapper = styled.div`
 export const MetaWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
   border-bottom: 2px solid rgba(42, 42, 42, 0.6);
 
   h3 {
@@ -35,19 +37,20 @@ export const MetaWrapper = styled.div`
 export const LinksWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  padding-top: 15px;
+  margin-top: 15px;
   border-top: 2px solid rgba(42, 42, 42, 0.6);
 
   > a {
     color: black;
     text-decoration: none;
-    transition: 0.2s;
+    transition: 0.3s;
     display: flex;
     align-items: center;
+    font-weight: bold;
 
     &: hover {
       color: ${({ theme }) => theme.main.softRed};
-      font-weight: bold;
     }
   }
 `

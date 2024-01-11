@@ -2,23 +2,37 @@
 
 import styled from 'styled-components'
 
-import { Section as SharedSection, Inner as SharedInner } from '../_shared/styles'
+import { Section as SharedSection } from '../styles'
 
 export const Section = styled(SharedSection)`
   height: 100%;
-  min-height: fit-content;
   width: 100%;
-  margin: 100px 0px 300px;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 100px 0px;
 `
 
-export const Inner = styled(SharedInner)`
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
   flex-direction: column;
+
+  h2 {
+    color: ${({ theme }) => theme.main.offWhite};
+  }
+
+  > div {
+    width: 80%;
+  }
 `
 
-export const ContactHead = styled.h2`
-  color: white;
+export const DetailWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 `
 
 export const Sentence = styled.p`
@@ -29,7 +43,7 @@ export const Sentence = styled.p`
   color: white;
 `
 
-export const Email = styled.a`
+export const Link = styled.a`
   font-size: 1.7rem;
   color: white;
   text-decoration: none;
@@ -45,3 +59,4 @@ export const Email = styled.a`
     color: ${({ theme }) => theme.main.bottomBlue};
   }
 `
+

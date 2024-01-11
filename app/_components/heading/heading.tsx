@@ -28,12 +28,6 @@ const HeadingSection = () => {
         <Image
           src={avatar}
           alt="Chris's head"
-          style={{
-            width: '100%',
-            height: 'auto',
-            borderRadius: '50%',
-            margin: '50px 0px'
-          }}
           width={300}
           height={300}
         />
@@ -45,12 +39,10 @@ const HeadingSection = () => {
           <span>and I like to build things that live on the web</span>
         </Styled.HeadingText>
       </Reveal>
-      <Externals reveal delay={1}/>
+      <Externals reveal delay={1.15}/>
       <Styled.Typing href="#aboutMe" onClick={doYouWantToKnowMore}>
         <TypeAnimation
-          sequence={[
-            3000, 'Would you like to know more?'
-          ]}
+          sequence={[3000, 'Would you like to know more?']}
           wrapper="span"
           speed={50}
           style={{ fontSize: '1.5rem', color: '#F2EA46' }}

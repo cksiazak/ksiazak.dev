@@ -32,16 +32,14 @@ const ProjectCard: FC<ProjectCardProps> = ({
         </Styled.Meta>
         <Project />
       </Styled.Details>
-      <Image
-        src={meta.img}
-        alt="Chris's head"
-        style={{
-          width: '100%',
-          height: 'auto',
-        }}
-        width={300}
-        height={300}
-      />
+      <Styled.ImageWrapper>
+        <Image
+          src={meta.img}
+          alt="Rytm main page"
+          width={300}
+          height={300}
+        />
+      </Styled.ImageWrapper>
     </Styled.Outer>
   )
 }

@@ -20,9 +20,7 @@ const ParticleWrapper = styled.div`
 `
 
 const ParticlesContainer = () => {
-  const [
-    init, setInit
-  ] = useState(false)
+  const [init, setInit] = useState(false)
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -125,33 +123,31 @@ const ParticlesContainer = () => {
                 },
               },
             },
-            responsive: [
-              {
-                maxWidth: 600,
-                options: {
-                  particles: {
-                    color: {
-                      value: '#0000ff',
-                    },
-                    number: {
-                      value: 40,
-                    },
+            responsive: [{
+              maxWidth: 600,
+              options: {
+                particles: {
+                  color: {
+                    value: '#0000ff',
                   },
-                },
-              }, {
-                maxWidth: 1000,
-                options: {
-                  particles: {
-                    color: {
-                      value: '#00ff00',
-                    },
-                    number: {
-                      value: 60,
-                    },
+                  number: {
+                    value: 40,
                   },
                 },
               },
-            ],
+            }, {
+              maxWidth: 1000,
+              options: {
+                particles: {
+                  color: {
+                    value: '#00ff00',
+                  },
+                  number: {
+                    value: 60,
+                  },
+                },
+              },
+            },],
           }}
         />
       )}

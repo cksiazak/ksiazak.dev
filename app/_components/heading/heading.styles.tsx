@@ -9,11 +9,17 @@ export const Heading = styled.section`
   align-items: center;
   justify-content: center;
 
-  & > div:first-of-type {
+  > div:first-of-type {
     position: absolute;
-    width: 300px;
+    width: 350px;
     z-index: 0;
-    margin-top: -225px;
+    margin-top: -265px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
   }
 `
 
@@ -24,17 +30,17 @@ export const HeadingText = styled.div`
   align-items: center;
   color: ${({ theme }) => theme.main.offWhite};
   text-shadow: 1px 3px 3px #000;
-  margin-top: 210px;
-  margin-bottom: 10px;
+  margin-top: 240px;
+  margin-bottom: 30px;
 
   & > span {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     z-index: 1;
   }
 
   & > h1 {
-    margin: 10px;
-    font-size: 5.5rem;
+    margin: 0px 0px 15px;
+    font-size: 6rem;
     z-index: 1;
   }
 `

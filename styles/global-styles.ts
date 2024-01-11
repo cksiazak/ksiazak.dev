@@ -37,6 +37,20 @@ const styles = css`
       100% { opacity: 1; }
     }
   }
+
+  h2 {
+    font-size: 2.6rem;
+    margin: 0px 0px 15px;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 0px 0px 15px;
+  }
+
+  p, a, span {
+    font-size: 1.7rem;
+  }
 `
 
 const GlobalStyles = createGlobalStyle`

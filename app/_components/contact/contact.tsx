@@ -1,20 +1,24 @@
+import LinkOut from '../_shared/link-out'
 import * as Styled from './contact.styles'
 
 const Contact = () => {
   return (
     <Styled.Section>
       <Styled.Inner>
-        <Styled.ContactHead>Thanks for visiting!</Styled.ContactHead>
-        <Styled.Sentence>
-          I'm actively in search of my next position where I can grow and develop
-          (literally) something great. Feel free to reach out!
-        </Styled.Sentence>
-        <Styled.Email
-          href='mailto:cksiazak@gmail.com'
-          title='email'
+        <LinkOut
+          heading='Thanks for visiting!'
+          link={{
+            href: 'mailto:cksiazak@gmail.com',
+            title: "Chris's Email",
+            text: 'Get in touch'
+          }}
         >
-          Get in touch
-        </Styled.Email>
+          I'm actively in search of my next position where I can grow and develop
+          (literally) something great.
+          <br />
+          <br />
+          Feel free to reach out!
+        </LinkOut>
       </Styled.Inner>
     </Styled.Section>
   )

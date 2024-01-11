@@ -11,6 +11,7 @@ type RevealProps = {
   width?: 'fit-content' | '100%'
   delay?: number
   isActive?: boolean
+  isCentered?: boolean
 }
 
 
@@ -19,10 +20,11 @@ const Reveal = ({
   type = 'scroll',
   width = 'fit-content',
   delay = 0.25,
-  isActive = true
+  isActive = true,
+  isCentered = false
 }: RevealProps) => {
   const ref = useRef(null)
-  const isInView = useInView(ref, {once: true })
+  const isInView = useInView(ref, {once: true, amount: 0.2 })
 
   const revealControls = useAnimation()
 
@@ -32,9 +34,15 @@ const Reveal = ({
     }
   }, [isInView, revealControls])
 
+  const center = isCentered ? {
+    display: 'flex',
+    justifyContent: 'center',
+  } : {}
+
   return (
     <RevealWrapper ref={ref} width={width}>
       <motion.div
+        style={{ ...center }}
         variants={{
           hidden: { opacity: 0, y: type === 'fade' ? 0 : 50 },
           visible: { opacity: 1, y: 0 }

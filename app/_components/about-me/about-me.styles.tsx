@@ -12,38 +12,44 @@ export const Outer = styled(Section)`
 export const AboutWrapper = styled.div`
   width: 60%;
 
-  h2 {
-    font-size: 1.75rem;
-  }
+  h2 {}
+
+
+  p {}
 
   h3 {
-    margin-bottom: 5px;
     text-align: center;
   }
+`
 
-  p {
-    font-size: 1.1rem;
-  }
+export const Skills = styled.div`
+  margin-top: 50px;
   
   ul {
     list-style-type: none;
     padding: 0px;
+    margin-top: 30px;
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
+    justify-content: center;
     
     li {
       padding: 5px;
-      margin: 5px;
+      margin: 0px 15px 15px 0px;
       border-radius: 5px;
       background: ${({ theme }) => theme.main.softRed};
       color: ${({ theme }) => theme.main.deepPurple};
       box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
+      font-size: 1.25rem;
+      font-weight: bold;
     }
   }
 `
 
 export const SelfieWrapper = styled.div`
-  box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px 0px;
+  }
 `

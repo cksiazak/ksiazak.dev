@@ -9,7 +9,8 @@ export const Footer = styled.footer`
 `
 
 export const Inner = styled.div`
-  width: ${({ theme }) => theme.size.max.innerWidth};
+  width: ${({ theme }) => theme.size.innerWidth};
+  max-width: 1536px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +20,7 @@ export const BranchLink = styled.a`
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   padding: 10px 0px;
   color: white;
   transition: 0.2s;

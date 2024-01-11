@@ -8,6 +8,11 @@ export const Outer = styled.div`
   overflow: hidden;
 `
 
+export const Details = styled.div`
+  padding: 20px;
+  width: 60%;
+`
+
 export const Meta = styled.div`
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(42, 42, 42, 0.6);
@@ -18,6 +23,13 @@ export const Meta = styled.div`
   }
 `
 
-export const Details = styled.div`
-  padding: 20px;
+export const ImageWrapper = styled.div`
+  width: 40%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 `

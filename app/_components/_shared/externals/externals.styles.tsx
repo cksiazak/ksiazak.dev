@@ -10,7 +10,7 @@ export const IconList = styled.ul`
     a {
       display: flex;
       text-decoration: none;
-      font-size: 2.25rem;
+      font-size: 2.8rem;
       padding: 10px 15px;
       transition: 0.2s;
       color: white;

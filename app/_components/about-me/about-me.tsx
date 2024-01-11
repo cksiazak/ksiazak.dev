@@ -41,7 +41,7 @@ const AboutMe = () => {
             <h2>About Me</h2>
             <Content.default />
           </Reveal>
-          <div>
+          <Styled.Skills>
             <Reveal width='100%'>
               <h3>Skills</h3>
             </Reveal>
@@ -52,22 +52,18 @@ const AboutMe = () => {
                 </Reveal>
               ))}
             </ul>
-          </div>
+          </Styled.Skills>
         </Styled.AboutWrapper>
-        <Reveal> 
-          <Image
-            src={selfie}
-            alt="Chris's selfie"
-            style={{
-              width: '100%',
-              height: 'auto',
-              margin: '50px 0px',
-              borderRadius: '25px 0px',
-            }}
-            width={300}
-            height={300}
-          />
-        </Reveal>
+        <Styled.SelfieWrapper>
+          <Reveal> 
+            <Image
+              src={selfie}
+              alt="Chris's selfie"
+              width={350}
+              height={300}
+            />
+          </Reveal>
+        </Styled.SelfieWrapper>
       </Inner>
     </Styled.Outer>
   )

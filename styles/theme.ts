@@ -7,9 +7,7 @@ const theme = {
     lightBlue: '#0093e9',
   },
   size: {
-    max: {
-      innerWidth: '80%'
-    }
+    innerWidth: '80%' // 1536px @ 1920px
   }
 }
 
