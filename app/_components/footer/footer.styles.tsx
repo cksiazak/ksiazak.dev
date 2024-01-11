@@ -6,6 +6,7 @@ export const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 10px 0px;
+  background-color: #0e1111;
 `
 
 export const Inner = styled.div`
@@ -20,7 +21,6 @@ export const BranchLink = styled.a`
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
   padding: 10px 0px;
   color: white;
   transition: 0.2s;

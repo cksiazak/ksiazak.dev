@@ -15,6 +15,16 @@ export const Heading = styled.section`
     z-index: 0;
     margin-top: -265px;
 
+    @media (max-width: 1600px) {
+      width: 300px;
+      margin-top: -245px;
+    }
+
+    @media (max-width: 1366px) {
+      width: 250px;
+      margin-top: -245px;
+    }
+
     img {
       width: 100%;
       height: auto;
@@ -36,12 +46,14 @@ export const HeadingText = styled.div`
   & > span {
     font-size: 1.8rem;
     z-index: 1;
+    color: ${({ theme }) => theme.main.offWhite};
   }
 
   & > h1 {
     margin: 0px 0px 15px;
     font-size: 6rem;
     z-index: 1;
+    color: ${({ theme }) => theme.main.offWhite};
   }
 `
 
@@ -53,4 +65,5 @@ export const Typing = styled.a`
   cursor: url('/assets/imdoingmypart.jpg'), pointer;
   animation-name: fadeIn;
   animation-duration: 0.5s;
+  font-weight: bold;
 `

@@ -45,7 +45,7 @@ const HeadingSection = () => {
           sequence={[3000, 'Would you like to know more?']}
           wrapper="span"
           speed={50}
-          style={{ fontSize: '1.5rem', color: '#F2EA46' }}
+          style={{ color: '#F2EA46' }}
           repeat={Infinity}
         />
       </Styled.Typing>

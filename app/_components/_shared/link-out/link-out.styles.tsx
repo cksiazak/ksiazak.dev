@@ -39,12 +39,10 @@ export const Sentence = styled.p`
   width: 75%;
   text-align: center;
   margin: 50px 0px 75px;
-  font-size: 1.65rem;
   color: white;
 `
 
 export const Link = styled.a`
-  font-size: 1.7rem;
   color: white;
   text-decoration: none;
   padding: 20px;

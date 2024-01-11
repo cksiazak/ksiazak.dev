@@ -10,7 +10,7 @@ export const Card = styled.div`
   background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   margin: 75px 0px 0px;
   box-shadow: 3px 3px 8px 0px rgba(42, 42, 42, 0.6);
-  color: black;
+  color: #0e1111;
   border-radius: 15px;
 
   ul {
@@ -42,7 +42,7 @@ export const LinksWrapper = styled.div`
   border-top: 2px solid rgba(42, 42, 42, 0.6);
 
   > a {
-    color: black;
+    color: #0e1111;
     text-decoration: none;
     transition: 0.3s;
     display: flex;
