@@ -18,7 +18,7 @@ const inter = Inter({
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en' className={inter.className}>
-      <body>
+      <body suppressHydrationWarning>
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
           <GoogleAnalytics
             ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
