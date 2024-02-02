@@ -1,20 +1,20 @@
 import { FC, ComponentType } from 'react'
 import Image from 'next/image'
+import { IoMdGitBranch, IoMdLink } from 'react-icons/io'
 
 import * as Styled from './project-card.styles'
-
-type LinkType = {
-  href: string,
-}
 
 export type ProjectCardProps = {
   project: {
     default: ComponentType
     meta: {
-      name: string
-      status: string
+      name: string,
+      status: string,
       img: string,
-      links?: LinkType[]
+      links: {
+        deployed?: string
+        github?: string,
+      }
     }
   }
 }
@@ -22,13 +22,28 @@ export type ProjectCardProps = {
 const ProjectCard: FC<ProjectCardProps> = ({
   project: { default: Project, meta },
 }) => {
-
   return (
     <Styled.Outer>
       <Styled.Details>
         <Styled.Meta>
-          <h3>{meta.name}</h3>
-          <span>Status: {meta.status}</span>
+          <Styled.MetaWrapper>
+            <h3>{meta.name}</h3>
+            <span>Status: {meta.status}</span>
+          </Styled.MetaWrapper>
+          {(meta?.links?.deployed || meta?.links?.github) && (
+            <Styled.MetaWrapper>
+              {meta?.links?.deployed && (
+                <a href={meta?.links?.deployed}>
+                  <IoMdLink />
+                </a>
+              )}
+              {meta?.links?.github && (
+                <a href={meta?.links?.github}>
+                  <IoMdGitBranch />
+                </a>
+              )}
+            </Styled.MetaWrapper>
+          )}
         </Styled.Meta>
         <Project />
       </Styled.Details>

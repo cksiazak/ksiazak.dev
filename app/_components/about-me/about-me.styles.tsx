@@ -7,6 +7,14 @@ import { Section } from '../_shared/styles'
 export const Outer = styled(Section)`
   background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
   box-shadow: inset 1px 1px 4px -1px rgba(42, 42, 42, 0.8);
+
+  > div {
+    align-items: flex-start;
+
+    @media (max-width: 1100px) {
+      align-items: center;
+    }
+  }
 `
 
 export const AboutWrapper = styled.div`
@@ -108,6 +116,8 @@ export const Skills = styled.div`
 
 export const SelfieWrapper = styled.div`
   padding-left: 100px;
+  position: sticky;
+  top: 100px;
 
   @media (max-width: 1700px) {
     padding-left: 100px;
@@ -122,6 +132,8 @@ export const SelfieWrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+    position: relative;
+    top: 0px;
   }
 
   @media (max-width: 1000px) {

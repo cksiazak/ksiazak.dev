@@ -12,6 +12,7 @@ type RevealProps = {
   delay?: number
   isActive?: boolean
   isCentered?: boolean
+  isRevealed?: boolean
 }
 
 
@@ -21,7 +22,8 @@ const Reveal = ({
   width = 'fit-content',
   delay = 0.25,
   isActive = true,
-  isCentered = false
+  isCentered = false,
+  isRevealed = false,
 }: RevealProps) => {
   const ref = useRef(null)
   const isInView = useInView(ref, {once: true, amount: 0.1 })
@@ -29,10 +31,14 @@ const Reveal = ({
   const revealControls = useAnimation()
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView || isRevealed) {
       revealControls.start('visible')
     }
-  }, [isInView, revealControls])
+  }, [
+    isInView,
+    isRevealed,
+    revealControls
+  ])
 
   const center = isCentered ? {
     display: 'flex',

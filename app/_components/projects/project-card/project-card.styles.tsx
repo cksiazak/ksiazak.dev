@@ -6,6 +6,7 @@ export const Outer = styled.div`
   justify-content: space-between;
   border-radius: 15px;
   overflow: hidden;
+  margin: 30px 0px;
 
   @media (max-width: 1200px) {
     font-size: 1.1rem;
@@ -44,6 +45,9 @@ export const Details = styled.div`
 `
 
 export const Meta = styled.div`
+  display: flex;
+  justify-content: space-between; 
+  align-items: space-between;
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(42, 42, 42, 0.6);
 
@@ -63,24 +67,28 @@ export const Meta = styled.div`
     font-size: 1.25rem;
 
     @media (max-width: 1600px) {
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 1000px) {
       font-size: 1rem;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 1000px) {
       font-size: 0.9rem;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 700px) {
       font-size: 0.8rem;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       font-size: 0.7rem;
     }
+
+    @media (max-width: 400px) {
+      font-size: 0.6rem;
+    }
+  }
+
+  > div:nth-of-type(2) {
+    align-items: flex-end;
   }
 `
 
@@ -92,5 +100,22 @@ export const ImageWrapper = styled.div`
     width: 100%;
     object-fit: cover;
     object-position: center;
+  }
+`
+
+export const MetaWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  a {
+    transition: 0.2s;
+    font-size: 1.4rem;
+    color: ${({ theme }) => theme.main.bottomBlue};
+
+    &:hover {
+      cursor: pointer;
+      color: ${({ theme }) => theme.main.lightBlue};
+    }
   }
 `

@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'framer-motion'
 import Image from 'next/image'
 
 import Reveal from '../_shared/reveal'
@@ -33,6 +35,16 @@ const skills = [
 ]
 
 const AboutMe = () => {
+  const ref = useRef(null)
+  const [isRevealed, setIsRevealed] = useState(false)
+  const isInView = useInView(ref, {once: true, amount: 0.1 })
+
+  useEffect(() => {
+    if (isInView) {
+      setIsRevealed(true)
+    }
+  }, [isInView])
+
   return (
     <Styled.Outer id="aboutMe">
       <Inner>
@@ -41,13 +53,17 @@ const AboutMe = () => {
             <h2>About Me</h2>
             <Content.default />
           </Reveal>
-          <Styled.Skills>
+          <Styled.Skills ref={ref}>
             <Reveal width='100%'>
               <h3>Skills</h3>
             </Reveal>
             <ul>
               {skills.map((skill, i) => (
-                <Reveal delay={0.25 + (0.1 * i)} key={skill}>
+                <Reveal
+                  isRevealed={isRevealed}
+                  delay={0.25 + (0.1 * i)}
+                  key={skill}
+                >
                   <li>{skill}</li>
                 </Reveal>
               ))}

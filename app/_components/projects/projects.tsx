@@ -7,6 +7,7 @@ import type { ProjectCardProps } from'./project-card'
 import * as Styled from './projects.styles'
 
 import { Rytm } from './data'
+import { SpeechSynthesizer } from './data'
 
 const Projects = () => {
   return (
@@ -30,6 +31,9 @@ const Projects = () => {
         </LinkOut>
 
         <Styled.ProjectsWrapper>
+          <Reveal>
+            <ProjectCard project={SpeechSynthesizer as ProjectCardProps['project']} />
+          </Reveal>
           <Reveal>
             <ProjectCard project={Rytm as ProjectCardProps['project']} />
           </Reveal>

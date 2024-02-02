@@ -27,4 +27,16 @@ export const ProjectsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+
+  > div:nth-of-type(2) {
+    > div {
+      > div {
+        flex-direction: row-reverse;
+
+        @media (max-width: 900px) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
 `

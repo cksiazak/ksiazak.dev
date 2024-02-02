@@ -16,6 +16,7 @@ export const IconList = styled.ul`
       color: ${({ theme }) => theme.main.offWhite};
 
       &:hover {
+        cursor: pointer;
         color: ${({ theme }) => theme.main.softRed};
         transform: scale(1.2);
       }

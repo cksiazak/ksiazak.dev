@@ -14,24 +14,20 @@ type LinkOutProps = {
 const LinkOut = ({ heading, children, link }: LinkOutProps) => {
   return (
     <Styled.Wrapper>
-      <Reveal isCentered>
+      <Reveal>
         <h2>{heading}</h2>
-      </Reveal>
-      <Styled.DetailWrapper>
-        <Reveal isCentered>
+        <Styled.DetailWrapper>
           <Styled.Sentence>
             {children}
           </Styled.Sentence>
-        </Reveal>
-        <Reveal isCentered>
           <Styled.Link
             href={link.href}
             title={link.title}
           >
             {link.text}
           </Styled.Link>
-        </Reveal>
-      </Styled.DetailWrapper>
+        </Styled.DetailWrapper>
+      </Reveal>
     </Styled.Wrapper>
   )
 }

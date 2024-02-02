@@ -6,11 +6,12 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 50px 0px 50px;
+  margin: 0px 0px 0px;
 
   h2 {
     color: ${({ theme }) => theme.main.offWhite};
     font-size: 1.8rem;
+    text-align: center;
 
     @media (max-width: 1700px) {
       font-size: 1.6rem;
@@ -26,6 +27,12 @@ export const Wrapper = styled.div`
 
     @media (max-width: 500px) {
       width: 100%;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 `
@@ -75,6 +82,7 @@ export const Link = styled.a`
   }
 
   &:hover {
+    cursor: pointer;
     transform: scale(1.05);
     font-weight: bold;
     color: ${({ theme }) => theme.main.bottomBlue};

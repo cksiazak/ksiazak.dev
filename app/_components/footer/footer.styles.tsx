@@ -34,6 +34,7 @@ export const BranchLink = styled.a`
   }
 
   &:hover {
+    cursor: pointer;
     color: ${({ theme }) => theme.main.softRed};
   }
 `
