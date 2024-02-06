@@ -14,8 +14,6 @@ const ParticleWrapper = styled.div`
 
   div {
     height: 100%;
-    animation-duration: 0.5s;
-    animation-name: fadeIn;
   }
 `
 
@@ -38,7 +36,7 @@ const ParticlesContainer = () => {
           options={{
             style: {
               position: 'absolute',
-              animation: 'fade-in 3s',
+              animation: 'fadeIn 0.5s',
               zIndex: '0',
             },
             particles: {

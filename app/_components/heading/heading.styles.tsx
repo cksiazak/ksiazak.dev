@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Heading = styled.section`
+export const Heading = styled.header`
   height: 100dvh;
   width: 100%;
   position: relative;

@@ -33,12 +33,12 @@ const ProjectCard: FC<ProjectCardProps> = ({
           {(meta?.links?.deployed || meta?.links?.github) && (
             <Styled.MetaWrapper>
               {meta?.links?.deployed && (
-                <a href={meta?.links?.deployed}>
+                <a href={meta?.links?.deployed} title={`${meta.name} Deployment`}>
                   <IoMdLink />
                 </a>
               )}
               {meta?.links?.github && (
-                <a href={meta?.links?.github}>
+                <a href={meta?.links?.github} title={`${meta.name} Github`}>
                   <IoMdGitBranch />
                 </a>
               )}

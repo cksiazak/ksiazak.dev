@@ -28,6 +28,7 @@ const HeadingSection = () => {
     <Styled.Heading>
       <Reveal>
         <Image
+          priority
           src={avatar}
           alt="Chris's head"
           width={300}
