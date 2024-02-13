@@ -1,7 +1,7 @@
 'use client'
 
 import { Inter } from 'next/font/google'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from 'styled-components'
@@ -21,8 +21,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <Analytics />
       <SpeedInsights />
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
-        <GoogleTagManager
-          gtmId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
         />
       )}
       <body suppressHydrationWarning>
