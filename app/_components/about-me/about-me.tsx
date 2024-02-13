@@ -37,7 +37,7 @@ const skills = [
 const AboutMe = () => {
   const ref = useRef(null)
   const [isRevealed, setIsRevealed] = useState(false)
-  const isInView = useInView(ref, {once: true, amount: 0.1 })
+  const isInView = useInView(ref, {once: true, amount: 'some' })
 
   useEffect(() => {
     if (isInView) {

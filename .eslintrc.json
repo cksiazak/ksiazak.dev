@@ -7,27 +7,6 @@
   ],
   "rules": {
     "react/no-unescaped-entities": 0,
-    "padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": "*"
-      },
-      {
-        "blankLine": "any",
-        "prev": "import",
-        "next": "import"
-      },
-      {
-        "blankLine": "any",
-        "prev": [
-          "const",
-          "let"
-        ],
-        "next": "*"
-      }
-    ],
     "quotes": [
       "error",
       "single",

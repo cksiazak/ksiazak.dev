@@ -2,13 +2,20 @@
 
 import { useEffect } from 'react'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { TypeAnimation } from 'react-type-animation'
 
 import Reveal from '../_shared/reveal'
 import Externals from '../_shared/externals'
-import Particles from './particles'
 import * as Styled from './heading.styles'
 import avatar from './avatar.jpg'
+
+const LavaComponent = dynamic(
+  () => import('./lava'),
+  {
+    ssr: false,
+  }
+)
 
 const HeadingSection = () => {
   useEffect(() => {
@@ -52,7 +59,7 @@ const HeadingSection = () => {
           repeat={Infinity}
         />
       </Styled.Typing>
-      <Particles />
+      <LavaComponent />
     </Styled.Heading>
   )
 }
