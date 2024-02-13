@@ -10,7 +10,7 @@ import Externals from '../_shared/externals'
 import * as Styled from './heading.styles'
 import avatar from './avatar.jpg'
 
-const LavaComponent = dynamic(
+const Lava = dynamic(
   () => import('./lava'),
   {
     ssr: false,
@@ -59,7 +59,7 @@ const HeadingSection = () => {
           repeat={Infinity}
         />
       </Styled.Typing>
-      <LavaComponent />
+      <Lava />
     </Styled.Heading>
   )
 }
