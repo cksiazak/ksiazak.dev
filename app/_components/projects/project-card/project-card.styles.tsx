@@ -47,7 +47,7 @@ export const Details = styled.div`
 export const Meta = styled.div`
   display: flex;
   justify-content: space-between; 
-  align-items: space-between;
+  align-items: center;
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(42, 42, 42, 0.6);
 

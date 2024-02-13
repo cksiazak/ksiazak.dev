@@ -4,57 +4,12 @@ import React, { useEffect, useRef } from 'react'
 
 const WebGLComponent: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null!)
-  const { width, height } = window?.screen
-  const numPoints = 50
-  const points: any[] = []
-
-  // Vertex shader code
-  const vsSource = `
-    attribute vec2 position;
-
-    void main() {
-      gl_Position = vec4(position, 0.0, 1.0);
-    }
-  `
-
-  // Fragment shader code
-  // http://learnwebgl.brown37.net/09_lights/fragment_shader_debugging.html
-  const fsSource = `
-    precision highp float;
-
-    uniform vec3 points[` + numPoints + `];
-
-    void main(){
-      float x = gl_FragCoord.x;
-      float y = gl_FragCoord.y;
-
-      float sum = 0.0;
-      for (int i = 0; i < ` + numPoints + `; i++) {
-        vec3 point = points[i];
-        float dx = point.x - x;
-        float dy = point.y - y;
-        float radius = point.z;
-      
-        sum += (radius * radius) / (dx * dx + dy * dy);
-      }
-
-      if (sum >= 0.99) {
-        // blob colors
-        // use mix(vec3(), vec3(), pct) instead for gradient color
-        // https://thebookofshaders.com/glossary/?search=mix
-        gl_FragColor = vec4(vec3(0.350, 0.255, 0.6), 1.0);
-        return;
-      }
-
-      gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0); // background color
-    }
-  `
 
   const compileShader = (gl: WebGLRenderingContext, shaderSource: string, shaderType: number) => {
-    const shader: WebGLShader = gl.createShader(shaderType) as WebGLShader
+    const shader = gl.createShader(shaderType) as WebGLShader
 
-    gl.shaderSource(shader as WebGLShader, shaderSource)
-    gl.compileShader(shader as WebGLShader)
+    gl.shaderSource(shader, shaderSource)
+    gl.compileShader(shader)
   
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
       throw 'Shader compile failed with: ' + gl?.getShaderInfoLog(shader)
@@ -64,7 +19,7 @@ const WebGLComponent: React.FC = () => {
   }
 
   const getAttribLocation = (gl: WebGLRenderingContext, program: WebGLProgram, name: string) => {
-    const attributeLocation = gl?.getAttribLocation(program, name)
+    const attributeLocation = gl.getAttribLocation(program, name)
   
     if (attributeLocation === -1) {
       throw 'Can not find attribute ' + name + '.'
@@ -97,12 +52,61 @@ const WebGLComponent: React.FC = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current
+    const { width, height } = window?.screen
+    canvasRef.current.width = width
+    canvasRef.current.height = height
+
     const gl = canvas.getContext('webgl')
 
     if (!gl) {
       console.error('Unable to initialize WebGL. Your browser may not support it.')
       return
     } else {
+      const numPoints = 50
+      const points: any[] = []
+    
+      // Vertex shader code
+      const vsSource = `
+        attribute vec2 position;
+    
+        void main() {
+          gl_Position = vec4(position, 0.0, 1.0);
+        }
+      `
+    
+      // Fragment shader code
+      // http://learnwebgl.brown37.net/09_lights/fragment_shader_debugging.html
+      const fsSource = `
+        precision highp float;
+    
+        uniform vec3 points[` + numPoints + `];
+    
+        void main(){
+          float x = gl_FragCoord.x;
+          float y = gl_FragCoord.y;
+    
+          float sum = 0.0;
+          for (int i = 0; i < ` + numPoints + `; i++) {
+            vec3 point = points[i];
+            float dx = point.x - x;
+            float dy = point.y - y;
+            float radius = point.z;
+          
+            sum += (radius * radius) / (dx * dx + dy * dy);
+          }
+    
+          if (sum >= 0.99) {
+            // blob colors
+            // use mix(vec3(), vec3(), pct) instead for gradient color
+            // https://thebookofshaders.com/glossary/?search=mix
+            gl_FragColor = vec4(vec3(0.350, 0.255, 0.6), 1.0);
+            return;
+          }
+    
+          gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0); // background color
+        }
+      `
+
       for (let i = 0; i < numPoints; i++) {
         const radius = height < 800 || width < 600
           ? Math.random() * 65 // mobile
@@ -194,12 +198,10 @@ const WebGLComponent: React.FC = () => {
 
       loop()
     }
-  }), []
+  }, [])
 
   return (
     <canvas
-      width={width}
-      height={height}
       style={{
         width: '100%',
         height: '100%',

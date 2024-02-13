@@ -9,7 +9,6 @@ import Contact from './_components/contact'
 import Footer from './_components/footer'
 import Projects from './_components/projects'
 
-
 export const metadata: Metadata = {
   title: 'Christopher Ksiazak - Full Stack Software Developer',
   keywords: [

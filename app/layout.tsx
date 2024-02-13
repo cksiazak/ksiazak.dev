@@ -18,14 +18,14 @@ const inter = Inter({
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en' className={inter.className}>
-      <Analytics />
-      <SpeedInsights />
-      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
-        <GoogleAnalytics
-          gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
-        />
-      )}
       <body suppressHydrationWarning>
+        <Analytics />
+        <SpeedInsights />
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+          <GoogleAnalytics
+            gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
+          />
+        )}
         <StyledComponentsRegistry>
           <GlobalStyles />
           <ThemeProvider theme={theme}>

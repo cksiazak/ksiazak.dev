@@ -29,7 +29,7 @@ const styles = css`
         hsl(221.54, 97.02%, 13.07%) 91.9%,
         hsl(221.54, 97.01%, 13.14%) 100%
       );
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
 
     @keyframes fadeIn {
