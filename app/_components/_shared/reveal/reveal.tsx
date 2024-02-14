@@ -32,15 +32,13 @@ const Reveal = ({
 
   const revealControls = useAnimation()
 
+  const isVisible = isRevealed || isInView
+
   useEffect(() => {
-    if (isInView || isRevealed) {
+    if (isVisible) {
       revealControls.start('visible')
     }
-  }, [
-    isInView,
-    isRevealed,
-    revealControls
-  ])
+  }, [isVisible, revealControls])
 
   const center = isCentered ? {
     display: 'flex',
