@@ -92,7 +92,7 @@ export const Skills = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     
-    li {
+    div {
       padding: 5px;
       margin: 0px 15px 15px 0px;
       border-radius: 5px;

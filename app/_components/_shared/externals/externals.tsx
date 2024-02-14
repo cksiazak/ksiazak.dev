@@ -5,9 +5,16 @@ import {
   IoIosMail,
   IoMdDocument,
 } from 'react-icons/io'
+import dynamic from 'next/dynamic'
 
-import Reveal from '../reveal'
 import * as Styled from './externals.styles'
+
+const Reveal = dynamic(
+  () => import('../reveal'),
+  {
+    ssr: false,
+  }
+)
 
 type LinkIconProps = {
   component: ComponentType
@@ -17,11 +24,9 @@ type LinkIconProps = {
 
 const LinkIcon: FC<LinkIconProps> = ({ component: Component, href, title }) => {
   return (
-    <li key={title}>
-      <a href={href} title={title}>
-        <Component />
-      </a>
-    </li>
+    <a key={title} href={href} title={title}>
+      <Component />
+    </a>
   )
 }
 
@@ -33,28 +38,28 @@ type ExternalsProps = {
 const Externals: FC<ExternalsProps> = ({ reveal = false, delay = 0.25 }) => {
   return (
     <Styled.IconList>
-      <Reveal isActive={reveal} delay={delay + 0.1}>
+      <Reveal isActive={reveal} delay={delay + 0.1} element='li'>
         <LinkIcon
           component={IoLogoLinkedin}
           href='https://linkedin.com/in/cksiazak'
           title='LinkedIn'
         />
       </Reveal>
-      <Reveal isActive={reveal} delay={delay + 0.2}>
+      <Reveal isActive={reveal} delay={delay + 0.2} element='li'>
         <LinkIcon
           component={IoLogoGithub}
           href='https://github.com/cksiazak'
           title='Github'
         />
       </Reveal>
-      <Reveal isActive={reveal} delay={delay + 0.3}>
+      <Reveal isActive={reveal} delay={delay + 0.3} element='li'>
         <LinkIcon
           component={IoIosMail}
           href='mailto:cksiazak@gmail.com'
           title='Mail'
         />
       </Reveal>
-      <Reveal isActive={reveal} delay={delay + 0.4}>
+      <Reveal isActive={reveal} delay={delay + 0.4} element='li'>
         <LinkIcon
           component={IoMdDocument}
           href='/assets/Cksiazak_Resume.pdf'

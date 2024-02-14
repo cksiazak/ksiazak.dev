@@ -3,12 +3,19 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 
-import Reveal from '../_shared/reveal'
 import { Inner } from '../_shared/styles'
 import * as Styled from './about-me.styles'
 import * as Content from './data/about-me.mdx'
 import selfie from './selfie.jpg'
+
+const Reveal = dynamic(
+  () => import('../_shared/reveal'),
+  {
+    ssr: false,
+  }
+)
 
 const skills = [
   'Javascript/Typescript',
@@ -63,8 +70,9 @@ const AboutMe = () => {
                   isRevealed={isRevealed}
                   delay={0.25 + (0.1 * i)}
                   key={skill}
+                  element='li'
                 >
-                  <li>{skill}</li>
+                  <span>{skill}</span>
                 </Reveal>
               ))}
             </ul>

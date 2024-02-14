@@ -50,7 +50,7 @@ const HeadingSection = () => {
         </Styled.HeadingText>
       </Reveal>
       <Externals reveal delay={1.15}/>
-      <Styled.Typing href="#aboutMe" onClick={doYouWantToKnowMore}>
+      <Styled.Typing aria-label="Would you like to know more?" href="#aboutMe" onClick={doYouWantToKnowMore}>
         <TypeAnimation
           sequence={[3000, 'Would you like to know more?']}
           wrapper="span"
