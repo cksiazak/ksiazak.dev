@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 
 const WebGLComponent: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null!)
@@ -30,7 +30,7 @@ const WebGLComponent: React.FC = () => {
 
   const points: any[] = generatePoints()
 
-  // Vertex shader code
+  // Vertex shader
   const vsSource = `
     attribute vec2 position;
 
@@ -39,7 +39,7 @@ const WebGLComponent: React.FC = () => {
     }
   `
 
-  // Fragment shader code
+  // Fragment shader
   // http://learnwebgl.brown37.net/09_lights/fragment_shader_debugging.html
   const fsSource = `
     precision highp float;
@@ -105,17 +105,97 @@ const WebGLComponent: React.FC = () => {
     return uniformLocation
   }
 
-  const makeProgram = (
+  const makeProgram = useCallback((
     gl: WebGLRenderingContext,
-    vertexShader: WebGLShader,
-    fragmentShader: WebGLShader
   ) => {
+    const vertexShader = compileShader(gl, vsSource, gl.VERTEX_SHADER)
+    const fragmentShader = compileShader(gl, fsSource, gl.FRAGMENT_SHADER)
     const program = gl.createProgram() as WebGLProgram
     gl.attachShader(program, vertexShader)
     gl.attachShader(program, fragmentShader)
     gl.linkProgram(program)
     return program
+  }, [fsSource, vsSource])
+
+  const handleBuffer =  (
+    gl: WebGLRenderingContext,
+  ) => {
+    // vertex visibility container
+    const vertexData = new Float32Array([
+      -1.0,
+      1.0,
+      -1.0,
+      -1.0,
+      1.0,
+      1.0,
+      1.0,
+      -1.0,
+    ])
+      
+    const vertexDataBuffer = gl.createBuffer()
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer)
+    gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW)
   }
+
+  const handleVertexAttribs = useCallback((gl: WebGLRenderingContext, program: WebGLProgram) => {
+    const positionHandle = getAttribLocation(gl, program, 'position')
+    gl.enableVertexAttribArray(positionHandle)
+    gl.vertexAttribPointer(
+      positionHandle,
+      2,
+      gl.FLOAT,
+      false,
+      8,
+      0
+    )
+  }, [])
+
+  const loop = useCallback((gl: WebGLRenderingContext, program: WebGLProgram) => {
+    for (let i = 0; i < numPoints; i++) {
+      let point = points[i]
+  
+      point.x += point.vx
+      point.y += point.vy
+  
+      if (
+        point.x < point.r ||
+        point.x > width - point.r
+      ) point.vx *= -1
+  
+      if (
+        point.y < point.r ||
+        point.y > height - point.r
+      ) point.vy *= -1
+    }
+  
+    const dataToSendToGPU = new Float32Array(3 * numPoints)
+  
+    for (let i = 0; i < numPoints; i++) {
+      const baseIndex = 3 * i
+  
+      const mb = points[i]
+  
+      dataToSendToGPU[baseIndex + 0] = mb.x
+      dataToSendToGPU[baseIndex + 1] = mb.y
+      dataToSendToGPU[baseIndex + 2] = mb.r
+    }
+
+    const pointsHandle = getUniformLocation(gl, program, 'points')
+
+    gl.useProgram(program)
+    gl.uniform3fv(pointsHandle, dataToSendToGPU)
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
+
+    setTimeout(function () {
+      requestAnimationFrame(function() {
+        loop(gl, program)
+      })
+    }, 10) // animation speed
+  }, [
+    height,
+    points,
+    width
+  ])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -125,86 +205,20 @@ const WebGLComponent: React.FC = () => {
       console.error('Unable to initialize WebGL. Your browser may not support it.')
       return
     } else {
-      const vertexShader = compileShader(gl, vsSource, gl.VERTEX_SHADER)
-      const fragmentShader = compileShader(gl, fsSource, gl.FRAGMENT_SHADER)
-      const program = makeProgram(gl, vertexShader, fragmentShader)
-
-      // vertex visibility container
-      const vertexData = new Float32Array([
-        -1.0,
-        1.0,
-        -1.0,
-        -1.0,
-        1.0,
-        1.0,
-        1.0,
-        -1.0,
-      ])
-      
-      const vertexDataBuffer = gl.createBuffer()
-      gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer)
-      gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW)
-
-      const positionHandle = getAttribLocation(gl, program, 'position')
-      gl.enableVertexAttribArray(positionHandle)
-      gl.vertexAttribPointer(
-        positionHandle,
-        2,
-        gl.FLOAT,
-        false,
-        8,
-        0
-      )
-
-      const loop = () => {
-        for (let i = 0; i < numPoints; i++) {
-          let point = points[i]
-      
-          point.x += point.vx
-          point.y += point.vy
-      
-          if (
-            point.x < point.r ||
-            point.x > width - point.r
-          ) point.vx *= -1
-      
-          if (
-            point.y < point.r ||
-            point.y > height - point.r
-          ) point.vy *= -1
-        }
-      
-        const dataToSendToGPU = new Float32Array(3 * numPoints)
-      
-        for (let i = 0; i < numPoints; i++) {
-          const baseIndex = 3 * i
-      
-          const mb = points[i]
-      
-          dataToSendToGPU[baseIndex + 0] = mb.x
-          dataToSendToGPU[baseIndex + 1] = mb.y
-          dataToSendToGPU[baseIndex + 2] = mb.r
-        }
-
-        const pointsHandle = getUniformLocation(gl, program, 'points')
-
-        gl.useProgram(program)
-        gl.uniform3fv(pointsHandle, dataToSendToGPU)
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-
-        setTimeout(function () {
-          requestAnimationFrame(loop)
-        }, 10) // animation speed
-      }
-
-      loop()
+      const program = makeProgram(gl)
+      handleBuffer(gl)
+      handleVertexAttribs(gl, program)
+      loop(gl, program)
     }
   }, [
-    fsSource,
     height,
+    width,
     points,
+    fsSource,
     vsSource,
-    width
+    makeProgram,
+    handleVertexAttribs,
+    loop
   ])
 
   return (

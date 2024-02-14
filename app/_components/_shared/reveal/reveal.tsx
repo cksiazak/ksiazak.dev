@@ -26,7 +26,7 @@ const Reveal = ({
   isRevealed = false,
 }: RevealProps) => {
   const ref = useRef(null)
-  const isInView = useInView(ref, {once: true, amount: 0.1 })
+  const isInView = useInView(ref, { once: true, amount: 'some' })
 
   const revealControls = useAnimation()
 
