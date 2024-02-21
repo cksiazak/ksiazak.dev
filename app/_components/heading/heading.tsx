@@ -33,7 +33,7 @@ const HeadingSection = () => {
 
   return (
     <Styled.Heading>
-      <Reveal>
+      <Reveal delay={0.5}>
         <Image
           priority
           src={avatar}
@@ -42,7 +42,7 @@ const HeadingSection = () => {
           height={300}
         />
       </Reveal>
-      <Reveal delay={0.75} type='fade'>
+      <Reveal delay={0.8} type='fade'>
         <Styled.HeadingText>
           <span>Hi, my name is</span>
           <h1>Christopher Ksiazak</h1>

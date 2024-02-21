@@ -230,7 +230,9 @@ const WebGLComponent: React.FC = () => {
         height: '100%',
         position: 'absolute',
         zIndex: -999,
-        background: 'transparent'
+        background: 'transparent',
+        animationName: 'fadeIn',
+        animationDuration: '0.3s',
       }}
       ref={canvasRef}
     />

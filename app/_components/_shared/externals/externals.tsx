@@ -62,7 +62,7 @@ const Externals: FC<ExternalsProps> = ({ reveal = false, delay = 0.25 }) => {
       <Reveal isActive={reveal} delay={delay + 0.4} element='li'>
         <LinkIcon
           component={IoMdDocument}
-          href='/assets/Cksiazak_Resume.pdf'
+          href='/assets/ChrisKsiazak-Resume.pdf'
           title='Resume'
         />
       </Reveal>
