@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
@@ -14,8 +15,14 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
+
+const handleMeta = async () => {
+  await fetch('/api/meta/')
+}
  
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
+  useEffect(() => { handleMeta() }, [])
+
   return (
     <html lang='en' className={inter.className}>
       <body suppressHydrationWarning>
