@@ -93,13 +93,13 @@ export const Meta = styled.div`
 `
 
 export const ImageWrapper = styled.div`
-  min-width: 40%;
+  min-width: 50%;
+  object-position: center;
+  object-fit: cover;
 
   img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 `
 
