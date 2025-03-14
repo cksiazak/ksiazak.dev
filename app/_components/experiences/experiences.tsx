@@ -6,7 +6,7 @@ import ExperienceCard from './experience-card'
 import type { ExperienceCardProps } from './experience-card'
 
 // data
-import { Kinsta, Function, PatrickThomas, EDealer, C3i } from './data'
+import { Kinsta, Function, PatrickThomas, EDealer, C3i, PigKnows } from './data'
 
 const Experiences = () => {
   return (
@@ -14,6 +14,7 @@ const Experiences = () => {
       <Styled.Inner>
         <Reveal>
           <h2>Experiences</h2>
+          <ExperienceCard work={PigKnows as ExperienceCardProps['work']} />
           <ExperienceCard work={Kinsta as ExperienceCardProps['work']} />
           <ExperienceCard work={Function as ExperienceCardProps['work']} />
           <ExperienceCard work={EDealer as ExperienceCardProps['work']} />

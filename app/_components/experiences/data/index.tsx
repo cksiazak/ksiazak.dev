@@ -1,3 +1,5 @@
+export * as PigKnows from './pigknows.mdx'
+
 export * as Kinsta from './kinsta.mdx'
 
 export * as Function from './function.mdx'
