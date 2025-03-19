@@ -26,6 +26,7 @@ const skills = [
   'SQL',
   'Apollo GraphQL',
   'Ruby on Rails',
+  'Python',
   'Docker',
   'GCP',
   'AWS',
@@ -38,7 +39,8 @@ const skills = [
   'JIRA',
   'Tableau',
   'DataDog',
-  'MixPanel'
+  'MixPanel',
+  'CAD (Fusion360)'
 ]
 
 const AboutMe = () => {

@@ -32,10 +32,10 @@ const Projects = () => {
 
         <Styled.ProjectsWrapper>
           <Reveal>
-            <ProjectCard project={SpeechSynthesizer as ProjectCardProps['project']} />
+            <ProjectCard project={SpeechSynthesizer as unknown as ProjectCardProps['project']} />
           </Reveal>
           <Reveal>
-            <ProjectCard project={Rytm as ProjectCardProps['project']} />
+            <ProjectCard project={Rytm as unknown as ProjectCardProps['project']} />
           </Reveal>
         </Styled.ProjectsWrapper>
       </Styled.Inner>
