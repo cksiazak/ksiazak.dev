@@ -21,7 +21,7 @@
     "framer-motion": "^12.5.0",
     "geoip2-api": "^1.1.1",
     "isomorphic-unfetch": "^4.0.2",
-    "next": "^15.2.2",
+    "next": "^15.2.3",
     "react": "^19.0.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.0.0",
